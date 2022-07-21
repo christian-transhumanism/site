@@ -1,0 +1,22 @@
+<!-- navigation styled for Bootstrap 3.0 //-->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="xnavbar-brand"><img src="//res.cloudinary.com/christian-transhumanist-association/image/upload/c_scale,h_40/v1492191041/cta_logo_standalone_large_n7mg2e.png" style="padding:4px 15px;" alt="Christian Transhumanist Association"/></a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        {% include '_navigation_links.njk' %}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% include '_navigation_links_right.njk' %}
+      </ul>
+    </div>
+  </div>
+</nav>

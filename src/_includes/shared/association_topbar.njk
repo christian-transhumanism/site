@@ -1,0 +1,16 @@
+<div class="container">
+  <ul class="nav nav-pills">
+    <li role="presentation" class="<%= 'active' if current_page?(executive_director_path) %>">
+      <a href="/executive-director">Executive Director</a>
+    </li>
+    <li role="presentation" class="<%= 'active' if current_page?(board_path) %>">
+      <a href="/board">The Board</a>
+    </li>
+    <li role="presentation" class="<%= 'active' if current_page?(academics_path) %>">
+      <a href="/academics">Academic Advisory Council</a>
+    </li>
+    <li role="presentation" class="<%= 'active' if current_page?(history_path) %>">
+      <a href="/history">Our History</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,90 @@
+---
+title: Christian Transhumanist Community
+description: Posts from our diverse community
+permalink: "blog/community/"
+layout: default
+---
+
+{% include 'shared/content_topbar.njk' %}
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+
+            <h1 class="page-header">
+                Posts
+                <small>from our diverse community</small>
+            </h1>
+
+            {% for post in community %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>
+                            <a href="{{ post.url }}">{{ post.title }}</a>
+                        </h2>
+                    </div>
+
+                    <div class="col-md-12">
+
+                        <p class="lead">
+                            by {{ post.author }}
+                        </p>
+
+                        <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.pubDate }}</p>
+
+                        <p>{{ post.content | safe }}</p>
+                        <a class="btn btn-primary" href="{{ post.permalink }}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                </div>
+
+                <hr>
+
+            {% endfor %}
+
+            {% if @pager_widget_on %}
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#">&larr; Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer &rarr;</a>
+                    </li>
+                </ul>
+            {% endif %}
+
+        </div>
+
+        <div class="col-lg-4">
+            <div class="well">
+                <h4>Guests</h4>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="list-unstyled">
+                            {% for guest in guests %}
+                                <li><a href="{{ guest.url }}">{{ guest.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <p>&mdash;</p>
+                    <p>The <a href="http://christiantranshumanistpodcast.com">Christian Transhumanist Podcast</a> is an editorially independent production of Micah Redding, provided here as a community resource on behalf of the CTA.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    {% include 'shared/footer.njk' %}
+
+</div>
+<!-- /.container -->

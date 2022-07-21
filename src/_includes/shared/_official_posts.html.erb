@@ -1,0 +1,18 @@
+<!-- Side Widget Well -->
+<div class="well">
+    <h4><%= link_to 'Official Posts', posts_path %></h4>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="list-unstyled">
+              <% entries.each do |post| %>
+                <li style="overflow: hidden;">
+                    <strong><%= link_to post.title, post %></strong>
+                    <p><%= teaser(post.body) %></p>
+                    <br />
+                </li>
+              <% end %>
+            </ul>
+        </div>
+    </div>
+</div>

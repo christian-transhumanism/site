@@ -1,0 +1,19 @@
+<div class="container">
+  <ul class="nav nav-pills">
+    <li role="presentation" class="<%= 'active' if current_page?(about_path) %>">
+      <a href="/about">Purpose</a>
+    </li>
+    <li role="presentation" class="<%= 'active' if current_page?(affirmation_path) %>">
+      <a href="/affirmation">Affirmation</a>
+    </li>
+    <li role="presentation" class="<%= 'active' if current_page?(quotes_path) %>">
+      <a href="/quotes">Quotes</a>
+    </li>
+    <li role="presentation" class="<%= 'active' if current_page?(books_path) %>">
+      <a href="/books">Books</a>
+    </li>
+    <li role="presentation" class="<%= 'active' if current_page?(faq_path) %>">
+      <a href="/faq">FAQ</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,38 @@
+---
+title: Academic Advisory Council
+description: The Prestigious Christian Transhumanist Academic Advisory Council
+image: http://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,h_200,w_200/c_fill,h_200,l_James_Hughes.jpg,w_200,x_200/c_fill,h_200,l_jeanine_thweatt.jpg,w_200,x_300/c_fill,h_200,l_Frank-J-Tipler_k9nj4y.jpg,w_200,x_-200,y_200/c_fill,h_200,l_CalvinMercer.jpg,w_200,x_0,y_100/c_fill,h_200,l_JayGary.linkedin.2014_xbnxtn.jpg,w_200,x_200,y_100/Ron-Cole-Turner2_krwttx.jpg
+layout: default
+---
+{% include 'shared/association_topbar.njk' %}
+
+<div class="container">
+  <h1>Academic Advisory Council</h1>
+    {% for director in academics %}
+      <br />
+      <div class="row">
+        <div class="col-md-3">
+          <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_face,h_200,w_200/{{ director.photo }}" />
+        </div>
+        <div class="col-md-9">
+          <h4>{{ director.name }}</h4>
+          <div>{{ director.bio | safe }}</div>
+            <p>{{ director.link | safe }}</p>
+          <p><a href="{{ director.full }}">(Download full CV here)</a></p>
+        </div>
+      </div><br />
+    {% endfor %}
+</div>
+
+
+<%=
+# cl_image_tag(@academics[0][:photo], :transformation=>[
+#   {:width=>200, :height=>200, :crop=>"fill"},
+#   {:overlay=>@academics[3][:photo], :width=>200, :height=>200, :x=>200, :crop=>"fill"},
+#   {:overlay=>@academics[2][:photo], :width=>200, :height=>200, :x=>300, :crop=>"fill"},
+#   {:overlay=>@academics[4][:photo], :width=>200, :height=>200, :y=>200, :x=>-200, :crop=>"fill"},
+#   {:overlay=>@academics[1][:photo], :width=>200, :height=>200, :y=>100, :x=>0, :crop=>"fill"},
+#   {:overlay=>@academics[6][:photo], :width=>200, :height=>200, :y=>100, :x=>200, :crop=>"fill"},
+#   # {:overlay=>@academics[6][:photo], :width=>200, :height=>200, :y=>200, :x=>600, :crop=>"fill"},
+#   ])
+%>

@@ -1,0 +1,60 @@
+[
+  {
+    "name": "Micah Redding <em>Executive Director</em>",
+    "bio": "Micah Redding is a software developer and the Executive Director of the Christian Transhumanist Association. He's an international TEDx speaker and educator, and a contributor to Vice Motherboard, the Huffington Post, IEET, and Humanity+. His travels have taken him to Tahrir Square during the Arab Spring, and Afghanistan during the war.",
+    "photo": "micah_redding_erika_chambers_bw_medium_cwvcih.jpg",
+    "url": "/executive-director",
+    "user_id": 1
+  },
+  {
+    "name": "Jonathan Gunnell",
+    "bio": "Australian, Engineer, Christian (mostly Anglican but also have been in Baptist and Charismatic/Pentecostal churches, honorary catholic occasionally in Spanish speaking places), work in construction. Keen to see Christianity impact the developing AI governance systems and coming technology changes. Fluent in Spanish, and in all English dialects of Christian-ese.",
+    "user_id": 283,
+    "photo": "http://res.cloudinary.com/christian-transhumanist-association/image/upload/c_scale,h_200,w_200/v1522712895/jonathan_gunnell.jpg"
+  },
+  {
+    "name": "Lorenzo Barberis Canonico <em>Secretary</em>",
+    "bio": "I'm an ML engineer at Rombot (https://rombot.com/) where we develop smart devices and a software ecosystem for remote physical therapy.",
+    "photo": "lorenzo_barberis_canonico",
+    "url": "https://medium.com/@lorenzobarberiscanonico",
+    "user_id": 1788
+  },
+  {
+    "name": "Emily Hogan Redding <em>Treasurer</em>",
+    "bio": "Emily Redding has 13 years of accounting experience, and is currently serving as Associate Vice President of Financial Services and Division Controller for a healthcare company based in Nashville, Tennessee. In her management role, she has overseen the creation and launch of multiple business processes and internal software projects.",
+    "photo": "1466078_10152191485093823_6998522668485093404_n_lvgitk.jpg",
+    "user_id": 68
+  },
+  {
+    "name": "Omar Reyes",
+    "bio": "To contribute direction and innovative insight to ministry, resulting in effective teaching and spiritual growth at individual and group levels. From working with Tim Keller to participating in urban church plants and serving the rural parishioners of a Canadian province, my diverse background informs and enriches the practical and spiritual application of my Master of Arts degree.",
+    "url": "http://christchurchalbertville.org/",
+    "user_id": 381
+  },
+  {
+    "name": "Elias Kruger",
+    "bio": "",
+    "photo": "elias_kruger",
+    "url": "https://www.aitheology.com",
+    "user_id": 36
+  },
+  {
+    "name": "Martha Bucaram",
+    "bio": "Martha Bucaram is Secretary and Treasurer of Xanathos, Inc., a nonprofit organization dedicated to educate people about life extension and support its scientific advancement. She is also a bilingual transactional attorney with over 10 years of experience. Her areas of focus include technology transactions. Before, she worked for a public software company, where she was one of three attorneys working on domestic and international deals, as well as protecting the company as co-chair of the compliance program. During that time, she oversaw all legal aspects of the company’s operations in Latin America. Prior to becoming in-house counsel, Martha worked for a global law firm, where she focused her practice on construction law, cross-border transactions and FCPA investigations. Before moving to Atlanta, she worked for two non-profit organizations, focusing on immigration law and human rights issues. Martha has a Master’s Degree (LLM) in International Legal Studies from New York University. Prior to obtaining her LLM she attended the Harvard Summer School for a coursework in Communication in Business. For years, Martha was a member of the Board of Directors of Caminar Latino, Inc., and chair of its fundraising committee, the organization is committed to helping Latino families in their journey to get out of the domestic violence cycle. She was also engaged with the Society of Hispanic Professional Engineers (SHPE) where she helped promote education, professional development and providing resources to other professionals to put their talent to their best use. Martha is from Ecuador and grew up in Panama.",
+    "photo": "martha_bucaram",
+    "url": "",
+    "user_id": 368
+  },
+  {
+    "name": "Lincoln Cannon",
+    "bio": "<p>Lincoln Cannon is a technologist and philosopher, and leading advocate of technological evolution and postsecular religion. He is a founder, board member, and former president of the Mormon Transhumanist Association. He is a founder and board member of the Christian Transhumanist Association. And he formulated the New God Argument, a logical argument for faith in God that is popular among religious Transhumanists.</p> <p>Lincoln has two decades of professional experience in the business of technology. He has worked for large enterprises, including Ancestry.com, Merit Medical, and Symantec; at startups, including The World Table; and with investment firms, including OS Fund. He is presently CEO at Thrivous and Discerner.</p> <p>Lincoln received formal education in business and the humanities. He holds an MBA from the Marriott School of Management. He holds a degree in philosophy from Brigham Young University. He is also an alumnus of the Exponential Medicine executive program at Singularity University.</p>",
+    "photo": "12993422_10153406720706746_3790809052508040277_n_grcvpg.jpg",
+    "user_id": 14
+  },
+  {
+    "name": "Mark Russell",
+    "bio": "I love Jesus and love seeing how God is using and will use tech to connect and heal us. Very exciting times we are living in!",
+    "user_id": 6,
+    "photo": "http://res.cloudinary.com/christian-transhumanist-association/image/upload/c_crop,g_face,h_500,w_500/c_scale,h_200/v1522712899/mark_russell.jpg"
+  }
+]

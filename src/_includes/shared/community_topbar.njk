@@ -1,0 +1,16 @@
+<div class="container">
+  <ul class="nav nav-pills">
+    <li role="presentation" class="<%= 'active' if current_page?(users_path) %>">
+      <a href="/users">Members</a>
+    </li>
+    <li role="presentation" class="<%= 'active' if current_page?(volunteer_path) %>">
+      <a href="/volunteer">Volunteer Opportunities</a>
+    </li>
+    <li role="presentation" class="<%= 'active' if current_page?(meetup_path) %>">
+      <a href="/meetup">Meetup in Nashville</a>
+    </li>
+    <li role="presentation" class="<%= 'active' if current_page?('/facebook') %>">
+      <a href="/facebook">Facebook Group</a>
+    </li>
+  </ul>
+</div>

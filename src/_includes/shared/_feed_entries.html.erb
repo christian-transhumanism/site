@@ -1,0 +1,18 @@
+<!-- Side Widget Well -->
+<div class="well">
+    <h4><%= link_to 'Posts from the Larger Community', community_path %></h4>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="list-unstyled">
+              <% entries.each do |entry| %>
+                <li style="overflow: hidden;">
+                    <strong><%= link_to (entry.title || "").html_safe, entry.link %></strong>
+                    <p><%= strip_tags(entry.description || "").truncate(250) %></p>
+                    <br />
+                </li>
+              <% end %>
+            </ul>
+        </div>
+    </div>
+</div>

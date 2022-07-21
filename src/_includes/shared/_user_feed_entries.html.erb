@@ -1,0 +1,21 @@
+<!-- Side Widget Well -->
+<div class="well">
+    <h4>Posts from <%= user.name %></h4>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="list-unstyled">
+              <% posts.each do |post| %>
+                <li>
+                    <%= link_to (post.title || "").html_safe, post_url(post) %><br />
+                </li>
+              <% end %>
+              <% entries.each do |entry| %>
+                <li>
+                    <%= link_to (entry.title || "").html_safe, entry.link %><br />
+                </li>
+              <% end %>
+            </ul>
+        </div>
+    </div>
+</div>

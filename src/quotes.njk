@@ -1,0 +1,39 @@
+---
+title: Quotes on Christianity and Transhumanism
+description: Maybe Christian Transhumanism isn't a new idea, after all.
+layout: default
+disqus_id: 20150126153913
+---
+
+{% include 'shared/resources_topbar.njk' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Quotes on Christianity &amp; Transhumanism</h1>
+
+      {% for section in quotes %}
+        <section class="quote-section">
+          <h4 id="{{ section.id }}">{{ section.title }}: </h4>
+          {% for q in section.quotes %}
+            <blockquote>
+              {{ q.quote | safe }}
+                <br />
+                <cite> &mdash;
+                    <a href="{{ q.url }}">{{ q.source }}</a>
+                </cite>
+            </blockquote>
+          {% endfor %}
+        </section>
+      {% endfor %}
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+        {% include 'shared/disqus_thread.njk' %} 
+    </div>
+  </div>
+
+</div>

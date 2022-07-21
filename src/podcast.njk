@@ -1,0 +1,87 @@
+---
+title: Christian Transhumanist Podcast
+description: Explore Christianity and Transhumanism, with provocative guests from the leading edges of science and theology.
+layout: default
+---
+{% include 'shared/content_topbar.njk' %}
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+
+            <h1 class="page-header">
+                The Christian Transhumanist Podcast <br />
+                <small class="text-muted">Explore Christianity and Transhumanism, with provocative guests from the leading edges of science and theology.</small> <br />
+                <div style="padding: 1rem 0;">
+                    <a class="btn btn-primary" href="https://itunes.apple.com/us/podcast/christian-transhumanist-podcast/id1053762042">iTunes</a>
+                    <a class="btn btn-primary" href="http://brickcaster.com/christiantranshumanist/subscribe">email</a>
+                    <a class="btn btn-primary" href="http://brickcaster.com/christiantranshumanist.rss">RSS</a>
+                </div>
+            </h1>
+
+
+            {% for post in podcast %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="img-responsive" src="{{ post.itunes.image }}" alt="{{ post.title }}">
+                    </div>
+
+                    <div class="col-md-8">
+                        <h2>
+                            <a href="{{ post.url }}">{{ post.title }}</a>
+                        </h2>
+
+                        <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.pubDate }}</p>
+
+                        <p>{{ post.content | safe }}</p>
+                    </div>
+                </div>
+
+                <hr>
+
+            {% endfor %}
+
+            {% if @pager_widget_on %}
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#">&larr; Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer &rarr;</a>
+                    </li>
+                </ul>
+            {% endif %}
+
+        </div>
+        <div class="col-lg-4">
+            <div class="well">
+                <h4>Guests</h4>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="list-unstyled">
+                            {% for guest in guests %}
+                                <li><a href="{{ guest.url }}">{{ guest.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <p>&mdash;</p>
+                    <p>The <a href="http://christiantranshumanistpodcast.com">Christian Transhumanist Podcast</a> is an editorially independent production of Micah Redding, provided here as a community resource on behalf of the CTA.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    {% include 'shared/footer.njk' %}
+
+</div>
+<!-- /.container -->

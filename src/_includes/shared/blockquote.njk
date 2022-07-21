@@ -1,0 +1,13 @@
+<blockquote id='<%= quote.hash %>'>
+  <%= quote.html_safe %>
+  <% if source %>
+    <br />
+    <cite> &mdash;
+      <% if url %>
+        <%= link_to source, url %>
+      <% else %>
+        <%= source.html_safe %>
+      <% end %>
+    </cite>
+  <% end %>
+</blockquote>
