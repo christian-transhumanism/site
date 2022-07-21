@@ -1,13 +1,9 @@
----js
-{
-    title: "title",
-    image: "image",
-    description: "teaser",
-    layout: "default",
-    disqus_id: function() {
-        return (new Date()).toLocaleString();
-    }
-}
+---
+title: title
+image: image
+description: teaser
+disqus_id: "00000000000000"
+layout: default
 ---
 {% include 'shared/content_topbar.njk' %}
 
@@ -43,7 +39,6 @@
             <hr>
 
             <!-- Blog Comments -->
-            {% timestamp created_at %}
             {% include 'shared/disqus_thread.njk' %}
 
         </div>
