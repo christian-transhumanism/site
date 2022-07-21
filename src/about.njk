@@ -2,6 +2,7 @@
 title: About Us
 description: Participating with God in the redemption, reconciliation, and renewal of the world.
 layout: default
+disqus_id: 20150109015429
 ---
 
 {% include 'shared/resources_topbar.njk' %}
@@ -43,7 +44,7 @@ layout: default
 
       <div class="row">
         <div class="col-md-12">
-        <%= render partial: 'shared/disqus_thread', locals: {id: timestamp_id(DateTime.parse("2015-01-09 01:54:29"))} %>
+        {% include 'shared/disqus_thread.njk' %}
         </div>
       </div>
 
