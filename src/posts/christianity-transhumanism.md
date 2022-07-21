@@ -5,6 +5,7 @@
     "title": "H+ Magazine: Christianity & Transhumanism",
     "permalink": "blog/christianity_transhumanism/",
     "created_at": "2014-10-11T09:19:00.000Z",
+    "disqus_id": "20141011091900",
     "image":  null,
     "author": "Micah Redding"
 }

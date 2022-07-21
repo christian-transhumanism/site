@@ -5,6 +5,7 @@
     "title": "Campaign Update",
     "permalink": "blog/campaign_update/",
     "created_at": "2017-03-31T10:45:00.000Z",
+    "disqus_id": "20170331104500",
     "image":  null,
     "author": "Micah Redding"
 }

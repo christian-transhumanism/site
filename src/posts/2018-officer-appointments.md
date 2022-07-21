@@ -5,6 +5,7 @@
     "title": "CTA Announces Officer Appointments",
     "permalink": "blog/2018-officer-appointments/",
     "created_at": "2018-04-14T04:50:29.582Z",
+    "disqus_id": "20180414045029",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1523685941/exigcus9cqavrpqcxzpl.jpg",
     "author": "Micah Redding"
 }

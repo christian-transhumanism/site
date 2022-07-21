@@ -5,6 +5,7 @@
     "title": "Cheryle Renee Moses, founder and producer of Urban Mediamakers Film Festival, to present at Christian Transhumanist Conference 2019",
     "permalink": "blog/2019-conference-speaker-cheryle-renee-moses/",
     "created_at": "2019-09-25T01:12:09.277Z",
+    "disqus_id": "20190925011209",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1569373929/slkdevf8orjphti8ytj8.jpg",
     "author": "Micah Redding"
 }

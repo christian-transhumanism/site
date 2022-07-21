@@ -5,6 +5,7 @@
     "title": "Christian Post: Why Christians should embrace Transhumanism",
     "permalink": "blog/why_christians_should_embrace_transhumanism/",
     "created_at": "2015-08-14T12:05:00.000Z",
+    "disqus_id": "20150814120500",
     "image":  null,
     "author": "Micah Redding"
 }

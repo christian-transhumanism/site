@@ -5,6 +5,7 @@
     "title": "Mike Morrell to present at Christian Transhumanist Conference 2018",
     "permalink": "blog/2018-conference-speaker-mike-morrell/",
     "created_at": "2018-07-31T18:19:45.713Z",
+    "disqus_id": "20180731181945",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1533061185/x8ogk4eqqowfqiwoxmyt.jpg",
     "author": "Micah Redding"
 }

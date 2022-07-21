@@ -5,6 +5,7 @@
     "title": "A Transhumanist and Jehovah's Witness",
     "permalink": "blog/transhumanist-and-jehovahs-witness/",
     "created_at": "2018-04-20T05:03:37.632Z",
+    "disqus_id": "20180420050337",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1524201542/jtweohp8uav18o9zf1yc.jpg",
     "author": "Micah McCathron"
 }

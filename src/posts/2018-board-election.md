@@ -5,6 +5,7 @@
     "title": "Electing the Next Board of the CTA",
     "permalink": "blog/2018-board-election/",
     "created_at": "2018-03-06T14:53:24.014Z",
+    "disqus_id": "20180306145324",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1520348224/g4yvqfvb5kprjpb4dmkb.jpg",
     "author": "Micah Redding"
 }

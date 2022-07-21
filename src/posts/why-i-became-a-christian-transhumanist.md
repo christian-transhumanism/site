@@ -5,6 +5,7 @@
     "title": "Motherboard: Why I became a Christian Transhumanist",
     "permalink": "blog/why_i_became_a_christian_transhumanist/",
     "created_at": "2015-08-14T12:10:00.000Z",
+    "disqus_id": "20150814121000",
     "image":  null,
     "author": "Micah Redding"
 }

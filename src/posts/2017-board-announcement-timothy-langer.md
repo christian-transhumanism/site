@@ -5,6 +5,7 @@
     "title": "CTA announces newest board member, Timothy Langer",
     "permalink": "blog/2017-board-announcement-timothy-langer/",
     "created_at": "2017-09-07T19:16:07.490Z",
+    "disqus_id": "20170907191607",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1504811767/ltjbh2ng1zama0mmqrxg.jpg",
     "author": "Micah Redding"
 }

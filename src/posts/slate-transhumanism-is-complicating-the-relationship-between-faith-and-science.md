@@ -5,6 +5,7 @@
     "title": "Slate: Transhumanism is Complicating the Relationship between Faith & Science",
     "permalink": "blog/slate-transhumanism-is-complicating-the-relationship-between-faith-and-science/",
     "created_at": "2018-05-28T14:07:49.159Z",
+    "disqus_id": "20180528140749",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1527516469/kjw495jybnrarfggzrqc.jpg",
     "author": "Micah Redding"
 }

@@ -5,6 +5,7 @@
     "title": "Embrace & the Christian Transhumanist Association",
     "permalink": "blog/embrace_announcement/",
     "created_at": "2015-10-06T07:30:00.000Z",
+    "disqus_id": "20151006073000",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1494469532/khus0puynhibdsf0stdl.jpg",
     "author": "Micah Redding"
 }

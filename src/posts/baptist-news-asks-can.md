@@ -5,6 +5,7 @@
     "title": "Baptist News Asks: Can Transhumanism Enrich Christian Theology?",
     "permalink": "blog/baptist_news_asks_can/",
     "created_at": "2016-08-10T18:35:00.000Z",
+    "disqus_id": "20160810183500",
     "image":  null,
     "author": "Micah Redding"
 }

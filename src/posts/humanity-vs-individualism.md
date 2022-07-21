@@ -5,6 +5,7 @@
     "title": "H+ Magazine: Humanity+ vs Individualism+",
     "permalink": "blog/humanity_vs_individualism/",
     "created_at": "2014-10-12T09:24:00.000Z",
+    "disqus_id": "20141012092400",
     "image":  null,
     "author": "Micah Redding"
 }

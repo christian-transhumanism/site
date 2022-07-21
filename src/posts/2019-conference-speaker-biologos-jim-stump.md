@@ -5,6 +5,7 @@
     "title": "Jim Stump of BioLogos to speak at Christian Transhumanist Conference 2019",
     "permalink": "blog/2019-conference-speaker-biologos-jim-stump/",
     "created_at": "2019-08-09T05:44:09.465Z",
+    "disqus_id": "20190809054409",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1565329450/sclrot9bkiizx61ynxcp.jpg",
     "author": "Micah Redding"
 }

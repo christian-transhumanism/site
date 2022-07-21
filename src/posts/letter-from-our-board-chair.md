@@ -5,6 +5,7 @@
     "title": "Letter from Our Board Chair",
     "permalink": "blog/letter_from_our_board_chair/",
     "created_at": "2017-03-23T01:56:00.000Z",
+    "disqus_id": "20170323015600",
     "image":  null,
     "author": "Christopher Benek"
 }

@@ -5,6 +5,7 @@
     "title": "2020 CTA Board Member Elections",
     "permalink": "blog/2020-board-election/",
     "created_at": "2020-03-09T18:09:32.013Z",
+    "disqus_id": "20200309180932",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1583777372/xdzter2xbagm0shlx0p8.jpg",
     "author": "Micah Redding"
 }

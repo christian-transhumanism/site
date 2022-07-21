@@ -5,6 +5,7 @@
     "title": "Announcing the Academic Advisory Council",
     "permalink": "blog/academic-advisory-council-announcement/",
     "created_at": "2017-06-02T04:30:40.341Z",
+    "disqus_id": "20170602043040",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1496380071/gctnk6kd88qp6fx0fzmu.jpg",
     "author": "Micah Redding"
 }

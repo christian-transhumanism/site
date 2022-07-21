@@ -5,6 +5,7 @@
     "title": "Three Missions of the CTA",
     "permalink": "blog/2022-three-missions-of-the-cta/",
     "created_at": "2022-03-07T01:06:22.696Z",
+    "disqus_id": "20220307010622",
     "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1646616935/15521549971_65f26d76bc_k_nstpqb",
     "author": "Micah Redding"
 }

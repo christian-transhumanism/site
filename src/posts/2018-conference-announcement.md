@@ -5,6 +5,7 @@
     "title": "SAVE THE DATE! Christian Transhumanist Conference 2018",
     "permalink": "blog/2018-conference-announcement/",
     "created_at": "2018-07-01T19:30:13.180Z",
+    "disqus_id": "20180701193013",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1530578898/wiucxmm8c2glvgkjnyrm.jpg",
     "author": "Micah Redding"
 }
