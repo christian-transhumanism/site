@@ -21,21 +21,6 @@ module.exports = function(eleventyConfig) {
   let markdownLibrary = markdownIt(options).use(markdownItFootnote);
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  eleventyConfig.addShortcode("timestamp", function(created_at) { 
-    var regex = /(\d\d\d\d)-(\d\d)-(\d\d)T(\d\d):(\d\d):(\d\d)(.*)/g;
-    var repl = "$1$2$3$4$5$6";
-    var x = created_at.replace(regex, repl);
-    // var v = new Date(created_at);
-    // var y = v.getFullYear();
-    // var m = v.getMonth();
-    // var d = v.getMinutes();
-    // var h = v.getHours();
-    // var n = v.getMinutes();
-    // var s = v.getSeconds();
-    // var e = y + m + d + h + n + s;
-    return x;
-  });
-
   return {
     dir: {
       input: "src",
