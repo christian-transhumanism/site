@@ -8,6 +8,18 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addLiquidFilter("reverse", (collection) => {
         return [...collection];
     });
+  eleventyConfig.addFilter("nameFromRSSAuthor", function(value) { 
+        const regex = /\((.*)\)/;
+        const found = value.match(regex);
+        return found[1];
+    });
+
+  eleventyConfig.addFilter("episodeNumberFromRSSGUID", function(value) { 
+        const regex = /.*\/christiantranshumanist\/(.*)/;
+        const found = value.match(regex);
+        return found[1];
+    });
+
   eleventyConfig.setTemplateFormats([
     "md",
     "njk",
