@@ -1,8 +1,11 @@
 const markdownIt = require("markdown-it");
 const markdownItFootnote = require('markdown-it-footnote');
 const format = require('date-fns/format')
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(pluginRss);
+
   eleventyConfig.addFilter('date', function (date, dateFormat) {
     return format(date, dateFormat)
   })
