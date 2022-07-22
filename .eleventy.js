@@ -1,5 +1,8 @@
 const markdownIt = require("markdown-it");
 const markdownItFootnote = require('markdown-it-footnote');
+const markdownItAttrs = require('markdown-it-attrs');
+const markdownItAnchor = require('markdown-it-anchor');
+
 const format = require('date-fns/format')
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
@@ -38,7 +41,7 @@ module.exports = function(eleventyConfig) {
     html: true,
     breaks: true
     };
-  let markdownLibrary = markdownIt(options).use(markdownItFootnote);
+  let markdownLibrary = markdownIt(options).use(markdownItFootnote).use(markdownItAttrs).use(markdownItAnchor);
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   return {
