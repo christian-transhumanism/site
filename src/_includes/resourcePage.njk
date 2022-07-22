@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+{% include 'shared/resources_topbar.njk' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      {{ content | safe }}
+
+    </div>
+  </div>
+
+  {% if disqus_id %}
+  <div class="row">
+    <div class="col-md-12">
+
+      {% include 'shared/disqus_thread.njk' %}
+
+    </div>
+  </div>
+  {% endif %}
+
+</div>

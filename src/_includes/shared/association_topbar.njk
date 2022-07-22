@@ -1,16 +1,16 @@
 <div class="container">
   <ul class="nav nav-pills">
-    <li role="presentation" class="<%= 'active' if current_page?(executive_director_path) %>">
-      <a href="/executive-director">Executive Director</a>
+    <li role="presentation" class="{% if page.url == "/executive-director/" %} active {% endif %}">
+      <a href="/executive-director/">Executive Director</a>
     </li>
-    <li role="presentation" class="<%= 'active' if current_page?(board_path) %>">
-      <a href="/board">The Board</a>
+    <li role="presentation" class="{% if page.url == "/board/" %} active {% endif %}">
+      <a href="/board/">The Board</a>
     </li>
-    <li role="presentation" class="<%= 'active' if current_page?(academics_path) %>">
-      <a href="/academics">Academic Advisory Council</a>
+    <li role="presentation" class="{% if page.url == "/academics/" %} active {% endif %}">
+      <a href="/academics/">Academic Advisory Council</a>
     </li>
-    <li role="presentation" class="<%= 'active' if current_page?(history_path) %>">
-      <a href="/history">Our History</a>
+    <li role="presentation" class="{% if page.url == "/history/" %} active {% endif %}">
+      <a href="/history/">Our History</a>
     </li>
   </ul>
 </div>

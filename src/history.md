@@ -1,7 +1,7 @@
 ---
 title: History of the CTA
 description: Where we began, and where we are going
-layout: association
+layout: associationPage
 ---
 # The History of the Christian Transhumanist Association
 

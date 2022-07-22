@@ -1,12 +1,12 @@
 <div class="container">
   <ul class="nav nav-pills">
-    <li role="presentation" class="<%= 'active' unless current_page?(community_path) || current_page?(podcast_path) %>">
+    <li role="presentation" class="{% if page.url == "/blog/" %} active {% endif %}">
       <a href="/blog/">Official Posts</a>
     </li>
-    <li role="presentation" class="<%= 'active' if current_page?(community_path) %>">
+    <li role="presentation" class="{% if page.url == "/blog/community/" %} active {% endif %}">
       <a href="/blog/community/">Community Posts</a>
     </li>
-    <li role="presentation" class="<%= 'active' if current_page?(podcast_path) %>">
+    <li role="presentation" class="{% if page.url == "/podcast/" %} active {% endif %}">
       <a href="/podcast/">Christian Transhumanist Podcast</a>
     </li>
   </ul>

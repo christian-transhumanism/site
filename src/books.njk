@@ -1,19 +1,17 @@
 ---
 title: Books about Christianity and Transhumanism
 description: Study and scholarship from the ancient past to the deep future
-layout: default
+layout: resourcePage
 ---
 
-{% include 'shared/resources_topbar.njk' %}
+<h1>Books about Christianity &amp; Transhumanism</h1>
 
-<div class="container">
-  <h2>Books about Christianity &amp; Transhumanism</h2>
+<br />
+
+{% for book in books %}
+  <div>
+    <h4><a href="{{ book.url }}">{{ book.title }}</a> — <strong>{{ book.author }}</strong></h4>
+      <div>{{ book.body | safe }}</div>
     <br />
-    {% for book in books %}
-      <div>
-        <h4><a href="{{ book.url }}">{{ book.title }}</a> — <strong>{{ book.author }}</strong></h4>
-          <div>{{ book.body | safe }}</div>
-        <br />
-      </div>
-    {% endfor %}
-</div>
+  </div>
+{% endfor %}

@@ -1,15 +1,15 @@
 <div class="container">
   <ul class="nav nav-pills">
-    <li role="presentation" class="<%= 'active' if current_page?(users_path) %>">
+    <li role="presentation" class="">
       <a href="/users">Members</a>
     </li>
-    <li role="presentation" class="<%= 'active' if current_page?(volunteer_path) %>">
-      <a href="/volunteer">Volunteer Opportunities</a>
+    <li role="presentation" class="{% if page.url == "/volunteer/" %} active {% endif %}">
+      <a href="/volunteer/">Volunteer Opportunities</a>
     </li>
-    <li role="presentation" class="<%= 'active' if current_page?(meetup_path) %>">
-      <a href="/meetup">Meetup in Nashville</a>
+    <li role="presentation" class="{% if page.url == "/meetup/" %} active {% endif %}">
+      <a href="/meetup/">Meetup in Nashville</a>
     </li>
-    <li role="presentation" class="<%= 'active' if current_page?('/facebook') %>">
+    <li role="presentation" class="">
       <a href="/facebook">Facebook Group</a>
     </li>
   </ul>
