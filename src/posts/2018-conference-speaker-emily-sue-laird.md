@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "Emily Sue Laird to present on Art & Transhumanism—at Christian Transhumanist Conference 2018",
     "permalink": "blog/2018-conference-speaker-emily-sue-laird/",
-    "created_at": "2018-07-31T18:13:21.241Z",
+    "date": "2018-07-31T18:13:21.241Z",
     "disqus_id": "20180731181321",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1533060801/de4ijfajara3viwhdegy.jpg",
     "author": "Micah Redding"

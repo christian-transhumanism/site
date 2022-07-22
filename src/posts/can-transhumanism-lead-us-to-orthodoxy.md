@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "Christ & Pop Culture: Can Transhumanism Lead Us Back to Orthodoxy?",
     "permalink": "blog/can_transhumanism_lead_us_to_orthodoxy/",
-    "created_at": "2016-08-17T09:32:00.000Z",
+    "date": "2016-08-17T09:32:00.000Z",
     "disqus_id": "20160817093200",
     "image":  null,
     "author": "Micah Redding"

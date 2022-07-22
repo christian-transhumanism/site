@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "Christian Transhumanists involved in support for Orphan Technology & Education Project",
     "permalink": "blog/christian_transhumanists_involved_in_support_for_orphan_technology_education_project/",
-    "created_at": "2014-10-21T09:29:00.000Z",
+    "date": "2014-10-21T09:29:00.000Z",
     "disqus_id": "20141021092900",
     "image":  null,
     "author": "Micah Redding"

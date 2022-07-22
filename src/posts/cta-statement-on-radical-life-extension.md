@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "(DRAFT) Statement on Radical Life Extension",
     "permalink": "blog/cta-statement-on-radical-life-extension/",
-    "created_at": "2018-08-10T03:10:08.678Z",
+    "date": "2018-08-10T03:10:08.678Z",
     "disqus_id": "20180810031008",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1534456231/pqsdxgjs1xabciwloara.jpg",
     "author": "Micah Redding"

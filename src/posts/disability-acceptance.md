@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "Disability Acceptance and Access",
     "permalink": "blog/disability_acceptance/",
-    "created_at": "2015-07-07T15:21:00.000Z",
+    "date": "2015-07-07T15:21:00.000Z",
     "disqus_id": "20150707152100",
     "image":  null,
     "author": "Dorothy Deasy"

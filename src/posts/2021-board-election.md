@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "2021 CTA Board Election",
     "permalink": "blog/2021-board-election/",
-    "created_at": "2021-03-06T20:27:29.688Z",
+    "date": "2021-03-06T20:27:29.688Z",
     "disqus_id": "20210306202729",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/fsemciff7498ey2w55r9.jpg",
     "author": "Micah Redding"

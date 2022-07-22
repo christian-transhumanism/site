@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "H+ Magazine: Towards a Relational Transhumanism",
     "permalink": "blog/towards_a_relational_transhumanism/",
-    "created_at": "2014-10-14T09:26:00.000Z",
+    "date": "2014-10-14T09:26:00.000Z",
     "disqus_id": "20141014092600",
     "image":  null,
     "author": "Micah Redding"

@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "CTA Board Announcement & Appreciation",
     "permalink": "blog/board_announcement_and_appreciation/",
-    "created_at": "2017-04-29T12:17:00.000Z",
+    "date": "2017-04-29T12:17:00.000Z",
     "disqus_id": "20170429121700",
     "image":  null,
     "author": "Micah Redding"

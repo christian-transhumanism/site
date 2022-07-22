@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "Call for Presentations: Christian Transhumanist Conference 2018",
     "permalink": "blog/2018-conference-proposals/",
-    "created_at": "2018-07-15T23:03:38.832Z",
+    "date": "2018-07-15T23:03:38.832Z",
     "disqus_id": "20180715230338",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1531696097/qc2dqayhp4npiv8s1vpe.jpg",
     "author": "Micah Redding"

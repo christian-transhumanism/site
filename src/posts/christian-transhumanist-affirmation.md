@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "The Christian Transhumanist Affirmation",
     "permalink": "blog/christian_transhumanist_affirmation/",
-    "created_at": "2016-04-03T21:40:00.000Z",
+    "date": "2016-04-03T21:40:00.000Z",
     "disqus_id": "20160403214000",
     "image":  null,
     "author": "Micah Redding"

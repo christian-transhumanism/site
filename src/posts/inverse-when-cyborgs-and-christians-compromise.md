@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "Inverse: When Cyborgs and Christians Compromise",
     "permalink": "blog/inverse_when_cyborgs_and_christians_compromise/",
-    "created_at": "2017-03-16T00:52:00.000Z",
+    "date": "2017-03-16T00:52:00.000Z",
     "disqus_id": "20170316005200",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1527515689/j6xouk8v0nlyrnnxg5yg.jpg",
     "author": "Micah Redding"

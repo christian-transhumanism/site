@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "Announcement! National Geographic to sponsor Christian Transhumanist Conference 2018",
     "permalink": "blog/2018-conference-announcement-national-geographic-mars/",
-    "created_at": "2018-08-20T20:04:57.935Z",
+    "date": "2018-08-20T20:04:57.935Z",
     "disqus_id": "20180820200457",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1534795498/fpbgq8gjpw2k1ixtwhqa.jpg",
     "author": "Micah Redding"

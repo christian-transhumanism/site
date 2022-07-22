@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "Early-Bird Tickets are Live! Christian Transhumanist Conference 2019",
     "permalink": "blog/2019-conference-announcement/",
-    "created_at": "2019-06-18T22:59:32.271Z",
+    "date": "2019-06-18T22:59:32.271Z",
     "disqus_id": "20190618225932",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1560898772/emohqqoxrezugoyikoff.jpg",
     "author": "Micah Redding"

@@ -4,7 +4,7 @@
 	"tags": "post",
     "title": "BBC — Immortality, The Why Factor",
     "permalink": "blog/bbc-immortality-the-why-factor/",
-    "created_at": "2018-05-22T21:28:36.810Z",
+    "date": "2018-05-22T21:28:36.810Z",
     "disqus_id": "20180522212836",
     "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1527024729/u6ghr2ucsgi57of1gsbo.jpg",
     "author": "Micah Redding"
