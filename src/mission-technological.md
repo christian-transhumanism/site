@@ -11,7 +11,7 @@ The CTA advocates for the development of brilliant technology to speed humanity 
 
 ---
 
-## 1. Super-Longevity
+## 1. Super-Longevity {#super-longevity}
 
 Humanity stands at the cusp of numerous major medical breakthroughs. Forestalling aging by a decade or more, forestalling common diseases such as heart disease, cancer, dementia and loss of bone density and type 2 diabetes is becoming mainstream. Billions are being invested and leading scientific minds engaged to combat aging before diseases occur.
 
@@ -55,7 +55,7 @@ CTA advocates for this knowledge to be widely shared, and in the immediate term,
 
 ---
 
-## 2. Super-Humanity
+## 2. Super-Humanity {#super-humanity}
 
 Technology to enhance humans will become as common as sunglasses. We will see humans made strong with exoskeletons, and given enhanced sight and hearing with technological aids. We will become changed in ways that are hard to foresee with brain-computer interfaces and genetic engineering.
 
@@ -77,7 +77,7 @@ Immediate human enhancement is available through a lively faith in God. As we ar
 
 ---
 
-## 3. Super-Intelligence
+## 3. Super-Intelligence {#super-intelligence}
 
 Artificial Intelligence is now ubiquitous and growing. Every year major advancements occur, and machines gain functionality previously unique to humans. Even so, we remain far from human level Artificial General Intelligence.
 
@@ -120,7 +120,7 @@ AGI should support individual human flourishing, always be oriented towards supp
 
 ---
 
-## 4. Super-Ecology
+## 4. Super-Ecology {#super-ecology}
 
 God created our biosphere as our home. The creation mandate in Genesis states we must care for it, and we should proactively and carefully improve it.
 
