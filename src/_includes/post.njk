@@ -43,6 +43,22 @@ layout: default
 
         </div>
 
+        <div class="col-lg-4">
+            <div class="well">
+                <h4>Guests</h4>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="list-unstyled">
+                            {% for guest in guests %}
+                                <li><a href="{{ guest.url }}">{{ guest.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <!-- /.row -->
 

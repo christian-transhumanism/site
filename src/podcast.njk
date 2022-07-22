@@ -31,7 +31,7 @@ layout: default
 
                     <div class="col-md-8">
                         <h2>
-                            <a href="{{ post.url }}">{{ post.title }}</a>
+                            <a href="/podcast/{{ post.guid | episodeNumberFromRSSGUID }}/">{{ post.title }}</a>
                         </h2>
 
                         <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.pubDate }}</p>

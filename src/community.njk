@@ -23,14 +23,14 @@ layout: default
                 <div class="row">
                     <div class="col-md-12">
                         <h2>
-                            <a href="{{ post.url }}">{{ post.title }}</a>
+                            <a href="{{ post.link }}">{{ post.title }}</a>
                         </h2>
                     </div>
 
                     <div class="col-md-12">
 
                         <p class="lead">
-                            by {{ post.author }}
+                            by {{ post.author | nameFromRSSAuthor }}
                         </p>
 
                         <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.pubDate }}</p>
@@ -70,10 +70,6 @@ layout: default
                             {% endfor %}
                         </ul>
                     </div>
-                </div>
-                <div>
-                    <p>&mdash;</p>
-                    <p>The <a href="http://christiantranshumanistpodcast.com">Christian Transhumanist Podcast</a> is an editorially independent production of Micah Redding, provided here as a community resource on behalf of the CTA.</p>
                 </div>
             </div>
         </div>
