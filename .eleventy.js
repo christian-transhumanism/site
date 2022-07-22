@@ -1,7 +1,12 @@
 const markdownIt = require("markdown-it");
 const markdownItFootnote = require('markdown-it-footnote');
+const format = require('date-fns/format')
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addFilter('date', function (date, dateFormat) {
+    return format(date, dateFormat)
+  })
+
   eleventyConfig.addLiquidFilter('sortByDate', (collection) => {
         return collection.slice().sort((a, b) => a.data.date.localeCompare(b.data.date))
     });
