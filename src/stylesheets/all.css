@@ -76,12 +76,12 @@ footer {
     margin:50px 0
 }
 
-body.home, body.conference {
+body.home {
     padding-top:0px
 }
 
 @media only screen and (min-width: 720px) {
-    body.home, body.conference {
+    body.home {
         padding-top:40px
     }
 }
@@ -2616,133 +2616,3 @@ span.twitter-typeahead {
 .home-flyer img {
     max-height:300px
 }
-
-.conference-flyer-2018 {
-    background: black url("//res.cloudinary.com/christian-transhumanist-association/image/upload/c_scale,g_center,w_2880/v1531858792/aubrey_de_grey_ted_talk.jpg") no-repeat top center scroll;
-    color: white;
-    box-sizing: border-box;
-    text-align: center;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    background-size: contain;
-    -o-background-size:contain
-}
-
-.conference-flyer-2018.jumbotron {
-    border-radius:0
-}
-
-.conference-flyer-2018 h1, .conference-flyer-2018 h3 {
-    color: white;
-    margin-top:0
-}
-
-.conference-flyer-2018 img {
-    max-height:300px
-}
-
-.conference-flyer-2018 ul.conference-cta {
-    list-style: none;
-    display: block;
-    margin-top: 3rem;
-    padding-left:0
-}
-
-.conference-flyer-2018 ul.conference-cta li {
-    display:block
-}
-
-@media only screen and (min-width: 500px) {
-    .conference-flyer-2018 ul.conference-cta li {
-        display:inline-block
-    }
-}
-
-.conference-flyer-2018 ul.conference-cta li a, .conference-flyer-2018 ul.conference-cta li button {
-    display: block;
-    color: white;
-    border-radius: 0;
-    text-transform:uppercase
-}
-
-.conference-flyer-2018 ul.conference-cta li a:hover, .conference-flyer-2018 ul.conference-cta li button:hover {
-    text-decoration: none;
-    color: #337ab7;
-    color: white;
-    background:black
-}
-
-.conference-flyer-2018 ul.conference-cta li a:hover.btn-primary, .conference-flyer-2018 ul.conference-cta li button:hover.btn-primary {
-    color:white
-}
-
-.conference-flyer-2019 h1 {
-    text-transform: uppercase;
-    font-weight: normal;
-    text-shadow:0 0 10px rgba(10, 10, 10, 0.9)
-}
-
-.conference-flyer-2019 {
-    background: black url("//res.cloudinary.com/christian-transhumanist-association/image/upload/v1567800006/24281387673_cd3c59a941_h_copy_ec6ikz.jpg") no-repeat scroll;
-    color: white;
-    box-sizing: border-box;
-    background-position: center 70%;
-    text-align: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size:cover
-}
-
-.conference-flyer-2019.jumbotron {
-    border-radius:0
-}
-
-.conference-flyer-2019 h1, .conference-flyer-2019 h3 {
-    color: white;
-    margin-top:0
-}
-
-.conference-flyer-2019 img {
-    max-height:300px
-}
-
-.conference-cta-wrapper a, .conference-cta-wrapper button, .conference-cta-button {
-    color: white;
-    border-radius: 0;
-    text-transform: uppercase;
-    font-size:150%
-}
-
-.conference-cta-wrapper a.btn-primary, .conference-cta-wrapper button.btn-primary, .btn-primary.conference-cta-button {
-    color:white
-}
-
-.conference-cta-wrapper a:hover, .conference-cta-wrapper button:hover, .conference-cta-button:hover {
-    text-decoration: none;
-    color: #337ab7;
-    color: white;
-    background:black
-}
-
-.conference-cta-wrapper a:hover.btn-primary, .conference-cta-wrapper button:hover.btn-primary, :hover.btn-primary.conference-cta-button {
-    color:white
-}
-
-.conference-cta-wrapper {
-    list-style: none;
-    display: block;
-    margin-top: 3rem;
-    padding-left:0
-}
-
-.conference-cta-wrapper li {
-    display:block
-}
-
-@media only screen and (min-width: 500px) {
-    .conference-cta-wrapper li {
-        display: inline-block
-    }
-}
-
