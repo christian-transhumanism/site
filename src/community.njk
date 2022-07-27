@@ -33,10 +33,9 @@ layout: default
                             by {{ post.author | nameFromRSSAuthor }}
                         </p>
 
-                        <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.pubDate }}</p>
+                        <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.pubDate | default("2000") }}</p>
 
                         <p>{{ post.content | truncate }}</p>
-                        <a class="btn btn-primary" href="{{ post.permalink }}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
                     </div>
                 </div>
 

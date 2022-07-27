@@ -2629,3 +2629,11 @@ ul.sidebar-nav > li > a {
 ul.sidebar-nav, ul.sidebar-nav ul, ul.sidebar-nav ul ul {
     list-style-type: none;
 }
+
+ul.sidebar-nav li.active > a {
+    font-weight: bold;
+}
+
+ul.sidebar-nav li li.active > a::after {
+    content: " <";
+}

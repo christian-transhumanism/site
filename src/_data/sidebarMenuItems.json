@@ -1,5 +1,6 @@
 [
     {
+        "url": "/about/",
         "title": "Perspectives",
         "key": "Perspectives",
         "children":
@@ -78,6 +79,7 @@
         ]
     },
     {
+        "url": "/blog/",
         "title": "Media",
         "key": "Media",
         "children":
@@ -96,10 +98,16 @@
                 "url": "/blog/community/",
                 "title": "Community Posts",
                 "key": "Community Posts"
+            },
+            {
+                "url": "/press/",
+                "title": "Press and Coverage",
+                "key": "Press"
             }
         ]
     },
     {
+        "url": "/board/",
         "title": "Association",
         "key": "Association",
         "children":
@@ -127,20 +135,39 @@
         ]
     },
     {
-        "title": "Conferences",
-        "key": "Conferences",
+        "url": "/volunteer/",
+        "title": "Connect",
+        "key": "Connect",
         "children":
         [
             {
-                "url": "/conference/2019/",
-                "title": "Conference 2019",
-                "key": "Conference 2019"
+                "url": "/volunteer/",
+                "title": "Volunteer Opportunities",
+                "key": "Volunteer"
             },
             {
-                "url": "/conference/2018/",
-                "title": "Conference 2018",
-                "key": "Conference 2018"
+                "url": "/meetup/",
+                "title": "Meetup",
+                "key": "Meetup"
+            },
+            {
+                "title": "Conferences",
+                "key": "Conferences",
+                "children":
+                [
+                    {
+                        "url": "/conference/2019/",
+                        "title": "Conference 2019",
+                        "key": "Conference 2019"
+                    },
+                    {
+                        "url": "/conference/2018/",
+                        "title": "Conference 2018",
+                        "key": "Conference 2018"
+                    }
+                ]
             }
+
         ]
     },
     {
