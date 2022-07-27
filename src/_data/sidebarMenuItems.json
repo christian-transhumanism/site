@@ -1,0 +1,151 @@
+[
+    {
+        "title": "Perspectives",
+        "key": "Perspectives",
+        "children":
+        [
+            {
+                "url": "/about/",
+                "title": "About",
+                "key": "About"
+            },
+            {
+                "url": "/affirmation/",
+                "title": "Affirmation",
+                "key": "Affirmation"
+            },
+            {
+                "url": "/mission/",
+                "title": "Mission",
+                "key": "Mission",
+                "children":
+                [
+                    {
+                        "url": "/mission/theological/",
+                        "title": "1. Theological",
+                        "key": "1. Theological"
+                    },
+                    {
+                        "url": "/mission/faith/",
+                        "title": "2. Faith-Renewing",
+                        "key": "2. Faith-Renewing"
+                    },
+                    {
+                        "url": "/mission/technological/",
+                        "title": "3. Technological",
+                        "key": "3. Technological",
+                        "children":
+                        [
+                            {
+                                "url": "/mission/technological/#super-longevity",
+                                "title": "Super-Longevity",
+                                "key": "Super-Longevity"
+                            },
+                            {
+                                "url": "/mission/technological/#super-humanity",
+                                "title": "Super-Humanity",
+                                "key": "Super-Humanity"
+                            },
+                            {
+                                "url": "/mission/technological/#super-intelligence",
+                                "title": "Super-Intelligence",
+                                "key": "Super-Intelligence"
+                            },
+                            {
+                                "url": "/mission/technological/#super-ecology",
+                                "title": "Super-Ecology",
+                                "key": "Super-Ecology"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "url": "/faq/",
+                "title": "FAQ",
+                "key": "FAQ"
+            },
+            {
+                "url": "/quotes/",
+                "title": "Quotes",
+                "key": "Quotes"
+            },
+            {
+                "url": "/books/",
+                "title": "Books",
+                "key": "Books"
+            }
+        ]
+    },
+    {
+        "title": "Media",
+        "key": "Media",
+        "children":
+        [
+            {
+                "url": "/blog/",
+                "title": "Blog",
+                "key": "Blog"
+            },
+            {
+                "url": "/podcast/",
+                "title": "Podcast",
+                "key": "Podcast"
+            },
+            {
+                "url": "/blog/community/",
+                "title": "Community Posts",
+                "key": "Community Posts"
+            }
+        ]
+    },
+    {
+        "title": "Association",
+        "key": "Association",
+        "children":
+        [
+            {
+                "url": "/executive-director/",
+                "title": "Executive Director",
+                "key": "Executive Director"
+            },
+            {
+                "url": "/board/",
+                "title": "The Board",
+                "key": "The Board"
+            },
+            {
+                "url": "/academics/",
+                "title": "Academic Advisory Council",
+                "key": "Academic Advisory Council"
+            },
+            {
+                "url": "/history/",
+                "title": "History",
+                "key": "History"
+            }
+        ]
+    },
+    {
+        "title": "Conferences",
+        "key": "Conferences",
+        "children":
+        [
+            {
+                "url": "/conference/2019/",
+                "title": "Conference 2019",
+                "key": "Conference 2019"
+            },
+            {
+                "url": "/conference/2018/",
+                "title": "Conference 2018",
+                "key": "Conference 2018"
+            }
+        ]
+    },
+    {
+        "url": "https://wiki.christiantranshumanism.org",
+        "title": "Wiki (new!)",
+        "key": "Wiki (new!)"
+    }
+]

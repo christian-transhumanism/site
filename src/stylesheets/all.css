@@ -2616,3 +2616,16 @@ span.twitter-typeahead {
 .home-flyer img {
     max-height:300px
 }
+
+ul.sidebar-nav {
+    padding-left: 0;
+}
+ul.sidebar-nav ul {
+    padding-left: 3rem;
+}
+ul.sidebar-nav > li > a {
+    font-weight: bold;
+}
+ul.sidebar-nav, ul.sidebar-nav ul, ul.sidebar-nav ul ul {
+    list-style-type: none;
+}

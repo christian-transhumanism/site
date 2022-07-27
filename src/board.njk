@@ -1,29 +1,30 @@
 ---
 title: The Board of the Christian Transhumanist Association
 description: Bold leadership toward the future of faith
-layout: default
+layout: associationPage
 ---
 
-{% include 'shared/association_topbar.njk' %}
+<div class="row">
+<div class="col-md-12">
 
-<div class="container">
   <h1>The Leadership Team</h1>
-    {% for director in board %}
-      <br />
-      <div class="row">
-        <div class="col-md-3">
-          <a href="{{ director.url }}">
-            <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_face,h_200,w_200/{{ director.photo }}" />
-          </a>
-        </div>
-        <div class="col-md-9">
-          <h4>{{ director.name | safe }}</h4>
-          <p>{{ director.bio | safe }}</p>
-          <a href="{{ director.url }}">Read more &gt</a>
-          <a href="/users/{{ director.user_id }}">View profile &gt</a>
-        </div>
+  {% for director in board %}
+    <br />
+    <div class="row">
+      <div class="col-md-4">
+        <a href="{{ director.url }}">
+          <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_face,h_200,w_200/{{ director.photo }}" />
+        </a>
       </div>
-      <br />
-    {% endfor %}
-  </div>
+      <div class="col-md-8">
+        <h4>{{ director.name | safe }}</h4>
+        <p>{{ director.bio | safe }}</p>
+        <a href="{{ director.url }}">Read more &gt</a>
+        <a href="/users/{{ director.user_id }}">View profile &gt</a>
+      </div>
+    </div>
+    <br />
+  {% endfor %}
+
+</div>
 </div>
