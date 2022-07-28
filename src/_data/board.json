@@ -1,16 +1,16 @@
 [
   {
-    "name": "Micah Redding <em>Executive Director</em>",
+    "name": "Micah Redding <em>President</em>",
     "bio": "Micah Redding is a software developer and the Executive Director of the Christian Transhumanist Association. He's an international TEDx speaker and educator, and a contributor to Vice Motherboard, the Huffington Post, IEET, and Humanity+. His travels have taken him to Tahrir Square during the Arab Spring, and Afghanistan during the war.",
     "photo": "micah_redding_erika_chambers_bw_medium_cwvcih.jpg",
     "url": "/executive-director",
     "user_id": 1
   },
   {
-    "name": "Jonathan Gunnell",
+    "name": "Jonathan Gunnell <em>Vice-President</em>",
     "bio": "Australian, Engineer, Christian (mostly Anglican but also have been in Baptist and Charismatic/Pentecostal churches, honorary catholic occasionally in Spanish speaking places), work in construction. Keen to see Christianity impact the developing AI governance systems and coming technology changes. Fluent in Spanish, and in all English dialects of Christian-ese.",
     "user_id": 283,
-    "photo": "http://res.cloudinary.com/christian-transhumanist-association/image/upload/c_scale,h_200,w_200/v1522712895/jonathan_gunnell.jpg"
+    "photo": "jonathan_gunnell.jpg"
   },
   {
     "name": "Lorenzo Barberis Canonico <em>Secretary</em>",
@@ -29,6 +29,7 @@
     "name": "Omar Reyes",
     "bio": "To contribute direction and innovative insight to ministry, resulting in effective teaching and spiritual growth at individual and group levels. From working with Tim Keller to participating in urban church plants and serving the rural parishioners of a Canadian province, my diverse background informs and enriches the practical and spiritual application of my Master of Arts degree.",
     "url": "http://christchurchalbertville.org/",
+    "photo": "",
     "user_id": 381
   },
   {
@@ -56,5 +57,10 @@
     "bio": "I love Jesus and love seeing how God is using and will use tech to connect and heal us. Very exciting times we are living in!",
     "user_id": 6,
     "photo": "http://res.cloudinary.com/christian-transhumanist-association/image/upload/c_crop,g_face,h_500,w_500/c_scale,h_200/v1522712899/mark_russell.jpg"
+  },
+  {
+    "name": "Caleb Strom",
+    "bio": "Caleb Strom is a PhD student studying planetary science. He has a background in earth science and geology and is an early career planetary scientist. He is interested in the origin, evolution, and future of life and civilization in the universe, including on Earth. On the faith side, he identifies as an Evangelical Christian with strong proclivities toward Anglicanism. He is currently affiliate staff with Cru and has led and coached college students in giving seminars on science and faith, discussing transhumanist topics including artificial intelligence, genetic engineering, and extraterrestrial life. He believes that humanity can become an extinction-proof, space-faring civilization of created co-creators, if it chooses, and endeavors to help make that a reality. In his spare time, he likes to spend time with good friends and good books, write, and go on long nature walks where he will ponder life, time, and the cosmos.",
+    "photo": "caleb_strom.jpg"
   }
 ]
