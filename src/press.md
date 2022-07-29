@@ -11,7 +11,7 @@ _Christian Transhumanism has been covered around the world. Here are some select
 
 {% for article in coverage %}
 <section>
-<h4><a href="{{ article.url }}">{{ article.publication }} | {{ article.title }}</a></h4>
-<p>{{ article.description }}</p>
+<b><a href="{{ article.url }}">{{ article.publication }} | {{ article.title }}</a></b>
+<p><em>{{ article.date }}</em> {{ article.description }}</p>
 </section>
 {% endfor %}
