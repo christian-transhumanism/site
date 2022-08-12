@@ -53,7 +53,7 @@ Despite being a key topic in philosophy, it seems to need a definition of differ
 
 For the purpose of this essay, "truth" will be defined in one of the following 11 Types of Truth, presented in approximate order of certainty:
 
-
+<div class="table-responsive">
 <table class="table table-striped table-condensed">
     <tr>
         <th>Item</th>
@@ -178,7 +178,7 @@ For the purpose of this essay, "truth" will be defined in one of the following 1
         <td>We don&#39;t have our own system, but seek to understand conflicts in other systems and seek truth wherever it may be found.</td>
     </tr>
 </table>
-
+</div>
 
 
 Regrettably English only has one word for "Truth". Similarly, it only has one word for "Love" which we apply to both to our love of chocolate (temptation!) and God's 'agape' love for humanity that he would suffer and die. On the other hand, New Testament Greek gifts us 7 words for Love. If only we had more words for Truth in English, we would avert a lot of conflict! Indeed, most debates about what is 'true' have an underlying subtext of the definition of truth and how sure we can be about anything.
@@ -298,7 +298,7 @@ Epistemology for the CTA must therefore see Critical Rationalism as a central pl
 
 But Critical Rationalism, applied to Faith, leaves us some conjectures which can survive Popperian critiques and some which can't, but are still useful. Therefore we can define different Types of Faith-held Truths:
 
-
+<div class="table-responsive">
 <table class="table table-striped table-condensed">
     <tr>
         <th>Item</th>
@@ -342,7 +342,7 @@ But Critical Rationalism, applied to Faith, leaves us some conjectures which can
         <td>This is not faith at all, according to specific words in Scripture, the General Revelation and the Character of Christ.</td>
     </tr>
 </table>
-
+</div>
 
 The process of applying Critical Rationalism to our religion can free us from dogma. This is not to seek after a stale miracle-less modernist gospel, far from it. We do not discard the central truths of the Gospel, that Christ died for our sins and was raised and ascended. That God spoke through the prophets in various ways and various times, that the Holy Spirit is our ever-present companion and coach, empowering our conscience and discernment. This is a truth which can be allowed in Critical Rationalism, despite its only partial falsifiability, as Popper argues that many important and useful things cannot be falsified.
 
