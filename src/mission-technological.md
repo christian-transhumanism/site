@@ -32,41 +32,40 @@ Two-thirds of deaths are attributable to aging-related diseases such as heart di
 Addressing the underlying processes of aging, (including the 'hallmarks of aging' described by Lopez-Otin et al) has moved from fringe to mainstream. Powerful investment and scientific forces are working on this. It should soon be recognised by the World Health Organisation.
 
 Emerging medical fields:
-We seek to understand and champion new tech seeking to address the underlying processes of aging, (including the 'hallmarks of aging' described by Lopez-Otin et al) at these levels:
 
-#### Molecular level
+#### **Molecular level**
 
 - Emerging medicines including RNA
 - Drugs and supplements
 - Tweaking the performance of our genome, incl DNA repair and enhancement
 
-#### Cellular level
+#### **Cellular level**
 
 - Senolytic drugs
 - Stem cells, including Yamanaka factors
 - Nanobot cell replacements, for example for red blood cells
 
-#### Organ level
+#### **Organ level**
 
 - Bioprinting organs using scaffolds and seeding
 - Replacing organs with biomechanical devices
 - Regenerating organs within your body
 
-#### Immediate actions:
+#### **Immediate actions:**
 
-Physical life is just the start. Keeping our bodies healthy must be matched with keeping our minds sharp and productive in creative and relational communities, and keeping our spirituality vibrant. "This is eternal life, that we may know you, the only true God".
+Physical life is just the start. Keeping our bodies healthy must be matched with keeping our minds sharp and productive in creative and relational communities, and keeping our spirituality vibrant. _"This is eternal life, that we may know you, the only true God"._ (John 17:3)
 
-For those interested in conserving their body and living as long as practical to accomplish God's mission, CTA recommends taking steps today in the following priority areas:
+For those interested in conserving their body and living as long as practical to accomplish God's mission, CTA recommends taking steps today in the following areas by priority:
 
 - Medical checks and blood screening
-- Stress, vocation, spiritual life and community
+- Vocation, spiritual life and community, stress and sleep
 - Understanding your genome risks and acting on them
 - Exercise
 - Diet
 - Supplements and emerging medicines
-- Preparing for future technology by keeping your body in great shape until it arrives
+- Learn and prepare for future technology
 
-Starting from zero baseline, prioritise action in each area to optimize your health span.
+Starting from your current baseline, prioritise action in each area to optimize your health-span.
 
 CTA advocates for this knowledge to be widely shared, and in the immediate term, for simple medical improvements, for example trials of emerging medicines to treat the 'hallmarks of aging'.
 
