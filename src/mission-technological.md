@@ -23,6 +23,15 @@ The CTA advocates for the development of intelligent technology to speed humanit
 
 We stand on the cusp of several medical revolutions, each as profound as the discovery of antibiotics.
 
+> "_Never again will there be in it an infant who lives but a few days, or an old man who does not live out his years; the one who dies at a hundred will be thought a mere child…"_ (Isaiah 65:20)
+
+> "_God did not make death, nor does he rejoice in the destruction of the living. For he fashioned all things that they might have being…"_ (Wisdom 1:13-14)
+
+Two-thirds of deaths are attributable to aging-related diseases such as heart disease, stroke, cancer and dementia. Many years of creative relational living are lost to osteoporosis, sarcopenia and arthritis.
+
+Addressing the underlying processes of aging, (including the 'hallmarks of aging' described by Lopez-Otin et al) has moved from fringe to mainstream. Powerful investment and scientific forces are working on this. It should soon be recognised by the World Health Organisation.
+
+Emerging medical fields:
 We seek to understand and champion new tech seeking to address the underlying processes of aging, (including the 'hallmarks of aging' described by Lopez-Otin et al) at these levels:
 
 #### Molecular level
