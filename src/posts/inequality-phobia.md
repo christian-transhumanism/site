@@ -6,7 +6,7 @@
     "permalink": "blog/inequality-phobia/",
     "date": "2020-05-14T13:16:31.213Z",
     "disqus_id": "20200514131631",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1590123658/axpqajxk4hukn4to2nhw.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1590123658/axpqajxk4hukn4to2nhw.jpg",
     "author": "Jonathan Gunnell"
 }
 ---

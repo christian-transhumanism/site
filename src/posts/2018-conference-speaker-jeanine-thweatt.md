@@ -6,7 +6,7 @@
     "permalink": "blog/2018-conference-speaker-jeanine-thweatt/",
     "date": "2018-07-31T16:23:02.615Z",
     "disqus_id": "20180731162302",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1533054218/ugiphvqzuppwhtwegc6q.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1533054218/ugiphvqzuppwhtwegc6q.jpg",
     "author": "Micah Redding"
 }
 ---

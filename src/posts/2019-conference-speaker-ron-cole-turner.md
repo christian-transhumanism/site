@@ -6,7 +6,7 @@
     "permalink": "blog/2019-conference-speaker-ron-cole-turner/",
     "date": "2019-09-30T14:59:16.684Z",
     "disqus_id": "20190930145916",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1569855557/citgdxbmffglypr2jmc5.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1569855557/citgdxbmffglypr2jmc5.jpg",
     "author": "Micah Redding"
 }
 ---

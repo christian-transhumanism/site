@@ -6,7 +6,7 @@
     "permalink": "blog/embrace_announcement/",
     "date": "2015-10-06T07:30:00.000Z",
     "disqus_id": "20151006073000",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1494469532/khus0puynhibdsf0stdl.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1494469532/khus0puynhibdsf0stdl.jpg",
     "author": "Micah Redding"
 }
 ---
@@ -18,5 +18,5 @@
 <p>The Christian Transhumanist Association seeks to encourage Christians to participate with God in the redemption of the world, through the compassionate use of science and technology. As a transhumanist organization, it challenges Christians to embrace a positive and proactive approach towards technology; as a Christian organization, it challenges transhumanists to recognize the role of compassion and respect for all human life as the basis for a thriving and sustainable future.</p>
 <p>Every organization has financial needs, and ours is no different. However, given our message and identity, it is fitting that our first substantial act be directed towards the outside world, to remind us of our purpose, our direction, and the very reason for our existence.</p>
 <p>If you would like to contribute towards <em>Embrace</em>, learn more about the region where the donation will be applied, or if you would like to join or find out more about the Christian Transhumanist Association, you can can do so <a href="http://www.christiantranshumanism.org">here</a>.</p>
-<p><a href="http://www.christiantranshumanism.org/"><img style="display: block; margin-left: auto; margin-right: auto;" src="http://res.cloudinary.com/christian-transhumanist-association/image/upload/c_scale,h_130/v1492191055/cta_logo_large_aykyxo.png" alt="" width="237" height="130" /></a></p>
+<p><a href="http://www.christiantranshumanism.org/"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_scale,h_130/v1492191055/cta_logo_large_aykyxo.png" alt="" width="237" height="130" /></a></p>
     

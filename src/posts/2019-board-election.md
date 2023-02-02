@@ -6,7 +6,7 @@
     "permalink": "blog/2019-board-election/",
     "date": "2019-03-12T01:21:23.143Z",
     "disqus_id": "20190312012123",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1552354292/mv2f4cxodzbygqrl5hdc.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1552354292/mv2f4cxodzbygqrl5hdc.jpg",
     "author": "Micah Redding"
 }
 ---

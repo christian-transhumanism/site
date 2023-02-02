@@ -6,7 +6,7 @@
     "permalink": "blog/2020-election-a-new-era/",
     "date": "2020-03-20T16:52:44.295Z",
     "disqus_id": "20200320165244",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1584723164/sqh8k8h4fs3ydixmh3rn.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1584723164/sqh8k8h4fs3ydixmh3rn.jpg",
     "author": "Micah Redding"
 }
 ---

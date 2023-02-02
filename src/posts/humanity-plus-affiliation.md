@@ -6,7 +6,7 @@
     "permalink": "blog/humanity-plus-affiliation/",
     "date": "2017-07-08T03:31:41.316Z",
     "disqus_id": "20170708033141",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1499484701/sf7arrme7ofj88v6jp7h.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1499484701/sf7arrme7ofj88v6jp7h.jpg",
     "author": "Micah Redding"
 }
 ---

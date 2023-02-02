@@ -6,7 +6,7 @@
     "permalink": "blog/2019-conference-speaker-michael-paulus/",
     "date": "2019-09-27T05:37:32.487Z",
     "disqus_id": "20190927053732",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1569562653/rcyt9tls3h06zv9uvpqu.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1569562653/rcyt9tls3h06zv9uvpqu.jpg",
     "author": "Micah Redding"
 }
 ---

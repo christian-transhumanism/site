@@ -6,7 +6,7 @@
     "permalink": "blog/the_jesuit_priest_who_helped_create_modern_transhumanism/",
     "date": "2016-03-09T21:39:00.000Z",
     "disqus_id": "20160309213900",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1494469039/uxppxuinv6g5hjwrrhzg.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1494469039/uxppxuinv6g5hjwrrhzg.jpg",
     "author": "Micah Redding"
 }
 ---

@@ -6,7 +6,7 @@
     "permalink": "blog/2018-board-election-results/",
     "date": "2018-04-02T23:41:28.869Z",
     "disqus_id": "20180402234128",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1522717874/enf3caqtcnfwtuzm4gbq.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1522717874/enf3caqtcnfwtuzm4gbq.jpg",
     "author": "Micah Redding"
 }
 ---

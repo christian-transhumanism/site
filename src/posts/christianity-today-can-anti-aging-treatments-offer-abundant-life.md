@@ -6,7 +6,7 @@
     "permalink": "blog/christianity-today-can-anti-aging-treatments-offer-abundant-life/",
     "date": "2019-02-18T15:24:47.157Z",
     "disqus_id": "20190218152447",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1550503487/vucoagt0aozgkj96li0v.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1550503487/vucoagt0aozgkj96li0v.jpg",
     "author": "Micah Redding"
 }
 ---

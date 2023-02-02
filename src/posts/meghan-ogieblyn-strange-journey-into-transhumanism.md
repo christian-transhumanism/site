@@ -6,7 +6,7 @@
     "permalink": "blog/meghan-ogieblyn-strange-journey-into-transhumanism/",
     "date": "2017-07-03T20:40:33.136Z",
     "disqus_id": "20170703204033",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1499114433/zjm3btsphifktpthdwgc.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1499114433/zjm3btsphifktpthdwgc.jpg",
     "author": "Micah Redding"
 }
 ---

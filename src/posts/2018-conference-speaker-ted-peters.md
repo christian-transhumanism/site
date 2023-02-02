@@ -6,7 +6,7 @@
     "permalink": "blog/2018-conference-speaker-ted-peters/",
     "date": "2018-07-29T04:21:19.738Z",
     "disqus_id": "20180729042119",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1532902805/dt8l2n58zpjiewf3as20.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1532902805/dt8l2n58zpjiewf3as20.jpg",
     "author": "Micah Redding"
 }
 ---

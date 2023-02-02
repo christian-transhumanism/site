@@ -6,7 +6,7 @@
     "permalink": "blog/2018-conference-speaker-emily-sue-laird/",
     "date": "2018-07-31T18:13:21.241Z",
     "disqus_id": "20180731181321",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1533060801/de4ijfajara3viwhdegy.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1533060801/de4ijfajara3viwhdegy.jpg",
     "author": "Micah Redding"
 }
 ---

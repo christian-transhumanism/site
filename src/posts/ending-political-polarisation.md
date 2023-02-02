@@ -6,7 +6,7 @@
     "permalink": "blog/ending-political-polarisation/",
     "date": "2020-06-17T15:26:20.885Z",
     "disqus_id": "20200617152620",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1592409893/blind_justice_202006171105.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1592409893/blind_justice_202006171105.jpg",
     "author": "Jonathan Gunnell"
 }
 ---

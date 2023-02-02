@@ -6,7 +6,7 @@
     "permalink": "blog/2019-conference-speaker-liz-parrish/",
     "date": "2019-09-09T17:06:49.532Z",
     "disqus_id": "20190909170649",
-    "image":  "http://res.cloudinary.com/christian-transhumanist-association/image/upload/v1568048811/mmrhc2y07amf9vzv8i3h.jpg",
+    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1568048811/mmrhc2y07amf9vzv8i3h.jpg",
     "author": "Micah Redding"
 }
 ---
