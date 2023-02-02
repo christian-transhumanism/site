@@ -71,7 +71,7 @@ CTA advocates for this knowledge to be widely shared, and in the immediate term,
 
 ---
 
-## 2. Super-Humanity {#super-humanity}
+## 2. Super-Embodiment {#super-humanity}
 
 Technology to enhance humans will become as common as sunglasses. We will see humans made strong with exoskeletons, and given enhanced sight and hearing with technological aids. We will become changed in ways that are hard to foresee with brain-computer interfaces and genetic engineering.
 
