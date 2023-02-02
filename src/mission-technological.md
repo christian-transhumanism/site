@@ -1,5 +1,5 @@
 ---
-title: Theological Mission
+title: Technological Mission
 description: Participating with God in the redemption, reconciliation, and renewal of the world.
 layout: resourcePage
 permalink: mission/technological/
@@ -11,6 +11,11 @@ In a world of increasingly difficult ethical questions and challenges---**We bel
 
 
 The CTA advocates for the development of intelligent technology to speed humanity towards the future. We engage with and support the best minds and ethicists pursuing technology for the greater good. Technology we focus on comes in four main areas:
+
+1. Super-Longevity
+2. Super-Embodiment
+3. Super-Intelligence
+4. Super-Ecology
 
 ---
 
