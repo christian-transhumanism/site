@@ -73,6 +73,18 @@ CTA advocates for this knowledge to be widely shared, and in the immediate term,
 
 ## 2. Super-Embodiment {#super-humanity}
 
+We stand on the cusp of new ways to meet human needs for agency, connection, relationality and creativity.
+
+> "_The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor. He has sent me to proclaim freedom for the prisoners and recovery of sight for the blind, to set the oppressed free, to proclaim the year of the Lord's favor_" (Luke 4:18-19)
+
+> "_Go and tell John what you have seen and heard: the blind receive their sight, the lame walk, the lepers are cleansed, the deaf hear, the dead are raised, the poor have good news brought to them...and prisoners & oppressed are freed"_ (Luke 7:22)
+
+> _Feed the hungry, clothe the naked, care for the sick_ (Matthew 25:35-37)
+
+> "_Heal the sick, raise the dead, cure those with leprosy, and cast out demons."_ (Matthew 10:8)
+
+### Human enhancement is coming
+
 Technology to enhance humans will become as common as sunglasses.
 
 We will become changed in ways that are hard to foresee with brain-computer interfaces and genetic engineering.
