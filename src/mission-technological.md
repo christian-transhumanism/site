@@ -73,23 +73,27 @@ CTA advocates for this knowledge to be widely shared, and in the immediate term,
 
 ## 2. Super-Embodiment {#super-humanity}
 
-Technology to enhance humans will become as common as sunglasses. We will see humans made strong with exoskeletons, and given enhanced sight and hearing with technological aids. We will become changed in ways that are hard to foresee with brain-computer interfaces and genetic engineering.
+Technology to enhance humans will become as common as sunglasses.
 
-Already humans are enhanced with technological aids. We are moving ever closer to our technology, which continues to grow in power and decrease in size. We will gain from interaction with smarter and smarter technology, including personal digital assistants and coaches, who will be able to help us grow and learn.
+We will become changed in ways that are hard to foresee with brain-computer interfaces and genetic engineering.
 
-Medical and biological human enhancements will first be for those suffering disabilities, as they are now such as hearing aids. Breakthroughs in artificial eyes for the blind are occurring. Eventually tech of this nature may be superior to, and preferred by humans.
+Already humans are enhanced with technological aids. We are moving ever closer to our technology, which continues to grow in power and decrease in size.
 
-Enhancements to DNA will become routine for our offspring. This technology will not be able to be stopped (almost no tech can be) so Christians must be at the forefront of the discussion.
+We will gain from interaction with smarter and smarter technology, including personal digital assistants and coaches, who will be able to help us grow and learn.
 
-Immediate human enhancement is available through a lively faith in God. As we are filled with the fruit of the Holy Spirit, in love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, humility and self-control, we are becoming the humans God planned. The first step to enhance humanity is the simplest, and the most ancient: to be in a relationship with the living God.
+Enhancements to DNA will become routine for our offspring. This technology will not be able to be permanently stopped, so Christians must be at the forefront of the discussion.
 
-#### Immediate Actions
+Immediate human enhancement is available through a lively faith in God. As we are filled with the fruit of the Holy Spirit, in love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, humility and self-control, we are becoming the humans God planned.
+
+The first step to enhance humanity is the simplest, and the most ancient: to be in a relationship with the living God.
+
+#### **Immediate Actions**
 
 - Enhance yourself through relationship with Jesus and being filled with the Holy Spirit
-- Use the Christian superpower of repentance - to change your mind, to act in accordance with God's standards
+- Use the Christian superpower of repentance – to change your mind, to act in accordance with God's standards
 - Engage with technology in a positive way that makes you stronger, and connects you better. Cut out technology that makes you weaker or wastes your time.
 - Plan your future, what kind of tech would you adopt as it becomes available? What would make good tech? Will you be an early adopter of some?
-- Engage with human-enhancing technology in the first instance for uplifting the poor and the disabled through education, spirituality, and technological support. Exo-skeletons, brain-computer interfaces, and visual systems "bionic eyes", are only a small step away from existing tech, such as Cochlear implants.
+- Engage with human-enhancing technology in the first instance for uplifting the poor and the disabled through education, spirituality, and technological support. Exo-skeletons, brain-computer interfaces, and visual systems "bionic eyes", are only a small step away from existing tech.
 
 ---
 
