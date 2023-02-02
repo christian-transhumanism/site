@@ -7,7 +7,10 @@ permalink: mission/technological/
 
 # Mission 3: Our Technological Mission
 
-The CTA advocates for the development of brilliant technology to speed humanity towards the future. We engage with and support the best minds and ethicists pursuing technology for the greater good. Technology we focus on comes in four main areas:
+In a world of increasingly difficult ethical questions and challenges---**We believe that Christ offers an ethical vision for scientific and technological progress**. *We as a community need to be able to articulate and advocate for that ethical vision, and to enact it progressively in our own lives, and in the world around us.*
+
+
+The CTA advocates for the development of intelligent technology to speed humanity towards the future. We engage with and support the best minds and ethicists pursuing technology for the greater good. Technology we focus on comes in four main areas:
 
 ---
 

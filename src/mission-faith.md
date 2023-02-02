@@ -8,3 +8,7 @@ permalink: mission/faith/
 # Faith-renewing mission
 
 In a world of rising skepticism and disenchantment---**We believe that engaging the future can help faith come alive**. *We as a community need to be able to show how the future can renew our faith, and the faith of individuals, families, communities, and the world.*
+
+The CTA advocates for the value of faith in navigating a complex and unknown future. 
+
+---
