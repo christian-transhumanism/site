@@ -2,8 +2,7 @@ const Parser = require('rss-parser');
 let parser = new Parser();
 
 module.exports = async function() {
+	let feeds = [];
 
-	let feed = await parser.parseURL('https://members.christiantranshumanism.org/blog/community.rss');
-	return feed.items;
-	
+    return feeds.map(x => x.items).flat();	
 };
