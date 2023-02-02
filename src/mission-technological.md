@@ -157,27 +157,40 @@ AGI should support individual human flourishing, always be oriented towards supp
 
 ## 4. Super-Ecology {#super-ecology}
 
-God created our biosphere as our home. The creation mandate in Genesis states we must care for it, and we should proactively and carefully improve it.
+We stand on the cusp of radically expanded possibilities for cultivating life.
+
+"_For the creation waits in eager expectation for the children of God to be revealed. ...in hope that the creation itself will be liberated from its bondage to decay and brought into the freedom and glory of the children of God."_ (Romans 8:19-21)
+
+**Creation Mandate:**
+
+- We must care for and cultivate all life.
+- We are the only species with the power to protect Earth
+- Humans are niche-creators. We create niches and adapt ourselves to them
+- New Heaven and New Earth are better, not a reversion to Eden
+
+God created (or created the emergence process for) our biosphere as our home.
 
 So far, we have greatly influenced many other species, largely to the negative. We should now seek to not only reverse the damage, but to enhance and build a better future.
 
-Humans may proactively choose to use geoengineering and species recreation to enhance the Earth, but this should be done by agreement in a truth-seeking, transparent and careful manner.
+Humans may proactively, transparently, and by international agreement choose to use geoengineering and species recreation to restore and enhance the Earth.
 
-Our environment includes not only our physical environment but our online milieu. Again, there are many opportunities to enhance this, to make it more a place of learning and growth, and less a place of hatred, division and exploitation.
+Our environment includes not only our physical environment but our online milieu. To enhance this, it must become more a place of learning and growth, and less a place of hatred, division and exploitation. Communication now allows anyone to learn anything. There is no more powerful way to foster international social justice and the elimination of poverty through education.
 
-The metaverse should continue to develop, to allow relational communities to form, to learn, and to bridge the divides of location, race and class. The metaverse should grow to allow anyone to access the best education, development and employment opportunities. There is no more powerful way to foster international social justice and the elimination of poverty through education.
+An age of superabundance may occur, and privilege may become defined not by access to resources, but by differences in genetics, family structure and culture.
 
-Our political system should also evolve. We should strive for societies with a strong safety net and foundation that poverty and lack of opportunity is eliminated, whilst not constraining how high our most productive can fly.
+Our political system must evolve. We should strive for societies with a strong safety net and foundation that poverty and lack of opportunity is eliminated, whilst not constraining how high our most productive can fly.
 
 As AI improves and moves towards AGI, these will empower human political parties. Such technology should be transparent and accountable.
 
+Our politicians should lead for unity, and debate transparently and fairly. Current political debates are led to cause division and hate.
+
 We advocate for humans to establish new habitats in space, including on the moon, Mars and other places in the solar system, including artificial bodies. This should include 'terraforming' or enhancing these environments, but not to the extent of harming any life or life-like predecessors.
 
-The technology to leave our solar system is not yet conceived, but almost certainly will be. When it is, we expect humans to travel interstellar distances.
+We look to a future where the Earth is renewed. Scripture speaks of divine intervention appearing both directly and in human lives to recreate the Earth. Such renewal can spread throughout the cosmos wherever renewed humanity can travel.
 
-We look to a future where the Earth is renewed. Scripture speaks of divine intervention appearing both directly and in human lives to recreate the Earth. Such renewal can spread throughout the cosmos wherever renewed humanity can travel. Scripture supports a renewal eschatology.
+Scripture can be used to support various eschatologies. The CTA interprets scripture to support a "renewal of all things" eschatology.
 
-#### Immediate Actions
+#### **Immediate Actions**
 
 - Advocate for investment to advance technology which will heal the planet.
 - Champion spiritual renewal in our online milieus
