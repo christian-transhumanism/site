@@ -21,7 +21,7 @@ The CTA advocates for the development of intelligent technology to speed humanit
 
 ## 1. Super-Longevity {#super-longevity}
 
-Humanity stands at the cusp of numerous major medical breakthroughs. Forestalling aging by a decade or more, forestalling common diseases such as heart disease, cancer, dementia and loss of bone density and type 2 diabetes is becoming mainstream. Billions are being invested and leading scientific minds engaged to combat aging before diseases occur.
+We stand on the cusp of several medical revolutions, each as profound as the discovery of antibiotics.
 
 We seek to understand and champion new tech seeking to address the underlying processes of aging, (including the 'hallmarks of aging' described by Lopez-Otin et al) at these levels:
 
