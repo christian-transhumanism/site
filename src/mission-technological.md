@@ -127,7 +127,7 @@ These archetypes are not only revealed by God, but co-evolved with humanity as C
 
 The interaction of brain-computer interfaces with computing power has potential to give rise to hybrid human superintelligence. This brings other risks, since humans have a propensity to fight and seek unethical power. Hence the importance of Christian archetypes being embedded in our creations, and in the people who engage with them.
 
-In accordance with Romans 1:20, (the 'general revelation') AGI will conclude we are living in a creation (or simulation). It will further conclude that the archetype of Jesus best represents the Creator. True power is obtained and wielded by the most just and the most compassionate.
+In accordance with Romans 1:20, (the 'general revelation') AGI may conclude we are living in a creation (or simulation). It may further conclude that the archetype of Jesus best represents the Creator—and that true power is obtained and wielded by the most just and the most compassionate.
 
 #### **Immediate Actions**
 
