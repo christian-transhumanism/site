@@ -11,8 +11,10 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter('date', function (date, dateFormat) {
     return format(date, dateFormat)
-  })
-
+  });
+  eleventyConfig.addFilter('sortByPubDate', (collection) => {
+    return collection.slice().sort((a, b) => Date.parse(a.pubDate) - Date.parse(b.pubDate))
+  });
   eleventyConfig.addLiquidFilter('sortByDate', (collection) => {
         return collection.slice().sort((a, b) => a.data.date.localeCompare(b.data.date))
     });
@@ -22,13 +24,21 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("nameFromRSSAuthor", function(value) { 
         const regex = /\((.*)\)/;
         const found = value.match(regex);
-        return found[1];
+        if(found && found[1]) {
+          return found[1];
+        } else {
+          return value;
+        }
     });
 
   eleventyConfig.addFilter("episodeNumberFromRSSGUID", function(value) { 
         const regex = /.*\/christiantranshumanist\/(.*)/;
         const found = value.match(regex);
-        return found[1];
+        if(found && found[1]) {
+          return found[1];
+        } else {
+          return value;
+        }
     });
 
   eleventyConfig.setTemplateFormats([

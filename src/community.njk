@@ -19,7 +19,7 @@ layout: default
                 <small>from our diverse community</small>
             </h1>
 
-            {% for post in community %}
+            {% for post in community | sortByPubDate | reverse %}
                 <div class="row">
                     <div class="col-md-12">
                         <h2>
