@@ -111,42 +111,45 @@ The first step to enhance humanity is the simplest, and the most ancient: to be 
 
 ## 3. Super-Intelligence {#super-intelligence}
 
-Artificial Intelligence is now ubiquitous and growing. Every year major advancements occur, and machines gain functionality previously unique to humans. Even so, we remain far from human level Artificial General Intelligence.
+We stand on the cusp of the emergence of machine intelligence beyond human abilities. We also stand on the cusp of ways to enhance biological intelligence.
+
+Artificial Intelligence, defined as prediction from patterns, is now ubiquitous. But we remain far from human level Artificial General Intelligence.
 
 Christians must advocate for care with the use of AI, and AGI. It must be transparent and accountable to the community. Impacts must be measured and published.
 
-AGI requires human-like ability to observe, abstract and develop explanatory knowledge. This is not likely to occur for 15-20 years, but in the meantime, we must consider and manage the risks.
+AGI requires human-like ability to observe, abstract and develop explanatory knowledge. This is not likely to occur for a decade or more, but in the meantime, we must consider and manage the risks.
 
-Most human thought is sub-linguistic. It can take effort to get a thought out through the 'language bottleneck'. In the animal kingdom there is much thought with no or very limited language. Large language models may mimic human words, but cannot be said to have a human-like process. AGI may be able to emulate a human, but is likely to have a totally different method of processing thoughts and therefore only be mimicking feelings.
+Most human thought is sub-linguistic. Throwing a ball, laying a brick, deciding on dinner or a holiday, or falling in love occur below the level of language. It can take effort to get a thought out through the 'language bottleneck'. In the animal kingdom there is much thought with no or very limited language. Therefore, large language models may mimic human words, but cannot be said to have a human-like process.
 
-AGI's goals will not necessarily be comparable to human goals, given our goals are mostly related to our physical needs and wants. It's not obvious what an AGI's goals would be. Given these risks and opportunities with AGI, we call for the instantiation of Christian archetypes such as the Good Shepherd, with Wise and Loving King, the Suffering Servant and the heart of Mary in AGI.
+AGI may be more powerful than humans. Given this risk, we call for the instantiation of Christian archetypes such as the Good Shepherd, with Wise and Loving King, the Suffering Servant and the heart of Mary in AGI.
+
+These archetypes are not only revealed by God, but co-evolved with humanity as CG Jung observed.
 
 The interaction of brain-computer interfaces with computing power has potential to give rise to hybrid human superintelligence. This brings other risks, since humans have a propensity to fight and seek unethical power. Hence the importance of Christian archetypes being embedded in our creations, and in the people who engage with them.
 
-In accordance with Romans 1:20, (the 'general revelation') AGI will conclude we are living in a creation (or simulation). It will further conclude that the archetype of Jesus best represents the Creator. Because true power is obtained and wielded by the most just and most compassionate.
+In accordance with Romans 1:20, (the 'general revelation') AGI will conclude we are living in a creation (or simulation). It will further conclude that the archetype of Jesus best represents the Creator. True power is obtained and wielded by the most just and the most compassionate.
 
-#### Immediate Actions
+#### **Immediate Actions**
 
 - Engage with and understand AI and AGI.
 - Advocate for the ethical use of AI
-- Advocate for the instantiation in AGI of 
-	- Christian archetypes such as:
-		- the Good Shepherd,
-		- the Suffering Servant,
-		- the Wise King,
-		- the heart of Mary, and
-	- principles such as
-		- loving your enemy
-		- respecting everyone's basic human rights and individual sovereignty
-	- Feelings and "the fruit of the Holy Spirit" such as
-		- Compassion
-		- Kindness
-		- Gentleness
-		- Self-discipline
+- Advocate for the instantiation in AGI of
+  - Christian archetypes such as:
+    - the Good Shepherd,
+    - the Suffering Servant,
+    - the Wise King,
+    - the heart of Mary, and
+  - Christian principles such as
+    - loving your enemy
+    - respecting everyone's basic human rights and individual sovereignty
+    - community as an emergent property of grace
+  - Christian emotions and "the fruit of the Holy Spirit" (Gal 5:22) such as
+    - Compassion
+    - Kindness
+    - Gentleness
+    - Self-discipline
 
-All of which should lead to positive action in humans we wish replicated.
-
-Set extraordinarily high ethical and human rights standards for those allowed to connect their minds directly to AI or AGI.
+We must set extraordinarily high ethical and human rights standards for those allowed to connect their minds directly to AI or AGI.
 
 AGI should support individual human flourishing, always be oriented towards supporting and improving humanity, and speeding us towards the destiny God has planned for us.
 
