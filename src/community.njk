@@ -30,7 +30,7 @@ layout: default
                     <div class="col-md-12">
 
                         <p class="lead">
-                            by {{ post.author | nameFromRSSAuthor }}
+                            by {{ post.author | default(post.creator) | default("a community member") | nameFromRSSAuthor }}
                         </p>
 
                         <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.pubDate | default("2000") }}</p>
