@@ -22,41 +22,45 @@ As an association, not a denomination, the CTA seeks to seeks to draw theologica
 At the 2019 Transvision conference in London, sociologist Steve Fuller declared that "Transhumanism is about the Image of God". For Christians, this connection makes sense, since we see our scientific and technological capacity as part of how we reflect God's own creative nature. We understand the image of God through these lenses:
 
 
-## 1. The Creation Mandate
+## 1. The Creation Mandate {#creation-mandate}
 
 The Creation Mandate is the calling of Genesis 1 to create, cultivate, and uplift life—in Imitation of God.
 
-God is a compassionate creator who empowers us to participate in the ongoing works of creation.
+**God is a compassionate creator who empowers us to participate in the ongoing works of creation**. Genesis reveals God as a compassionate creator who empowers us, and then calls us, to participate in ongoing works of creation. 
 
-We are called to imitate God's benevolent work of creation. Technology is part of that imitation. Technology emerges from our creative nature.
+**Science and Technology are part of our imitation of God**. Just as God names and categorizes creation, God leads humanity to name and categorize creation. Just as God cultivates, blesses, and empowers life, God leads humanity to cultivate, bless, and empower life. These are science and technology in their most fundamental forms. And they emerge from our God-given creative nature.
 
-The Universe appears constructed. Scientific questions are asked in the context of a universe with rules like a computer simulation would have.
+**Science and Technology are part of the work of God**. In the story of Noah, God calls a human to use their creative skill to construct an Ark—the largest piece of technology the ancient world could imagine—in order to care for and cultivate life. God brings the animals to Noah, just as God brought the animals to Adam. And when Noah emerges from the Ark, God reiterates the Creation Mandate, as if declaring that this is humanity as God intended—using our creative and technological nature to participate in the work of God. 
 
-The insights of those who suggest the Universe may be a Simulation echo the Bible's concept of "General Revelation" (Romans 1:20) that suggests humans can conceive we are living in a 'creation'. The Cosmological Argument for the existence of God can be restated as "Causation is a Feature of the Simulation/Creation".
+**Science and Technology unveil General Revelation**. As we use our science and technology to create, we often find ourselves "thinking God's thoughts after him" (Kepler), uncovering aspects of "General Revelation" (Romans 1:20), that God has made accessible to us all. The recent interest in the Simulation Hypothesis illustrates this point. To construct a world points to the likelihood that our own world has been constructed. As we begin to create worlds, we discover the wisdom involved in the creation of this world. Our technological work can help proclaim God's revelation.
 
 Intentionally, carefully, and ethically creating the future is God's call on all humanity. Christians are called to be at the forefront of this work.
 
-## 2. The Imitation of Christ
+## 2. The Imitation of Christ {#imitation-of-christ}
 
-Christ's ethics are humility, love, and vocationally dedicating himself to the transformation of humanity. Scripture states, _"The Son is the radiance of God's glory and the exact representation of his being."_ (Heb 1:3)
+**Christ is the Image of God**. Scripture states, _"The Son is the radiance of God's glory and the exact representation of his being"_ (Hebrews 1:3). Christ thus reveals what we are intended to become.
 
-Christians are called to develop the characteristics of Christ. _"And we, who with unveiled faces contemplate the Lord's glory, are being transformed into his image with ever-increasing glory, which comes from the Lord, who is the Spirit."_ (2 Cor 3:18) and, _"Put on the new self, created to be like God in true righteousness and holiness."_ (Eph 4:24) and _"In your relationships with one another, have the same mindset as Christ Jesus: Who, being in very nature God, did not consider equality with God something to be used to his own advantage; rather, he made himself nothing by taking the very nature of a servant, being made in human likeness. And being found in appearance as a man, he humbled himself by becoming obedient to death, even death on a cross! (Phil 2:5-8)_
+**Christ is our ethical calling**. Christ's ethics are humility, love, and vocationally dedicating himself to the transformation of humanity. Christians are called to develop the characteristics of Christ. 
 
-Participation in the nature of Christ is a basic calling for all Christians.
+> _"In your relationships with one another, have the same mindset as Christ Jesus: Who, being in very nature God, did not consider equality with God something to be used to his own advantage; rather, he made himself nothing by taking the very nature of a servant, being made in human likeness. And being found in appearance as a man, he humbled himself by becoming obedient to death, even death on a cross!"_ (Philippians 2:5-8)
 
-The CTA advocates for Christians to express this humility and love of Christ by dedicating their lives and careers to useful technological development, and rejecting the empty display of consumerism, and false values of the secular world.
+**We will be like Christ**. Participation in the nature of Christ is a basic calling for all Christians.
+> _"And we, who with unveiled faces contemplate the Lord's glory, are being transformed into his image with ever-increasing glory, which comes from the Lord, who is the Spirit."_ (2 Corinthians 3:18)
+> _"Put on the new self, created to be like God in true righteousness and holiness."_ (Ephesians 4:24)
 
-## 3. The Renewal of All Things
+The CTA advocates for Christians to express this humility and love of Christ by dedicating their lives and careers to useful technological development, and rejecting the empty display of consumerism, and other false values of the secular world.
 
-"_For the creation waits in eager expectation for the children of God to be revealed....in hope that the creation itself will be liberated from its bondage to decay and brought into the freedom and glory of the children of God."_ (Romans 8:19-21)
+## 3. The Renewal of All Things {#renewal-of-all-things}
 
-"_Truly, I tell you, at the renewal of all things…"_ — Jesus (Matt 19:28-30)
+> "_For the creation waits in eager expectation for the children of God to be revealed....in hope that the creation itself will be liberated from its bondage to decay and brought into the freedom and glory of the children of God."_ (Romans 8:19-21)
 
-"…_until the time comes for the restoration of all things"_ — Peter (Acts 3:21)
+> "_Truly, I tell you, at the renewal of all things…"_ — Jesus (Matthew 19:28-30)
 
-"_Your kingdom come, your will be done, on earth as it is in heaven"_ Jesus (Matt 6:10)
+> "…_until the time comes for the restoration of all things"_ — Peter (Acts 3:21)
 
-Christians are called to work for the improvement of this present world. Escapist theologies bear bad fruit, such as a willingness to sacrifice the environment, awaiting a helicopter rescue from God, and failing to be salt and light for the preservation and enhancement of society.
+> "_Your kingdom come, your will be done, on earth as it is in heaven"_ Jesus (Matthew 6:10)
 
-The CTA interprets Scripture as expecting the world to continue to improve, and that the Rule of Christ's Principles will usher in unparalleled benefits for Earth.
+Christians are called to work for the improvement of this present world. Escapist theologies bear bad fruit, such as a willingness to sacrifice the environment, awaiting a "helicopter rescue" from God, and failing to be salt and light for the preservation and enhancement of society.
+
+Scripture calls us to hope for the world to continue to improve, and to have faith that Christ's principles will usher in unparalleled benefits for Earth.
 
