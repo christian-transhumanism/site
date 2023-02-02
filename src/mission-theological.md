@@ -9,13 +9,18 @@ permalink: mission/theological/
 
 In a world where Christians often see science and technology as enemies of faith---**We believe that science and technology are part of the mission of Christ and of God**. *We as a community need to be able to share this understanding of the Christian story.*
 
-As an association, not a denomination, the CTA seeks to seeks to draw theological themes on which Christians can agree, and that reflect the interaction Christianity must have with Transhumanism in a manner that will be mutually beneficial. Our distinctive emphases:
+As an association, not a denomination, the CTA seeks to seeks to draw theological themes on which Christians can agree, and that reflect the interaction Christianity must have with Transhumanism in a manner that will be mutually beneficial. Our distinctive emphasis is on **The Image of God**, as understood through these lenses:
 
 1. The Creation Mandate
 2. The Imitation of Christ / Participation in Christ
 3. The Renewal of All Things
 
 ---
+
+## Transhumanism is about the Image of God
+
+At the 2019 Transvision conference in London, sociologist Steve Fuller declared that "Transhumanism is about the Image of God". For Christians, this connection makes sense, since we see our scientific and technological capacity as part of how we reflect God's own creative nature. We understand the image of God through these lenses:
+
 
 ## 1. The Creation Mandate
 
