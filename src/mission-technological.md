@@ -71,7 +71,7 @@ CTA advocates for this knowledge to be widely shared, and in the immediate term,
 
 ---
 
-## 2. Super-Embodiment {#super-humanity}
+## 2. Super-Embodiment {#super-embodiment}
 
 We stand on the cusp of new ways to meet human needs for agency, connection, relationality and creativity.
 

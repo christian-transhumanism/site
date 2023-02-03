@@ -24,7 +24,24 @@
                     {
                         "url": "/mission/theological/",
                         "title": "1. Theological",
-                        "key": "1. Theological"
+                        "key": "1. Theological",
+                        "children": [
+                            {
+                                "url": "/mission/theological/#creation-mandate",
+                                "title": "Creation Mandate",
+                                "key": "creation-mandate"
+                            },
+                            {
+                                "url": "/mission/theological/#imitation-of-christ",
+                                "title": "Imitation of Christ",
+                                "key": "imitation-of-christ"
+                            },
+                            {
+                                "url": "/mission/theological/#renewal-of-all-things",
+                                "title": "Renewal of All Things",
+                                "key": "renewal-of-all-things"
+                            }
+                        ]
                     },
                     {
                         "url": "/mission/faith/",
@@ -43,9 +60,9 @@
                                 "key": "Super-Longevity"
                             },
                             {
-                                "url": "/mission/technological/#super-humanity",
-                                "title": "Super-Humanity",
-                                "key": "Super-Humanity"
+                                "url": "/mission/technological/#super-embodiment",
+                                "title": "Super-Embodiment",
+                                "key": "Super-Embodiment"
                             },
                             {
                                 "url": "/mission/technological/#super-intelligence",
