@@ -18,4 +18,4 @@ layout: electionPage
 
 * If you are a voting member:
 
-**[> Click here to Vote <](/vote/)**
+**[> Click here to Vote <](/board-election/vote/)**
