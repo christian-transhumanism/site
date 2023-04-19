@@ -74,7 +74,7 @@ Deontological Christian principles provide an overarching guide for technologica
 
 A purely Utilitarian response cannot explain why using humans as means to an end is wrong if it leads to good consequences. The utilitarian response to the “Transplant question” (should a doctor kill one healthy bystander to use their organs to save the life of five sick people?) contradicts the deontological principle of the human rights of the healthy.
 
-Using virtue ethics, we learn the moral perfection of humans is the goal we strived for. We expect to find similar striving elsewhere in the Universe.
+Using virtue ethics, we learn the moral perfection of humans is the goal we strive for. We expect to find similar striving elsewhere in the Universe.
 
 ## Article III: God {#article-III}
 
@@ -110,7 +110,7 @@ This is a more defensible position than any assertion that the universe is self-
 
 Humans are a species whom God has called to be his image-bearers and “created co-creators.” God has made humans co-pilots in the evolution of life, consciousness, and the cosmos. Just as God created his own divine technology (nature/cosmos), which evolves evermore towards complexity and consciousness, humanity is meant to do the same through its own technology.
 
-Scripture contains the allegory of the Fall. This reflects our experience, that humans are born with a mix of both the image of God and a fallen sinful inheritance. We should not state that humans are entirely good nor entirely evil. Beyond reasonable doubt, we are a mix. It is likely to be ethically justifiable (subject to article II) to use technology and culture to try to improve this mix. This can be described as brokenness.
+Scripture contains the allegory of the Fall. This reflects our experience, that humans are born with a mix of both the image of God and a fallen sinful inheritance. We should not state that humans are entirely good nor entirely evil. Beyond reasonable doubt, we are a mix. This can be described as brokenness. It is likely to be ethically justifiable (subject to article II) to use technology and culture to try to improve this mix. 
 
 Humans have a unique ability to create explanatory knowledge, and mediate the improvement of our species through knowledge, culture and technology.
 
@@ -174,7 +174,7 @@ Technological progress is also good, but true technological progress does not si
 
 Technological advances often initially increase inequality. In the present era, the rich are best placed to leverage advances. Christians are therefore required to ensure social structures see the benefits shared widely, whilst acknowledging that advances in technology and science can only be made by those with spare resources.
 
-The rapid dissemination of technology serves to equalise opportunity for the poor, and offer disproportionate benefits for quality of life for the poor. Technological progress requires social and spiritual progress, including wealth creation, moral capital creation and community self-reliance through technology.
+The rapid dissemination of technology serves to equalise opportunity for the poor, while offering them proportionately larger benefits in quality of life. Technological progress requires social and spiritual progress, including wealth creation, moral capital creation, and community self-reliance through technology.
 
 ## Article IX: Evolution {#article-IX}
 
