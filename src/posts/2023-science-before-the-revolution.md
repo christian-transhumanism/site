@@ -1,14 +1,13 @@
 ---
-layout: post-wide
+layout: post
 tags: post
 title: Science before the Revolution: a continuity of Christian thought
 author: Dustin Ashley
 permalink: blog/2023-science-before-the-revolution/
-date: 2023-06-23T00:00:00.000Z
+date: 2023-06-23T01:01:01.590Z
 disqus_id: 202306230000
 image:  https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1687520498/Nikolaus_Kopernikus_2_vonsdk.jpg
 ---
-
 
 **Introduction**
 
