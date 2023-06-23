@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: post
-title: Science before the Revolution: a continuity of Christian thought
+title: "Science before the Revolution: a continuity of Christian thought"
 author: Dustin Ashley
 permalink: blog/2023-science-before-the-revolution/
 date: 2023-06-23T01:01:01.590Z
