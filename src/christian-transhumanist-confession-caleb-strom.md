@@ -1,14 +1,12 @@
----json
-{
-    "layout": "post",
-    "tags": "post",
-    "title": "A Christian Transhumanist Confession",
-    "permalink": "blog/2023-christian-transhumanist-confession-caleb-strom/",
-    "date": "2023-04-17T23:59:59.590Z",
-    "disqus_id": "20230417595959",
-    "image":  "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1681822326/micahredding_a_simple_minimalist_depiction_of_a_crucifix_e3a6eeec-80a8-4b64-9cc8-f0bedc6360d2_mqktno.png",
-    "author": "Caleb Strom"
-}
+---
+layout: post
+tags: post
+title: A Christian Transhumanist Confession
+permalink: blog/2023-christian-transhumanist-confession-caleb-strom/
+date: 2023-04-17T23:59:59.590Z
+disqus_id: 20230417595959
+image: https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1681822326/micahredding_a_simple_minimalist_depiction_of_a_crucifix_e3a6eeec-80a8-4b64-9cc8-f0bedc6360d2_mqktno.png
+author: Caleb Strom
 ---
 
 # A Christian Transhumanist Confession
