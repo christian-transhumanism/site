@@ -29,22 +29,8 @@
     "name": "Omar Reyes",
     "bio": "To contribute direction and innovative insight to ministry, resulting in effective teaching and spiritual growth at individual and group levels. From working with Tim Keller to participating in urban church plants and serving the rural parishioners of a Canadian province, my diverse background informs and enriches the practical and spiritual application of my Master of Arts degree.",
     "url": "http://christchurchalbertville.org/",
-    "photo": "",
+    "photo": "omar_reyes.jpg",
     "user_id": 381
-  },
-  {
-    "name": "Elias Kruger",
-    "bio": "",
-    "photo": "elias_kruger",
-    "url": "https://www.aitheology.com",
-    "user_id": 36
-  },
-  {
-    "name": "Martha Bucaram",
-    "bio": "Martha Bucaram is Secretary and Treasurer of Xanathos, Inc., a nonprofit organization dedicated to educate people about life extension and support its scientific advancement. She is also a bilingual transactional attorney with over 10 years of experience. Her areas of focus include technology transactions. Before, she worked for a public software company, where she was one of three attorneys working on domestic and international deals, as well as protecting the company as co-chair of the compliance program. During that time, she oversaw all legal aspects of the company’s operations in Latin America. Prior to becoming in-house counsel, Martha worked for a global law firm, where she focused her practice on construction law, cross-border transactions and FCPA investigations. Before moving to Atlanta, she worked for two non-profit organizations, focusing on immigration law and human rights issues. Martha has a Master’s Degree (LLM) in International Legal Studies from New York University. Prior to obtaining her LLM she attended the Harvard Summer School for a coursework in Communication in Business. For years, Martha was a member of the Board of Directors of Caminar Latino, Inc., and chair of its fundraising committee, the organization is committed to helping Latino families in their journey to get out of the domestic violence cycle. She was also engaged with the Society of Hispanic Professional Engineers (SHPE) where she helped promote education, professional development and providing resources to other professionals to put their talent to their best use. Martha is from Ecuador and grew up in Panama.",
-    "photo": "martha_bucaram",
-    "url": "",
-    "user_id": 368
   },
   {
     "name": "Lincoln Cannon",
@@ -56,11 +42,16 @@
     "name": "Mark Russell",
     "bio": "I love Jesus and love seeing how God is using and will use tech to connect and heal us. Very exciting times we are living in!",
     "user_id": 6,
-    "photo": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_crop,g_face,h_500,w_500/c_scale,h_200/v1522712899/mark_russell.jpg"
+    "photo": "mark_russell.jpg"
   },
   {
     "name": "Caleb Strom",
     "bio": "Caleb Strom is a PhD student studying planetary science. He has a background in earth science and geology and is an early career planetary scientist. He is interested in the origin, evolution, and future of life and civilization in the universe, including on Earth. On the faith side, he identifies as an Evangelical Christian with strong proclivities toward Anglicanism. He is currently affiliate staff with Cru and has led and coached college students in giving seminars on science and faith, discussing transhumanist topics including artificial intelligence, genetic engineering, and extraterrestrial life. He believes that humanity can become an extinction-proof, space-faring civilization of created co-creators, if it chooses, and endeavors to help make that a reality. In his spare time, he likes to spend time with good friends and good books, write, and go on long nature walks where he will ponder life, time, and the cosmos.",
     "photo": "caleb_strom.jpg"
+  },
+  {
+    "name": "Ryan Hogan",
+    "bio": "",
+    "photo": "ryan_hogan.jpg"
   }
 ]
