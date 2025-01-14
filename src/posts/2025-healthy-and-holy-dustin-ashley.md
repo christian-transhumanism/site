@@ -9,10 +9,6 @@ image: https://res.cloudinary.com/christian-transhumanist-association/image/uplo
 author: Dustin Ashley
 ---
 
-# Healthy and Holy: When the Goals of Asceticism Align with Transhumanism
-
-by Dustin Ashley
-
 In the age of rapid technological advancement, the merging of spiritual disciplines with transhumanist ideals might seem unlikely. Yet, a closer look reveals profound connections between the Christian tradition of asceticism and the goals of transhumanism. Both seek to refine the human condition—one through spiritual discipline and the other through technological enhancement. By exploring their intersections, we can uncover a unique dialogue that bridges the ancient and the futuristic.
 
 **Understanding Asceticism**
