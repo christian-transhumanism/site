@@ -9,9 +9,7 @@ image: https://res.cloudinary.com/christian-transhumanist-association/image/uplo
 author: Caleb Strom
 ---
 
-# A Christian Transhumanist Confession
-
-By Caleb Strom
+_A Christian Transhumanist Confession by Caleb Strom_
 
 ## Article I: Core tenants of Christian Transhumanism {#article-I}
 

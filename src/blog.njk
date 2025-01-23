@@ -37,7 +37,7 @@ layout: default
 
                         <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.data.date }}</p>
 
-                        <p>{{ post.templateContent | safe }}</p>
+                        <p>{{ post.templateContent | truncate | safe }}</p>
                         <a class="btn btn-primary" href="{{ post.permalink }}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
                     </div>
                 </div>
@@ -45,6 +45,7 @@ layout: default
                 <hr>
 
             {% endfor %}
+
 
             {% if @pager_widget_on %}
                 <!-- Pager -->
