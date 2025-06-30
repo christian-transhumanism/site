@@ -9,10 +9,11 @@ image: https://res.cloudinary.com/christian-transhumanist-association/image/uplo
 author: Micah Redding
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xw2Y258hCpU?si=qcgTrOXVSD1XvzmB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 Did you know the world's first receipient of the Neuralink brain-computer interface is a devout Christian?
 
 Noland Arbaugh shares the journey that led him to become the world’s first Neuralink recipient—and a person of faith. His story bridges the gap between brain and computer, technology and soul.
 
 In this exclusive interview, Noland opens up about life before and after his accident, what it’s like to live with a brain-computer interface, how this radical experience reshaped his relationship with God, and what he sees for the future of humanity.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xw2Y258hCpU?si=qcgTrOXVSD1XvzmB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
