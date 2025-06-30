@@ -14,14 +14,14 @@
   },
   {
     "name": "Lorenzo Barberis Canonico <em>Secretary</em>",
-    "bio": "I'm an ML engineer at Rombot (https://rombot.com/) where we develop smart devices and a software ecosystem for remote physical therapy.",
+    "bio": "Lorenzo is an ML engineer.",
     "photo": "lorenzo_barberis_canonico",
     "url": "https://medium.com/@lorenzobarberiscanonico",
     "user_id": 1788
   },
   {
     "name": "Emily Hogan Redding <em>Treasurer</em>",
-    "bio": "Emily Redding has 13 years of accounting experience, and is currently serving as Associate Vice President of Financial Services and Division Controller for a healthcare company based in Nashville, Tennessee. In her management role, she has overseen the creation and launch of multiple business processes and internal software projects.",
+    "bio": "Emily Redding has 20 years of accounting experience, and is currently serving as a Vice President for a healthcare company based in Nashville, Tennessee. In her management role, she has overseen the creation and launch of multiple business processes and internal software projects.",
     "photo": "1466078_10152191485093823_6998522668485093404_n_lvgitk.jpg",
     "user_id": 68
   },
@@ -51,7 +51,12 @@
   },
   {
     "name": "Ryan Hogan",
-    "bio": "",
+    "bio": "Ryan Hogan is a futurist and a practioner of strategic foresight.",
     "photo": "ryan_hogan.jpg"
+  },
+  {
+    "name": "Dustin Ashley",
+    "bio": "Dustin Ashley is an advocate of Christian education.",
+    "photo": "dustin_ashley.jpg"
   }
 ]
