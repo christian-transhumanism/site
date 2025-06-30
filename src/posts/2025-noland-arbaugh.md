@@ -1,5 +1,5 @@
 ---
-layout: post-video
+layout: post-landing
 tags: post
 title: "Noland Arbaugh: First Neuralink Recipient to receive brain-computer interface"
 permalink: blog/2025-noland-arbaugh-neuralink/

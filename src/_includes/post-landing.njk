@@ -1,0 +1,52 @@
+---
+title: title
+image: image
+description: teaser
+disqus_id: "00000000000000"
+layout: default
+---
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Blog Post Content Column -->
+        <div class="col-lg-8">
+
+            <!-- Blog Post -->
+
+            <!-- Title -->
+            <h1 class="page-header">{{ title }}</h1>
+
+            <hr>
+
+            <!-- Post Content -->
+            {{ content | safe }}
+
+            <hr>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="well">
+                <h4>Guests</h4>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="list-unstyled">
+                            {% for guest in guests %}
+                                <li><a href="{{ guest.url }}">{{ guest.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    {% include 'shared/footer.njk' %}
+</div>
+<!-- /.container -->
