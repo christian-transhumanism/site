@@ -16,10 +16,10 @@ permalink: /books/
   {% set tags = book.tags or [] %}
   {% set searchIndex = (book.title ~ ' ' ~ book.author ~ ' ' ~ (book.year or '') ~ ' ' ~ (tags | join(' '))) | lower %}
   <article class="book" data-search="{{ searchIndex }}">
-    {% if book.cover %}
+    {% if book.image %}
       <figure class="book-cover">
         <a href="{{ book.url or '#' }}" rel="noopener">
-          <img src="{{ book.cover }}" alt="{{ book.coverAlt or (book.title ~ ' cover') }}" loading="lazy" decoding="async" width="300" height="450">
+          <img src="{{ book.image }}" alt="{{ book.imageAlt or (book.title ~ ' cover') }}" loading="lazy" decoding="async" width="300" height="450">
         </a>
       </figure>
     {% endif %}
