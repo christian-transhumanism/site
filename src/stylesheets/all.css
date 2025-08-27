@@ -2656,8 +2656,8 @@ ul.sidebar-nav li li.active > a::after {
   background: var(--card, #fff);
 }
 .book-cover img { width: 100%; height: auto; border-radius: .5rem; display: block; }
-.book-title { font-size: 1.25rem; line-height: 1.25; margin: 0 0 .25rem; }
-.book-byline { color: #555; margin: 0 0 .5rem; font-size: .92rem; }
+.book-title { font-size: 1em; line-height: 1.25; margin: 0 0 .25rem; }
+.book-byline { color: #555; margin: 0 0 .5rem; font-size: 1em; }
 .book-tags { list-style: none; display: flex; flex-wrap: wrap; gap: .35rem; padding: 0; margin: 0 0 .5rem; }
 .book-tags li { font-size: .8rem; padding: .15rem .4rem; border: 1px solid #ddd; border-radius: 999px; }
 .book-desc p { margin: 0 0 .5rem; }
@@ -2672,14 +2672,6 @@ ul.sidebar-nav li li.active > a::after {
   position: absolute !important; clip: rect(1px,1px,1px,1px); padding: 0 !important;
   border: 0 !important; height: 1px !important; width: 1px !important; overflow: hidden;
 }
-/* Title and author */
-.book-byline {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #333;
-  margin: 0 0 .5rem;
-}
-
 /* Grid: cover + meta */
 .book {
   display: grid;
