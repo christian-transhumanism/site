@@ -8,42 +8,45 @@ permalink: /books/
 <h1>Books about Christianity &amp; Transhumanism</h1>
 <p class="page-intro">Study and scholarship from the ancient past to the deep future.</p>
 
-<!-- Simple client-side filter -->
 <label for="book-filter" class="visually-hidden">Filter books</label>
 <input id="book-filter" class="book-filter" type="search" placeholder="Filter by title, author, year, or tag" autocomplete="off" />
 
-<!-- List -->
 <div id="book-list" class="book-grid">
   {% for book in books | sort(false, false, "title") %}
-  <article class="book" data-search="{{ (book.title ~ ' ' ~ book.author ~ ' ' ~ (book.year or '') ~ ' ' ~ (book.tags | join(' '))) | lower }}">
+  {% set tags = book.tags or [] %}
+  {% set searchIndex = (book.title ~ ' ' ~ book.author ~ ' ' ~ (book.year or '') ~ ' ' ~ (tags | join(' '))) | lower %}
+  <article class="book" data-search="{{ searchIndex }}">
     {% if book.cover %}
       <figure class="book-cover">
-        <a href="{{ book.url }}" rel="noopener">
+        <a href="{{ book.url or '#' }}" rel="noopener">
           <img src="{{ book.cover }}" alt="{{ book.coverAlt or (book.title ~ ' cover') }}" loading="lazy" decoding="async" width="300" height="450">
         </a>
       </figure>
     {% endif %}
+
     <div class="book-meta">
       <h2 class="book-title">
-        <a href="{{ book.url }}" rel="noopener">{{ book.title }}</a>
+        <a href="{{ book.url or '#' }}" rel="noopener">{{ book.title }}</a>
       </h2>
+
       <p class="book-byline">
         <strong>{{ book.author }}</strong>
         {% if book.year %} • <span class="book-year">{{ book.year }}</span>{% endif %}
         {% if book.publisher %} • <span class="book-publisher">{{ book.publisher }}</span>{% endif %}
       </p>
-      {% if book.tags and book.tags.length %}
+
+      {% if tags | length %}
         <ul class="book-tags">
-          {% for t in book.tags %}
-            <li>{{ t }}</li>
-          {% endfor %}
+          {% for t in tags %}<li>{{ t }}</li>{% endfor %}
         </ul>
       {% endif %}
+
       <div class="book-desc">
         {{ book.body | safe }}
       </div>
+
       <p class="book-links">
-        <a class="btn" href="{{ book.url }}" rel="noopener nofollow">Details / Buy</a>
+        <a class="btn" href="{{ book.url or '#' }}" rel="noopener nofollow">Details / Buy</a>
         {% if book.isbn %}<span class="isbn">ISBN: {{ book.isbn }}</span>{% endif %}
       </p>
     </div>
@@ -51,7 +54,6 @@ permalink: /books/
   {% endfor %}
 </div>
 
-<!-- JSON-LD: ItemList of Books -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -69,7 +71,7 @@ permalink: /books/
         {% if book.isbn %}"isbn": {{ book.isbn | dump }},{% endif %}
         {% if book.publisher %}"publisher": {{ book.publisher | dump }},{% endif %}
         {% if book.year %}"datePublished": "{{ book.year }}",{% endif %}
-        "url": {{ book.url | dump }}
+        "url": {{ (book.url or '#') | dump }}
       }
     }{% if not loop.last %},{% endif %}
     {% endfor %}
@@ -77,17 +79,13 @@ permalink: /books/
 }
 </script>
 
-<!-- Tiny filter script -->
 <script>
   (function(){
     const input = document.getElementById('book-filter');
     const items = Array.from(document.querySelectorAll('#book-list .book'));
     input.addEventListener('input', function(){
       const q = this.value.trim().toLowerCase();
-      items.forEach(el => {
-        const hit = el.dataset.search.includes(q);
-        el.style.display = hit ? '' : 'none';
-      });
+      items.forEach(el => { el.style.display = el.dataset.search.includes(q) ? '' : 'none'; });
     });
   })();
 </script>
