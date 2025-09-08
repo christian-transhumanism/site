@@ -71,7 +71,7 @@ section {
 .resource-page ul.sidebar-nav li.active > a { border-left: 3px solid var(--accent); padding-left: .5rem; }
 
 /* Mission header image: consistent crop */
-.mission-header { margin: 0 0 1rem; }
+.mission-header { margin: .75rem 0 1rem; }
 .mission-header__image { width: 100%; height: 240px; object-fit: cover; display: block; border-radius: .5rem; margin: 0 0 .6rem; }
 @media (min-width: 768px) { .mission-header__image { height: 320px; } }
 .mission-header__subtitle { margin: -.25rem 0 .75rem; color: var(--muted, #555); font-size: 1.05rem; }
@@ -94,10 +94,12 @@ section {
 }
 
 /* Mission tabs grouping in topbar (section-aware) */
+.nav.nav-pills > li.mission-tab { margin-left: 0; } /* remove Bootstrap gap */
 .nav.nav-pills > li.mission-tab > a {
-  background: #f8f9fa;
+  background: #f8f9fa; /* subtle shading */
   border: 1px solid var(--border, #e5e5e5);
   color: inherit;
+  border-radius: 0; /* contiguous by default; ends handled below */
 }
 .nav.nav-pills > li.mission-tab.active > a,
 .nav.nav-pills > li.mission-tab.active > a:focus,
@@ -107,7 +109,11 @@ section {
   border-color: var(--accent, #337ab7);
 }
 /* Visually connect the mission tabs */
-.nav.nav-pills > li.mission-tab + li.mission-tab > a { margin-left: -1px; }
+/* Visually connect the mission tabs by removing inner vertical borders */
+.nav.nav-pills > li.mission-tab > a { border-left-width: 0; border-right-width: 0; }
+.nav.nav-pills > li.mission-tab--first > a { border-left-width: 1px; border-right-width: 1px; }
+.nav.nav-pills > li.mission-tab--last > a { border-right-width: 1px; }
+/* Rounded caps at the ends */
 .nav.nav-pills > li.mission-tab--first > a { border-top-left-radius: 999px; border-bottom-left-radius: 999px; }
 .nav.nav-pills > li.mission-tab--last > a { border-top-right-radius: 999px; border-bottom-right-radius: 999px; }
 
