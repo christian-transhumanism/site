@@ -8,14 +8,22 @@ permalink: /books/
 <h1>Books about Christianity &amp; Transhumanism</h1>
 <p class="page-intro">Study and scholarship from the ancient past to the deep future.</p>
 
-<label for="book-filter" class="visually-hidden">Filter books</label>
-<input id="book-filter" class="book-filter" type="search" placeholder="Filter by title, author, year, or tag" autocomplete="off" />
+<div class="book-toolbar">
+  <div class="btn-group btn-group-sm" role="group" aria-label="Book filter">
+    <button type="button" class="btn btn-default book-filter-btn active" data-filter="all">All</button>
+    <button type="button" class="btn btn-default book-filter-btn" data-filter="faith">Faith</button>
+    <button type="button" class="btn btn-default book-filter-btn" data-filter="technology">Technology</button>
+  </div>
+
+  <label for="book-filter" class="visually-hidden">Filter books</label>
+  <input id="book-filter" class="book-filter" type="search" placeholder="Filter by title, author, year, or tag" autocomplete="off" />
+</div>
 
 <div id="book-list" class="book-grid">
   {% for book in books | sort(false, false, "title") %}
   {% set tags = book.tags or [] %}
   {% set searchIndex = (book.title ~ ' ' ~ book.author ~ ' ' ~ (book.year or '') ~ ' ' ~ (tags | join(' '))) | lower %}
-  <article class="book" data-search="{{ searchIndex }}">
+  <article class="book" data-search="{{ searchIndex }}" data-tags="{{ (tags | join(' ')) | lower }}">
     {% if book.image %}
       <figure class="book-cover">
         <a href="{{ book.url or '#' }}" rel="noopener">
@@ -83,9 +91,29 @@ permalink: /books/
   (function(){
     const input = document.getElementById('book-filter');
     const items = Array.from(document.querySelectorAll('#book-list .book'));
-    input.addEventListener('input', function(){
-      const q = this.value.trim().toLowerCase();
-      items.forEach(el => { el.style.display = el.dataset.search.includes(q) ? '' : 'none'; });
-    });
+    const buttons = Array.from(document.querySelectorAll('.book-filter-btn'));
+    let category = 'all';
+
+    function applyFilters(){
+      const q = (input.value || '').trim().toLowerCase();
+      const showAllCat = category === 'all';
+      items.forEach(el => {
+        const matchesSearch = !q || el.dataset.search.indexOf(q) !== -1;
+        const tags = (el.dataset.tags || '');
+        const matchesCat = showAllCat || (tags.split(/\s+/).indexOf(category) !== -1);
+        const show = matchesSearch && matchesCat;
+        el.style.display = show ? '' : 'none';
+      });
+    }
+
+    input.addEventListener('input', applyFilters);
+    buttons.forEach(btn => btn.addEventListener('click', function(){
+      buttons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      category = this.getAttribute('data-filter');
+      applyFilters();
+    }));
+
+    applyFilters();
   })();
 </script>

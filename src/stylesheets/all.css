@@ -2866,6 +2866,8 @@ ul.sidebar-nav li li.active > a::after {
   width: 100%; max-width: 28rem; padding: .6rem .8rem; margin: .5rem 0 1.25rem;
   border: 1px solid var(--border, #ddd); border-radius: .5rem; font-size: 1rem;
 }
+.book-toolbar { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; margin: .5rem 0 1.25rem; }
+.book-toolbar .btn-group .btn.active { background: var(--accent, #337ab7); color: #fff; border-color: var(--accent, #337ab7); }
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
