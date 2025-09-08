@@ -2,7 +2,13 @@
 title: Christian Transhumanist News
 description: News and Announcements about the leading association for faith and technology
 layout: default
+pagination:
+  data: collections.post
+  size: 10
+  reverse: true
+permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
+<div class="blog-page">
 {% include 'shared/content_topbar.njk' %}
 
 <!-- Page Content -->
@@ -17,7 +23,7 @@ layout: default
                 <small>about the CTA</small>
             </h1>
 
-            {% for post in collections.post | reverse %}
+            {% for post in pagination.items %}
                 <div class="row">
                     <div class="col-md-12">
                         <h2>
@@ -26,7 +32,7 @@ layout: default
                     </div>
 
                     <div class="col-md-4">
-                        <img class="img-responsive" src="{{ post.data.image }}" alt="{{ post.data.title }}">
+                        <a href="{{ post.url }}" class="media-thumb"><img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy"></a>
                     </div>
 
                     <div class="col-md-8">
@@ -37,8 +43,8 @@ layout: default
 
                         <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.data.date }}</p>
 
-                        <p>{{ post.templateContent | truncate | safe }}</p>
-                        <a class="btn btn-primary" href="{{ post.permalink }}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                        <p>{{ post.templateContent | striptags | truncate(280, true, '…') }}</p>
+                        <a class="btn btn-primary" href="{{ post.url }}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
                     </div>
                 </div>
 
@@ -47,22 +53,21 @@ layout: default
             {% endfor %}
 
 
-            {% if @pager_widget_on %}
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="previous">
-                        <a href="#">&larr; Older</a>
-                    </li>
-                    <li class="next">
-                        <a href="#">Newer &rarr;</a>
-                    </li>
-                </ul>
+            {% if pagination.href.previous or pagination.href.next %}
+              <ul class="pager">
+                {% if pagination.href.previous %}
+                <li class="previous"><a href="{{ pagination.href.previous }}">&larr; Newer</a></li>
+                {% endif %}
+                {% if pagination.href.next %}
+                <li class="next"><a href="{{ pagination.href.next }}">Older &rarr;</a></li>
+                {% endif %}
+              </ul>
             {% endif %}
 
         </div>
 
         <div class="col-md-4">
-            <div class="well">
+            <div class="well site-sidebar">
                 {% include 'shared/sidebar_nav.njk' %}
             </div>
         </div>
@@ -70,9 +75,7 @@ layout: default
     </div>
     <!-- /.row -->
 
-    <hr>
-
-    {% include 'shared/footer.njk' %}
-
+    
 </div>
 <!-- /.container -->
+</div>

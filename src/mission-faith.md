@@ -5,15 +5,21 @@ layout: resourcePage
 permalink: mission/faith/
 ---
 
-# Faith-renewing mission
+# Renewing Faith
 
-In a world of rising skepticism and disenchantment---**We believe that engaging the future can help faith come alive**. *We as a community need to be able to show how the future can renew our faith, and the faith of individuals, families, communities, and the world.*
+Recover hope and purpose in the face of radical change.
 
-The CTA advocates for the value of faith in navigating a complex and unknown future. 
+{% include 'shared/mission-articles.liquid', key: 'faith' %}
 
 ---
 
-## Definition of Faith
+## Our Faith-Renewing Mission
+
+In a world of rising skepticism and disenchantment—**We believe that engaging the future can help faith come alive**. _We as a community need to be able to show how the future can renew our faith, and the faith of individuals, families, communities, and the world_.
+
+The CTA advocates for the value of faith in navigating a complex and unknown future. 
+
+### Definition of Faith
 
 > "_Now faith is confidence in what we hope for and assurance about what we do not see."_ (Heb 11:1)
 
@@ -35,7 +41,7 @@ Faith can include:
 - Confidence that all truth is God's truth
 - Confidence that science leads to God
 
-## Faith and Epistemology
+### Faith and Epistemology
 
 **Fallibilism**. We lack total knowledge of the Creation. How do we deal with this 'epistemic gap'? A rigorous definition of faith needs an epistemic framework. Scripture includes the concept of fallibilism, the concept that we can never be exactly sure of what is right.
 
@@ -61,7 +67,7 @@ English is limited to a single verb 'to know', whereas romance languages typical
 
 Since we know in part, fallibility and humility should be the hallmarks of our conversation. But then, we are required to act, based on this incomplete information. Therefore we must do so carefully, working on the biggest obvious pain points. Our solutions must be tested carefully, and reverted if found to make things worse.
 
-## Faith and Ethical Choices
+### Faith and Ethical Choices
 
 As with other forms of knowledge, fallibilism applies to knowing the right ethical choices. Scripture provides evidence of three ethical systems: Virtue, Deontological and Consequentialist. Each has strengths and weaknesses.
 
@@ -75,7 +81,7 @@ All three ethical lenses should be applied to proposed actions. Rules such as A/
 
 By faithfulness to the character of Christ, and by faith we can learn what is most likely to be the least wrong course of action.
 
-## Faith is a confident call to Action
+### Faith is a confident call to Action
 
 Faith is an optimistic commitment to a vision. Faith is confidence in God, from both the General and Special Revelations.
 
@@ -90,4 +96,3 @@ Christians are both journeying with Science, and already at the destination, hav
 The creation is understandable. Humans create "explanatory knowledge".
 
 Therefore we can be confident, optimistic, and embracing of future scientific changes in the nature of humanity. Non-Christians are welcome to join Christians in this faith journey.
-

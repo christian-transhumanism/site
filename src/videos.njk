@@ -1,0 +1,73 @@
+---
+title: Videos
+description: Featured videos from our channels
+layout: default
+permalink: "videos/"
+---
+<div class="blog-page">
+{% include 'shared/content_topbar.njk' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="page-header">Videos</h1>
+      <p class="page-intro">Highlights from <strong>@ChristianTranshumanism</strong> and <strong>@micahredding</strong>.</p>
+
+      <div class="video-toolbar">
+        <div class="btn-group btn-group-sm" role="group" aria-label="Video filter">
+          <button type="button" class="btn btn-default video-filter active" data-filter="all">All</button>
+          <button type="button" class="btn btn-default video-filter" data-filter="ChristianTranshumanism">@ChristianTranshumanism</button>
+          <button type="button" class="btn btn-default video-filter" data-filter="micahredding">@micahredding</button>
+        </div>
+      </div>
+
+      <div class="video-grid" id="video-grid">
+        {% for v in videos %}
+        <article class="video-card" data-channel="{{ v.channel }}">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v={{ v.id }}" target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/{{ v.id }}/hqdefault.jpg" alt="{{ v.title or 'Video' }}" />
+            <span class="play-badge"><i class="glyphicon glyphicon-play"></i></span>
+          </a>
+          <h3 class="video-title">{{ v.title or 'Watch on YouTube' }}</h3>
+          <div class="video-meta">{{ v.channel }}</div>
+        </article>
+        {% endfor %}
+      </div>
+
+      <div class="alert alert-info video-empty" style="display:none">No videos for this filter.</div>
+    </div>
+    <div class="col-md-4">
+      <div class="well site-sidebar">
+        {% include 'shared/sidebar_nav.njk' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var grid = document.getElementById('video-grid');
+  var buttons = document.querySelectorAll('.video-filter');
+  function norm(s){ return (s||'').toLowerCase().replace(/[^a-z0-9]+/g, ''); }
+  function applyFilter(key){
+    var showAll = key === 'all';
+    var keyN = norm(key);
+    var any = false;
+    [].forEach.call(grid.children, function(card){
+      var ch = card.getAttribute('data-channel');
+      var match = showAll || norm(ch) === keyN;
+      card.style.display = match ? '' : 'none';
+      if (match) any = true;
+    });
+    document.querySelector('.video-empty').style.display = any ? 'none' : '';
+  }
+  [].forEach.call(buttons, function(btn){
+    btn.addEventListener('click', function(){
+      [].forEach.call(buttons, function(b){ b.classList.remove('active'); });
+      this.classList.add('active');
+      applyFilter(this.getAttribute('data-filter'));
+    });
+  });
+})();
+</script>
+</div>

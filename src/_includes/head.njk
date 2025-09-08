@@ -1,21 +1,22 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Christian Transhumanist Association: Faith, Technology, and the Future</title>
+<title>{% if title %}{{ title }} | {{ site.sitename or 'Christian Transhumanist Association' }}{% else %}{{ site.title or 'Christian Transhumanist Association: Faith, Technology, and the Future' }}{% endif %}</title>
 
 <meta name="google-site-verification" content="FTJq_oBL1CX0ZjEkvySnzTPhb4HtdWIXDGWgDqoALFU" />
-<meta name="description"              content="{{description}}" />
-<meta property="url"                  content="{{url}}"         />
-<meta name="twitter:site"             content="{{creator}}"     />
-<meta name="twitter:creator"          content="{{creator}}"     />
-<meta name="twitter:title"            content="{{title}}"       />
-<meta name="twitter:description"      content="{{description}}" />
-<meta name="twitter:image"            content="{{image}}"       />
-<meta property="og:description"       content="{{description}}" />
-<meta property="og:site_name"         content="{{sitename}}"    />
-<meta property="og:title"             content="{{title}}"       />
-<meta property="og:type"              content="{{type}}"        />
-<meta property="og:image"             content="{{image}}"       />
-<meta property="fb:app_id"            content="{{app_id}}"      />
+<meta name="description"              content="{{ description or site.description }}" />
+<meta property="url"                  content="{{ site.url }}" />
+<meta name="twitter:site"             content="{{ site.creator }}" />
+<meta name="twitter:creator"          content="{{ site.creator }}" />
+<meta name="twitter:title"            content="{{ title or site.title }}" />
+<meta name="twitter:description"      content="{{ description or site.description }}" />
+<meta name="twitter:image"            content="{{ site.image }}" />
+<meta property="og:description"       content="{{ description or site.description }}" />
+<meta property="og:site_name"         content="{{ site.sitename or site.title }}" />
+<meta property="og:title"             content="{{ title or site.title }}" />
+<meta property="og:type"              content="{{ site.type or 'website' }}" />
+<meta property="og:image"             content="{{ site.image }}" />
+<meta property="fb:app_id"            content="{{ site.app_id }}" />
+<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">

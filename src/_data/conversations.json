@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Deeper Theology",
+    "url": "/mission/theological/",
+    "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757203821/teilhard-de-chardin.jpg",
+    "blurb": "Explore a theology of technology rooted in Christ."
+  },
+  {
+    "title": "Ethical Technology",
+    "url": "/mission/technological/",
+    "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757208610/ChatGPT_Image_Sep_6_2025_at_07_22_24_PM_ws6pqy.png",
+    "blurb": "Engage AI, biotechnology, and space with wisdom and vision."
+  },
+  {
+    "title": "Renewed Faith",
+    "url": "/mission/faith/",
+    "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1687520498/Nikolaus_Kopernikus_2_vonsdk.jpg",
+    "blurb": "Recover hope and purpose in the face of radical change."
+  }
+]

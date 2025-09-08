@@ -5,9 +5,17 @@ layout: resourcePage
 permalink: mission/theological/
 ---
 
-# Theological Mission
+# Deepening Theology
 
-In a world where Christians often see science and technology as enemies of faith---**We believe that science and technology are part of the mission of Christ and of God**. *We as a community need to be able to share this understanding of the Christian story.*
+Explore a theology of technology rooted in Christ
+
+{% include 'shared/mission-articles.liquid', key: 'theological' %}
+
+---
+
+## Our Theological Mission
+
+In a world where Christians often see science and technology as enemies of faith—We believe that science and technology are part of the mission of Christ and of God. We as a community need to be able to share this understanding of the Christian story.
 
 As an association, not a denomination, the CTA seeks to seeks to draw theological themes on which Christians can agree, and that reflect the interaction Christianity must have with Transhumanism in a manner that will be mutually beneficial. Our distinctive emphasis is on **The Image of God**, as understood through these lenses:
 
@@ -17,12 +25,12 @@ As an association, not a denomination, the CTA seeks to seeks to draw theologica
 
 ---
 
-## Transhumanism is about the Image of God
+### Transhumanism is about the Image of God {#image-of-god}
 
 At the 2019 Transvision conference in London, sociologist Steve Fuller declared that "Transhumanism is about the Image of God". For Christians, this connection makes sense, since we see our scientific and technological capacity as part of how we reflect God's own creative nature. We understand the image of God through these lenses:
 
 
-## 1. The Creation Mandate {#creation-mandate}
+### 1. The Creation Mandate {#creation-mandate}
 
 The Creation Mandate is the calling of Genesis 1 to create, cultivate, and uplift life—in Imitation of God.
 
@@ -36,7 +44,7 @@ The Creation Mandate is the calling of Genesis 1 to create, cultivate, and uplif
 
 Intentionally, carefully, and ethically creating the future is God's call on all humanity. Christians are called to be at the forefront of this work.
 
-## 2. The Imitation of Christ {#imitation-of-christ}
+### 2. The Imitation of Christ {#imitation-of-christ}
 
 **Christ is the Image of God**. Scripture states, _"The Son is the radiance of God's glory and the exact representation of his being"_ (Hebrews 1:3). Christ thus reveals what we are intended to become.
 
@@ -50,7 +58,7 @@ Intentionally, carefully, and ethically creating the future is God's call on all
 
 The CTA advocates for Christians to express this humility and love of Christ by dedicating their lives and careers to useful technological development, and rejecting the empty display of consumerism, and other false values of the secular world.
 
-## 3. The Renewal of All Things {#renewal-of-all-things}
+### 3. The Renewal of All Things {#renewal-of-all-things}
 
 > "_For the creation waits in eager expectation for the children of God to be revealed....in hope that the creation itself will be liberated from its bondage to decay and brought into the freedom and glory of the children of God."_ (Romans 8:19-21)
 
@@ -63,4 +71,3 @@ The CTA advocates for Christians to express this humility and love of Christ by 
 Christians are called to work for the improvement of this present world. Escapist theologies bear bad fruit, such as a willingness to sacrifice the environment, awaiting a "helicopter rescue" from God, and failing to be salt and light for the preservation and enhancement of society.
 
 Scripture calls us to hope for the world to continue to improve, and to have faith that Christ's principles will usher in unparalleled benefits for Earth.
-

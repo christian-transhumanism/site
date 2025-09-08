@@ -1,5 +1,38 @@
 [
     {
+        "url": "/blog/",
+        "title": "Media",
+        "key": "Media",
+        "children":
+        [
+            {
+                "url": "/blog/",
+                "title": "Blog",
+                "key": "Blog"
+            },
+            {
+                "url": "/podcast/",
+                "title": "Podcast",
+                "key": "Podcast"
+            },
+            {
+                "url": "/videos/",
+                "title": "Videos",
+                "key": "Videos"
+            },
+            {
+                "url": "/blog/community/",
+                "title": "Community Posts",
+                "key": "Community Posts"
+            },
+            {
+                "url": "/press/",
+                "title": "Press and Coverage",
+                "key": "Press"
+            }
+        ]
+    },
+    {
         "url": "/about/",
         "title": "Perspectives",
         "key": "Perspectives",
@@ -24,24 +57,7 @@
                     {
                         "url": "/mission/theological/",
                         "title": "1. Theological",
-                        "key": "1. Theological",
-                        "children": [
-                            {
-                                "url": "/mission/theological/#creation-mandate",
-                                "title": "Creation Mandate",
-                                "key": "creation-mandate"
-                            },
-                            {
-                                "url": "/mission/theological/#imitation-of-christ",
-                                "title": "Imitation of Christ",
-                                "key": "imitation-of-christ"
-                            },
-                            {
-                                "url": "/mission/theological/#renewal-of-all-things",
-                                "title": "Renewal of All Things",
-                                "key": "renewal-of-all-things"
-                            }
-                        ]
+                        "key": "1. Theological"
                     },
                     {
                         "url": "/mission/faith/",
@@ -51,30 +67,7 @@
                     {
                         "url": "/mission/technological/",
                         "title": "3. Technological",
-                        "key": "3. Technological",
-                        "children":
-                        [
-                            {
-                                "url": "/mission/technological/#super-longevity",
-                                "title": "Super-Longevity",
-                                "key": "Super-Longevity"
-                            },
-                            {
-                                "url": "/mission/technological/#super-embodiment",
-                                "title": "Super-Embodiment",
-                                "key": "Super-Embodiment"
-                            },
-                            {
-                                "url": "/mission/technological/#super-intelligence",
-                                "title": "Super-Intelligence",
-                                "key": "Super-Intelligence"
-                            },
-                            {
-                                "url": "/mission/technological/#super-ecology",
-                                "title": "Super-Ecology",
-                                "key": "Super-Ecology"
-                            }
-                        ]
+                        "key": "3. Technological"
                     }
                 ]
             },
@@ -92,34 +85,6 @@
                 "url": "/books/",
                 "title": "Books",
                 "key": "Books"
-            }
-        ]
-    },
-    {
-        "url": "/blog/",
-        "title": "Media",
-        "key": "Media",
-        "children":
-        [
-            {
-                "url": "/blog/",
-                "title": "Blog",
-                "key": "Blog"
-            },
-            {
-                "url": "/podcast/",
-                "title": "Podcast",
-                "key": "Podcast"
-            },
-            {
-                "url": "/blog/community/",
-                "title": "Community Posts",
-                "key": "Community Posts"
-            },
-            {
-                "url": "/press/",
-                "title": "Press and Coverage",
-                "key": "Press"
             }
         ]
     },

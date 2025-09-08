@@ -3,6 +3,7 @@ title: Christian Transhumanist Podcast
 description: Explore Christianity and Transhumanism, with provocative guests from the leading edges of science and theology.
 layout: default
 ---
+<div class="blog-page">
 {% include 'shared/content_topbar.njk' %}
 
 <!-- Page Content -->
@@ -26,7 +27,9 @@ layout: default
             {% for post in podcast %}
                 <div class="row">
                     <div class="col-md-4">
-                        <img class="img-responsive" src="{{ post.itunes.image }}" alt="{{ post.title }}">
+                        <a class="media-thumb" href="/podcast/{{ post.guid | episodeNumberFromRSSGUID }}/">
+                          <img src="{{ post.itunes.image }}" alt="{{ post.title }}" loading="lazy">
+                        </a>
                     </div>
 
                     <div class="col-md-8">
@@ -58,11 +61,11 @@ layout: default
 
         </div>
         <div class="col-lg-4">
-            <div class="well">
+            <div class="well site-sidebar">
                 {% include 'shared/sidebar_nav.njk' %}
             </div>
 
-            <div class="well">
+            <div class="well site-sidebar">
                 <h4>Guests</h4>
                 <br />
                 <div class="row">
@@ -83,9 +86,7 @@ layout: default
     </div>
     <!-- /.row -->
 
-    <hr>
-
-    {% include 'shared/footer.njk' %}
-
+    
 </div>
 <!-- /.container -->
+</div>

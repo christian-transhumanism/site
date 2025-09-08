@@ -1,0 +1,22 @@
+{
+  "faith": [
+    { "title": "Why Faith Is Rational", "url": "/mission/faith/why-faith-is-rational/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Faith_is_Rational__Lightbulb_glowing_beside_Scripture.jpg" },
+    { "title": "Beyond Supernatural: The Physical Vision of Christianity", "url": "/mission/faith/beyond-supernatural-physical-christianity/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Non-Supernatural__Minimalist_stone_altar_in_daylight.jpg" },
+    { "title": "Reuniting Scripture and Science", "url": "/mission/faith/reuniting-scripture-and-science/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Scripture_and_Science__Microscope_beside_Bible.jpg" },
+    { "title": "Christ and Evolution", "url": "/mission/faith/christ-and-evolution/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Christ_and_Evolution__Tree_of_life_diagram_in_forest.jpg" },
+    { "title": "Christ and Simulation", "url": "/mission/faith/christ-and-simulation/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Christ_and_Simulation__Human_silhouette_in_holographic_grid.jpg" },
+    { "title": "The Epistemology of Faith", "url": "/mission/faith/epistemology-of-faith/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Epistemology_of_Faith__Magnifying_glass_over_Scripture.jpg" }
+  ],
+  "theological": [
+    { "title": "Image of God", "url": "/mission/theological/#image-of-god", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Image_of_God__Astronaut_floating_above_Earth.jpg" },
+    { "title": "Creation Mandate", "url": "/mission/theological/#creation-mandate", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Creation_Mandate__Family_gardening.jpg" },
+    { "title": "Participation in Christ", "url": "/mission/theological/#imitation-of-christ", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Participation_in_Christ__Communion_bread_and_cup_on_table.jpg" },
+    { "title": "Renewal of All Things", "url": "/mission/theological/#renewal-of-all-things", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Renewal_of_All_Things__Butterfly_emerging_from_cocoon.jpg" }
+  ],
+  "technological": [
+    { "title": "Super-Longevity", "url": "/mission/technological/#super-longevity", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Super-Longevity__Elderly_person_jogging_at_sunrise.jpg" },
+    { "title": "Super-Embodiment", "url": "/mission/technological/#super-embodiment", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Super-Embodiment__Dancer_leaping_mid-air.jpg" },
+    { "title": "Super-Intelligence", "url": "/mission/technological/#super-intelligence", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Super-Intelligence__Neural_network_glowing_abstract.jpg" },
+    { "title": "Super-Ecology", "url": "/mission/technological/#super-ecology", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757208610/ChatGPT_Image_Sep_6_2025_at_07_22_24_PM_ws6pqy.png" }
+  ]
+}

@@ -5,10 +5,17 @@ layout: resourcePage
 permalink: mission/technological/
 ---
 
-# Mission 3: Our Technological Mission
+# Ethical Technology
 
-In a world of increasingly difficult ethical questions and challenges---**We believe that Christ offers an ethical vision for scientific and technological progress**. *We as a community need to be able to articulate and advocate for that ethical vision, and to enact it progressively in our own lives, and in the world around us.*
+Engage AI, biotechnology, and space with wisdom and vision.
 
+{% include 'shared/mission-articles.liquid', key: 'technological' %}
+
+---
+
+## Our Technological Mission
+
+In a world of increasingly difficult ethical questions and challenges—**We believe that Christ offers an ethical vision for scientific and technological progress**. _We as a community need to be able to articulate and advocate for that ethical vision, and to enact it progressively in our own lives, and in the world around us._
 
 The CTA advocates for the development of intelligent technology to speed humanity towards the future. We engage with and support the best minds and ethicists pursuing technology for the greater good. Technology we focus on comes in four main areas:
 
@@ -19,7 +26,7 @@ The CTA advocates for the development of intelligent technology to speed humanit
 
 ---
 
-## 1. Super-Longevity {#super-longevity}
+### 1. Super-Longevity {#super-longevity}
 
 We stand on the cusp of several medical revolutions, each as profound as the discovery of antibiotics.
 
@@ -71,7 +78,7 @@ CTA advocates for this knowledge to be widely shared, and in the immediate term,
 
 ---
 
-## 2. Super-Embodiment {#super-embodiment}
+### 2. Super-Embodiment {#super-embodiment}
 
 We stand on the cusp of new ways to meet human needs for agency, connection, relationality and creativity.
 
@@ -83,7 +90,7 @@ We stand on the cusp of new ways to meet human needs for agency, connection, rel
 
 > "_Heal the sick, raise the dead, cure those with leprosy, and cast out demons."_ (Matthew 10:8)
 
-### Human enhancement is coming
+#### Human enhancement is coming
 
 Technology to enhance humans will become as common as sunglasses.
 
@@ -109,7 +116,7 @@ The first step to enhance humanity is the simplest, and the most ancient: to be 
 
 ---
 
-## 3. Super-Intelligence {#super-intelligence}
+### 3. Super-Intelligence {#super-intelligence}
 
 We stand on the cusp of the emergence of machine intelligence beyond human abilities. We also stand on the cusp of ways to enhance biological intelligence.
 
@@ -155,7 +162,7 @@ AGI should support individual human flourishing, always be oriented towards supp
 
 ---
 
-## 4. Super-Ecology {#super-ecology}
+### 4. Super-Ecology {#super-ecology}
 
 We stand on the cusp of radically expanded possibilities for cultivating life.
 

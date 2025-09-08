@@ -1,0 +1,13 @@
+<div class="feature-grid">
+{% for c in conversations %}
+{% if c.url == page.url or c.url == url %}
+<a class="feature-card" href="{{ c.url }}">
+<span class="feature-card__media" style="background-image: url('{{ c.image }}');"></span>
+<span class="feature-card__body">
+<h3 class="feature-card__title">{{ c.title }}</h3>
+<p class="feature-card__blurb">{{ c.blurb }}</p>
+</span>
+</a>
+{% endif %}
+{% endfor %}
+</div>

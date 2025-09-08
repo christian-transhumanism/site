@@ -1,0 +1,11 @@
+{% assign hero = hero %}
+{% if hero == nil or hero == '' %}
+{% for c in conversations %}
+{% if c.url == page.url or c.url == url %}
+{% assign hero = c.image %}
+{% endif %}
+{% endfor %}
+{% endif %}
+<div class="mission-header">
+<img class="mission-header__image" src="{{ hero }}" alt="{{ page.title }}" />
+</div>

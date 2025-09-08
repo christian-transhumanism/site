@@ -1,0 +1,13 @@
+<div class="feature-grid">
+{% assign list = missionArticles[key] %}
+{% if list %}
+{% for item in list %}
+<a class="feature-card" href="{{ item.url }}">
+<span class="feature-card__media" style="background-image: url('{{ item.image | cdnImage: "c_fill,g_auto,f_auto,q_auto,w_600,h_220,dpr_auto" }}');"></span>
+<span class="feature-card__body">
+<h3 class="feature-card__title">{{ item.title }}</h3>
+</span>
+</a>
+{% endfor %}
+{% endif %}
+</div>

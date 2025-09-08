@@ -5,6 +5,7 @@ permalink: "blog/community/"
 layout: default
 ---
 
+<div class="blog-page">
 {% include 'shared/content_topbar.njk' %}
 
 <!-- Page Content -->
@@ -35,7 +36,7 @@ layout: default
 
                         <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.pubDate | default("2000") }}</p>
 
-                        <p>{{ post.content | truncate }}</p>
+                        <p>{{ post.content | striptags | truncate(280, true, '…') }}</p>
                     </div>
                 </div>
 
@@ -58,7 +59,7 @@ layout: default
         </div>
 
         <div class="col-md-4">
-            <div class="well">
+            <div class="well site-sidebar">
                 {% include 'shared/sidebar_nav.njk' %}
             </div>
         </div>
@@ -66,9 +67,7 @@ layout: default
     </div>
     <!-- /.row -->
 
-    <hr>
-
-    {% include 'shared/footer.njk' %}
-
+    
 </div>
 <!-- /.container -->
+</div>

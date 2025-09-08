@@ -5,11 +5,79 @@ layout: resourcePage
 ---
 
 <h1>Frequently Asked Questions</h1>
-{% for faq in faqs %}
-  <div class="row">
-      <div class="col-md-12">
-        <h3>{{ faq.question | safe  }}</h3>
-        <p>{{ faq.answer | safe }}</p>
-      </div>
+<section id="fh5co-faqs">
+  <div class="faq-toolbar">
+    <input type="search" id="faq-search" class="form-control input-sm" placeholder="Search FAQs..." aria-label="Search FAQs">
+    <div class="btn-group btn-group-sm" role="group" aria-label="FAQ controls">
+      <button type="button" id="faq-collapse-all" class="btn btn-default">Collapse All</button>
+      <button type="button" id="faq-expand-all" class="btn btn-primary">Expand All</button>
+    </div>
   </div>
-{% endfor %}
+  <div class="faq-empty alert alert-info" style="display:none;">No matching questions.</div>
+  {% for faq in faqs %}
+    <div class="faq-accordion" role="group">
+      <h3 id="q-{{ loop.index }}" tabindex="0" aria-controls="a-{{ loop.index }}" aria-expanded="false">
+        {{ faq.question | safe }}
+      </h3>
+      <span class="faq-accordion-icon-toggle" aria-hidden="true">
+        <i class="glyphicon glyphicon-chevron-down"></i>
+      </span>
+      <div class="faq-body" id="a-{{ loop.index }}" aria-labelledby="q-{{ loop.index }}">
+        {{ faq.answer | safe }}
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+<script>
+  (function($){
+    function toggle($acc, expand){
+      var $body = $acc.find('.faq-body');
+      var isActive = $acc.hasClass('active');
+      var doExpand = (typeof expand !== 'undefined') ? expand : !isActive;
+      $acc.toggleClass('active', doExpand);
+      $acc.find('h3').attr('aria-expanded', doExpand);
+      // Use show/hide for jQuery slim (no effects module)
+      if (doExpand) { $body.show(); }
+      else { $body.hide(); }
+    }
+
+    $('#fh5co-faqs').on('click', '.faq-accordion h3, .faq-accordion .faq-accordion-icon-toggle', function(){
+      var $acc = $(this).closest('.faq-accordion');
+      toggle($acc);
+    });
+
+    // Keyboard accessibility: toggle with Enter/Space
+    $('#fh5co-faqs').on('keydown', '.faq-accordion h3', function(e){
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle($(this).closest('.faq-accordion'));
+      }
+    });
+
+    // Expand/Collapse All
+    $('#faq-expand-all').on('click', function(){
+      $('#fh5co-faqs .faq-accordion:visible').each(function(){ toggle($(this), true); });
+    });
+    $('#faq-collapse-all').on('click', function(){
+      $('#fh5co-faqs .faq-accordion:visible').each(function(){ toggle($(this), false); });
+    });
+
+    // Simple search/filter
+    $('#faq-search').on('input', function(){
+      var q = $(this).val().toLowerCase().trim();
+      var any = false;
+      $('#fh5co-faqs .faq-accordion').each(function(){
+        var $acc = $(this);
+        var text = ($acc.find('h3').text() + ' ' + $acc.find('.faq-body').text()).toLowerCase();
+        var match = q === '' || text.indexOf(q) !== -1;
+        $acc.toggle(match);
+        if (match) any = true;
+      });
+      $('.faq-empty').toggle(!any);
+    });
+
+    // Default: expand all so answers are visible initially
+    $('#fh5co-faqs .faq-accordion').each(function(){ toggle($(this), true); });
+  })(jQuery);
+</script>

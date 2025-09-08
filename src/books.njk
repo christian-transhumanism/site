@@ -1,7 +1,7 @@
 ---
 title: Books about Christianity & Transhumanism
 description: Curated reading list at the intersection of Christianity, technology, and the human future.
-layout: resourcePage-wide
+layout: resourcePage
 permalink: /books/
 ---
 
@@ -42,7 +42,7 @@ permalink: /books/
       {% endif %}
 
       <div class="book-desc">
-        {{ book.body | safe }}
+        {{ book.body | excerpt(40) }}
       </div>
 
       <p class="book-links">

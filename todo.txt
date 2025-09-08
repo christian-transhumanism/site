@@ -1,0 +1,16 @@
+Next steps / ideas
+
+- Add optional YouTube Data API v3 pagination (env: YOUTUBE_API_KEY) to fetch deeper history per channel.
+- Document VIDEO_LIMIT and Shorts filtering in README; include examples.
+- Support manual denylist by video ID for edge cases.
+- Show duration and published date badges on video cards.
+- Add a small script/CLI to purge and refresh the `.cache` for videos.
+- Harden watch-page parsing and improve error logging when patterns change.
+- Add lightweight tests for the RSS parser and Shorts detection logic.
+- Optional: scrape channel /videos as a non-API fallback for older items.
+
+Mission flow / content
+
+- Reconceptualize Mission as guided steps (Learn → Reflect → Act → Share) with progress and email companion.
+- Fill in content for new Faith articles (now stub pages exist under `src/mission/faith/`).
+- Add Technological mission article cards (define topics + targets) and optional stubs.

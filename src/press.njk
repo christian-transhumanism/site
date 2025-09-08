@@ -1,0 +1,36 @@
+---
+title: Press and Coverage
+description: Interviews, press, coverage
+layout: default
+permalink: press/
+---
+<div class="blog-page">
+{% include 'shared/content_topbar.njk' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="page-header">Press and Coverage</h1>
+      <p class="page-intro"><em>Christian Transhumanism has been covered around the world. Here are some selected interviews, articles, and videos:</em></p>
+
+      <div class="press-list">
+      {% for article in coverage %}
+      <article class="press-item">
+        <div class="press-item-header">
+          <span class="press-publication">{{ article.publication }}</span>{% if article.date %}
+          <time class="press-date">{{ article.date }}</time>{% endif %}
+        </div>
+        <h3 class="press-title"><a href="{{ article.url }}" target="_blank" rel="noopener">{{ article.title }} <i class="glyphicon glyphicon-new-window" aria-hidden="true"></i></a></h3>
+        {% if article.description %}<p class="press-desc">{{ article.description }}</p>{% endif %}
+      </article>
+      {% endfor %}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="well site-sidebar">
+        {% include 'shared/sidebar_nav.njk' %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>

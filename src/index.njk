@@ -2,49 +2,13 @@
 layout: default.njk
 body_classes: home
 ---
-<div class="home-flyer">
-  <section class="container text-center" id="intro">
-    <h1>Could Science & Faith work together <br /> to create a radically better Future?</h1>
-    <br />
-    <ul class="conference-cta-wrapper">
-      <li><a href="/join" class="btn-primary btn-lg">Let's Explore Together</a></li>
-    </ul>
-  </section>
-</div>
 
-<div class="home">
-  <section class="container intro-section text-center" id="intro">
-    <h2>
-      The most significant conversations impacting our future&mdash;<br /><br />
+{% include 'shared/home-hero.njk' %}
 
-      <em>like Artificial Intelligence, Space Exploration, Genetic Engineering</em><br /><br />
+{% include 'shared/home-featured-conversations.njk' %}
 
-      should involve people of faith
-    </h2><br />
-  </section>
-</div>
+{% include 'shared/home-media.njk' %}
 
-<!-- Full Width Image Header with Logo -->
-<!-- Image backgrounds are set within the full-width-pics.css file. -->
-<div class="jumbotron image-bg-fixed-height cta-hero-image-2">
-  <img class="img-responsive img-center" src="//res.cloudinary.com/christian-transhumanist-association/image/upload/c_scale,h_120/v1492191041/cta_logo_standalone_large_n7mg2e.png" alt=""><br />
+{% include 'shared/affirmation.njk' %}
 
-  <h1>Christian Transhumanist Association</h1>
-  <div class="container">
-    <h3>
-      Using science &amp; technology to participate in the work of God&mdash;<br>
-      to cultivate life and renew creation.
-    </h3>
-  </div>
-</div>
-
-
-<div class="home">
-
-  {% include 'shared/affirmation.njk' %}
-
-  <br /><br /><br />
-
-  {% include 'shared/join.njk' %}
-
-</div>
+{% include 'shared/join.njk' %}
