@@ -58,7 +58,7 @@ This balance—humility before truth, confidence in action—is the heart of bib
 
 Faith is not belief *against* reason. It is belief aligned with truth-seeking:
 
-- Faith expects that **all truth is God’s truth.**  
+- Faith expects that [all truth is God’s truth](/mission/faith/convergence-hypothesis/).  
 - Faith is willing to test and revise, because truth can withstand testing.  
 - Faith embraces science, philosophy, and history as partners in the search for reality.  
 

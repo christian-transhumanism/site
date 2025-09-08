@@ -9,7 +9,13 @@ permalink: mission/faith/
 
 Recover hope and purpose in the face of radical change.
 
-{% include 'shared/mission-articles.liquid', key: 'faith' %}
+### Featured
+{% include 'shared/mission-articles.liquid', key: 'faith_featured' %}
+
+---
+
+### More from Faith
+{% include 'shared/mission-articles.liquid', key: 'faith_more' %}
 
 ---
 

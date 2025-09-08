@@ -1,13 +1,28 @@
 {
+  "faith_featured": [
+    { "title": "The Faith Principle", "url": "/mission/faith/the-faith-principle/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757347540/generated/micahredding_a_person_leaping_over_a_crevasse_in_the_snow_e3dbb497-c619-44e5-a3bb-2254afcada78.png" },
+    { "title": "The Convergence Hypothesis", "url": "/mission/faith/convergence-hypothesis/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757347542/generated/micahredding_converging_on_the_top_of_a_mountain_75967476-e8f0-472a-a700-5009dd005c98.png" },
+    { "title": "The Ecosystem of Heaven", "url": "/mission/faith/ecosystem-of-heaven/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757347773/generated/micahredding_galaxy_of_living_creatures_cosmos_fc2e8ef2-4538-4012-9eff-3e55404be72a.png" }
+  ],
+  "faith_more": [
+    { "title": "Transhumanism & Christ", "url": "/mission/faith/christ-and-transhumanism/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757348330/generated/micahredding_a_map_of_concentric_circles_with_a_human_in_the_ce_d88b695a-228d-4d0e-9817-e1ad262bbad6.png" },
+    { "title": "Simulation & Christ", "url": "/mission/faith/christ-and-simulation/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Christ_and_Simulation__Human_silhouette_in_holographic_grid.jpg" },
+    { "title": "Evolution & Christ", "url": "/mission/faith/christ-and-evolution/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Christ_and_Evolution__Tree_of_life_diagram_in_forest.jpg" },
+    { "title": "Beyond Supernatural: The Physical Vision of Christianity", "url": "/mission/faith/beyond-supernatural-physical-christianity/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Non-Supernatural__Minimalist_stone_altar_in_daylight.jpg" },
+    { "title": "Reuniting Scripture and Science", "url": "/mission/faith/reuniting-scripture-and-science/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Scripture_and_Science__Microscope_beside_Bible.jpg" }
+  ],
   "faith": [
     { "title": "The Faith Principle", "url": "/mission/faith/the-faith-principle/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757347540/generated/micahredding_a_person_leaping_over_a_crevasse_in_the_snow_e3dbb497-c619-44e5-a3bb-2254afcada78.png" },
     { "title": "The Convergence Hypothesis", "url": "/mission/faith/convergence-hypothesis/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757347542/generated/micahredding_converging_on_the_top_of_a_mountain_75967476-e8f0-472a-a700-5009dd005c98.png" },
 
+    { "title": "The Ecosystem of Heaven", "url": "/mission/faith/ecosystem-of-heaven/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757347773/generated/micahredding_galaxy_of_living_creatures_cosmos_fc2e8ef2-4538-4012-9eff-3e55404be72a.png" },    
+
+    { "title": "Transhumanism & Christ", "url": "/mission/faith/christ-and-transhumanism/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757348330/generated/micahredding_a_map_of_concentric_circles_with_a_human_in_the_ce_d88b695a-228d-4d0e-9817-e1ad262bbad6.png" },
     { "title": "Why Faith is Rational (Critical Rationalism & Christ)", "url": "/mission/faith/why-faith-is-rational/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Faith_is_Rational__Lightbulb_glowing_beside_Scripture.jpg" },
     { "title": "Evolution & Christ", "url": "/mission/faith/christ-and-evolution/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Christ_and_Evolution__Tree_of_life_diagram_in_forest.jpg" },
     { "title": "Simulation & Christ", "url": "/mission/faith/christ-and-simulation/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Christ_and_Simulation__Human_silhouette_in_holographic_grid.jpg" },
     { "title": "Beyond Supernatural: The Physical Vision of Christianity", "url": "/mission/faith/beyond-supernatural-physical-christianity/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Non-Supernatural__Minimalist_stone_altar_in_daylight.jpg" },
-    { "title": "Reuniting Scripture and Science", "url": "/mission/faith/reuniting-scripture-and-science/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Scripture_and_Science__Microscope_beside_Bible.jpg" }    
+    { "title": "Reuniting Scripture and Science", "url": "/mission/faith/reuniting-scripture-and-science/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Scripture_and_Science__Microscope_beside_Bible.jpg" }
   ],
   "theological": [
     { "title": "Image of God", "url": "/mission/theological/image-of-god/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Image_of_God__Astronaut_floating_above_Earth.jpg" },
