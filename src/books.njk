@@ -1,12 +1,16 @@
 ---
 title: Books about Christianity & Transhumanism
 description: Curated reading list at the intersection of Christianity, technology, and the human future.
-layout: resourcePage
+layout: default
 permalink: /books/
 ---
+{% include 'shared/content_topbar.njk' %}
 
-<h1>Books about Christianity &amp; Transhumanism</h1>
-<p class="page-intro">Study and scholarship from the ancient past to the deep future.</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="page-header">Books about Christianity &amp; Transhumanism</h1>
+      <p class="page-intro">Study and scholarship from the ancient past to the deep future.</p>
 
 <div class="book-toolbar">
   <div class="btn-group btn-group-sm" role="group" aria-label="Book filter">
@@ -19,7 +23,7 @@ permalink: /books/
   <input id="book-filter" class="book-filter" type="search" placeholder="Filter by title, author, year, or tag" autocomplete="off" />
 </div>
 
-<div id="book-list" class="book-grid">
+      <div id="book-list" class="book-grid">
   {% for book in books | sort(false, false, "title") %}
   {% set tags = book.tags or [] %}
   {% set searchIndex = (book.title ~ ' ' ~ book.author ~ ' ' ~ (book.year or '') ~ ' ' ~ (tags | join(' '))) | lower %}
@@ -60,9 +64,9 @@ permalink: /books/
     </div>
   </article>
   {% endfor %}
-</div>
+      </div>
 
-<script type="application/ld+json">
+      <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -85,9 +89,9 @@ permalink: /books/
     {% endfor %}
   ]
 }
-</script>
+      </script>
 
-<script>
+      <script>
   (function(){
     const input = document.getElementById('book-filter');
     const items = Array.from(document.querySelectorAll('#book-list .book'));
@@ -116,4 +120,12 @@ permalink: /books/
 
     applyFilters();
   })();
-</script>
+      </script>
+    </div>
+    <div class="col-md-4">
+      <div class="well site-sidebar">
+        {% include 'shared/sidebar_nav.njk' %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,9 +11,9 @@
                 "key": "Blog"
             },
             {
-                "url": "/podcast/",
-                "title": "Podcast",
-                "key": "Podcast"
+                "url": "/blog/community/",
+                "title": "Community Posts",
+                "key": "Community Posts"
             },
             {
                 "url": "/videos/",
@@ -21,9 +21,14 @@
                 "key": "Videos"
             },
             {
-                "url": "/blog/community/",
-                "title": "Community Posts",
-                "key": "Community Posts"
+                "url": "/podcast/",
+                "title": "Podcast",
+                "key": "Podcast"
+            },
+            {
+                "url": "/books/",
+                "title": "Books",
+                "key": "Books"
             },
             {
                 "url": "/press/",
@@ -135,11 +140,6 @@
                 "url": "/quotes/",
                 "title": "Quotes",
                 "key": "Quotes"
-            },
-            {
-                "url": "/books/",
-                "title": "Books",
-                "key": "Books"
             }
         ]
     },
