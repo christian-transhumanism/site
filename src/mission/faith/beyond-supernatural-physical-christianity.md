@@ -44,7 +44,7 @@ In this sense, every miracle is eschatological: a glimpse of resurrection, a for
 
 ---
 
-## The Creation Mandate and Human Vocation
+## [The Creation Mandate](/mission/theological/creation-mandate/) and Human Vocation
 
 From the beginning, humanity has been called into a physical, creative partnership with God.
 

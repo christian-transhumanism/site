@@ -1,0 +1,38 @@
+{%- comment -%}
+Renders a small grid of related mission articles within the same section.
+Usage: include with a section key (faith|theological|technological). If not
+provided, it infers from page.url. Excludes the current page URL.
+{%- endcomment -%}
+
+{%- assign section = key -%}
+{%- if not section or section == '' -%}
+  {%- assign url = page.url -%}
+  {%- if url contains '/mission/faith/' -%}
+    {%- assign section = 'faith' -%}
+  {%- elsif url contains '/mission/technological/' -%}
+    {%- assign section = 'technological' -%}
+  {%- elsif url contains '/mission/theological/' -%}
+    {%- assign section = 'theological' -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- assign list = missionArticles[section] -%}
+{%- if list and list.size > 0 -%}
+  <div class="related-mission">
+    <h3 class="h5" style="margin-top:2rem;">More in {{ section | capitalize }}</h3>
+    <div class="feature-grid">
+      {%- assign count = 0 -%}
+      {%- for item in list -%}
+        {%- if item.url != page.url and count < 3 -%}
+          <a class="feature-card" href="{{ item.url }}">
+            <span class="feature-card__media" style="background-image: url('{{ item.image | cdnImage: "c_fill,g_auto,f_auto,q_auto,w_600,h_220,dpr_auto" }}');"></span>
+            <span class="feature-card__body">
+              <h4 class="feature-card__title">{{ item.title }}</h4>
+            </span>
+          </a>
+          {%- assign count = count | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}

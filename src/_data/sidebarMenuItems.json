@@ -33,6 +33,84 @@
         ]
     },
     {
+        "url": "/mission/",
+        "title": "Mission",
+        "key": "Mission",
+        "children": [
+            {
+                "url": "/mission/theological/",
+                "title": "1. Theological",
+                "key": "1. Theological",
+                "children": [
+                    {
+                        "url": "/mission/theological/image-of-god/",
+                        "title": "Image of God",
+                        "key": "Image of God"
+                    },
+                    {
+                        "url": "/mission/theological/creation-mandate/",
+                        "title": "Creation Mandate",
+                        "key": "Creation Mandate"
+                    },
+                    {
+                        "url": "/mission/theological/participation-in-christ/",
+                        "title": "Participation in Christ",
+                        "key": "Participation in Christ"
+                    },
+                    {
+                        "url": "/mission/theological/renewal-of-all-things/",
+                        "title": "Renewal of All Things",
+                        "key": "Renewal of All Things"
+                    }
+                ]
+            },
+            {
+                "url": "/mission/faith/",
+                "title": "2. Faith-Renewing",
+                "key": "2. Faith-Renewing",
+                "children": [
+                    {
+                        "url": "/mission/faith/the-faith-principle/",
+                        "title": "The Faith Principle",
+                        "key": "The Faith Principle"
+                    },
+                    {
+                        "url": "/mission/faith/convergence-hypothesis/",
+                        "title": "The Convergence Hypothesis",
+                        "key": "The Convergence Hypothesis"
+                    }
+                ]
+            },
+            {
+                "url": "/mission/technological/",
+                "title": "3. Technological",
+                "key": "3. Technological",
+                "children": [
+                    {
+                        "url": "/mission/technological/#super-longevity",
+                        "title": "Super-Longevity",
+                        "key": "Super-Longevity"
+                    },
+                    {
+                        "url": "/mission/technological/#super-embodiment",
+                        "title": "Super-Embodiment",
+                        "key": "Super-Embodiment"
+                    },
+                    {
+                        "url": "/mission/technological/#super-intelligence",
+                        "title": "Super-Intelligence",
+                        "key": "Super-Intelligence"
+                    },
+                    {
+                        "url": "/mission/technological/#super-ecology",
+                        "title": "Super-Ecology",
+                        "key": "Super-Ecology"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "url": "/about/",
         "title": "Perspectives",
         "key": "Perspectives",
@@ -47,29 +125,6 @@
                 "url": "/affirmation/",
                 "title": "Affirmation",
                 "key": "Affirmation"
-            },
-            {
-                "url": "/mission/",
-                "title": "Mission",
-                "key": "Mission",
-                "children":
-                [
-                    {
-                        "url": "/mission/theological/",
-                        "title": "1. Theological",
-                        "key": "1. Theological"
-                    },
-                    {
-                        "url": "/mission/faith/",
-                        "title": "2. Faith-Renewing",
-                        "key": "2. Faith-Renewing"
-                    },
-                    {
-                        "url": "/mission/technological/",
-                        "title": "3. Technological",
-                        "key": "3. Technological"
-                    }
-                ]
             },
             {
                 "url": "/faq/",

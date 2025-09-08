@@ -19,7 +19,7 @@ In a world where Christians often see science and technology as enemies of faith
 
 As an association, not a denomination, the CTA seeks to seeks to draw theological themes on which Christians can agree, and that reflect the interaction Christianity must have with Transhumanism in a manner that will be mutually beneficial. Our distinctive emphasis is on **The Image of God**, as understood through these lenses:
 
-1. The Creation Mandate
+1. [The Creation Mandate](/mission/theological/creation-mandate/)
 2. The Imitation of Christ / Participation in Christ
 3. The Renewal of All Things
 
@@ -30,15 +30,15 @@ As an association, not a denomination, the CTA seeks to seeks to draw theologica
 At the 2019 Transvision conference in London, sociologist Steve Fuller declared that "Transhumanism is about the Image of God". For Christians, this connection makes sense, since we see our scientific and technological capacity as part of how we reflect God's own creative nature. We understand the image of God through these lenses:
 
 
-### 1. The Creation Mandate {#creation-mandate}
+### 1. [The Creation Mandate](/mission/theological/creation-mandate/) {#creation-mandate}
 
-The Creation Mandate is the calling of Genesis 1 to create, cultivate, and uplift life—in Imitation of God.
+The [Creation Mandate](/mission/theological/creation-mandate/) is the calling of Genesis 1 to create, cultivate, and uplift life—in Imitation of God.
 
 **God is a compassionate creator who empowers us to participate in the ongoing works of creation**. Genesis reveals God as a compassionate creator who empowers us, and then calls us, to participate in ongoing works of creation. 
 
 **Science and Technology are part of our imitation of God**. Just as God names and categorizes creation, God leads humanity to name and categorize creation. Just as God cultivates, blesses, and empowers life, God leads humanity to cultivate, bless, and empower life. These are science and technology in their most fundamental forms. And they emerge from our God-given creative nature.
 
-**Science and Technology are part of the work of God**. In the story of Noah, God calls a human to use their creative skill to construct an Ark—the largest piece of technology the ancient world could imagine—in order to care for and cultivate life. God brings the animals to Noah, just as God brought the animals to Adam. And when Noah emerges from the Ark, God reiterates the Creation Mandate, as if declaring that this is humanity as God intended—using our creative and technological nature to participate in the work of God. 
+**Science and Technology are part of the work of God**. In the story of Noah, God calls a human to use their creative skill to construct an Ark—the largest piece of technology the ancient world could imagine—in order to care for and cultivate life. God brings the animals to Noah, just as God brought the animals to Adam. And when Noah emerges from the Ark, God reiterates the [Creation Mandate](/mission/theological/creation-mandate/), as if declaring that this is humanity as God intended—using our creative and technological nature to participate in the work of God. 
 
 **Science and Technology unveil General Revelation**. As we use our science and technology to create, we often find ourselves "thinking God's thoughts after him" (Kepler), uncovering aspects of "General Revelation" (Romans 1:20), that God has made accessible to us all. The recent interest in the Simulation Hypothesis illustrates this point. To construct a world points to the likelihood that our own world has been constructed. As we begin to create worlds, we discover the wisdom involved in the creation of this world. Our technological work can help proclaim God's revelation.
 

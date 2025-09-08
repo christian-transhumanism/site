@@ -9,7 +9,18 @@ layout: default
   <div class="row">
     <div class="col-md-8">
 
+      {# Mission article hero image (if this page is a mission article) #}
+      {% if page.url and ('/mission/' in page.url) %}
+        {% include 'shared/mission-article-hero.njk' %}
+      {% endif %}
+
       {{ content | safe }}
+
+      {# Related articles within the same Mission section #}
+      {% if page.url and ('/mission/' in page.url) %}
+        <hr>
+        {% include 'shared/related-mission-articles.njk' %}
+      {% endif %}
 
       {% if disqus_id %}
       <div class="row">

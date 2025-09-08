@@ -20,15 +20,33 @@ Key thinkers who connect this ancient stream of thought to today include:
 - 2013 Interest group and initial community
 - 2014 Formal organization
 - 2015 501c3 status, infant warmer project, logo, membership
-- 2016 **Christian Transhumanist Affirmation** adopted
-- 2018 **CTA Conference 2018**
-- 2019 **CTA Conference 2019**
+- 2016 [Christian Transhumanist Affirmation](/affirmation) adopted
+- 2018 [CTA Conference 2018](/conference/2018)
+- 2019 [CTA Conference 2019](/conference/2019)
 
 ### Initial Interest Group (2013)
 
 On June 6th, 2013, Micah Redding [posted a signup form](https://www.facebook.com/groups/332924799454/permalink/10151616121344455/) [(archive)](https://archive.is/oR5fW) for those interested in forming a Christian Transhumanist Association.
 
 On July 7th, 2013, Micah Redding published a [Call for Interest](http://micahredding.com/blog/2013/07/07/interested-christian-transhumanism) in a Christian Transhumanist Association, and [Giulio Prisco](http://turingchurch.com/2013/07/08/a-christian-transhumanist-association/) publicized it farther. That call led 24 additional people to sign a statement of interest. This culminated with the launch of a [Christian Transhumanist Association discussion group](https://groups.google.com/forum/#!forum/christian-transhumanism) on November 1, 2013. 
+
+### Guiding Statements (2013-2014)
+
+When we were in the process of formation, our small community used several guiding statements and concepts. These statements included:
+
+**Our Purpose**: Participating with God in the redemption, reconciliation, and renewal of the world.
+
+**Our Understanding**: We understand our Christian faith to affirm humans as scientific and technological creatures—creatures who create and discover, and who are commissioned to cultivate life, create new things, and renew the world. We further understand our Christian mission to charge us with healing, feeding, and restoring life—activities which provoke us to scientific and medical innovations, just as they have throughout Christian history.
+
+**Our Statement of Principle and Action**: As part of our affirmation, we include a <strong>Statement of Principle and Action</strong> taken from Jesus himself: <em>Love the Lord your God with all your heart, soul, mind, and strength&hellip;and love your neighbor as yourself.</em>
+
+That contains our purpose, our defining focus, and our message. And when it comes to the application of those commands, we see three deep things:
+
+1. We focus on that which is transcendent.
+2. We pursue greater coherence of mentality, physicality, spirituality.
+3. We seek the betterment of the world.
+
+We think that these three elements define what it is to be a complete human being, and mark out the dimensions along which we should grow. They define what we hope to practice as an organization, what will shape our choices, and what we hope to convey in many ways and forms to the outside world.
 
 ### Formal Organization (2014)
 

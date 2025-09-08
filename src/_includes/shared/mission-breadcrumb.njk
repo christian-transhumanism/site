@@ -1,0 +1,33 @@
+{# Simple breadcrumb/back link for Mission pages and sub-articles #}
+{% set url = page.url %}
+
+{% set isMission = url and ('/mission/' in url) %}
+{% if isMission %}
+  {% set sectionTitle = "" %}
+  {% set sectionUrl = "" %}
+
+  {% if '/mission/faith/' in url %}
+    {% set sectionTitle = "Renewing Faith" %}
+    {% set sectionUrl = "/mission/faith/" %}
+  {% elif '/mission/technological/' in url %}
+    {% set sectionTitle = "Ethical Technology" %}
+    {% set sectionUrl = "/mission/technological/" %}
+  {% elif '/mission/theological/' in url %}
+    {% set sectionTitle = "Deepening Theology" %}
+    {% set sectionUrl = "/mission/theological/" %}
+  {% endif %}
+
+  <nav class="mission-breadcrumb" aria-label="Breadcrumb" style="margin: .25rem 0 1rem; font-size: .95rem;">
+    <a href="/mission/" style="text-decoration:none;">Mission</a>
+    {% if sectionUrl %}
+      <span aria-hidden="true"> › </span>
+      <a href="{{ sectionUrl }}" style="text-decoration:none;">{{ sectionTitle }}</a>
+    {% endif %}
+  </nav>
+
+  {% if sectionUrl and url != sectionUrl %}
+    <div class="mission-back" style="margin: -.5rem 0 1rem;">
+      <a href="{{ sectionUrl }}" class="btn btn-link" style="padding:0;">← Back to {{ sectionTitle }}</a>
+    </div>
+  {% endif %}
+{% endif %}

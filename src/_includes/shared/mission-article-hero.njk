@@ -1,0 +1,19 @@
+{# Render a header image for mission article pages using missionArticles data #}
+{% set url = page.url %}
+{% set hero = null %}
+
+{# Flatten missionArticles collections and find matching item by URL #}
+{% for section, items in missionArticles %}
+  {% for item in items %}
+    {% if item.url == url and item.image %}
+      {% set hero = item.image %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% if hero %}
+  <div class="mission-header">
+    <img class="mission-header__image" src="{{ hero | cdnImage('c_fill,g_auto,f_auto,q_auto,w_1600,h_420,dpr_auto') }}" alt="{{ page.title }}" />
+  </div>
+{% endif %}
+

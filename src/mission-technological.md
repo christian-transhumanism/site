@@ -168,7 +168,7 @@ We stand on the cusp of radically expanded possibilities for cultivating life.
 
 > "_For the creation waits in eager expectation for the children of God to be revealed. ...in hope that the creation itself will be liberated from its bondage to decay and brought into the freedom and glory of the children of God."_ (Romans 8:19-21)
 
-**Creation Mandate:**
+**[Creation Mandate](/mission/theological/creation-mandate/):**
 
 - We must care for and cultivate all life.
 - We are the only species with the power to protect Earth

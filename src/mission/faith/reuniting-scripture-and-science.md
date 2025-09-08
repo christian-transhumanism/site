@@ -28,7 +28,7 @@ Genesis 1 is not a scientific manual, nor a textbook in physics or biology. It i
 
 - Structured in a seven-day rhythm, Genesis presents God’s creative work as ordered and purposeful.  
 - Exodus 20 explicitly grounds the human workweek in this pattern: *“Six days you shall labor and do all your work…for in six days the Lord made the heavens and the earth.”* Our rhythm of work and rest imitates God’s creative actions.  
-- The text culminates in humanity, made in God’s image, entrusted with the creation mandate.  
+- The text culminates in humanity, made in God’s image, entrusted with the [Creation Mandate](/mission/theological/creation-mandate/).  
 
 Genesis 1’s purpose is not to set physical timelines but to frame human vocation: to mirror God’s creative work in the world. This liturgical vision allows us to honor the text’s intent without forcing it into categories it was never written to answer.
 
