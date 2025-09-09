@@ -31,9 +31,9 @@
     { "title": "Renewal of All Things", "url": "/mission/theological/renewal-of-all-things/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Renewal_of_All_Things__Butterfly_emerging_from_cocoon.jpg" }
   ],
   "technological": [
-    { "title": "Super-Longevity", "url": "/mission/technological/#super-longevity", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Super-Longevity__Elderly_person_jogging_at_sunrise.jpg" },
-    { "title": "Super-Embodiment", "url": "/mission/technological/#super-embodiment", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Super-Embodiment__Dancer_leaping_mid-air.jpg" },
-    { "title": "Super-Intelligence", "url": "/mission/technological/#super-intelligence", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Super-Intelligence__Neural_network_glowing_abstract.jpg" },
-    { "title": "Super-Ecology", "url": "/mission/technological/#super-ecology", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757208610/ChatGPT_Image_Sep_6_2025_at_07_22_24_PM_ws6pqy.png" }
+    { "title": "Super-Longevity", "url": "/mission/technological/super-longevity/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Super-Longevity__Elderly_person_jogging_at_sunrise.jpg" },
+    { "title": "Super-Embodiment", "url": "/mission/technological/super-embodiment/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Super-Embodiment__Dancer_leaping_mid-air.jpg" },
+    { "title": "Super-Intelligence", "url": "/mission/technological/super-intelligence/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/placeholders/Super-Intelligence__Neural_network_glowing_abstract.jpg" },
+    { "title": "Super-Ecology", "url": "/mission/technological/super-ecology/", "image": "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757208610/ChatGPT_Image_Sep_6_2025_at_07_22_24_PM_ws6pqy.png" }
   ]
 }

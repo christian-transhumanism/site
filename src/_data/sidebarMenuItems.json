@@ -91,26 +91,26 @@
                 "title": "3. Technological",
                 "key": "3. Technological",
                 "children": [
-                    {
-                        "url": "/mission/technological/#super-longevity",
-                        "title": "Super-Longevity",
-                        "key": "Super-Longevity"
-                    },
-                    {
-                        "url": "/mission/technological/#super-embodiment",
-                        "title": "Super-Embodiment",
-                        "key": "Super-Embodiment"
-                    },
-                    {
-                        "url": "/mission/technological/#super-intelligence",
-                        "title": "Super-Intelligence",
-                        "key": "Super-Intelligence"
-                    },
-                    {
-                        "url": "/mission/technological/#super-ecology",
-                        "title": "Super-Ecology",
-                        "key": "Super-Ecology"
-                    }
+            {
+                "url": "/mission/technological/super-longevity/",
+                "title": "Super-Longevity",
+                "key": "Super-Longevity"
+            },
+            {
+                "url": "/mission/technological/super-embodiment/",
+                "title": "Super-Embodiment",
+                "key": "Super-Embodiment"
+            },
+            {
+                "url": "/mission/technological/super-intelligence/",
+                "title": "Super-Intelligence",
+                "key": "Super-Intelligence"
+            },
+            {
+                "url": "/mission/technological/super-ecology/",
+                "title": "Super-Ecology",
+                "key": "Super-Ecology"
+            }
                 ]
             }
         ]
