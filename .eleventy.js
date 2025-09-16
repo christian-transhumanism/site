@@ -128,6 +128,8 @@ module.exports = function(eleventyConfig) {
     const items = collectionApi.getAll().filter(item => {
       const ip = (item && item.inputPath) ? String(item.inputPath).replace(/\\/g, '/') : '';
       if (!ip.includes('/src/obsidian/')) return false;
+      // Ignore anything under src/obsidian/templates/
+      if (ip.includes('/src/obsidian/templates/')) return false;
       // Exclude the index page itself if present
       if (ip.endsWith('/src/obsidian/index.njk') || ip.endsWith('/src/obsidian/index.md')) return false;
       return true;
@@ -159,6 +161,8 @@ module.exports = function(eleventyConfig) {
       for (const ent of entries) {
         const full = path.join(dir, ent.name);
         if (ent.isDirectory()) {
+          // Skip templates directory
+          if (ent.name && ent.name.toLowerCase() === 'templates') continue;
           walk(full);
         } else if (ent.isFile() && /\.md$/i.test(ent.name)) {
           try {
@@ -166,6 +170,9 @@ module.exports = function(eleventyConfig) {
             const parsed = matter(raw);
             const rel = path.relative(base, full);
             const nameNoExt = path.basename(ent.name, path.extname(ent.name));
+            const relNorm = String(rel).replace(/\\/g, '/');
+            // Ignore files under templates/
+            if (relNorm.toLowerCase().startsWith('templates/')) continue;
 
             // Determine output URL
             let url = '';
@@ -177,7 +184,6 @@ module.exports = function(eleventyConfig) {
             } else {
               // Default URL logic
               // If file is under obsidian/board, mirror nested path under /board/
-              const relNorm = rel.replace(/\\/g, '/');
               if (relNorm.toLowerCase().startsWith('board/')) {
                 const withoutExt = relNorm.replace(/\.md$/i, '');
                 const segs = withoutExt.split('/').slice(1); // skip leading 'board'
@@ -235,6 +241,7 @@ module.exports = function(eleventyConfig) {
       for (const ent of entries) {
         const full = path.join(dir, ent.name);
         if (ent.isDirectory()) {
+          if (ent.name && ent.name.toLowerCase() === 'templates') continue;
           walk(full);
         } else if (ent.isFile() && /\.md$/i.test(ent.name)) {
           try {
@@ -243,6 +250,8 @@ module.exports = function(eleventyConfig) {
             const hasExplicitPermalink = !!(parsed.data && typeof parsed.data.permalink === 'string' && parsed.data.permalink.trim());
             // Normalize to workspace-relative posix path like 'src/obsidian/…'
             const rel = path.relative(process.cwd(), full).replace(/\\/g, '/');
+            // Ignore files under src/obsidian/templates/
+            if (rel.includes('/src/obsidian/templates/')) continue;
             meta.set(rel, { hasExplicitPermalink });
           } catch (_) { /* ignore */ }
         }
@@ -325,8 +334,12 @@ module.exports = function(eleventyConfig) {
       for (const ent of entries) {
         const full = path.join(dir, ent.name);
         if (ent.isDirectory()) {
+          if (ent.name && ent.name.toLowerCase() === 'templates') continue;
           walk(full);
         } else if (ent.isFile() && /\.md$/i.test(ent.name)) {
+          // Ignore files under templates/
+          const relFromBase = path.relative(base, full).replace(/\\/g, '/');
+          if (relFromBase.toLowerCase().startsWith('templates/')) continue;
           const from = toUrlForFile(full);
           if (!from) continue;
           const content = String(from.content);
