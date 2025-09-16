@@ -15,7 +15,7 @@
 	- [[Christianity is the ultimate memetic attractor]]
 	- [[Christianity is necessary to escape the Great Filter]]
 - Dive deeper 
-	- [[A Christian History of Transhumanism]]
+	- [[Christian History of Transhumanism]]
 	- [[Resources for Christian Transhumanists]]
 	- [[Notes for Researchers on Christian Transhumanism]]
 - Volunteer to work on some of the proposed wiki articles:

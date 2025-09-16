@@ -1,3 +1,8 @@
+---
+aliases:
+  - A Christian History of Transhumanism
+  - Christian History of Transhumanism
+---
 [[Christian Transhumanism]] is the name for a strain of Christian thinking going back through the Protestant Reformation, to the Patristic era, to the Jewish and Christian scriptures. It strongly influenced the [[Scientific Revolution]], the [[space race]], and the emergence of modern futurism. 
 
 [[Secular Transhumanism]] in modern times derives from [[Julian Huxley]], who was explicit in his aims to create a secularized Christianity for a secular world. 

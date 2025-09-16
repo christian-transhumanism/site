@@ -1,5 +1,5 @@
 - __Directions: Add resources to the bottom of the list, or add helpful reviews or comments underneath listed resources. (Play nice—don't make us have to shut down editing.)__
 - [[Books about Christianity & Transhumanism]]
 - [[Videos about Christianity & Transhumanism]]
-- [[A Christian History of Transhumanism]] 
+- [[Christian History of Transhumanism]] 
 - [[Influences in Christian Transhumanism]] 

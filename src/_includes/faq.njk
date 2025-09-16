@@ -17,13 +17,13 @@ layout: resourcePage
   {% for faq in faqs %}
     <div class="faq-accordion" role="group">
       <h3 id="q-{{ loop.index }}" tabindex="0" aria-controls="a-{{ loop.index }}" aria-expanded="false">
-        {{ faq.question | safe }}
+        {{ faq.question | mdInline | wikilinks | safe }}
       </h3>
       <span class="faq-accordion-icon-toggle" aria-hidden="true">
         <i class="glyphicon glyphicon-chevron-down"></i>
       </span>
       <div class="faq-body" id="a-{{ loop.index }}" aria-labelledby="q-{{ loop.index }}">
-        {{ faq.answer | safe }}
+        {{ faq.answer | md | wikilinks | safe }}
       </div>
     </div>
   {% endfor %}

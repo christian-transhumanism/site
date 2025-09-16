@@ -18,7 +18,7 @@
     - Uplifting of humanity
     - Self-gratification
     - etc...
-- [[A Christian History of Transhumanism]]
+- [[Christian History of Transhumanism]]
 	- Hallmark Indicators of [[Transhumanism]] through History
 	    - Transformative Future
 	    - Transcendent Human Potential

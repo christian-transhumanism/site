@@ -126,6 +126,22 @@ module.exports = function(eleventyConfig) {
   let markdownLibrary = markdownIt(options).use(markdownItFootnote).use(markdownItAttrs).use(markdownItAnchor);
   eleventyConfig.setLibrary("md", markdownLibrary);
 
+  // Render arbitrary Markdown strings inside templates (for YAML-provided content)
+  const renderMarkdown = (str) => {
+    try { return markdownLibrary.render(String(str || '')); }
+    catch (_) { return String(str || ''); }
+  };
+  eleventyConfig.addFilter('md', renderMarkdown);
+  eleventyConfig.addLiquidFilter('md', renderMarkdown);
+
+  // Inline Markdown (no surrounding <p>), for headings and labels
+  const renderMarkdownInline = (str) => {
+    try { return markdownLibrary.renderInline(String(str || '')); }
+    catch (_) { return String(str || ''); }
+  };
+  eleventyConfig.addFilter('mdInline', renderMarkdownInline);
+  eleventyConfig.addLiquidFilter('mdInline', renderMarkdownInline);
+
   // Collection: all Obsidian notes
   eleventyConfig.addCollection('obsidian', (collectionApi) => {
     const items = collectionApi.getAll().filter(item => {
@@ -302,7 +318,18 @@ module.exports = function(eleventyConfig) {
         const title = (parsed.data && typeof parsed.data.title === 'string' && parsed.data.title.trim())
           ? parsed.data.title.trim()
           : nameNoExt;
-        return { url, title, content: parsed.content || '' };
+        const dataText = (() => {
+          const acc = [];
+          function collect(v) {
+            if (!v) return;
+            if (typeof v === 'string') { acc.push(v); return; }
+            if (Array.isArray(v)) { for (const x of v) collect(x); return; }
+            if (typeof v === 'object') { for (const k of Object.keys(v)) collect(v[k]); }
+          }
+          collect(parsed.data);
+          return acc.join('\n\n');
+        })();
+        return { url, title, content: parsed.content || '', dataText };
       } catch (_) {
         return null;
       }
@@ -346,6 +373,7 @@ module.exports = function(eleventyConfig) {
           const from = toUrlForFile(full);
           if (!from) continue;
           const content = String(from.content);
+          const extra = String(from.dataText || '');
           // Wikilinks [[...]]
           const rx = /\[\[([^\]]+)\]\]/g;
           let m;
@@ -369,6 +397,31 @@ module.exports = function(eleventyConfig) {
             const href = m2[2];
             const norm = normalizeHref(href);
             if (norm && norm !== from.url) addBacklink(norm, from);
+          }
+
+          // Also parse front matter strings (e.g., FAQ answers/questions)
+          if (extra) {
+            let m3;
+            const rx2 = /\[\[([^\]]+)\]\]/g;
+            while ((m3 = rx2.exec(extra)) !== null) {
+              let target = m3[1] || '';
+              const pipe = target.indexOf('|');
+              if (pipe !== -1) target = target.slice(0, pipe);
+              const hash = target.indexOf('#');
+              if (hash !== -1) target = target.slice(0, hash);
+              const key = target.trim();
+              if (!key) continue;
+              const url = index.get(key) || index.get(key.toLowerCase()) || index.get(toSlugBase(key));
+              if (url && url !== from.url) addBacklink(url, from);
+            }
+            const md2 = /(!)?\[[^\]]+\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)/g;
+            let m4;
+            while ((m4 = md2.exec(extra)) !== null) {
+              if (m4[1] === '!') continue;
+              const href = m4[2];
+              const norm = normalizeHref(href);
+              if (norm && norm !== from.url) addBacklink(norm, from);
+            }
           }
         }
       }
@@ -407,6 +460,70 @@ module.exports = function(eleventyConfig) {
       return [];
     }
   });
+
+  // Expose a filter to resolve Obsidian-style wikilinks in arbitrary strings
+  function resolveWikilinksInHtml(content) {
+    if (!content || typeof content !== 'string') return content;
+
+    function resolveTarget(target) {
+      let display = null;
+      let page = target;
+      const pipe = target.indexOf('|');
+      if (pipe !== -1) {
+        page = target.slice(0, pipe);
+        display = target.slice(pipe + 1);
+      }
+      let anchor = '';
+      const hash = page.indexOf('#');
+      if (hash !== -1) {
+        anchor = page.slice(hash + 1).trim();
+        page = page.slice(0, hash);
+      }
+      const key = page.trim();
+      const url = obsidianIndex.get(key) || obsidianIndex.get(key.toLowerCase()) || obsidianIndex.get(toSlugBase(key));
+      const exists = !!url;
+      const href = exists ? (url + (anchor ? `#${toSlugBase(anchor)}` : '')) : '#';
+      const text = (display && display.trim()) || key;
+      return { href, text, exists, key };
+    }
+
+    // Images: ![[file|alt]] or ![[file]]
+    content = content.replace(/!\[\[([^\]]+)\]\]/g, (m, inner) => {
+      const { href } = resolveTarget(inner);
+      if (/^\//.test(href)) {
+        return `<img src="${href}" alt="" />`;
+      }
+      return m;
+    });
+
+    // Links: [[Page]] or [[Page|Text]] or with anchors
+    content = content.replace(/\[\[([^\]]+)\]\]/g, (m, inner) => {
+      const { href, text, exists, key } = resolveTarget(inner);
+      if (exists) {
+        return `<a href="${href}">${text}</a>`;
+      }
+      return `<span class="wikilink-missing" title="Missing note: ${key}">${text}</span>`;
+    });
+
+    // Convert .md links to proper URLs
+    content = content.replace(/<a\s+([^>]*?)href=\"([^\"]+?\.md)(#[^\"]*)?\"([^>]*)>(.*?)<\/a>/gi, (m, pre, href, frag = '', post, text) => {
+      try {
+        const decoded = decodeURIComponent(href);
+        const file = decoded.replace(/^.*\//, '');
+        const nameNoExt = file.replace(/\.md$/i, '');
+        const url = obsidianIndex.get(nameNoExt) || obsidianIndex.get(nameNoExt.toLowerCase()) || obsidianIndex.get(toSlugBase(nameNoExt));
+        if (url) {
+          const finalHref = url + (frag ? frag : '');
+          return `<a ${pre}href="${finalHref}"${post}>${text}</a>`;
+        }
+      } catch (_) {}
+      return m;
+    });
+
+    return content;
+  }
+  eleventyConfig.addFilter('wikilinks', resolveWikilinksInHtml);
+  eleventyConfig.addLiquidFilter('wikilinks', resolveWikilinksInHtml);
 
   // Replace Obsidian-style wikilinks [[Page|Text]] and [[Page#Anchor]] in final HTML
   eleventyConfig.addTransform('obsidian-wikilinks', function (content, outputPath) {
