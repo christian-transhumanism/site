@@ -11,6 +11,9 @@ const format = require('date-fns/format')
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
+  // Ignore Obsidian template scaffolds from being processed as pages
+  try { eleventyConfig.ignores.add('src/obsidian/templates/'); } catch (_) {}
+  try { eleventyConfig.addWatchIgnore('src/obsidian/templates/'); } catch (_) {}
   // Lightweight .env loader (no dependency on dotenv)
   try {
     const envPath = path.join(process.cwd(), '.env');
