@@ -1,12 +1,14 @@
 ---
-title: Obsidian Index
+title: Wiki Index
 layout: resourcePage
 permalink: /wiki/
 ---
 
-<h1>Obsidian Index</h1>
+<h1>Wiki Index</h1>
 
-<p>All pages sourced from <code>src/obsidian</code>.</p>
+&gt; <strong><a href="/wiki/start-here">Start here!</a></strong> &lt;
+
+<br><br>
 
 <ul>
 {% for page in collections.obsidian %}
@@ -15,6 +17,6 @@ permalink: /wiki/
   </li>
 {% endfor %}
 {% if collections.obsidian | length == 0 %}
-  <li>No Obsidian pages found.</li>
+  <li>No wiki pages found.</li>
 {% endif %}
 </ul>
