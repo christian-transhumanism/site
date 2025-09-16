@@ -8,7 +8,7 @@ permalink: mission/faith/why-faith-is-rational/
 
 When people think of faith, they often imagine it as blind belief or stubborn certainty. But biblically and philosophically, faith is something deeper: confidence to act amid uncertainty, oriented toward truth.  
 
-Critical Rationalism—the epistemology developed by Karl Popper and others—helps make sense of this. It rejects the futile search for absolute proofs and instead emphasizes **conjecture and critique**: proposing bold ideas and testing them rigorously. This framework aligns closely with the Christian vision of faith.
+[[Critical Rationalism]]—the epistemology developed by Karl Popper and others—helps make sense of this. It rejects the futile search for absolute proofs and instead emphasizes **conjecture and critique**: proposing bold ideas and testing them rigorously. This framework aligns closely with the Christian vision of faith.
 
 ---
 

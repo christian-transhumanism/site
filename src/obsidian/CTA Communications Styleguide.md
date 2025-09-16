@@ -11,7 +11,7 @@
 		- This mandate has historically been understood as a calling to science and technology
 	- [[Superhuman]] instead of __posthuman__ for the future state of humanity
 		- "Superhumanity" instead of "posthumanity"
-	- [[Image of God]] [[Image of God]] "Image and Likeness of God" is our future and ethical calling. Here's how to talk about it. ⬇️
+	- [[Image of God]] "Image and Likeness of God" is our future and ethical calling. Here's how to talk about it. ⬇️
 		- Preferred terminology
 			- "We are to be transformed into the likeness of Christ"
 			- "We are to be transformed into the likeness of Christ and of God"
@@ -42,8 +42,8 @@
 	- "Working towards" is often more appropriate and accurate than "building" or "creating", when talking about the future. However, in some cases it is better to use the stronger terms.
 	- We are not saved by works. We are saved by faith __in order__ that we may do the good works which God prepared for us to do (Ephesians 2:8-10). This distinction is important to maintain.
 - [[Definitions]]
-	- Transhumanism is the ethical use of science and technology to transform the human condition.
-	- Christian Transhumanism is the ethical use of science and technology to transform the human condition—where "ethical" is defined as discipleship of Christ.
+	- [[Transhumanism]] is the ethical use of science and technology to transform the human condition.
+	- [[Christian Transhumanism]] is the ethical use of science and technology to transform the human condition—where "ethical" is defined as discipleship of Christ.
 		- __alternate formulations:__
 			- Christian Transhumanism is the use of science and technology to participate in the work of God.
 			- Christian Transhumanism is the use of science and technology to participate in the work of Christ and of God.

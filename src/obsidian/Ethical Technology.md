@@ -1,4 +1,4 @@
-- part of the [[mission-technological|Technological Mission]]
+- part of the [[Technological Mission|Technological Mission]]
 - entailed by [[Ethical Techno-Optimism]]
 - Principles
 	- [[decentralization]]

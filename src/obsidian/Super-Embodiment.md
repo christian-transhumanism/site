@@ -3,9 +3,6 @@ title: Super-Embodiment
 layout: resourcePage
 permalink: mission/technological/super-embodiment/
 ---
-see [[Technological Mission#2. Super-Embodiment { super-embodiment}]]
-
-
 # Super-Embodiment
 
 We stand on the cusp of new ways to meet human needs for agency, connection, relationality and creativity.
