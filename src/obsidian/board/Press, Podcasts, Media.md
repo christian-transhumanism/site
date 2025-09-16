@@ -1,0 +1,33 @@
+_Christian Transhumanism has been covered around the world. Here are some selected interviews, articles, and videos:_
+
+- **[BBC World Radio | Immortality, the Why Factor](https://www.bbc.co.uk/programmes/w3cswrjy)**
+	- Section on Christian Transhumanism begins at 15:11, and lasts for approximately 2 minutes.
+- **[Christianity Today | Can Anti-Aging Treatments Offer Abundant Life?](https://www.christianitytoday.com/ct/2019/march/can-anti-aging-treatments-offer-abundant-life.html)**
+	- _2019-02-15T00:00:00.000Z_
+	- Science seeks to fix aging and death. But a Christian vision of the good life might actually embrace them.
+- **[Slate | Transhumanism is complicating the relationship between faith and science](https://slate.com/technology/2018/03/transhumanism-is-complicating-the-relationship-between-faith-and-science.html)**
+	- Thinking Outside the Old Religious Box. Transhumanism is complicating the sometimes antagonistic relationship between faith and science.
+- **[Inverse | When Cyborgs and Christians Compromise](https://www.inverse.com/article/20477-transhumanism-zoltan-istvan-religious-right-christian-science)**
+- **[Motherboard | The Turing Church Preaches the Religion of the Future](http://motherboard.vice.com/read/the-turing-church-preaches-the-religion-of-the-future)**
+- **[Religion News Service | Should we live to be 500? Christians and Secularists come together over transhumanism](https://religionnews.com/2018/09/05/should-we-live-to-be-500-christians-and-secularists-come-together-over-transhumanism/)**
+- **[Channel NewsAsia | Becoming Human - Coding Morality - S1E3](https://www.channelnewsasia.com/news/video-on-demand/becoming-human/coding-morality-11357948)**
+	- Should a machine know right from wrong? Enlai explores how law, ethics and spirituality shapes artificial intelligence.
+- **[Unbelievable? with Justin Brierley | Should Christians embrace Transhumanism? Micah Redding vs Nigel Cameron](https://www.premier.plus/unbelievable/podcasts/episodes/should-christians-embrace-transhumanism-micah-redding-vs-nigel-cameron)**
+	- _19 July 2019_
+- **[The Boston Globe | When Silicon Valley gets religion — and vice versa.](https://www.bostonglobe.com/ideas/2018/11/07/when-silicon-valley-gets-religion-and-vice-versa/L5xOYtgwd4VImwcj52YxtK/story.html)**
+	- _November 7, 2018, 4:16 p.m_
+- **[The Tennessean | Should we live to be 500? And other questions Christians are asking in Nashville this weekend](https://www.tennessean.com/story/news/religion/2018/08/24/christian-transhumanist-associations-conference-nashville-tn-lipscomb-university/1074151002/)**
+	- https://archive.is/7Rh71
+- **[NewsChannel 5 Issues of Faith | Christian Transhumanism](https://www.newschannel5.com/plus/issues-of-faith/issues-of-faith-christian-transhumanism)**
+- **[The Daily Beast | The New Religions Obsessed with AI](https://www.thedailybeast.com/the-new-religions-obsessed-with-ai)**
+- **[Baptist News | Exploring Incarnation - Can transhumanism enrich a Christian Theology of humanity?](https://baptistnews.com/article/exploring-incarnation-can-transhumanism-enrich-a-christian-theology-of-humanity/)**
+- [[AI Theology Podcast, Episode 3, Demystifying Christian Transhumanism]]
+	- In this episode, Elias Kruger interviews Micah Redding, on his personal experience with Christian Transhumanism. They talked about the origins and future of the movement, and Micah shared how Transhumanism informs and shapes his Christian practice.
+- [[Voice of Islam Radio UK, Will robots take our jobs, raise our kids, replace our friends?]]
+	- https://soundcloud.com/voislam/drive-time-podcast-27-06-2017#t=1:28:53
+	- interview with [[Micah Redding]] starts at 0:1:28
+- **[Tomorrow Bio | Interview: Jonathan Gunnell And The Christian Transhumanist Association](https://www.tomorrow.bio/post/jonathan-gunnell-christian-transhumanist-association)**
+	- _July 14, 2022_ What if the latest life-changing technologies were a gift from God?
+- [God in the machine: my strange journey into transhumanism](https://www.theguardian.com/technology/2017/apr/18/god-in-the-machine-my-strange-journey-into-transhumanism) by [[Meghan O'Gieblyn]]
+	- mentions [[Chris Benek]] of the [[Christian Transhumanist Association|CTA]]
+- https://aeon.co/essays/why-is-the-language-of-transhumanists-and-religion-so-similar

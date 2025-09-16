@@ -1,0 +1,69 @@
+
+- Social presence:
+    - Facebook Page: [https://www.facebook.com/christiantranshumanism](https://www.facebook.com/christiantranshumanism)
+    - Facebook Group: [https://www.facebook.com/groups/ChristianTranshumanistAssociation](https://www.facebook.com/groups/ChristianTranshumanistAssociation)
+    - Email discussion group: [https://groups.google.com/g/christian-transhumanism](https://groups.google.com/g/christian-transhumanism)
+    - Twitter: [https://twitter.com/xianityplus](https://twitter.com/xianityplus)
+    - Bluesky: 
+    - Reddit: [https://www.reddit.com/r/christianityplus](https://www.reddit.com/r/christianityplus)
+    - Discord: [https://discord.gg/cC8H4CJBaB](https://discord.gg/cC8H4CJBaB)
+    - Telegram: [https://t.me/ChristianTranshumanism](https://t.me/ChristianTranshumanism)
+    - Instagram: [https://www.instagram.com/christiantranshumanism/](https://www.instagram.com/christiantranshumanism/)
+    - Zoom:
+        - [https://zoom.us/j/96867266649?pwd=bU5ma2VUeURzUDlac0JHRk42NDdxZz09](https://zoom.us/j/96867266649?pwd=bU5ma2VUeURzUDlac0JHRk42NDdxZz09)
+        - [https://www.christiantranshumanism.org/zoom](https://www.christiantranshumanism.org/zoom)
+    - Calendar:
+        - [https://calendar.google.com/calendar/u/4?cid=YWRtaW5AY2hyaXN0aWFudHJhbnNodW1hbmlzbS5vcmc](https://calendar.google.com/calendar/u/4?cid=YWRtaW5AY2hyaXN0aWFudHJhbnNodW1hbmlzbS5vcmc)
+        - [https://calendar.google.com/calendar/b/4?cid=YWRtaW5AY2hyaXN0aWFudHJhbnNodW1hbmlzbS5vcmc](https://calendar.google.com/calendar/b/4?cid=YWRtaW5AY2hyaXN0aWFudHJhbnNodW1hbmlzbS5vcmc)
+- Social Feeds
+    - Zapier: [admin@christiantranshumanism.org](mailto:admin@christiantranshumanism.org)
+    - Buffer: [admin@christiantranshumanism.org](mailto:admin@christiantranshumanism.org)
+- Web:
+    - Cloudinary:
+        - Images for main site
+    - Heroku:
+        - Web hosting for main site
+        - Custom Rails app with
+            - Membership signup (Stripe)
+            - Membership profiles
+            - Membership email integration (Mailchimp)
+            - Blog Aggregator & RSS
+            - Official blog
+            - Static pages
+            - Voting app
+    - Namecheap:
+        - Domain names
+            - [http://christianity.plus](http://christianity.plus/)
+            - [christianityandtranshumanism.com](http://christianityandtranshumanism.com/)
+            - [christianityplus.org](http://christianityplus.org/)
+            - [christiantranshumanism.com](http://christiantranshumanism.com/)
+            - [christian-transhumanism.com](http://christian-transhumanism.com/)
+            - [christiantranshumanism.org](http://christiantranshumanism.org/)
+            - [christian-transhumanism.org](http://christian-transhumanism.org/)
+            - [christiantranshumanist.com](http://christiantranshumanist.com/)
+            - [christian-transhumanist.com](http://christian-transhumanist.com/)
+            - [christiantranshumanist.org](http://christiantranshumanist.org/)
+            - [christian-transhumanist.org](http://christian-transhumanist.org/)
+            - [http://cta.one](http://cta.one/)
+            - [thechristiantranshumanist.com](http://thechristiantranshumanist.com/)
+    - Netlify:
+        - [http://cta-garden.netlify.app](http://cta-garden.netlify.app/)
+        - [wiki.christiantranshumanism.org](http://wiki.christiantranshumanism.org/)
+    - Roam
+        - [https://roamresearch.com/#/app/christiantranshumanism](https://roamresearch.com/#/app/christiantranshumanism)
+- Membership
+    - Stripe
+    - MailChimp
+- Email Management & Google Apps
+    - [http://admin.google.com](http://admin.google.com/)
+        - Google for Non-profits
+    - [https://ads.google.com/home/#!/](https://ads.google.com/home/#!/)
+        - Google Adwords Account
+- Internal Documents
+    - [drive.google.com](http://drive.google.com/)
+    - Github: [https://github.com/christian-transhumanism](https://github.com/christian-transhumanism)
+    - Hackmd: [admin@christiantranshumanism.org](mailto:admin@christiantranshumanism.org)
+- Other
+    - Square
+    - Typeform
+        - Used for [[Member Survey 2020]]
