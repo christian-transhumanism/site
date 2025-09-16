@@ -14,7 +14,26 @@ layout: default
         {% include 'shared/mission-article-hero.njk' %}
       {% endif %}
 
+      {# If no H1 is present in content, render a header from the page title #}
+      {% if not (content and ('<h1' in content)) %}
+        {% if title %}<h1>{{ title }}</h1>{% endif %}
+      {% endif %}
+
       {{ content | safe }}
+
+      {# Backlinks: show within main column for Obsidian pages only #}
+      {% set backlinks = (page.url | obsidianBacklinks) %}
+      {% if backlinks and backlinks.length %}
+        <section class="backlinks">
+          <hr>
+          <h3>Backlinks</h3>
+          <ul>
+            {% for item in backlinks %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
 
       {# Related articles within the same Mission section #}
       {% if page.url and ('/mission/' in page.url) %}

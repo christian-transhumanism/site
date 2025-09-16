@@ -1,0 +1,20 @@
+---
+title: Obsidian Index
+layout: resourcePage
+permalink: /wiki/
+---
+
+<h1>Obsidian Index</h1>
+
+<p>All pages sourced from <code>src/obsidian</code>.</p>
+
+<ul>
+{% for page in collections.obsidian %}
+  <li>
+    <a href="{{ page.url }}">{{ page.data.title or page.fileSlug }}</a>
+  </li>
+{% endfor %}
+{% if collections.obsidian | length == 0 %}
+  <li>No Obsidian pages found.</li>
+{% endif %}
+</ul>

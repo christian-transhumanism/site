@@ -99,7 +99,7 @@ body_classes:  ""
               <li><a href="/books">Books</a></li>
               <li><a href="/youtube">Youtube</a></li>
               <li><a href="/podcast">Podcast</a></li>
-              <li><a href="https://wiki.christiantranshumanism.org">Wiki (new!)</a></li>
+              <li><a href="/wiki/start-here/">Wiki (new!)</a></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -166,6 +166,20 @@ body_classes:  ""
 
     <main role="main">
       {{ content | safe }}
+
+      {# Backlinks: show if any exist for this page #}
+      {% set backlinks = (page.url | obsidianBacklinks) %}
+      {% if backlinks and backlinks.length %}
+        <section class="backlinks container">
+          <hr>
+          <h3>Backlinks</h3>
+          <ul>
+            {% for item in backlinks %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
     </main>
 
     {% include 'footer.njk' %}

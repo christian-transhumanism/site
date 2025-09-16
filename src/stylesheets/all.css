@@ -2937,3 +2937,10 @@ ul.sidebar-nav li li.active > a::after {
 }
 
 /* Tags, description, links remain same */
+
+/* Obsidian wikilinks that failed to resolve */
+.wikilink-missing {
+  color: #b94a48; /* subtle danger/red tone */
+  text-decoration: underline dotted;
+  cursor: not-allowed;
+}
