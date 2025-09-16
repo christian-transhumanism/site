@@ -1,22 +1,13 @@
 ---
-title: Wiki Index
+title: Wiki
 layout: resourcePage
 permalink: /wiki/
 ---
 
-<h1>Wiki Index</h1>
+<h1>Wiki</h1>
 
-&gt; <strong><a href="/wiki/start-here">Start here!</a></strong> &lt;
+<p>The CTA Wiki is a living knowledge base exploring Christian Transhumanism — ideas, people, history, theology, and technology. It’s built from concise notes that interlink for quick discovery.</p>
 
-<br><br>
+<p><strong><a href="/wiki/start-here/">Start here</a></strong> to get oriented, or <a href="/wiki/all/">browse all articles</a>.</p>
 
-<ul>
-{% for page in collections.obsidian %}
-  <li>
-    <a href="{{ page.url }}">{{ page.data.title or page.fileSlug }}</a>
-  </li>
-{% endfor %}
-{% if collections.obsidian | length == 0 %}
-  <li>No wiki pages found.</li>
-{% endif %}
-</ul>
+<p>Have suggestions or want to contribute? Reach out via the <a href="/discord" target="_blank">Discord</a> or <a href="/facebook" target="_blank">Facebook group</a>.</p>

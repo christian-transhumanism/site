@@ -1,0 +1,19 @@
+---
+title: Wiki Index
+layout: resourcePage
+permalink: /wiki/all/
+---
+
+<h1>All Wiki Articles</h1>
+
+<ul>
+{% for page in collections.obsidian %}
+  <li>
+    <a href="{{ page.url }}">{{ page.data.title or page.fileSlug }}</a>
+  </li>
+{% endfor %}
+{% if collections.obsidian | length == 0 %}
+  <li>No wiki pages found.</li>
+{% endif %}
+</ul>
+
