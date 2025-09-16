@@ -30,5 +30,8 @@
     <li role="presentation" class="{% if page.url == "/quotes/" %} active {% endif %}">
       <a href="/quotes/">Quotes</a>
     </li>
+    <li role="presentation" class="{% if page.url and (page.url | stringContains('/wiki/')) %} active {% endif %}">
+      <a href="/wiki/">Wiki</a>
+    </li>
   </ul>
 </div>
