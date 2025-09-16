@@ -1,6 +1,7 @@
 ---
 title: CTA Launch Announcement
 layout: default
+permalink: /announcement/
 ---
 
 <div class="container">

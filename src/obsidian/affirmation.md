@@ -2,6 +2,7 @@
 title: Christian Transhumanist Affirmation
 description: As members of the Christian Transhumanist Association, we affirm.
 layout: resourcePage
+permalink: /affirmation/
 ---
 
 <h1>The Christian Transhumanist Affirmation</h1>

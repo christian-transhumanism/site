@@ -3,6 +3,7 @@ title: Academic Advisory Council
 description: The Prestigious Christian Transhumanist Academic Advisory Council
 image: https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,h_200,w_200/c_fill,h_200,l_James_Hughes.jpg,w_200,x_200/c_fill,h_200,l_jeanine_thweatt.jpg,w_200,x_300/c_fill,h_200,l_Frank-J-Tipler_k9nj4y.jpg,w_200,x_-200,y_200/c_fill,h_200,l_CalvinMercer.jpg,w_200,x_0,y_100/c_fill,h_200,l_JayGary.linkedin.2014_xbnxtn.jpg,w_200,x_200,y_100/Ron-Cole-Turner2_krwttx.jpg
 layout: associationPage
+permalink: /academics/
 ---
 
 <div class="row">

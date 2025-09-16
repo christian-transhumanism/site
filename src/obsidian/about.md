@@ -3,6 +3,7 @@ title: About Us
 description: Participating with God in the redemption, reconciliation, and renewal of the world.
 layout: resourcePage
 disqus_id: 20150109015429
+permalink: /about/
 ---
 
 # Who We Are

@@ -2,6 +2,7 @@
 title: Volunteer Opportunities in Christianity and Transhumanism
 description: Significant efforts take significant effort.
 layout: communityPage
+permalink: /volunteer/
 ---
 <h1>Volunteer Opportunities</h1>
 

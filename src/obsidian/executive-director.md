@@ -3,6 +3,7 @@ title: Executive Director, Micah Redding
 description: Science, Faith, and the Future
 image: https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_scale,w_400/v1492201376/micah_redding_erika_chambers_bw_medium_cwvcih.jpg
 layout: associationPage
+permalink: /executive-director/
 ---
 
 <h1>Executive Director</h1>
