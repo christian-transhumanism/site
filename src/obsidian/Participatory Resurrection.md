@@ -1,0 +1,6 @@
+- an implication of [[Participatory Theology]]
+- an implication of [[Humans to Rule Over All Things]]
+- suggests [[Scientific Resurrection]]
+- discussed by [[Micah Redding]]
+    - [[The Resurrection is Technological]]
+    - [essay The Resurrection is Participatory](http://micahredding.com/blog/the-resurrection-is-participatory)

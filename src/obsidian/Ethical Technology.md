@@ -1,0 +1,13 @@
+- part of the [[Technological Mission]]
+- entailed by [[Ethical Techno-Optimism]]
+- Principles
+	- [[decentralization]]
+	- [[agency]] and [[empowerment]]
+	- [[Super-Abundance]]
+	- [[Super-Longevity]]
+	- [[Super-Embodiment]]
+	- [[Super-Intelligence]]
+	- [[Super-Ecology]] (ecology in the broadest sense)
+	- [[Democracy of the Dead]]
+	- [[Democracy of the Future]]
+	- 

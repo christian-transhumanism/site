@@ -1,0 +1,3 @@
+The Gospel is Good News and Blessing for all
+
+> The realization that this prophetic future is not just for the benefit of one special subgroup of human beings, Jews or Christians, for example, comes to full blossom in the New Testament period and writings. In the last book of the Bible, “The Revelation,” the phrase _every nation and tribe and tongue and people_ becomes a characteristic bit of language that recurs in application to the outcome of God’s redemptive purposes on earth. To be sure, some groups are caught up for a unique role in those purposes, but it is never for their benefit alone or because they have some special claim or corner on God.

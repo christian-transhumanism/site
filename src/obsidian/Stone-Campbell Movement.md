@@ -1,0 +1,11 @@
+- an 1800s religious reform movement, focusing on theological minimalism, biblical interpretation, and unity among Christians
+- led to the [[Churches of Christ]], [[Disciples of Christ]], independent Christian Churches, and other related fellowships
+- influenced by the empiricism and eschatology of [[Francis Bacon]]
+    - [[Bacon College]]
+    - "The Restoration Movement" may have been named for [[The Great Instauration]]
+	- [[Alexander Campbell]] extensively inspired by empiricism of [[Francis Bacon]]
+	- [[Alexander Campbell]] embraced [[Postmillennialism]] (also associated with [[Francis Bacon]]) and named his most significant publication [[Millennial Harbinger]]
+- [[Christian Transhumanist Association]] connections
+	- [[Micah Redding]] grew up in the [[Churches of Christ]], and was inspired by the independent truth-seeking of the [[Stone-Campbell Movement]]
+	- [[CTA Conferences]] were held at [[Lipscomb University]]
+	- 

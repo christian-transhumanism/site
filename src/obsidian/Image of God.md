@@ -1,0 +1,2 @@
+Entails both an eschatological [[likeness to God]], and a calling ([[Creation Mandate]]).
+Historically understood as connected to our Creative Rational nature, and to our Science and Technology. see [[Gregory of Nyssa]]

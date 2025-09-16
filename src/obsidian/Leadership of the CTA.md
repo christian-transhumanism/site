@@ -1,0 +1,14 @@
+- [[Christian Transhumanist Association]]
+- [[CTA Board]]
+- Board Members:
+    - [[Micah Redding]]
+    - [[Lorenzo Barberis Canonico]]
+    - Omar Reyes
+    - Mark Russell
+    - [[Jonathan Gunnell]]
+    - Lincoln Cannon
+    - [[Caleb Strom]]
+- Officers:
+    - CEO: [[Micah Redding]]
+    - CFO: Emily Redding
+    - COO: [[Lorenzo Barberis Canonico]]

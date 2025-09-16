@@ -1,0 +1,19 @@
+- Humanity is called to participate in the work of God
+- Participation is, and has always been, the plan of God
+- Participation is what humanity was created for
+	- see [[Creation Mandate]]
+	- see [[Humans to Rule Over All Things]]
+- Participation is the meaning of the [[Body of Christ]]
+- Participation is the meaning of the [[Indwelling of the Spirit]]
+- [[Participatory Eschatology]]
+	- [[Romans 8]]
+	- [[Participatory Resurrection]]
+
+- Scripture
+	- [[Noah's Ark]]
+		- Salvation is the opportunity to participate in the work of God
+	- 1 Corinthians 6:2-3
+	- [[1 Corinthians 15]]
+	- [[Revelation 3.21]]
+	- [[Hebrews 2]]
+	- [[Psalm 8]]

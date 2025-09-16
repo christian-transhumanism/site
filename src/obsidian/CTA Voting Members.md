@@ -1,0 +1,3 @@
+- Voting members are eligible to participate in our annual board election
+- Voting members are eligible to serve on the [[CTA Board]]
+- 

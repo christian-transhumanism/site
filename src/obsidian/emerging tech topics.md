@@ -1,0 +1,9 @@
+- [[Artificial Intelligence]]
+- [[Carbon filtration]]
+- [[Space Exploration]]
+- [[Gene editing]]
+- [[Brain-Computer Interfaces]]
+- [[Nanotechnology]]
+- [[cryonics]]
+- [[Cryptocurrency]]
+- 

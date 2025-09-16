@@ -1,0 +1,5 @@
+- Humans are General Intelligence, or [[AGI]]
+- Persons contain an "algorithm of creativity" which create explanations
+- We do not yet understand how this is done
+- This is done dramatically faster than normal evolutionary processes, or trial-and-error
+- advocated by [[David Deutsch]]

@@ -1,0 +1,12 @@
+---
+aliases:
+  - NT Wright
+  - N.T. Wright
+---
+- strongly influential in current Christian neo-orthodoxy
+- a strong influence on many contemporary Christian Transhumanists
+- Relevant theologies:
+	- [[Physical Eschatology]]
+	- [[Preterism]]
+- Has had a couple of "debates" on transhumanism with [[Peter Thiel]]
+- 

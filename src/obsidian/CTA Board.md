@@ -1,0 +1,3 @@
+- Board members serve staggered 3-year terms
+- Board members are elected by the [[CTA Voting Members]] of the association
+- Board members represent the membership to the board, and the CTA to the outside world

@@ -1,0 +1,8 @@
+- Theological Influences:
+    - [[Pierre Teilhard de Chardin]]
+    - [[Paul Tillich]]
+    - [[Wolfhart Pannenberg]]
+- Scientific Influences:
+    - association with [[David Deutsch]]
+- Tipler joked that the theologian, [[Wolfhart Pannenberg]], accepted the essential Christian nature of his [[Omega Point Theory]] but questioned the science, while the scientist [[David Deutsch]] accepted the science but questioned the theology.
+- 

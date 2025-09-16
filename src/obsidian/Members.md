@@ -1,0 +1,10 @@
+- The CTA has a few thousand members. These include:
+- [[Micah Redding]]
+- [[Jonathan Gunnell]]
+- [[Lorenzo Barberis Canonico]]
+- [[Lincoln Cannon]]
+- [[Caleb Strom]]
+- Mark Russell
+- Ryan Hogan
+- [[Calvin Mercer]]
+- 

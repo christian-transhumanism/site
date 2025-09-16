@@ -1,0 +1,1 @@
+"To the one who is victorious, I will give the right to sit with me on my throne, just as I was victorious and sat down with my Father on his throne."

@@ -1,0 +1,5 @@
+- AI Theology Podcast | Episode 3, Demystifying Christian Transhumanism
+- Elias Kruger
+- In this episode, Elias Kruger interviews Micah Redding, on his personal experience with Christian Transhumanism. They talked about the origins and future of the movement, and Micah shared how Transhumanism informs and shapes his Christian practice.
+- https://podcasts.apple.com/us/podcast/ai-theology/id1620568227?i=1000570860837
+- https://creators.spotify.com/pod/show/isabelle-braconnot/episodes/Demystifying-Christian-Transhumanism-e1lihng

@@ -1,0 +1,9 @@
+- Theories of intelligence
+	- [[Intelligence is a collection of algorithms]]
+	- [[David Deutsch]] and [[Humans as Universal Explainers]]
+- Forms of intelligence
+	- [[ANI]] - Artificial Narrow Intelligence
+	- [[AGI]] - Artificial General Intelligence
+	- [[ASI]] - Artificial Super Intelligence
+- 
+- 

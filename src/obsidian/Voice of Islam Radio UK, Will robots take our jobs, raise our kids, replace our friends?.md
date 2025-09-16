@@ -1,0 +1,3 @@
+- https://soundcloud.com/voislam/drive-time-podcast-27-06-2017#t=1:28:53
+- https://web.archive.org/web/20240000000000*/https://soundcloud.com/voislam/drive-time-podcast-27-06-2017
+- interview with [[Micah Redding]] starts at 0:1:28

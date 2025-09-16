@@ -1,0 +1,3 @@
+- emerged from the [[Stone-Campbell Movement]]
+- associated with [[Freed-Hardeman University]], [[Harding University]], [[Lipscomb University]], [[Abilene Christian University]], [[Pepperdine University]]
+- 

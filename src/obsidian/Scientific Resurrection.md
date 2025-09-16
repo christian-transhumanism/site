@@ -1,0 +1,9 @@
+- the scientific study of the possibility of resurrection of the dead
+- studied throughout Christian history
+	- [[Gregory of Nyssa; On the Resurrection]]
+	- [[202307012027 Robert Boyle; Some Physico-Theological Considerations about the Possibility of the Resurrection (1675)]]
+- considered by modern Christian thinkers
+- recently considered by secular thinkers
+	- possible to consider [[cryonics]] to be a branch of this
+	- [[quantum archaeology]]
+- Essay: [[The Resurrection is Technological]]

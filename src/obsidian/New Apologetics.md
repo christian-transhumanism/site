@@ -1,0 +1,21 @@
+New approaches to arguing for Christianity that we find emerging in the modern world:
+
+- Arguments that lean towards pragmatic considerations
+	- [[Christianity is the origin]]
+	- [[Christianity is necessary]]
+	- [[Christianity is a load-bearing wall]]
+	- [[Christianity is the ultimate memetic attractor]]
+- Arguments that use a different epistemology
+	- We can simply conjecture God/Christ/Christianity
+	- We can believe if we desire to do so
+	- You should want Christianity to be true
+		- eg: because it's the best story, because it's ultimately the only hopeful story, or because it's the only way through the [[Great Filter]], or the only good outcome of [[Simulation Argument]]
+- Arguments that lean on core mysteries:
+	- Core mysteries:
+		- Existence of the universe
+		- Fine-tuning of the universe
+		- Possibility of computation (not a given) — [[Computation as Fine-Tuning]]
+		- Existence of rational minds within the universe
+		- Hard problem of consciousness
+	- Perhaps the best explanation of these mysteries involves recognizing a central significance to personhood
+	- A universe in which personhood is significant is a universe that looks theistic, and arguably, Christian

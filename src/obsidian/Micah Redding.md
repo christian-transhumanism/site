@@ -1,0 +1,13 @@
+- [[executive-director]] of the [[Christian Transhumanist Association]]
+- BS in Computer Science from [[Freed-Hardeman University]]
+- MSc in Philosophy, Science and Religion from the [[University of Edinburgh]]
+- Links
+    - http://micahredding.com
+    - https://bsky.app/profile/micahredding.bsky.social
+    - https://twitter.com/micahtredding
+- Publications:
+	- [[(ARCHIVE) Vice Motherboard — The Jesuit Priest Who Believed in God and the Singularity]]
+	- [[(ARCHIVE) Vice Motherboard — Why I became a Christian Transhumanist]]
+	- [[(ARCHIVE) Christ & Pop Culture — Can Transhumanism lead us back to Orthodoxy?]]
+	- [[(ARCHIVE) H+ Magazine — Relational Transhumanism, Interdependence is the Rule, Not the Exception]]
+- 

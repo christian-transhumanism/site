@@ -1,0 +1,1 @@
+Along with [[Christian Transhumanism]], and other forms of [[Religious Transhumanism]], is a subset of [[Transhumanism]] as a whole. However, secular transhumanism is often treated as the entirety of the transhumanist movement in popular writing and conversation.

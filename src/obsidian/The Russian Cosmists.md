@@ -1,0 +1,4 @@
+- aka [[Cosmism]]
+- derived from [[Nikolai Fedorov (1829-1903)]]
+- sources
+	- [[201904050512 Young2012; The Russian Cosmists—The Esoteric Futurism of Nikolai Fedorov and His Followers]]

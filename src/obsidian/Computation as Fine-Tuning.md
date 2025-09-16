@@ -1,0 +1,7 @@
+- [[David Deutsch]] argues that the possibility of computation is not a given. It is not a feature of every universe, but only of special ones.
+	- Computation is the ability to do every transformation possible within the universe, within a smaller subset of the universe
+	- Put differently, computation is the ability to run simulations of anything within the universe, or the universe itself
+- This self-simulating capability is "rare" among possible universes
+- This self-simulating capability is important. Human minds depend upon it.
+- This suggests it as a candidate for a [[Fine-Tuning Argument]]
+- 

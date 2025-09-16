@@ -1,0 +1,4 @@
+- Resurrecting Nikolai Fedorov http://www.thespacereview.com/article/873/1 
+- Zoltan http://www.newsweek.com/quantum-archaeology-quest-3d-bioprint-every-dead-person-back-life-837967
+- Eterni.me https://www.newyorker.com/tech/elements/how-to-become-virtually-immortal
+- [An alternative to quantum archaeology](https://www.youtube.com/watch?v=vycdNdUlyZM)

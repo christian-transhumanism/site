@@ -1,0 +1,25 @@
+Big influences and historical figures
+- Christian Transhumanist Icons
+	- [[Francis Bacon]]
+	- [[Nikolai Fedorov (1829-1903)]]
+	- [[Pierre Teilhard de Chardin|Teilhard de Chardin]]
+- Christian Transhumanist modern icons
+	- [[Frank Tipler]]
+- Patristic sources
+	- [[Saint Irenaeus]]
+	- [[Gregory of Nyssa]]
+	- [[Saint Macrina the Younger]]
+	- [[Justin Martyr]]
+- Popular Christian writers that resonate with Christian Transhumanists
+	- [[CS Lewis]]
+	- [[Dallas Willard]]
+	- [[NT Wright]]
+	- [[Wolfhart Pannenberg]]
+	- [[GK Chesterton]]
+	- [[David Bentley Hart]]
+- Secular voices that resonate with Christian Transhumanists
+	- [[Ray Kurzweil]]
+	- [[David Deutsch]]
+	- [[Kevin Kelly]]
+	- [[Aubrey de Grey]]
+	- [[Steven Kotler]]

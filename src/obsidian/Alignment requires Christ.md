@@ -1,0 +1,4 @@
+- Alignment is not static, but dynamic 
+- Alignment entails Reconciliation
+- Reconciliation is Girardian
+- 
