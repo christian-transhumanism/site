@@ -1,0 +1,5 @@
+- [[Transhumanism]] is the ethical use of science and technology to transform the human condition.
+- [[Christian Transhumanism]] is the ethical use of science and technology to transform the human condition—where "ethical" is defined as discipleship of Christ.
+	- __alternate formulations:__
+		- Christian Transhumanism is the use of science and technology to participate in the work of God.
+		- Christian Transhumanism is the use of science and technology to participate in the work of Christ and of God.
