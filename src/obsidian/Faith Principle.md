@@ -2,6 +2,10 @@
 title: The Faith Principle
 layout: resourcePage
 permalink: mission/faith/the-faith-principle/
+aliases:
+  - the-faith-principle
+  - Faith Principle
+  - The Faith Principle
 ---
 
 # The Faith Principle

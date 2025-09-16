@@ -3,6 +3,9 @@ title: Mission
 description: Participating with God in the redemption, reconciliation, and renewal of the world.
 layout: resourcePage
 permalink: mission/
+aliases:
+  - CTA Mission
+  - mission
 ---
 
 # Our Three-Fold Mission

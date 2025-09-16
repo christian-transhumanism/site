@@ -3,6 +3,9 @@ title: Theological Mission
 description: Participating with God in the redemption, reconciliation, and renewal of the world.
 layout: resourcePage
 permalink: mission/theological/
+aliases:
+  - Theological Mission
+  - CTA Theological Mission
 ---
 
 # Deepening Theology

@@ -2,13 +2,25 @@
 aliases:
   - Renewal Eschatology
   - Renewal of All Things
+title: Renewal of All Things
+layout: resourcePage
+permalink: mission/theological/renewal-of-all-things/
 ---
+# The Renewal of All Things
 
-> Jesus said to them, “Truly I tell you, at the renewal of all things… (Matthew 19:28)
+> “For the creation waits in eager expectation for the children of God to be revealed… in hope that the creation itself will be liberated from its bondage to decay and brought into the freedom and glory of the children of God.” (Romans 8:19–21)
 
-> Thy kingdom come…on earth as it is in heaven (Matthew 6:9-13)
+> “Truly, I tell you, at the renewal of all things…” — Jesus (Matthew 19:28–30)
 
-> For the creation waits in eager expectation for the children of God to be revealed...in hope that the creation itself will be liberated from its bondage to decay and brought into the freedom and glory of the children of God. (Romans 8:19-21)
+> “…until the time comes for the restoration of all things” — Peter (Acts 3:21)
+
+> “Your kingdom come, your will be done, on earth as it is in heaven.” — Jesus (Matthew 6:10)
+
+Christians are called to work for the improvement of this present world. Escapist theologies bear bad fruit, such as a willingness to sacrifice the environment, awaiting a “helicopter rescue” from God, and failing to be salt and light for the preservation and enhancement of society.
+
+Scripture calls us to hope for the world to continue to improve, and to have faith that Christ’s principles will usher in unparalleled benefits for Earth.
+
+---
 
 > “[in] Orthodoxy…salvation is cosmic in scope and includes all creation…the promised Kingdom of God will be this world restored and transfigured…a deified humanity will serve as a cosmic priesthood, receiving glory from Christ and mediating it to the natural world.” ~ [[202308252046 DBH; orthodoxy, kingdom of god|DBH]]
 
@@ -26,4 +38,6 @@ Similar language is used about the transformation of the material world. It is s
 
 > The gospel of the kingdom of God is not news from another world about another world. It is a gospel born from the history of God in this world for the sake of this world's future in the kingdom of God.  
 > — [Lutheran Theologian Carl E. Braaten (The Future of God: the Revolutionary Dynamics of Hope — 1969)](//smile.amazon.com/Future-God-Revolutionary-Dynamics-Hope/dp/B001AGA3LE/ref=as_li_ss_tl?ie=UTF8&qid=1520647833&sr=8-1&keywords=The+Future+of+God+the+revolutionary+dynamics+of+hope&linkCode=ll1&tag=micahredding-20&linkId=80b3919adcc42f51a5ea3c8c935a0928)
+
+
 

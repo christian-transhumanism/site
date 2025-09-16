@@ -62,5 +62,9 @@ Christ is both the root and fruit of this vision—the vine in whom branches bea
 
 **The upshot:** The Christian future is not static heaven but living communion—an ecosystem of love, justice, creativity, and flourishing, expanding through creation. Our task now is to practice that future: to build communities, technologies, and cultures that preview the world to come.
 
+see [[Renewal of All Things|Renewal of All Things]]
+back to [[mission-faith|Faith-Renewing Mission]]
+
+
 ---
 

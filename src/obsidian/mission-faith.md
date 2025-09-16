@@ -3,6 +3,9 @@ title: Faith-Renewing Mission
 description: Participating with God in the redemption, reconciliation, and renewal of the world.
 layout: resourcePage
 permalink: mission/faith/
+aliases:
+  - Faith-Renewing Mission
+  - Renewing Faith
 ---
 
 # Renewing Faith
