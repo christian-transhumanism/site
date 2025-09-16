@@ -169,7 +169,7 @@ body_classes:  ""
 
       {# Backlinks: show if any exist for this page #}
       {% set backlinks = (page.url | obsidianBacklinks) %}
-      {% if backlinks and backlinks.length %}
+      {% if (page.url | stringContains('/wiki/')) and backlinks and backlinks.length %}
         <section class="backlinks container">
           <hr>
           <h3>Backlinks</h3>

@@ -22,7 +22,7 @@ body_classes:  ""
 
       {# Backlinks: only render here for pages whose chosen layout is 'default' #}
       {% set backlinks = (page.url | obsidianBacklinks) %}
-      {% if layout == 'default' and backlinks and backlinks.length %}
+      {% if layout == 'default' and (page.url | stringContains('/wiki/')) and backlinks and backlinks.length %}
         <section class="backlinks container">
           <hr>
           <h3>Backlinks</h3>

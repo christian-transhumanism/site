@@ -23,7 +23,7 @@ layout: default
 
       {# Backlinks: show within main column for Obsidian pages only #}
       {% set backlinks = (page.url | obsidianBacklinks) %}
-      {% if backlinks and backlinks.length %}
+      {% if (page.url | stringContains('/wiki/')) and backlinks and backlinks.length %}
         <section class="backlinks">
           <hr>
           <h3>Backlinks</h3>
