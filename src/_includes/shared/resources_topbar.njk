@@ -1,11 +1,5 @@
 <div class="container">
   <ul class="nav nav-pills">
-    <li role="presentation" class="{% if page.url == "/about/" %} active {% endif %}">
-      <a href="/about/">About</a>
-    </li>
-    <li role="presentation" class="{% if page.url == "/affirmation/" %} active {% endif %}">
-      <a href="/affirmation/">Affirmation</a>
-    </li>
     {% if page.url and ('/mission/' in page.url) %}
       <li role="presentation" class="mission-tab mission-tab--first {% if page.url == "/mission/" %} active {% endif %}">
         <a href="/mission/">Mission</a>
@@ -24,6 +18,12 @@
         <a href="/mission/">Mission</a>
       </li>
     {% endif %}
+    <li role="presentation" class="{% if page.url == "/about/" %} active {% endif %}">
+      <a href="/about/">About</a>
+    </li>
+    <li role="presentation" class="{% if page.url == "/affirmation/" %} active {% endif %}">
+      <a href="/affirmation/">Affirmation</a>
+    </li>
     <li role="presentation" class="{% if page.url == "/faq/" %} active {% endif %}">
       <a href="/faq/">FAQ</a>
     </li>
