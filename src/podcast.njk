@@ -20,6 +20,7 @@ layout: default
                     <a class="btn btn-primary" href="https://itunes.apple.com/us/podcast/christian-transhumanist-podcast/id1053762042">iTunes</a>
                     <a class="btn btn-primary" href="http://brickcaster.com/christiantranshumanist/subscribe">email</a>
                     <a class="btn btn-primary" href="http://brickcaster.com/christiantranshumanist.rss">RSS</a>
+                    <a class="btn btn-primary" href="https://www.youtube.com/watch?v=sj0xITgHvx8&list=PL-S97LROgRNy8GQORBQ6opBCITdM4dP2O&index=15">YouTube</a>
                 </div>
             </h1>
 
@@ -27,14 +28,14 @@ layout: default
             {% for post in podcast %}
                 <div class="row">
                     <div class="col-md-4">
-                        <a class="media-thumb" href="/podcast/{{ post.guid | episodeNumberFromRSSGUID }}/">
+                        <a class="media-thumb" href="/podcast/{{ (post.guid | episodeNumberFromRSSGUID) | replace('/', '') }}/">
                           <img src="{{ post.itunes.image }}" alt="{{ post.title }}" loading="lazy">
                         </a>
                     </div>
 
                     <div class="col-md-8">
                         <h2>
-                            <a href="/podcast/{{ post.guid | episodeNumberFromRSSGUID }}/">{{ post.title }}</a>
+                            <a href="/podcast/{{ (post.guid | episodeNumberFromRSSGUID) | replace('/', '') }}/">{{ post.title }}</a>
                         </h2>
 
                         <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.pubDate }}</p>

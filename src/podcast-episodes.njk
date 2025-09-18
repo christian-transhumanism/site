@@ -8,94 +8,142 @@ layout: default
 ---
 {% include 'shared/content_topbar.njk' %}
 
-<!-- Page Content -->
+{% set episodeSlug = (post.guid | episodeNumberFromRSSGUID) | replace('/', '') %}
+{% set episodeUrl = '/podcast/' + episodeSlug + '/' %}
+{% if post.isoDateObject %}
+  {% set publishedDate = post.isoDateObject | date('MMMM d, yyyy') %}
+{% else %}
+  {% set publishedDate = post.pubDate %}
+{% endif %}
+{% if post.recordedAtObject %}
+  {% set recordedDate = post.recordedAtObject | date('MMMM d, yyyy') %}
+{% else %}
+  {% set recordedDate = null %}
+{% endif %}
+{% if post.fileSizeBytes %}
+  {% set sizeMB = (post.fileSizeBytes / (1024 * 1024)) %}
+{% else %}
+  {% set sizeMB = null %}
+{% endif %}
+{% set podcastCover = post.showImage or post.itunes.image %}
+{% set podcastTitle = post.showTitle or 'The Christian Transhumanist Podcast' %}
+{% set podcastYoutubePlaylist = 'https://www.youtube.com/watch?v=sj0xITgHvx8&list=PL-S97LROgRNy8GQORBQ6opBCITdM4dP2O&index=15' %}
+
 <div class="container">
-    <div class="row">
-
-        <!-- Blog Post Content Column -->
-        <div class="col-lg-8">
-
-            <!-- Blog Post -->
-
-            <!-- Title -->
-            <h3 class="page-header">
-                <a href="/podcast/">The Christian Transhumanist Podcast</a> &nbsp; 
-                <span style="padding: 1rem 0;">
-                    <a class="btn btn-primary" href="https://itunes.apple.com/us/podcast/christian-transhumanist-podcast/id1053762042">iTunes</a>
-                    <a class="btn btn-primary" href="http://brickcaster.com/christiantranshumanist/subscribe">email</a>
-                    <a class="btn btn-primary" href="http://brickcaster.com/christiantranshumanist.rss">RSS</a>
-                </span>
-            </h3>
-
-            <h1 class="page-header">{{ post.title }}</h1>
-
-            <!-- Author -->
-            <p class="lead">
-              {{ post.author }}
-            </p>
-
-            <hr>
-
-            <!-- Date/Time -->
-            <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.pubDate }}</p>
-                <hr>
-                <!-- Preview Image -->
-                <img class="img-responsive" src="{{ post.itunes.image }}" alt="">
-                <hr>
-
-            <div id="audio-player">
-              <audio controls="controls">
-                <source src="{{ post.enclosure.url }}" type="audio/mpeg">
-                <source src="{{ post.enclosure.url }}" type="audio/mp3">
-                <p>Your browser does not support HTML5 audio, but you can <a href="{{ post.enclosure.url }}">(download)</a> this episode!</p>
-              </audio>
-              <a href="{{ post.enclosure.url }}">(download)</a>
-            </div>
-            <br />
-
-            <!-- Post Content -->
-            {{ post["content:encoded"] | safe }}
-
-            <hr>
-
-            <div class="episode-details">
-                {{ post.title }}<br />
-                <a href="/podcast/">Christian Transhumanist Podcast</a><br />
-                <a href="https://www.micahredding.com">{{ post.author }}</a><br />
-                {{ post.pubDate }}<br />
-                {{ post.enclosure.length }}<br />
-            </div>
-
-
-
+  <div class="row">
+    <div class="col-md-8 podcast-episode">
+      <div class="podcast-header-bar">
+        <div class="brand">
+          <a href="/podcast/"><img src="{{ podcastCover }}" alt="{{ podcastTitle }} cover art" loading="lazy"></a>
         </div>
-
-        <div class="col-lg-4">
-            <div class="well">
-                <h4>Guests</h4>
-                <br />
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="list-unstyled">
-                            {% for guest in guests %}
-                                <li><a href="{{ guest.url }}">{{ guest.name }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <p>&mdash;</p>
-                    <p>The <a href="http://christiantranshumanistpodcast.com">Christian Transhumanist Podcast</a> is an editorially independent production of Micah Redding, provided here as a community resource on behalf of the CTA.</p>
-                </div>
-            </div>
+        <div class="header-text">
+          <div class="header-title"><a href="/podcast/">{{ podcastTitle }}</a></div>
         </div>
+        <div class="header-actions">
+          <a class="btn btn-sm btn-outline-secondary" href="https://itunes.apple.com/us/podcast/christian-transhumanist-podcast/id1053762042">iTunes</a>
+          <a class="btn btn-sm btn-outline-secondary" href="http://eepurl.com/harg5r">Email</a>
+          <a class="btn btn-sm btn-outline-secondary" href="http://brickcaster.com/christiantranshumanist.rss">RSS</a>
+          <a class="btn btn-sm btn-outline-secondary" href="{{ podcastYoutubePlaylist }}">YouTube</a>
+        </div>
+      </div>
 
+      <div class="episode-hero">
+        <div class="hero-media">
+          <div class="main-image">
+            <img src="{{ post.itunes.image }}" alt="{{ post.title }} cover art" loading="lazy">
+          </div>
+        </div>
+        <div class="hero-content">
+          <h1 class="title">{{ post.title }}</h1>
+          <div class="meta-badges">
+            {% if post.guestName %}<span class="badge badge-light meta-badge">Guest: {{ post.guestName }}</span>{% endif %}
+            {% if post.itunes.duration %}<span class="badge badge-light meta-badge">Duration: {{ post.itunes.duration }}</span>{% endif %}
+            {% if recordedDate %}<span class="badge badge-light meta-badge">Recorded: {{ recordedDate }}</span>{% endif %}
+            {% if publishedDate %}<span class="badge badge-light meta-badge">Published: {{ publishedDate }}</span>{% endif %}
+          </div>
+          <div class="player-card">
+            <audio controls src="{{ post.enclosure.url }}">Your browser does not support the <code>audio</code> element.</audio>
+            <div class="player-actions">
+              {% if post.videoUrl %}<a class="btn btn-sm btn-primary" href="{{ post.videoUrl }}">Watch on YouTube</a>{% endif %}
+              <a class="btn btn-sm btn-outline-secondary" href="{{ post.enclosure.url }}">Download MP3</a>
+              <a href="#" class="btn btn-sm btn-outline-secondary" data-copy-target="{{ episodeUrl }}" role="button">Copy Link</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="episode-body">
+        {{ post["content:encoded"] | safe }}
+      </div>
+
+      <div class="episode-footer">
+        <p class="episode-footer__title">{{ post.title }}</p>
+        <p class="episode-footer__meta">
+          <span><a href="/podcast/">Christian Transhumanist Podcast</a></span><br>
+          {% if post.author %}<span>{{ post.author }}</span><br>{% endif %}
+          {% if publishedDate %}<span>{{ publishedDate }}</span><br>{% endif %}
+          {% if sizeMB %}<span>{{ (sizeMB | round(1)) }} MB mp3</span>{% endif %}
+        </p>
+        {% if post.guestTwitter %}
+          <p class="episode-footer__meta">Guest on Twitter: <a href="https://twitter.com/{{ post.guestTwitter | replace('@', '') }}">@{{ post.guestTwitter | replace('@', '') }}</a></p>
+        {% endif %}
+      </div>
     </div>
-    <!-- /.row -->
 
-    <hr>
+    <div class="col-lg-4">
+      <div class="well site-sidebar">
+        {% include 'shared/sidebar_nav.njk' %}
+      </div>
 
-    {% include 'shared/footer.njk' %}
+      <div class="well site-sidebar">
+        <h4>Guests</h4>
+        <br />
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-unstyled">
+              {% for guest in guests %}
+                  <li><a href="{{ guest.url }}">{{ guest.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div>
+          <p>&mdash;</p>
+          <p>The <a href="http://christiantranshumanistpodcast.com">Christian Transhumanist Podcast</a> is an editorially independent production of Micah Redding, provided here as a community resource on behalf of the CTA.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      function copyText(value) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(value);
+          return true;
+        }
+        var textarea = document.createElement('textarea');
+        textarea.value = value;
+        textarea.style.position = 'fixed';
+        textarea.style.top = '-1000px';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(textarea);
+        return true;
+      }
+      document.addEventListener('click', function(event) {
+        var trigger = event.target.closest('[data-copy-target]');
+        if (!trigger) return;
+        event.preventDefault();
+        var origin = (typeof window !== 'undefined' && window.location) ? window.location.origin : '';
+        copyText(origin + trigger.getAttribute('data-copy-target'));
+      });
+    })();
+  </script>
+
+  <hr>
+
+  {% include 'shared/footer.njk' %}
 </div>
-<!-- /.container -->

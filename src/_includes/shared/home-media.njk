@@ -33,9 +33,9 @@
     <article class="home-card">
       <h3>Latest Podcast</h3>
       {% if latestEp.itunes and latestEp.itunes.image %}
-        <a href="/podcast/{{ latestEp.guid | episodeNumberFromRSSGUID }}/" class="media-thumb"><img src="{{ latestEp.itunes.image | cdnImage("c_fill,g_auto,f_auto,q_auto,w_600,h_338,dpr_auto") }}" alt="{{ latestEp.title }}" loading="lazy"></a>
+        <a href="/podcast/{{ (latestEp.guid | episodeNumberFromRSSGUID) | replace('/', '') }}/" class="media-thumb"><img src="{{ latestEp.itunes.image | cdnImage("c_fill,g_auto,f_auto,q_auto,w_600,h_338,dpr_auto") }}" alt="{{ latestEp.title }}" loading="lazy"></a>
       {% endif %}
-      <h4 class="home-item-title"><a href="/podcast/{{ latestEp.guid | episodeNumberFromRSSGUID }}/">{{ latestEp.title }}</a></h4>
+      <h4 class="home-item-title"><a href="/podcast/{{ (latestEp.guid | episodeNumberFromRSSGUID) | replace('/', '') }}/">{{ latestEp.title }}</a></h4>
       <p class="home-item-desc">{{ latestEp.content | striptags | truncate(160, true, '…') }}</p>
       <p><a class="btn btn-default" href="/podcast/">All Episodes</a></p>
     </article>

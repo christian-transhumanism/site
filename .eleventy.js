@@ -88,12 +88,21 @@ module.exports = function(eleventyConfig) {
     });
 
   eleventyConfig.addFilter("episodeNumberFromRSSGUID", function(value) { 
-        const regex = /.*\/christiantranshumanist\/(.*)/;
-        const found = value.match(regex);
-        if(found && found[1]) {
-          return found[1];
-        } else {
-          return value;
+        if (!value) return '';
+        try {
+          const parsed = new URL(String(value));
+          return parsed.pathname
+            .replace(/^\/+/, '')
+            .replace(/^christiantranshumanist\//, '')
+            .replace(/\/+$/, '');
+        } catch (e) {
+          const regex = /.*\/christiantranshumanist\/(.*)/;
+          const found = String(value).match(regex);
+          if(found && found[1]) {
+            return found[1].replace(/\/+$/, '');
+          } else {
+            return String(value).replace(/\/+$/, '');
+          }
         }
     });
 
