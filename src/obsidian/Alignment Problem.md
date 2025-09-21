@@ -1,0 +1,3 @@
+- Intelligence can adopt an unlimited range of goals
+- There is no known way to pre-program or lock in a given goal
+- Even if there were, there is no known way to fully anticipate what a given goal would lead to 

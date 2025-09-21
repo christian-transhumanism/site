@@ -4,6 +4,7 @@ a form of [[Christianity is necessary]], relating specifically to the [[Great Fi
 	- it is likely the self-destructive nature of intelligence itself
 		- intelligence is the ultimate power
 		- intelligence tends to be *unaligned*
+			- [[Alignment Problem]]
 		- unaligned intelligence leads to destruction
 	- in practical terms, we can imagine accelerating intelligence leading to global war, and mutual destruction
 - Thus,

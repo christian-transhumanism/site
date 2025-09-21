@@ -1,0 +1,9 @@
+- [[1 Corinthians 6]]:2-3
+	- “Do you not know that we will judge angels?”
+- [[Hebrews 2]]
+	- “*a little while* lower than the angels”
+- Ramifications:
+	- Thus, angels are not a source of scientific knowledge 
+		- …since the rule connected with the [[Creation Mandate]] is promised to humanity directly, and not to angels 
+		- An important concept for [[Francis Bacon]], in formulating the [[Scientific Method]].
+	- Perhaps angels are a form of [[Narrow AI]] — impressive, but lacking Universal Reach.
