@@ -7,7 +7,6 @@
 	"http://mikemorrell.org/feed",
 	"http://rundown.live/rss",
 	"http://thesingularity.com/?feed=rss",
-	"http://www.blaireostler.com/journal?format=RSS",
 	"http://www.christopherbenek.com/?feed=rss2",
 	"https://artoonsolutions.com/feed/",
 	"https://josiahredding.com/feed/",
@@ -17,8 +16,9 @@
 	"https://thesingularity.com/?feed=rss",
 	"https://turingchurch.net/feed",
 	"https://www.aitheology.com/feed/",
-	"https://www.aitheology.com/feed/",
 	"https://www.buzzsprout.com/67135.rss",
 	"https://www.micahredding.com/blog.rss",
-	"https://www.turingchurch.com/feed"
+	"https://www.turingchurch.com/feed",
+	"https://christiantranshumanism.substack.com/feed",
+	"https://micahredding.substack.com/feed"
 ]
