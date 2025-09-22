@@ -27,7 +27,21 @@ layout: default
                         {% if postImage %}
                         <div class="col-md-4">
                             <a href="{{ post.link }}" class="post-image-link">
-                                <img src="{{ postImage }}" alt="{{ post.title }}" class="img-responsive post-image" onerror="this.style.display='none'">
+                                <img 
+                                    src="{{ postImage }}" 
+                                    alt="{{ post.title }}" 
+                                    class="img-responsive post-image"
+                                    onerror="
+                                        if (!this.dataset.fallbackAttempted) {
+                                            this.dataset.fallbackAttempted = true;
+                                            this.src = '/assets/images/cta_logo_standalone.png';
+                                        } else {
+                                            this.style.display = 'none';
+                                            this.parentElement.parentElement.className = 'col-md-0';
+                                            this.parentElement.parentElement.nextElementSibling.className = 'col-md-12';
+                                        }
+                                    "
+                                >
                             </a>
                         </div>
                         <div class="col-md-8">
