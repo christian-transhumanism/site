@@ -21,22 +21,32 @@ layout: default
             </h1>
 
             {% for post in community | sortByPubDate | reverse %}
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>
-                            <a href="{{ post.link }}">{{ post.title }}</a>
-                        </h2>
-                    </div>
+                <div class="blog-post">
+                    <div class="row">
+                        {% set postImage = post.featuredImage or (post.content | getFirstImage) %}
+                        {% if postImage %}
+                        <div class="col-md-4">
+                            <a href="{{ post.link }}" class="post-image-link">
+                                <img src="{{ postImage }}" alt="{{ post.title }}" class="img-responsive post-image" onerror="this.style.display='none'">
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                        {% else %}
+                        <div class="col-md-12">
+                        {% endif %}
+                            <h2 class="post-title">
+                                <a href="{{ post.link }}">{{ post.title }}</a>
+                            </h2>
 
-                    <div class="col-md-12">
+                            <p class="post-meta">
+                                by <span class="post-author">{{ post.author | default(post.creator) | default("a community member") | nameFromRSSAuthor }}</span>
+                                <span class="post-date"><span class="glyphicon glyphicon-time"></span> {{ post.pubDate | default("2000") }}</span>
+                            </p>
 
-                        <p class="lead">
-                            by {{ post.author | default(post.creator) | default("a community member") | nameFromRSSAuthor }}
-                        </p>
-
-                        <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.pubDate | default("2000") }}</p>
-
-                        <p>{{ post.content | striptags | truncate(280, true, '…') }}</p>
+                            <div class="post-excerpt">
+                                {{ post.content | striptags | truncate(280, true, '…') }}
+                            </div>
+                        </div>
                     </div>
                 </div>
 

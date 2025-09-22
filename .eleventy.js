@@ -48,6 +48,13 @@ module.exports = function(eleventyConfig) {
     });
   // Take first N items from an array (works in Nunjucks + Liquid)
   eleventyConfig.addFilter('take', (arr, n) => Array.isArray(arr) ? arr.slice(0, n) : []);
+
+  // Extract the first image from HTML content
+  eleventyConfig.addFilter('getFirstImage', (content) => {
+    if (!content) return null;
+    const match = content.match(/<img[^>]+src="([^">]+)"/);
+    return match ? match[1] : null;
+  });
   eleventyConfig.addLiquidFilter('take', (arr, n) => Array.isArray(arr) ? arr.slice(0, n) : []);
 
   // Simple string containment check for Nunjucks templates
