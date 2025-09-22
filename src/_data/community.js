@@ -18,45 +18,57 @@ function generatePlaceholderImage(feedTitle) {
     const line1 = words.slice(0, Math.ceil(words.length/2)).join(' ');
     const line2 = words.slice(Math.ceil(words.length/2)).join(' ');
     
-    // Create SVG with modern, branded design
+    // Create a deterministic color pair from the title
+    function hashStringToColor(str, seed) {
+        let h = 2166136261 >>> 0;
+        for (let i = 0; i < str.length; i++) {
+            h = Math.imul(h ^ str.charCodeAt(i), 16777619) >>> 0;
+        }
+        h = (h + (seed || 0)) >>> 0;
+        // convert to H (0-360)
+        const hue = h % 360;
+        return `hsl(${hue} 65% 45%)`;
+    }
+
+    const colorA = hashStringToColor(title, 1);
+    const colorB = hashStringToColor(title, 2);
+
+    // Derive initials from the title (up to 2 letters)
+    const initials = words.length === 1
+        ? (words[0].substring(0,2)).toUpperCase()
+        : (words[0][0] + (words[1] ? words[1][0] : '')).toUpperCase();
+
+    // Create SVG with improved, modern design
     const svg = `
         <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
-            <defs>
-                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#337ab7;stop-opacity:1" />
-                </linearGradient>
-                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-                </pattern>
-            </defs>
-            <rect width="800" height="400" fill="url(#grad)"/>
-            <rect width="800" height="400" fill="url(#grid)"/>
-            <text x="400" y="160" 
-                font-family="Arial, sans-serif" 
-                font-size="48" 
-                fill="white" 
-                text-anchor="middle"
-                font-weight="bold">${line1}</text>
-            <text x="400" y="220" 
-                font-family="Arial, sans-serif" 
-                font-size="48" 
-                fill="white" 
-                text-anchor="middle"
-                font-weight="bold">${line2}</text>
-            <text x="400" y="300" 
-                font-family="Arial, sans-serif" 
-                font-size="24" 
-                fill="rgba(255,255,255,0.7)" 
-                text-anchor="middle">Christian Transhumanist Community</text>
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="${colorA}" stop-opacity="1" />
+              <stop offset="100%" stop-color="${colorB}" stop-opacity="1" />
+            </linearGradient>
+            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="6" stdDeviation="14" flood-color="#000" flood-opacity="0.25"/>
+            </filter>
+          </defs>
+          <rect rx="28" ry="28" width="800" height="400" fill="url(#g)" />
+          <rect rx="28" ry="28" width="800" height="400" fill="rgba(0,0,0,0.06)" />
+
+          <!-- Left badge -->
+          <g transform="translate(64,100)">
+            <rect width="240" height="200" rx="20" ry="20" fill="rgba(255,255,255,0.12)" filter="url(#shadow)" />
+            <circle cx="120" cy="100" r="56" fill="rgba(255,255,255,0.12)" />
+            <text x="120" y="122" font-family="Inter, Roboto, Arial, sans-serif" font-size="64" fill="white" text-anchor="middle" font-weight="700">${initials}</text>
+          </g>
+
+          <!-- Title text on the right -->
+          <text x="420" y="150" font-family="Inter, Roboto, Arial, sans-serif" font-size="44" fill="white" font-weight="700">${line1}</text>
+          <text x="420" y="210" font-family="Inter, Roboto, Arial, sans-serif" font-size="34" fill="rgba(255,255,255,0.92)" >${line2}</text>
+          <text x="420" y="300" font-family="Inter, Roboto, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.75)">Christian Transhumanist Community</text>
         </svg>
     `.trim();
-    
-    // Convert SVG to data URL
-    const encoded = encodeURIComponent(svg)
-        .replace(/'/g, '%27')
-        .replace(/"/g, '%22');
-    
+
+    // Convert to compact data URL safely
+    const encoded = encodeURIComponent(svg).replace(/'/g, "%27").replace(/\"/g, "%22");
     return `data:image/svg+xml;charset=UTF-8,${encoded}`;
 }
 
