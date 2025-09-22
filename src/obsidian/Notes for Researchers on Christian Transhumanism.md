@@ -40,7 +40,7 @@ Christian Transhumanism is an ecumenical community, in keeping with its engageme
 - [[NT Wright]] (on the religious side; see, for example, [Surprised by Hope](https://amzn.to/3LOJUHl))
 - [[Ray Kurzweil]] (on the scientific side; see, for example, [The Singularity is Near](https://amzn.to/3LSGaVd)). 
 
-### Christian Transhumanism as a Transhumanist Ethical Vision
+### Christian Transhumanism as a [[Transhumanist Ethical Visions|Transhumanist Ethical Vision]]
 Christian Transhumanism can be understood as a distinct ethical vision among the span of ethical visions that constitute the larger transhumanist movement. Within the transhumanist movement, there are various articulated ethics, from:
 
 - (1) Radical individualism
@@ -103,7 +103,7 @@ Micah Redding has summarized the Omega Point Theory [here](https://www.micahredd
 
 Tipler's vision was endorsed by fellow physicist David Deutsch in *The Fabric of Reality*, who nevertheless disagreed with the religious interpretation of Tipler's vision, and remained an atheist.
 
-Tipler's vision was influential in the (largely secular) 90s transhumanist movement.
+Tipler's vision was influential in the (largely secular) 90s transhumanist movement. It was cited, for example, in 1990's [[Great Mambo Chicken and the Transhuman Condition]], and discussed frequently on email lists.
 
 Tipler's vision also inspired a number of young Christian Transhumanists, who would later form the Christian Transhumanist Association. This number includes Micah Redding and Neal Locke.
 

@@ -1,4 +1,4 @@
-Robert Boyle (1627-1691), a devout evangelical Christian, a prominent scientist, a founder of [[The Royal Society]], and someone interested in [[Life extension]]. Also founded a series of lectureships about the relation between science and religion.
+Robert Boyle (1627-1691), a devout evangelical Christian, a prominent scientist, a founder of the [[Royal Society]], and someone interested in [[Life extension]]. Also founded a series of lectureships about the relation between science and religion.
 
 - 1656-1668. At Oxford. “Experimental Philosophy Club” with John Wilkins, [[Christopher Wren]], [[John Locke]].
 - 1659. He and [[Robert Hooke]] complete an experiment.
