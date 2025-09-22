@@ -68,28 +68,32 @@ function isImageUrl(url) {
     return imageExtensions.some(ext => lowerUrl.endsWith(ext));
 }
 
-// Helper function to get valid image URL from media object
-function getMediaImageUrl(mediaObj) {
-    if (!mediaObj) return null;
-    
-    // Handle array of media items
-    if (Array.isArray(mediaObj)) {
-        const imageItem = mediaObj.find(item => 
-            item.type?.toLowerCase().startsWith('image/') || 
-            isImageUrl(item.url)
-        );
-        return imageItem?.url;
-    }
-    
-    // Handle single media item
-    if (mediaObj.type?.toLowerCase().startsWith('image/') || isImageUrl(mediaObj.url)) {
-        return mediaObj.url;
-    }
-    
-    return null;
-}
-
-// Configure the parser to look for media content
+    // Helper function to get image from media object
+    function getMediaImageUrl(mediaObj) {
+        if (!mediaObj) return null;
+        
+        try {
+            // WordPress.com RSS feed structure (media:content)
+            if (mediaObj.$ && mediaObj.$.url && mediaObj.$.medium === 'image') {
+                return mediaObj.$.url;
+            }
+            
+            // WordPress.com thumbnail structure
+            if (mediaObj.$ && mediaObj.$.url) {
+                return mediaObj.$.url;
+            }
+            
+            // Generic media URL
+            if (mediaObj.url) {
+                return mediaObj.url;
+            }
+            
+            return null;
+        } catch (e) {
+            console.warn('Error getting media URL:', e);
+            return null;
+        }
+    }// Configure the parser to look for media content
 const parser = new Parser({
     customFields: {
         feed: [
