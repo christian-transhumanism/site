@@ -8,7 +8,6 @@ aliases:
 [[Secular Transhumanism]] in modern times derives from [[Julian Huxley]], who was explicit in his aims to create a secularized Christianity for a secular world. 
 
 In current times, [[Christian Transhumanism]] is a conversation, an area of study, a revival of ancient Christian theology, and an ethics of science and technology. Its most prominent form is the [[Christian Transhumanist Association]], which seeks to promote dialogue and awareness between people of faith, and the leading edges of science and technology.
-## History
 
 ### Patristics & Early Church
 - [[Justin Martyr]] proclaimed the [[Resurrection of the Body]]
@@ -16,6 +15,7 @@ In current times, [[Christian Transhumanism]] is a conversation, an area of stud
 - [[Saint Macrina the Younger]] used science to prove resurrection of the body
 	- see [[Scientific Resurrection]]
 - [[Gregory of Nyssa]] claimed God designed human anatomy to make us the technological species
+
 ### Middle Ages
 - 1320s [[Dante's Divine Comedy]]
     - "Words cannot tell of that transhuman change..."
@@ -36,18 +36,21 @@ In short, Christian eschatological belief, as well as contemplation of the [[Cre
 
 > __“Bacon, Locke and Newton. I consider them as the three greatest men that have ever lived, without any exception, and as having laid the foundation of those superstructures which have been raised in the Physical and Moral sciences.”__ — Thomas Jefferson
 
-- [[Royal Society]]
-	- 1620s [[Francis Bacon]]
-	- [[Robert Boyle]]
-	- Robert Hooke
-	- John Lock (1632 - 1704)
-	- Thomas Sprat
-	- Isaac Newton
+**[[Royal Society]]**
+
+- 1620s [[Francis Bacon]]
+- [[Robert Boyle]]
+- Robert Hooke
+- John Lock (1632 - 1704)
+- Thomas Sprat
+- Isaac Newton
 
 **American thought**
+
 - American [[Postmillennialism]] was a form of [[Renewal of All Things|Renewal Eschatology]]
 - [[Stone-Campbell Movement]] often embraced [[Scientific Revolution]], [[Renewal of All Things|Renewal Eschatology]]
 - Benjamin Franklin?
+
 
 ### Modern Era
 
@@ -71,10 +74,13 @@ __Early Secular Transhumanist Precursors__
     - References by Current Popes
     - association with [[Julian Huxley]]
 - 1940s [[WD Lighthall]]
-    - "Paul's Transhumanism"
+    - "Paul's Transhumanism" — first use of the term "transhumanism"
 - 1957 [[Julian Huxley]] formulates [[Secular Transhumanism]] as a philosophy.
     - Huxley sees transhumanism as non-Christian reworking of [[Pierre Teilhard de Chardin|Teilhard de Chardin]]'s religious vision. He expressed a similar aspiration for a "non-religious religion" in [[Religion without Revelation]].
 	- > "The human species can, if it wishes, transcend itself — not just sporadically, an individual here in one way, an individual there in another way, but in its entirety, as humanity. We need a name for this new belief. **Perhaps transhumanism will serve: man remaining man, but transcending himself, by realizing new possibilities of and for his human nature.** "I believe in transhumanism": once there are enough people who can truly say that, the human species will be on the threshold of a new kind of existence, as different from ours as ours is from that of Pekin man. It will at last be consciously fulfilling its real destiny." — Julian Huxley
+
+**Early Christian engagement with Secular Transhumanism**
+
 - 1958 [[CS Lewis]]
 	- [[CS Lewis]] critiqued the secular transhumanism of his own day, and articulated a vision—incomplete at times—of a Christian Transhumanism, expansive, immersive, colorful, and full of diverse forms of life, drawn from the Eastern and Patristic traditions of Christianity.
 		- https://www.cslewis.com/religion-and-rocketry/
@@ -83,6 +89,9 @@ __Early Secular Transhumanist Precursors__
 		- https://www.cslewis.com/us/books/hardcover/mere-christianity-gift-edition/9780061350214/
 		- https://www.cslewis.com/us/books/hardcover/lion-the-witch-and-the-wardrobe-a-celebration-of-the-first-edition/9780061715051/
 - 1968 [[John Warwick Montgomery; Cryonics and Orthodoxy]]
+
+**Current Transhumanist Movement**
+
 - 1980s [[FM-2030]]
 - 1988 [[Extropianism]]
 - 1994 [[Frank Tipler]] publishes [[The Physics of Immortality (1994)]] describing the [[Omega Point Theory]]
@@ -92,15 +101,17 @@ __Early Secular Transhumanist Precursors__
 - [[Ray Kurzweil]]
 - [[Kevin Kelly]]
 - [[David Deutsch]]
-- 2010s 
-    - History of the [[Christian Transhumanist Association]]
-- Other Influences on the modern Christian Transhumanist movement
-    - [[Eastern Orthodoxy]]
-    - [[GK Chesterton]]
-    - [[Dallas Willard]]
-    - [[CS Lewis]]
-    - [[NT Wright]]
-        - [[Physical Eschatology]] — "heaven on earth"
-    - [[Steven Kotler]], [[Peter Diamandis]], [[Aubrey de Grey]]
-- [[Resources for Christian Transhumanists]]
+
+**Current Christian Transhumanist Movement**
+
+- [[History of the CTA|History of the Christian Transhumanist Association]]
+	- Other Influences on the modern Christian Transhumanist movement
+	    - [[Eastern Orthodoxy]]
+	    - [[GK Chesterton]]
+	    - [[Dallas Willard]]
+	    - [[CS Lewis]]
+	    - [[NT Wright]]
+	        - [[Physical Eschatology]] — "heaven on earth"
+	    - [[Steven Kotler]], [[Peter Diamandis]], [[Aubrey de Grey]]
+	- [[Resources for Christian Transhumanists]]
 
