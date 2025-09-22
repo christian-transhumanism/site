@@ -80,6 +80,33 @@ function isImageUrl(url) {
     return imageExtensions.some(ext => lowerUrl.endsWith(ext));
 }
 
+// Helper to parse an item's publication date robustly (top-level)
+function getItemDate(item) {
+    if (!item) return null;
+    const candidates = [
+        item.isoDate,
+        item.iso_date,
+        item.pubDate,
+        item.pubdate,
+        item.published_at,
+        item.date,
+        item.published,
+        item.publishedDate
+    ];
+
+    for (const c of candidates) {
+        if (!c) continue;
+        try {
+            const d = new Date(c);
+            if (!isNaN(d.getTime())) return d;
+        } catch (e) {
+            // continue
+        }
+    }
+
+    return null;
+}
+
     // Helper function to get image from media object
     function getMediaImageUrl(mediaObj) {
         if (!mediaObj) return null;
@@ -182,7 +209,12 @@ module.exports = async function() {
     const items = feeds
         .filter(result => result.status === 'fulfilled')
         .map(result => result.value.items)
-        .flat();
+        .flat()
+        .filter(item => {
+            const d = getItemDate(item);
+            if (!d) return false; // skip items without parseable date
+            return d.getFullYear() > 2011; // keep 2012+
+        });
 
     // Helper function to extract image from HTML content
     function extractImageFromHTML(html) {
