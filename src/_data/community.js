@@ -75,17 +75,17 @@ function isImageUrl(url) {
         try {
             // WordPress.com RSS feed structure (media:content)
             if (mediaObj.$ && mediaObj.$.url && mediaObj.$.medium === 'image') {
-                return mediaObj.$.url;
+                return isImageUrl(mediaObj.$.url) ? mediaObj.$.url : null;
             }
             
             // WordPress.com thumbnail structure
             if (mediaObj.$ && mediaObj.$.url) {
-                return mediaObj.$.url;
+                return isImageUrl(mediaObj.$.url) ? mediaObj.$.url : null;
             }
             
             // Generic media URL
             if (mediaObj.url) {
-                return mediaObj.url;
+                return isImageUrl(mediaObj.url) ? mediaObj.url : null;
             }
             
             return null;
@@ -218,9 +218,10 @@ module.exports = async function() {
         // Find the matching feed URL for this item
         const itemFeedUrl = feedUrls.find(url => {
             try {
-                // Try to match by domain
-                const itemDomain = new URL(item.link).hostname;
-                const feedDomain = new URL(url).hostname;
+                // Normalize hostnames (strip leading www.) to match feeds with/without www
+                const normalizeHost = host => (host || '').toString().replace(/^www\./i, '').toLowerCase();
+                const itemDomain = normalizeHost(new URL(item.link).hostname);
+                const feedDomain = normalizeHost(new URL(url).hostname);
                 return itemDomain === feedDomain;
             } catch (e) {
                 return false;
