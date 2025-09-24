@@ -59,6 +59,13 @@ body {
     transform: scale(1.05);
 }
 
+/* Rectangular variant for mission/home feature thumbnails: prefer showing full image */
+.post-image--rect {
+    aspect-ratio: 600 / 220; /* match homepage feature card ratio */
+    object-fit: contain; /* show whole image, letterbox within the box if needed */
+    background-color: #f6f6f6; /* subtle backdrop if image has different aspect */
+}
+
 .blog-post .post-title {
     margin-top: 0;
     font-size: 24px;
