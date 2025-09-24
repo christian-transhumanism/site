@@ -611,7 +611,6 @@ body.home {
     display: -moz-inline-stack;
     display: inline-block;
     zoom: 1;
-    * display:inline
 }
 
 #fh5co-clients {
@@ -1376,7 +1375,7 @@ pre {
 
 .fh5co-list-check li:before {
     font-family: 'icomoon';
-    speak: none;
+    /* 'speak' is deprecated; removed for modern compliance */
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -1513,7 +1512,6 @@ pre {
     display: -moz-inline-stack;
     display: inline-block;
     zoom: 1;
-    * display:inline;
     width: 25px;
     height: 3px;
     color: #fff;
@@ -1604,7 +1602,6 @@ pre {
     display: -moz-inline-stack;
     display: inline-block;
     zoom: 1;
-    * display:inline;
     position: absolute;
     left: 0;
     top: 0;
@@ -1684,19 +1681,19 @@ pre {
     }
 }
 
-.owl-theme .owl-controls .owl-nav [class * ="owl-"] {
+.owl-theme .owl-controls .owl-nav [class*="owl-"] {
     background: none !important
 }
 
-.owl-theme .owl-controls .owl-nav [class * ="owl-"] i {
+.owl-theme .owl-controls .owl-nav [class*="owl-"] i {
     font-size: 30px
 }
 
-.owl-theme .owl-controls .owl-nav [class * ="owl-"] i:hover, .owl-theme .owl-controls .owl-nav [class * ="owl-"] i:focus {
+.owl-theme .owl-controls .owl-nav [class*="owl-"] i:hover, .owl-theme .owl-controls .owl-nav [class*="owl-"] i:focus {
     background: none !important
 }
 
-.owl-theme .owl-controls .owl-nav [class * ="owl-"]:hover, .owl-theme .owl-controls .owl-nav [class * ="owl-"]:focus {
+.owl-theme .owl-controls .owl-nav [class*="owl-"]:hover, .owl-theme .owl-controls .owl-nav [class*="owl-"]:focus {
     background:none !important
 }
 
@@ -1758,6 +1755,7 @@ pre {
 .mfp-with-zoom .mfp-container, .mfp-with-zoom.mfp-bg {
     opacity: 0;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
