@@ -12,8 +12,14 @@ layout: associationPage
     <br />
     <div class="row">
       <div class="col-md-4">
-        <a href="{{ director.url }}">
-          <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/{{ director.photo }}" />
+        <a href="{{ director.url }}" class="post-image-link">
+          <img
+            src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/{{ director.photo }}"
+            srcset="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_320,h_320,f_auto,q_auto,dpr_auto/{{ director.photo }} 320w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/{{ director.photo }} 420w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_720,h_720,f_auto,q_auto,dpr_auto/{{ director.photo }} 720w"
+            sizes="(max-width: 576px) 100vw, 33vw"
+            alt="{{ director.name }}"
+            class="img-responsive post-image"
+            loading="lazy">
         </a>
       </div>
       <div class="col-md-8">

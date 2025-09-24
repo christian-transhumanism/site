@@ -14,7 +14,15 @@ permalink: /academics/
 <br />
 <div class="row">
   <div class="col-md-4">
-  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/Ron-Cole-Turner2_krwttx.jpg" />
+  <a class="post-image-link" href="/academics/">
+    <img
+      src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/Ron-Cole-Turner2_krwttx.jpg"
+      srcset="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_320,h_320,f_auto,q_auto,dpr_auto/Ron-Cole-Turner2_krwttx.jpg 320w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/Ron-Cole-Turner2_krwttx.jpg 420w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_720,h_720,f_auto,q_auto,dpr_auto/Ron-Cole-Turner2_krwttx.jpg 720w"
+      sizes="(max-width: 576px) 100vw, 33vw"
+      alt="Ron Cole-Turner"
+      class="img-responsive post-image"
+      loading="lazy">
+  </a>
   </div>
   <div class="col-md-8">
 
@@ -31,7 +39,15 @@ The Rev. Dr. Ronald Cole-Turner is the H. Parker Sharp Professor of Theology and
 <br />
 <div class="row">
   <div class="col-md-4">
-  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/CalvinMercer.jpg" />
+  <a class="post-image-link" href="/academics/">
+    <img
+      src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/CalvinMercer.jpg"
+      srcset="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_320,h_320,f_auto,q_auto,dpr_auto/CalvinMercer.jpg 320w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/CalvinMercer.jpg 420w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_720,h_720,f_auto,q_auto,dpr_auto/CalvinMercer.jpg 720w"
+      sizes="(max-width: 576px) 100vw, 33vw"
+      alt="Calvin Mercer"
+      class="img-responsive post-image"
+      loading="lazy">
+  </a>
   </div>
   <div class="col-md-8">
 
@@ -48,7 +64,15 @@ Dr. Calvin Mercer’s work on religion and transhumanism includes co-editing, al
 <br />
 <div class="row">
   <div class="col-md-4">
-  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/jeanine_thweatt.jpg" />
+  <a class="post-image-link" href="/academics/">
+    <img
+      src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/jeanine_thweatt.jpg"
+      srcset="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_320,h_320,f_auto,q_auto,dpr_auto/jeanine_thweatt.jpg 320w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/jeanine_thweatt.jpg 420w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_720,h_720,f_auto,q_auto,dpr_auto/jeanine_thweatt.jpg 720w"
+      sizes="(max-width: 576px) 100vw, 33vw"
+      alt="J. Jeanine Thweatt"
+      class="img-responsive post-image"
+      loading="lazy">
+  </a>
   </div>
   <div class="col-md-8">
 
@@ -62,7 +86,15 @@ Jennifer Jeanine Thweatt holds a Ph.D. in Theology and Science from Princeton Th
 <br />
 <div class="row">
   <div class="col-md-4">
-  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/James_Hughes.jpg" />
+  <a class="post-image-link" href="/academics/">
+    <img
+      src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/James_Hughes.jpg"
+      srcset="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_320,h_320,f_auto,q_auto,dpr_auto/James_Hughes.jpg 320w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/James_Hughes.jpg 420w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_720,h_720,f_auto,q_auto,dpr_auto/James_Hughes.jpg 720w"
+      sizes="(max-width: 576px) 100vw, 33vw"
+      alt="James Hughes"
+      class="img-responsive post-image"
+      loading="lazy">
+  </a>
   </div>
   <div class="col-md-8">
 
@@ -79,7 +111,15 @@ James "J." Hughes Ph.D. is a bioethicist and sociologist who serves as the Assoc
 <br />
 <div class="row">
   <div class="col-md-4">
-  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/Frank-J-Tipler_k9nj4y.jpg" />
+  <a class="post-image-link" href="/academics/">
+    <img
+      src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/Frank-J-Tipler_k9nj4y.jpg"
+      srcset="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_320,h_320,f_auto,q_auto,dpr_auto/Frank-J-Tipler_k9nj4y.jpg 320w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/Frank-J-Tipler_k9nj4y.jpg 420w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_720,h_720,f_auto,q_auto,dpr_auto/Frank-J-Tipler_k9nj4y.jpg 720w"
+      sizes="(max-width: 576px) 100vw, 33vw"
+      alt="Frank Tipler"
+      class="img-responsive post-image"
+      loading="lazy">
+  </a>
   </div>
   <div class="col-md-8">
 
@@ -95,7 +135,15 @@ Frank Jennings Tipler is a mathematical physicist and cosmologist, holding a joi
 <br />
 <div class="row">
   <div class="col-md-4">
-  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/Ted_20Peters_cam1ya.jpg" />
+  <a class="post-image-link" href="/academics/">
+    <img
+      src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/Ted_20Peters_cam1ya.jpg"
+      srcset="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_320,h_320,f_auto,q_auto,dpr_auto/Ted_20Peters_cam1ya.jpg 320w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/Ted_20Peters_cam1ya.jpg 420w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_720,h_720,f_auto,q_auto,dpr_auto/Ted_20Peters_cam1ya.jpg 720w"
+      sizes="(max-width: 576px) 100vw, 33vw"
+      alt="Ted Peters"
+      class="img-responsive post-image"
+      loading="lazy">
+  </a>
   </div>
   <div class="col-md-8">
 
@@ -109,7 +157,15 @@ Ted Peters is a Lutheran theologian and Professor of Systematic Theology at Paci
 <br />
 <div class="row">
   <div class="col-md-4">
-  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/Jay-Gary" />
+  <a class="post-image-link" href="/academics/">
+    <img
+      src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/Jay-Gary"
+      srcset="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_320,h_320,f_auto,q_auto,dpr_auto/Jay-Gary 320w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto/Jay-Gary 420w, https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,w_720,h_720,f_auto,q_auto,dpr_auto/Jay-Gary 720w"
+      sizes="(max-width: 576px) 100vw, 33vw"
+      alt="Jay Gary"
+      class="img-responsive post-image"
+      loading="lazy">
+  </a>
   </div>
   <div class="col-md-8">
 

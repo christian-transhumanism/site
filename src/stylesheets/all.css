@@ -40,6 +40,25 @@ body {
     transform: scale(1.05);
 }
 
+/* Reuse teaser image styles site-wide for components that use post-image-link/post-image */
+.post-image-link {
+    display: block;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.post-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+}
+.post-image-link:hover .post-image {
+    transform: scale(1.05);
+}
+
 .blog-post .post-title {
     margin-top: 0;
     font-size: 24px;
