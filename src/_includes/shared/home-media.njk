@@ -9,7 +9,14 @@
     <article class="home-card">
       <h3>Latest Blog</h3>
       {% if latestPost.data.image %}
-        <a href="{{ latestPost.url }}" class="media-thumb"><img src="{{ latestPost.data.image | cdnImage("c_fill,g_auto,f_auto,q_auto,w_600,h_338,dpr_auto") }}" alt="{{ latestPost.data.title }}" loading="lazy"></a>
+        <a href="{{ latestPost.url }}" class="media-thumb">
+            <img
+            src="{{ latestPost.data.image | cdnImage('c_scale,w_420,f_auto,q_auto,dpr_auto') }}"
+            srcset="{{ latestPost.data.image | cdnImage('c_scale,w_320,f_auto,q_auto,dpr_auto') }} 320w, {{ latestPost.data.image | cdnImage('c_scale,w_420,f_auto,q_auto,dpr_auto') }} 420w, {{ latestPost.data.image | cdnImage('c_scale,w_720,f_auto,q_auto,dpr_auto') }} 720w"
+            sizes="(max-width: 576px) 100vw, 33vw"
+            alt="{{ latestPost.data.title }}"
+            loading="lazy">
+        </a>
       {% endif %}
       <h4 class="home-item-title"><a href="{{ latestPost.url }}">{{ latestPost.data.title }}</a></h4>
       <p class="home-item-desc">{{ latestPost.templateContent | striptags | truncate(160, true, '…') }}</p>
@@ -33,7 +40,14 @@
     <article class="home-card">
       <h3>Latest Podcast</h3>
       {% if latestEp.itunes and latestEp.itunes.image %}
-        <a href="/podcast/{{ (latestEp.guid | episodeNumberFromRSSGUID) | replace('/', '') }}/" class="media-thumb"><img src="{{ latestEp.itunes.image | cdnImage("c_fill,g_auto,f_auto,q_auto,w_600,h_338,dpr_auto") }}" alt="{{ latestEp.title }}" loading="lazy"></a>
+        <a href="/podcast/{{ (latestEp.guid | episodeNumberFromRSSGUID) | replace('/', '') }}/" class="media-thumb">
+          <img
+            src="{{ latestEp.itunes.image | cdnImage('c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto') }}"
+            srcset="{{ latestEp.itunes.image | cdnImage('c_fill,g_auto,w_320,h_320,f_auto,q_auto,dpr_auto') }} 320w, {{ latestEp.itunes.image | cdnImage('c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto') }} 420w, {{ latestEp.itunes.image | cdnImage('c_fill,g_auto,w_720,h_720,f_auto,q_auto,dpr_auto') }} 720w"
+            sizes="(max-width: 576px) 100vw, 33vw"
+            alt="{{ latestEp.title }}"
+            loading="lazy">
+        </a>
       {% endif %}
       <h4 class="home-item-title"><a href="/podcast/{{ (latestEp.guid | episodeNumberFromRSSGUID) | replace('/', '') }}/">{{ latestEp.title }}</a></h4>
       <p class="home-item-desc">{{ latestEp.content | striptags | truncate(160, true, '…') }}</p>

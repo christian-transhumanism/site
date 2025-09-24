@@ -14,7 +14,7 @@ permalink: /academics/
 <br />
 <div class="row">
   <div class="col-md-4">
-    <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_face,h_200,w_200/Ron-Cole-Turner2_krwttx.jpg" />
+  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/Ron-Cole-Turner2_krwttx.jpg" />
   </div>
   <div class="col-md-8">
 
@@ -31,7 +31,7 @@ The Rev. Dr. Ronald Cole-Turner is the H. Parker Sharp Professor of Theology and
 <br />
 <div class="row">
   <div class="col-md-4">
-    <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_face,h_200,w_200/CalvinMercer.jpg" />
+  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/CalvinMercer.jpg" />
   </div>
   <div class="col-md-8">
 
@@ -48,7 +48,7 @@ Dr. Calvin Mercer’s work on religion and transhumanism includes co-editing, al
 <br />
 <div class="row">
   <div class="col-md-4">
-    <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_face,h_200,w_200/jeanine_thweatt.jpg" />
+  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/jeanine_thweatt.jpg" />
   </div>
   <div class="col-md-8">
 
@@ -62,7 +62,7 @@ Jennifer Jeanine Thweatt holds a Ph.D. in Theology and Science from Princeton Th
 <br />
 <div class="row">
   <div class="col-md-4">
-    <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_face,h_200,w_200/James_Hughes.jpg" />
+  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/James_Hughes.jpg" />
   </div>
   <div class="col-md-8">
 
@@ -79,7 +79,7 @@ James "J." Hughes Ph.D. is a bioethicist and sociologist who serves as the Assoc
 <br />
 <div class="row">
   <div class="col-md-4">
-    <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_face,h_200,w_200/Frank-J-Tipler_k9nj4y.jpg" />
+  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/Frank-J-Tipler_k9nj4y.jpg" />
   </div>
   <div class="col-md-8">
 
@@ -95,7 +95,7 @@ Frank Jennings Tipler is a mathematical physicist and cosmologist, holding a joi
 <br />
 <div class="row">
   <div class="col-md-4">
-    <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_face,h_200,w_200/Ted_20Peters_cam1ya.jpg" />
+  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/Ted_20Peters_cam1ya.jpg" />
   </div>
   <div class="col-md-8">
 
@@ -109,7 +109,7 @@ Ted Peters is a Lutheran theologian and Professor of Systematic Theology at Paci
 <br />
 <div class="row">
   <div class="col-md-4">
-    <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_face,h_200,w_200/Jay-Gary" />
+  <img src="https://res.cloudinary.com/christian-transhumanist-association/image/upload/c_fill,g_auto,h_200,w_200/Jay-Gary" />
   </div>
   <div class="col-md-8">
 

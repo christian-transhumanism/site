@@ -50,7 +50,12 @@ layout: default
       <div class="episode-hero">
         <div class="hero-media">
           <div class="main-image">
-            <img src="{{ post.itunes.image }}" alt="{{ post.title }} cover art" loading="lazy">
+            <img
+              src="{{ post.itunes.image | cdnImage('c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto') }}"
+              srcset="{{ post.itunes.image | cdnImage('c_fill,g_auto,w_320,h_320,f_auto,q_auto,dpr_auto') }} 320w, {{ post.itunes.image | cdnImage('c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto') }} 420w, {{ post.itunes.image | cdnImage('c_fill,g_auto,w_720,h_720,f_auto,q_auto,dpr_auto') }} 720w"
+              sizes="(max-width: 576px) 100vw, 33vw"
+              alt="{{ post.title }} cover art"
+              loading="lazy">
           </div>
         </div>
         <div class="hero-content">

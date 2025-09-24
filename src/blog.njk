@@ -30,7 +30,13 @@ permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber
                         {% if postImage %}
                         <div class="col-md-4">
                             <a href="{{ post.url }}" class="post-image-link">
-                                <img src="{{ postImage }}" alt="{{ post.data.title }}" class="img-responsive post-image" loading="lazy">
+                                <img
+                                    src="{{ postImage | cdnImage('c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto') }}"
+                                        srcset="{{ postImage | cdnImage('c_fill,g_auto,w_320,h_320,f_auto,q_auto,dpr_auto') }} 320w, {{ postImage | cdnImage('c_fill,g_auto,w_420,h_420,f_auto,q_auto,dpr_auto') }} 420w, {{ postImage | cdnImage('c_fill,g_auto,w_720,h_720,f_auto,q_auto,dpr_auto') }} 720w"
+                                    sizes="(max-width: 576px) 100vw, 33vw"
+                                    alt="{{ post.data.title }}"
+                                    class="img-responsive post-image"
+                                    loading="lazy">
                             </a>
                         </div>
                         <div class="col-md-8">
