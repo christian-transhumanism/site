@@ -1,3 +1,5 @@
 - brother of [[Saint Macrina the Younger]]
 - had a [[Cooperation Theory of Technology]]
 - God designed human anatomy to make us the technological species
+	- [[Gregory of Nyssa; On the Making of Man]]
+	- 
