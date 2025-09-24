@@ -8,7 +8,7 @@ pagination:
   reverse: true
 permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
-<div class="blog-page">
+<div class="blog-page blog-index">
 {% include 'shared/content_topbar.njk' %}
 
 <!-- Page Content -->
@@ -24,27 +24,32 @@ permalink: "blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber
             </h1>
 
             {% for post in pagination.items %}
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>
-                            <a href="{{ post.url }}">{{ post.data.title }}</a>
-                        </h2>
-                    </div>
+                <div class="blog-post">
+                    <div class="row">
+                        {% set postImage = post.data.image %}
+                        {% if postImage %}
+                        <div class="col-md-4">
+                            <a href="{{ post.url }}" class="post-image-link">
+                                <img src="{{ postImage }}" alt="{{ post.data.title }}" class="img-responsive post-image" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                        {% else %}
+                        <div class="col-md-12">
+                        {% endif %}
+                            <h2 class="post-title">
+                                <a href="{{ post.url }}">{{ post.data.title }}</a>
+                            </h2>
 
-                    <div class="col-md-4">
-                        <a href="{{ post.url }}" class="media-thumb"><img src="{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy"></a>
-                    </div>
+                            <p class="post-meta">
+                                by <span class="post-author">{{ post.data.author }}</span>
+                                <span class="post-date"><span class="glyphicon glyphicon-time"></span> {{ post.data.date }}</span>
+                            </p>
 
-                    <div class="col-md-8">
-
-                        <p class="lead">
-                            by {{ post.data.author }}
-                        </p>
-
-                        <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.data.date }}</p>
-
-                        <p>{{ post.templateContent | striptags | truncate(280, true, '…') }}</p>
-                        <a class="btn btn-primary" href="{{ post.url }}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            <div class="post-excerpt">
+                                {{ post.templateContent | striptags | truncate(280, true, '…') }}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
