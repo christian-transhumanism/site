@@ -8,7 +8,7 @@ aliases:
   - CTA Theological Mission
 ---
 
-# Deepening Theology
+# Transformative Theology
 
 Explore a theology of technology rooted in Christ
 
@@ -23,8 +23,8 @@ In a world where Christians often see science and technology as enemies of faith
 As an association, not a denomination, the CTA seeks to seeks to draw theological themes on which Christians can agree, and that reflect the interaction Christianity must have with Transhumanism in a manner that will be mutually beneficial. Our distinctive emphasis is on **The Image of God**, as understood through these lenses:
 
 1. [The Creation Mandate](/mission/theological/creation-mandate/)
-2. The Imitation of Christ / Participation in Christ
-3. The Renewal of All Things
+2. [Participation in Christ](/mission/theological/participation-in-christ/)
+3. [The Renewal of All Things](/mission/theological/renewal-of-all-things)
 
 ---
 
@@ -47,7 +47,7 @@ The [Creation Mandate](/mission/theological/creation-mandate/) is the calling of
 
 Intentionally, carefully, and ethically creating the future is God's call on all humanity. Christians are called to be at the forefront of this work.
 
-### 2. The Imitation of Christ {#imitation-of-christ}
+### 2. [Participation in Christ](/mission/theological/participation-in-christ/) {#imitation-of-christ}
 
 **Christ is the Image of God**. Scripture states, _"The Son is the radiance of God's glory and the exact representation of his being"_ (Hebrews 1:3). Christ thus reveals what we are intended to become.
 
@@ -61,7 +61,7 @@ Intentionally, carefully, and ethically creating the future is God's call on all
 
 The CTA advocates for Christians to express this humility and love of Christ by dedicating their lives and careers to useful technological development, and rejecting the empty display of consumerism, and other false values of the secular world.
 
-### 3. The Renewal of All Things {#renewal-of-all-things}
+### 3. [The Renewal of All Things](/mission/theological/renewal-of-all-things) {#renewal-of-all-things}
 
 > "_For the creation waits in eager expectation for the children of God to be revealed....in hope that the creation itself will be liberated from its bondage to decay and brought into the freedom and glory of the children of God."_ (Romans 8:19-21)
 

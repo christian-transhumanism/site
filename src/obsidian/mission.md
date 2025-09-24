@@ -47,7 +47,7 @@ aliases:
         </a>
       </div>
       <div class="col-md-8">
-        <h2><a href="/mission/theological/">Deeper Theology</a></h2>
+        <h2><a href="/mission/theological/">Transformative Theology</a></h2>
         <p>In a world where Christians often see science and technology as enemies of faith---<b>We believe that science and technology are part of the mission of Christ and of God</b>. <i>We as a community need to be able to share this understanding of the Christian story.</i></p>
       </div>
     </div>

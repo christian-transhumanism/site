@@ -1,13 +1,16 @@
 <div class="container" style="margin-top: .25rem;">
   <ul class="nav nav-pills">
+    <li role="presentation" class="{% if page.url == '/mission/' %} active {% endif %}">
+      <a href="/mission/">Mission</a>
+    </li>
     <li role="presentation" class="{% if '/mission/theological/' in page.url %} active {% endif %}">
       <a href="/mission/theological/">Theology</a>
     </li>
-    <li role="presentation" class="{% if '/mission/faith/' in page.url %} active {% endif %}">
-      <a href="/mission/faith/">Faith</a>
-    </li>
     <li role="presentation" class="{% if '/mission/technological/' in page.url %} active {% endif %}">
       <a href="/mission/technological/">Technology</a>
+    </li>
+    <li role="presentation" class="{% if '/mission/faith/' in page.url %} active {% endif %}">
+      <a href="/mission/faith/">Faith</a>
     </li>
   </ul>
   </div>
