@@ -7,13 +7,17 @@ const markdownItFootnote = require('markdown-it-footnote');
 const markdownItAttrs = require('markdown-it-attrs');
 const markdownItAnchor = require('markdown-it-anchor');
 
+const WIKI_ROOT = 'src/cta-wiki';
+const WIKI_SEGMENT = 'cta-wiki';
+const WIKI_RAW_PREFIX = `/${WIKI_SEGMENT}/`;
+
 const format = require('date-fns/format')
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
-  // Ignore Obsidian template scaffolds from being processed as pages
-  try { eleventyConfig.ignores.add('src/obsidian/templates/'); } catch (_) {}
-  try { eleventyConfig.addWatchIgnore('src/obsidian/templates/'); } catch (_) {}
+  // Ignore CTA wiki template scaffolds from being processed as pages
+  try { eleventyConfig.ignores.add(`${WIKI_ROOT}/templates/`); } catch (_) {}
+  try { eleventyConfig.addWatchIgnore(`${WIKI_ROOT}/templates/`); } catch (_) {}
   // Lightweight .env loader (no dependency on dotenv)
   try {
     const envPath = path.join(process.cwd(), '.env');
@@ -162,11 +166,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection('obsidian', (collectionApi) => {
     const items = collectionApi.getAll().filter(item => {
       const ip = (item && item.inputPath) ? String(item.inputPath).replace(/\\/g, '/') : '';
-      if (!ip.includes('/src/obsidian/')) return false;
-      // Ignore anything under src/obsidian/templates/
-      if (ip.includes('/src/obsidian/templates/')) return false;
+      if (!ip.includes(`/src/${WIKI_SEGMENT}/`)) return false;
+      // Ignore anything under the wiki templates directory
+      if (ip.includes(`/src/${WIKI_SEGMENT}/templates/`)) return false;
       // Exclude the index page itself if present
-      if (ip.endsWith('/src/obsidian/index.njk') || ip.endsWith('/src/obsidian/index.md')) return false;
+      if (ip.endsWith(`/src/${WIKI_SEGMENT}/index.njk`) || ip.endsWith(`/src/${WIKI_SEGMENT}/index.md`)) return false;
       return true;
     });
     // Sort by computed title then by URL for stability
@@ -218,7 +222,7 @@ module.exports = function(eleventyConfig) {
               if (!url.endsWith('/')) url = url + '/';
             } else {
               // Default URL logic
-              // If file is under obsidian/board, mirror nested path under /board/
+              // If file is under cta-wiki/board, mirror nested path under /board/
               if (relNorm.toLowerCase().startsWith('board/')) {
                 const withoutExt = relNorm.replace(/\.md$/i, '');
                 const segs = withoutExt.split('/').slice(1); // skip leading 'board'
@@ -265,7 +269,7 @@ module.exports = function(eleventyConfig) {
     return index;
   }
 
-  const obsidianIndex = buildObsidianIndex('src/obsidian');
+  const obsidianIndex = buildObsidianIndex(WIKI_ROOT);
 
   // Build a quick lookup to know if a given Obsidian file set an explicit permalink in frontmatter
   function buildObsidianFileMeta(rootDir) {
@@ -283,10 +287,10 @@ module.exports = function(eleventyConfig) {
             const raw = fs.readFileSync(full, 'utf8');
             const parsed = matter(raw);
             const hasExplicitPermalink = !!(parsed.data && typeof parsed.data.permalink === 'string' && parsed.data.permalink.trim());
-            // Normalize to workspace-relative posix path like 'src/obsidian/…'
+            // Normalize to workspace-relative posix path like 'src/cta-wiki/…'
             const rel = path.relative(process.cwd(), full).replace(/\\/g, '/');
-            // Ignore files under src/obsidian/templates/
-            if (rel.includes('/src/obsidian/templates/')) continue;
+            // Ignore files under the wiki templates directory
+            if (rel.includes(`/src/${WIKI_SEGMENT}/templates/`)) continue;
             meta.set(rel, { hasExplicitPermalink });
           } catch (_) { /* ignore */ }
         }
@@ -296,7 +300,7 @@ module.exports = function(eleventyConfig) {
     return meta;
   }
 
-  const obsidianFileMeta = buildObsidianFileMeta('src/obsidian');
+  const obsidianFileMeta = buildObsidianFileMeta(WIKI_ROOT);
 
   eleventyConfig.addFilter('obsidianHasExplicitPermalink', function(inputPath) {
     if (!inputPath) return false;
@@ -447,7 +451,7 @@ module.exports = function(eleventyConfig) {
     return backlinks;
   }
 
-  const obsidianBacklinks = buildObsidianBacklinks('src/obsidian', obsidianIndex);
+  const obsidianBacklinks = buildObsidianBacklinks(WIKI_ROOT, obsidianIndex);
 
   eleventyConfig.addFilter('obsidianBacklinks', function(pageUrl) {
     if (!pageUrl) return [];
@@ -465,11 +469,11 @@ module.exports = function(eleventyConfig) {
       }
       // Direct key
       pushAll(obsidianBacklinks.get(key));
-      // Cross-prefix fallback between /wiki/ and /obsidian/
+      // Cross-prefix fallback between /wiki/ and the raw note directory
       if (key.includes('/wiki/')) {
-        pushAll(obsidianBacklinks.get(key.replace('/wiki/', '/obsidian/')));
-      } else if (key.includes('/obsidian/')) {
-        pushAll(obsidianBacklinks.get(key.replace('/obsidian/', '/wiki/')));
+        pushAll(obsidianBacklinks.get(key.replace('/wiki/', WIKI_RAW_PREFIX)));
+      } else if (key.includes(WIKI_RAW_PREFIX)) {
+        pushAll(obsidianBacklinks.get(key.replace(WIKI_RAW_PREFIX, '/wiki/')));
       }
       return results.sort((a, b) => a.title.localeCompare(b.title));
     } catch (_) {
