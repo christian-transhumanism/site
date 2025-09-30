@@ -70,7 +70,7 @@ The Cosmists were geniuses of unusual, seemingly conflicting tendencies and purs
 - Werewolves as reminders we can devolve, return to being subhuman
 - Russian rulers have long history of magic. Rasputin makes sense.
 - > Fedorov would propose that all matter contains the dust of ancestors, and that traces of ancestral dust could be extracted and used not to do hostile magic but scientifically, to restore life to the departed.
-- [[201904052124 Cosmism > Technology must be focused on doing good]]
+- [[Cosmism > Technology must be focused on doing good]]
 
 [[201904072204]] The Russian landscape leads to antagonism between Humanity & Nature.
 Fedorov sees nature-worship as a death-wish.

@@ -1,3 +1,6 @@
+---
+uid: 201904052129
+---
 [[Scientific Resurrection]] requires space exploration
 [[quantum archaeology]] would be needed
 This required hunting down far-flung "particles" or information

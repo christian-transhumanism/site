@@ -1,3 +1,6 @@
+---
+uid: 201904052126
+---
 Fedorov believed in two kinds of death:
 - Death by disintegration
 - Death by fusion into some lifeless / distinctionless mass (mass movement, etc)

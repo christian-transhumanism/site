@@ -1,3 +1,6 @@
+---
+uid: 202206211132
+---
 
 [[David Bentley Hart on Theosis]]
 [[DBH on theosis as the historical rationale for the trinity]]
@@ -6,7 +9,7 @@
     - Hart, David Bentley. You Are Gods (p. 9). University of Notre Dame Press. Kindle Edition.  
         - https://www.facebook.com/groups/ChristianTranshumanistAssociation/posts/2119849228189325/  
 
-[[202209142052 Our Spirit is the Holy Spirit]]
+[[Our Spirit is the Holy Spirit]]
 DBH says Paul makes this clear, by his ambiguity
 
 > "Bulgakov is surely right, and on the soundest scriptural ground, when he speaks of the human spirit as that which is uncreated in humanity, and that which proceeds from God as an outpouring from his essence; and Bulgakov is right also in saying that, in creation, God calls his own breath to hypostatic existence—calls his own Spirit to indwell his creatures as their spirits—and thereby gives hypostatic life to the rays of his own glory.  

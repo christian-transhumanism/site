@@ -1,4 +1,4 @@
 - [[Religious drivers of the Scientific Revolution]]
 - [[Robert Boyle's Scientific Todo List]]
-- [[202307012027 Robert Boyle; Some Physico-Theological Considerations about the Possibility of the Resurrection (1675)]]
+- [[Robert Boyle; Some Physico-Theological Considerations about the Possibility of the Resurrection (1675)]]
 - [[Francis Bacon]]

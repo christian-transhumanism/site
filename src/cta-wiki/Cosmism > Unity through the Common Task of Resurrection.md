@@ -1,3 +1,6 @@
+---
+uid: 201904052204
+---
 # Cosmism > Unity through the Common Task of Resurrection
 - The work of resurrection would necessarily unite the world. 
 - Unbelievers, who in theory might find Christianity unacceptable, would, by resurrecting the dead, become in practice followers of Christ.

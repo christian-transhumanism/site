@@ -22,7 +22,7 @@ Scripture calls us to hope for the world to continue to improve, and to have fai
 
 ---
 
-> “[in] Orthodoxy…salvation is cosmic in scope and includes all creation…the promised Kingdom of God will be this world restored and transfigured…a deified humanity will serve as a cosmic priesthood, receiving glory from Christ and mediating it to the natural world.” ~ [[202308252046 DBH; orthodoxy, kingdom of god|DBH]]
+> “[in] Orthodoxy…salvation is cosmic in scope and includes all creation…the promised Kingdom of God will be this world restored and transfigured…a deified humanity will serve as a cosmic priesthood, receiving glory from Christ and mediating it to the natural world.” ~ [[David Bentley Hart; orthodoxy, kingdom of god|DBH]]
 
 > Jesus's resurrection is the beginning of God's new project not to snatch people away from earth to heaven but to colonize earth with the life of heaven. That, after all, is what the Lord's Prayer is about.  
 > — NT Wright

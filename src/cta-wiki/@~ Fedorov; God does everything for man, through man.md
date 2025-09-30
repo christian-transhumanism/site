@@ -1,3 +1,6 @@
+---
+uid: 202102071045
+---
 God does everything for man, through man #quote
 
 > God is the king who does everything for man but also through man. There is no purposefulness in nature - it is for man to introduce it, and this is his supreme raison d'etre. The Creator restores the world through us and brings back to life all that has perished. That is why nature has been left to its blindness, and mankind to its lusts. Through the labour of resuscitation, man as an independent , self-created , free creature freely responds to the call of divine love. Therefore humanity must not be idle passengers, but the crew of its terrestrial craft propelled by forces the nature of which we do not even know - is it photo-, thermo- or electro-powered ? We will remain unable to discover what force propels it until we are able to control it.

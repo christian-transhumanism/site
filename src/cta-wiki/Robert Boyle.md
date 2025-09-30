@@ -18,4 +18,4 @@ Robert Boyle (1627-1691), a devout evangelical Christian, a prominent scientist,
     - https://iep.utm.edu/boyle/
     - https://biologos.org/articles/the-faith-of-a-great-scientist-robert-boyles-religious-life-attitudes-and-vocation
 - Works
-    - [[202307012027 Robert Boyle; Some Physico-Theological Considerations about the Possibility of the Resurrection (1675)]]
+    - [[Robert Boyle; Some Physico-Theological Considerations about the Possibility of the Resurrection (1675)]]

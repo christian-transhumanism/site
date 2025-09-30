@@ -1,3 +1,6 @@
+---
+uid: 201904052124
+---
 Cosmism > Technology must be singularly focused on doing good
 
 > In Cosmism the danger is the unintended damage that can occur from powerful technology applied with even the best intentions. As in medieval magic, the best protection for Cosmists is the cross, the conviction that all technological advance must be pursued not for its own sake but for the sake of, and in the name of, the Christian task of resurrection.
