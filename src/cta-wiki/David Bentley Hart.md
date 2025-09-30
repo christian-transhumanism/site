@@ -7,7 +7,7 @@ aliases:
 [[DBH on rationality as essence of God]]
 [[202308252046 DBH; orthodoxy, kingdom of god]]
 [[202206211132 DBH; You Are Gods]]
-[[202111212143 DBH on theosis as the historical rationale for the trinity]]
+[[DBH on theosis as the historical rationale for the trinity]]
 [[202209142052 Our Spirit is the Holy Spirit]]
 [[DBH; Salvation is not magical]]
 

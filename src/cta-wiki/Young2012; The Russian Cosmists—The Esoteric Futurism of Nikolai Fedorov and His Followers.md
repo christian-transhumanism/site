@@ -1,3 +1,6 @@
+---
+uid: 201904050512
+---
 
 title: 'The Russian Cosmists: The Esoteric Futurism of Nikolai Fedorov and His Followers'
 author: George M. Young

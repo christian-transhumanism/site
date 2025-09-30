@@ -1,6 +1,6 @@
 
-[[202102181416 David Bentley Hart on Theosis]]
-[[202111212143 DBH on theosis as the historical rationale for the trinity]]
+[[David Bentley Hart on Theosis]]
+[[DBH on theosis as the historical rationale for the trinity]]
 
 > Finite existence itself is always already nothing but the gracious effect of God calling creatures to himself out of nothingness. All those boring false dilemmas bedeviling Western theology since the Pelagian controversy—the causal priority we assign either to our own working out of salvation or to God working in us, either to God’s foreknowledge or to his sovereignty in election, either to the creature’s merit or to God’s, and so on—are simple category errors. Between the immanent and the transcendent, or the finite and the infinite, such rivalries of agency are not even cogently conceivable.  
     - Hart, David Bentley. You Are Gods (p. 9). University of Notre Dame Press. Kindle Edition.  

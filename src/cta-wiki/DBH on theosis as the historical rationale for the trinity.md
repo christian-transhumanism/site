@@ -1,9 +1,12 @@
+---
+uid: 202111212143
+---
 DBH on the trinity, salvation, theosis
 source: https://www.facebook.com/groups/552331154934653/posts/1986825618151859
 shared: https://www.facebook.com/groups/749186598934347/posts/1239923839860618/
 #DBH #theosis
 
-[[202102181416]] David Bentley Hart on Theosis
+[[David Bentley Hart on Theosis]]
 
 ---
 short quote

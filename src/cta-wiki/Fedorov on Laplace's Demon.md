@@ -1,3 +1,6 @@
+---
+uid: 202101060028
+---
 I think #Fedorov is using this as a thought experiment for how to resurrect the dead.
 
 > Canales cites the Soviet futurist Nikolai Fyodorov, who argued “that Laplace’s creation could be brought to life if everyone worked together, literally putting their minds to it to collectivize intellectual work.”

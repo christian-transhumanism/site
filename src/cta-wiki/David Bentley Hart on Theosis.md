@@ -1,7 +1,8 @@
-202102181416 David Bentley Hart on Theosis
-#DBH #theosis
+---
+uid: 202102181416
+---
 
-[[202111212143 DBH on theosis as the historical rationale for the trinity]]
+[[DBH on theosis as the historical rationale for the trinity]]
 
 > "In all of us, and in all things, there sleeps a fallen god called by God to awaken and seek union with him as a natural end—to risk a formulation that will offend just about every Christian, but that merely expresses the inescapable conclusion of thinking the theology of divine incarnation and human glorification through to its logically inevitable terminus" 
 > - (Hart, pg. 72, Kindle Edition).
@@ -23,6 +24,7 @@
 > - [[202206211132 DBH; You Are Gods]]
 > - Hart, David Bentley. You Are Gods (p. 32). University of Notre Dame Press. Kindle Edition.  
 
+#DBH #theosis
 
 ---
 uuid: F2CFD6A2-705C-41C7-9E43-CC31F4772231

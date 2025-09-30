@@ -1,3 +1,6 @@
+---
+uid: 201904052131
+---
 [[Nikolai Fedorov (1829-1903)|Fedorov]] anticipated [[quantum archaeology]], and the diffusion of data / particles across the universe. a form of [[Scientific Resurrection]]
 
 > To recover particles of disintegrated ancestors, Fedorov projected, research teams would have to travel to the moon, to the planets, and to distant points throughout the universe.

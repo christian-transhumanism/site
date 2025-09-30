@@ -10,7 +10,7 @@ aliases:
 #transhumanism #ChristianTranshumanism #HistoricPerson
 
 
-### [[201904050512 Young2012; The Russian Cosmists—The Esoteric Futurism of Nikolai Fedorov and His Followers]] 
+### [[Young2012; The Russian Cosmists—The Esoteric Futurism of Nikolai Fedorov and His Followers]] 
 
 
 [[201904052311]] Fedorov personal life
