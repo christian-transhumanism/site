@@ -10,11 +10,45 @@ const markdownItAnchor = require('markdown-it-anchor');
 const WIKI_ROOT = 'src/cta-wiki';
 const WIKI_SEGMENT = 'cta-wiki';
 const WIKI_RAW_PREFIX = `/${WIKI_SEGMENT}/`;
+const WIKI_ASSET_OUTPUT_DIR = 'wiki-assets';
+const WIKI_ASSET_URL_PREFIX = `/${WIKI_ASSET_OUTPUT_DIR}/`;
+const WIKI_ASSET_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.avif', '.svg', '.mp3', '.mp4', '.pdf']);
+
+function posixPath(str) {
+  return String(str).replace(/\\/g, '/');
+}
+
+function toSlugBase(str) {
+  const s = slugify(String(str || '').replace(/[–—]/g, '-'), { lower: true, strict: true });
+  return s || 'note';
+}
+
+function decodeHtmlEntities(str) {
+  return String(str || '').replace(/&(#x?[0-9a-fA-F]+|#\d+|amp|lt|gt|quot|apos);/g, (match, entity) => {
+    switch (entity) {
+      case 'amp': return '&';
+      case 'lt': return '<';
+      case 'gt': return '>';
+      case 'quot': return '"';
+      case 'apos': return "'";
+    }
+    if (entity.startsWith('#x') || entity.startsWith('#X')) {
+      const code = parseInt(entity.slice(2), 16);
+      return Number.isFinite(code) ? String.fromCodePoint(code) : match;
+    }
+    if (entity.startsWith('#')) {
+      const code = parseInt(entity.slice(1), 10);
+      return Number.isFinite(code) ? String.fromCodePoint(code) : match;
+    }
+    return match;
+  });
+}
 
 const format = require('date-fns/format')
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
+  const wikiAssetLookup = new Map();
   // Ignore CTA wiki template scaffolds from being processed as pages
   try { eleventyConfig.ignores.add(`${WIKI_ROOT}/templates/`); } catch (_) {}
   try { eleventyConfig.addWatchIgnore(`${WIKI_ROOT}/templates/`); } catch (_) {}
@@ -186,10 +220,58 @@ module.exports = function(eleventyConfig) {
   });
 
   // --- Obsidian Wikilink support ---
-  function toSlugBase(str) {
-    const s = slugify(String(str || '').replace(/[–—]/g, '-'), { lower: true, strict: true });
-    return s || 'note';
+  function collectWikiAssets(rootDir) {
+    const base = path.join(process.cwd(), rootDir);
+    const assets = [];
+
+    function walk(dir) {
+      const entries = fs.existsSync(dir) ? fs.readdirSync(dir, { withFileTypes: true }) : [];
+      for (const ent of entries) {
+        const full = path.join(dir, ent.name);
+        if (ent.isDirectory()) {
+          if (ent.name && ent.name.toLowerCase() === 'templates') continue;
+          walk(full);
+        } else if (ent.isFile()) {
+          const ext = path.extname(ent.name).toLowerCase();
+          if (!WIKI_ASSET_EXTENSIONS.has(ext)) continue;
+          const relFromBase = posixPath(path.relative(base, full));
+          const relFromRoot = posixPath(path.relative(process.cwd(), full));
+          const outputRelative = posixPath(path.posix.join(WIKI_ASSET_OUTPUT_DIR, relFromBase));
+          const href = WIKI_ASSET_URL_PREFIX + relFromBase.split('/').map(encodeURIComponent).join('/');
+          const stem = path.basename(ent.name, ext);
+          const keys = new Set([
+            relFromBase,
+            relFromBase.toLowerCase(),
+            ent.name,
+            ent.name.toLowerCase(),
+            stem,
+            stem.toLowerCase(),
+            toSlugBase(stem),
+          ]);
+          assets.push({ relFromBase, relFromRoot, outputRelative, href, keys });
+        }
+      }
+    }
+
+    walk(base);
+    return assets;
   }
+
+  function findWikiAssetHref(key) {
+    if (!key) return null;
+    const trimmed = key.trim();
+    if (!trimmed) return null;
+    const direct = wikiAssetLookup.get(trimmed);
+    if (direct) return direct;
+    const lower = wikiAssetLookup.get(trimmed.toLowerCase());
+    if (lower) return lower;
+    if (!trimmed.includes('.')) {
+      const slugged = toSlugBase(trimmed);
+      if (wikiAssetLookup.has(slugged)) return wikiAssetLookup.get(slugged);
+    }
+    return null;
+  }
+
   // Build a lookup of Obsidian note names -> output URLs
   function buildObsidianIndex(rootDir) {
     const base = path.join(process.cwd(), rootDir);
@@ -270,6 +352,15 @@ module.exports = function(eleventyConfig) {
   }
 
   const obsidianIndex = buildObsidianIndex(WIKI_ROOT);
+
+  const wikiAssets = collectWikiAssets(WIKI_ROOT);
+  for (const asset of wikiAssets) {
+    eleventyConfig.addPassthroughCopy({ [asset.relFromRoot]: asset.outputRelative });
+    for (const key of asset.keys) {
+      if (!key) continue;
+      if (!wikiAssetLookup.has(key)) wikiAssetLookup.set(key, asset.href);
+    }
+  }
 
   // Build a quick lookup to know if a given Obsidian file set an explicit permalink in frontmatter
   function buildObsidianFileMeta(rootDir) {
@@ -486,12 +577,13 @@ module.exports = function(eleventyConfig) {
     if (!content || typeof content !== 'string') return content;
 
     function resolveTarget(target) {
+      const decoded = decodeHtmlEntities(target);
       let display = null;
-      let page = target;
-      const pipe = target.indexOf('|');
+      let page = decoded;
+      const pipe = decoded.indexOf('|');
       if (pipe !== -1) {
-        page = target.slice(0, pipe);
-        display = target.slice(pipe + 1);
+        page = decoded.slice(0, pipe);
+        display = decoded.slice(pipe + 1);
       }
       let anchor = '';
       const hash = page.indexOf('#');
@@ -501,10 +593,12 @@ module.exports = function(eleventyConfig) {
       }
       const key = page.trim();
       const url = obsidianIndex.get(key) || obsidianIndex.get(key.toLowerCase()) || obsidianIndex.get(toSlugBase(key));
-      const exists = !!url;
-      const href = exists ? (url + (anchor ? `#${toSlugBase(anchor)}` : '')) : '#';
+      const assetHref = findWikiAssetHref(key);
+      const hasUrl = !!url;
+      const href = hasUrl ? (url + (anchor ? `#${toSlugBase(anchor)}` : '')) : (assetHref || '#');
       const text = (display && display.trim()) || key;
-      return { href, text, exists, key };
+      const exists = hasUrl || !!assetHref;
+      return { href, text, exists, key, isAsset: !hasUrl && !!assetHref };
     }
 
     // Images: ![[file|alt]] or ![[file]]
@@ -550,13 +644,14 @@ module.exports = function(eleventyConfig) {
     if (!outputPath || !outputPath.endsWith('.html') || typeof content !== 'string') return content;
 
     function resolveTarget(target) {
+      const decoded = decodeHtmlEntities(target);
       // Split alias text
       let display = null;
-      let page = target;
-      const pipe = target.indexOf('|');
+      let page = decoded;
+      const pipe = decoded.indexOf('|');
       if (pipe !== -1) {
-        page = target.slice(0, pipe);
-        display = target.slice(pipe + 1);
+        page = decoded.slice(0, pipe);
+        display = decoded.slice(pipe + 1);
       }
       // Extract anchor if present
       let anchor = '';
@@ -567,10 +662,12 @@ module.exports = function(eleventyConfig) {
       }
       const key = page.trim();
       const url = obsidianIndex.get(key) || obsidianIndex.get(key.toLowerCase()) || obsidianIndex.get(toSlugBase(key));
-      const exists = !!url;
-      const href = exists ? (url + (anchor ? `#${toSlugBase(anchor)}` : '')) : '#';
+      const assetHref = findWikiAssetHref(key);
+      const hasUrl = !!url;
+      const href = hasUrl ? (url + (anchor ? `#${toSlugBase(anchor)}` : '')) : (assetHref || '#');
       const text = (display && display.trim()) || key;
-      return { href, text, exists, key };
+      const exists = hasUrl || !!assetHref;
+      return { href, text, exists, key, isAsset: !hasUrl && !!assetHref };
     }
 
     // Images: ![[file|alt]] or ![[file]] — best-effort: map to /assets or pass through as-is
