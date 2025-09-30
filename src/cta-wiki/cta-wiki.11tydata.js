@@ -1,5 +1,7 @@
 const slugify = require('slugify');
 
+const WIKI_SEGMENT = 'cta-wiki';
+
 function toSlugBase(str) {
   const s = slugify(String(str || '').replace(/[–—]/g, '-'), { lower: true, strict: true });
   return s || 'note';
@@ -15,7 +17,7 @@ function humanizeTitle(str) {
 }
 
 module.exports = {
-  // Default layout for Obsidian notes when none is provided
+  // Default layout for CTA wiki notes when none is provided
   layout: 'resourcePage',
 
   eleventyComputed: {
@@ -29,8 +31,8 @@ module.exports = {
       if (data.title) return data.title;
       const stem = (data.page && data.page.filePathStem) ? String(data.page.filePathStem) : '';
       const parts = stem.replace(/^\/+/, '').split('/');
-      const obsidianIdx = parts.indexOf('obsidian');
-      const after = obsidianIdx >= 0 ? parts.slice(obsidianIdx + 1) : parts;
+      const wikiIdx = parts.indexOf(WIKI_SEGMENT);
+      const after = wikiIdx >= 0 ? parts.slice(wikiIdx + 1) : parts;
       const fileSeg = after[after.length - 1] || 'Note';
       return humanizeTitle(fileSeg);
     },
@@ -41,18 +43,18 @@ module.exports = {
       // Determine from file path and name
       const stem = (data.page && data.page.filePathStem) ? String(data.page.filePathStem) : '';
       // Example stems:
-      //  - '/obsidian/about'                 => '/wiki/about/'
-      //  - '/obsidian/board/2024/notes'      => '/board/2024/notes/'
-      //  - '/obsidian/mission/faith/foo-bar' => '/wiki/foo-bar/' (only filename for non-board)
+      //  - '/cta-wiki/about'                 => '/wiki/about/'
+      //  - '/cta-wiki/board/2024/notes'      => '/board/2024/notes/'
+      //  - '/cta-wiki/mission/faith/foo-bar' => '/wiki/foo-bar/' (only filename for non-board)
 
-      // Extract last segment (filename without extension) and any folders under obsidian/
-      const parts = stem.replace(/^\/+/, '').split('/'); // e.g. ['obsidian','board','2024','notes']
-      const obsidianIdx = parts.indexOf('obsidian');
-      const after = obsidianIdx >= 0 ? parts.slice(obsidianIdx + 1) : parts;
+      // Extract last segment (filename without extension) and any folders under cta-wiki/
+      const parts = stem.replace(/^\/+/, '').split('/'); // e.g. ['cta-wiki','board','2024','notes']
+      const wikiIdx = parts.indexOf(WIKI_SEGMENT);
+      const after = wikiIdx >= 0 ? parts.slice(wikiIdx + 1) : parts;
 
       if (after.length === 0) return '/wiki/';
 
-      // Special case: mirror nested path under /board/ when file lives under obsidian/board/
+      // Special case: mirror nested path under /board/ when file lives under cta-wiki/board/
       if (after[0] && after[0].toLowerCase() === 'board') {
         const segs = after.slice(1); // everything after 'board'
         const slugged = segs.map(s => toSlugBase(s));

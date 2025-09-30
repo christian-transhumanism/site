@@ -8,11 +8,11 @@ module.exports = {
       if (data.permalink) return data.permalink;
 
       const stem = (data.page && data.page.filePathStem) ? String(data.page.filePathStem) : "";
-      // Expect stems like "/obsidian/board/…"
-      if (!stem.startsWith("/obsidian/board/")) return data.permalink;
+      // Expect stems like "/cta-wiki/board/…"
+      if (!stem.startsWith("/cta-wiki/board/")) return data.permalink;
 
       // Build /board/… path preserving nested folders (slugified)
-      const afterBoard = stem.replace(/^\/obsidian\/board\//, "");
+      const afterBoard = stem.replace(/^\/cta-wiki\/board\//, "");
       const segments = afterBoard.split("/").filter(Boolean);
       const slugifySeg = (s) => s
         .toLowerCase()
