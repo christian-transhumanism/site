@@ -1,3 +1,6 @@
+---
+uid: 201904301811
+---
 H+ Magazine
 Relational Transhumanism: Interdependence is the Rule, Not the Exception
 http://hplusmagazine.com/2014/10/02/relational-transhumanism-interdependence-rule-exception/

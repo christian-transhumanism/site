@@ -1,3 +1,6 @@
+---
+uid: 201605261911
+---
 [[Christian Transhumanist Podcast]] Episode 17
 https://www.christiantranshumanism.org/podcast/17/
 

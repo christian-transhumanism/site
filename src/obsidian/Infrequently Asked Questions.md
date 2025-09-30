@@ -1,0 +1,21 @@
+- What is the difference between Christian Transhumanism and Secular Transhumanism?
+	- 
+- Are there any practical differences in method or goals?
+	- 
+- Name some actual positions or recommended actions where secular transhumanists and Christian transhumanists are opposed
+	- 
+- Do Christian transhumanists tend to be more progressive or conservative?
+	- 
+- How do most Christian Transhumanists feel about gender and sexuality?
+	- The diversity in Christian Transhumanist thought mirrors the diversity in Christian thought in general. 
+	- Christian Transhumanists come from every denomination and Christian tradition, and frame these issues accordingly.
+- Are Christian Transhumanists orthodox?
+	- Christian Transhumanists come from the full span of the Christian world, and have a corresponding diversity of thought. 
+	- Christian Transhumanist thought is fully compatible with historic and traditional Christian orthodoxy, including the ecumenical councils, the Nicene Creed, and the Chalcedonian Definition. 
+	- Many people have come to Christian Transhumanism by studying CS Lewis, NT Wright, or the church fathers.
+- Are Christian Transhumanists trinitarian?
+	- Christian Transhumanists come from the full span of the Christian world, and have a corresponding diversity of thought. 
+	- The majority of Christian Transhumanists are explicit trinitarians.
+	- The Father, the Son, and the Holy Spirit are critical features of Christian Transhumanist thought. If affirming the Father, the Son, and the Holy Spirit is trinitarian, then Christian Transhumanist thought is trinitarian. 
+	- Christian Transhumanist thought is fully compatible with historic and traditional Christian orthodoxy, including the ecumenical councils, the Nicene Creed, and the Chalcedonian Definition. 
+- 
