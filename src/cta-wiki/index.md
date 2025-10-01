@@ -1,5 +1,13 @@
-- Read about [[Christian Transhumanism]]
-- Join the [Christian Transhumanist Association](https://www.christiantranshumanism.org/join/)
+The CTA Wiki is a living knowledge base exploring Christian Transhumanism — ideas, people, history, theology, and technology. It’s built from concise notes that interlink for quick discovery.
+
+- Start here:
+	- Read about [[Christian Transhumanism]]
+	- Join the [Christian Transhumanist Association](https://www.christiantranshumanism.org/join/)
+- Go further:
+	- [Books](/books/)
+	- [Press](/press/)
+	- [Frequently Asked Questions](/faq/)
+	- [Quotes](/quotes/)
 - Read about [[emerging tech topics]]:
 	- [[Artificial Intelligence]]
 	- [[Carbon filtration]]
@@ -21,4 +29,5 @@
 - Volunteer to work on some of the proposed wiki articles:
 	- https://docs.google.com/spreadsheets/d/1ywcS_PMz2BVbvYdMso6uJl6wyCVf-CXS-dtclmXLHV8/edit?usp=sharing
 
-	
+[browse all articles](/wiki/all/)
+
