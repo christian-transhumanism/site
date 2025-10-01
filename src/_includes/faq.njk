@@ -14,70 +14,105 @@ layout: resourcePage
     </div>
   </div>
   <div class="faq-empty alert alert-info" style="display:none;">No matching questions.</div>
+  <ul class="faq-list">
   {% for faq in faqs %}
-    <div class="faq-accordion" role="group">
-      <h3 id="q-{{ loop.index }}" tabindex="0" aria-controls="a-{{ loop.index }}" aria-expanded="false">
-        {{ faq.question | mdInline | wikilinks | safe }}
-      </h3>
-      <span class="faq-accordion-icon-toggle" aria-hidden="true">
-        <i class="glyphicon glyphicon-chevron-down"></i>
-      </span>
-      <div class="faq-body" id="a-{{ loop.index }}" aria-labelledby="q-{{ loop.index }}">
+    <li class="faq-item" role="group">
+      <button type="button" class="faq-question" id="q-{{ loop.index }}" aria-controls="a-{{ loop.index }}" aria-expanded="false">
+        <span class="faq-question-text">{{ faq.question | mdInline | wikilinks | safe }}</span>
+        <span class="faq-question-icon" aria-hidden="true">
+          <i class="glyphicon glyphicon-chevron-down"></i>
+        </span>
+      </button>
+      <div class="faq-body" id="a-{{ loop.index }}" role="region" aria-labelledby="q-{{ loop.index }}">
         {{ faq.answer | md | wikilinks | safe }}
       </div>
-    </div>
+    </li>
   {% endfor %}
+  </ul>
 </section>
 
 <script>
   (function($){
-    function toggle($acc, expand){
-      var $body = $acc.find('.faq-body');
-      var isActive = $acc.hasClass('active');
-      var doExpand = (typeof expand !== 'undefined') ? expand : !isActive;
-      $acc.toggleClass('active', doExpand);
-      $acc.find('h3').attr('aria-expanded', doExpand);
-      // Use show/hide for jQuery slim (no effects module)
-      if (doExpand) { $body.show(); }
-      else { $body.hide(); }
+    var $faqContainer = $('#fh5co-faqs');
+    var $expandAll = $('#faq-expand-all');
+    var $collapseAll = $('#faq-collapse-all');
+
+    function setButtons(state){
+      $expandAll.removeClass('btn-primary btn-default');
+      $collapseAll.removeClass('btn-primary btn-default');
+      if (state === 'expanded') {
+        $expandAll.addClass('btn-primary');
+        $collapseAll.addClass('btn-default');
+      } else if (state === 'collapsed') {
+        $collapseAll.addClass('btn-primary');
+        $expandAll.addClass('btn-default');
+      } else {
+        $expandAll.addClass('btn-default');
+        $collapseAll.addClass('btn-default');
+      }
     }
 
-    $('#fh5co-faqs').on('click', '.faq-accordion h3, .faq-accordion .faq-accordion-icon-toggle', function(){
-      var $acc = $(this).closest('.faq-accordion');
-      toggle($acc);
+    function updateToolbarState(){
+      var $items = $faqContainer.find('.faq-item:visible');
+      if (!$items.length) {
+        setButtons('collapsed');
+        return;
+      }
+      var expandedCount = $items.filter('.active').length;
+      if (expandedCount === 0) setButtons('collapsed');
+      else if (expandedCount === $items.length) setButtons('expanded');
+      else setButtons('partial');
+    }
+
+    function toggle($item, expand, silent){
+      var $body = $item.find('.faq-body');
+      var $button = $item.find('.faq-question');
+      var isActive = $item.hasClass('active');
+      var doExpand = (typeof expand !== 'undefined') ? expand : !isActive;
+      $item.toggleClass('active', doExpand);
+      $button.attr('aria-expanded', doExpand);
+      if (doExpand) { $body.show(); }
+      else { $body.hide(); }
+      if (!silent) updateToolbarState();
+    }
+
+    $faqContainer.on('click', '.faq-question', function(){
+      toggle($(this).closest('.faq-item'));
     });
 
     // Keyboard accessibility: toggle with Enter/Space
-    $('#fh5co-faqs').on('keydown', '.faq-accordion h3', function(e){
+    $faqContainer.on('keydown', '.faq-question', function(e){
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        toggle($(this).closest('.faq-accordion'));
+        toggle($(this).closest('.faq-item'));
       }
     });
 
     // Expand/Collapse All
-    $('#faq-expand-all').on('click', function(){
-      $('#fh5co-faqs .faq-accordion:visible').each(function(){ toggle($(this), true); });
+    $expandAll.on('click', function(){
+      $faqContainer.find('.faq-item:visible').each(function(){ toggle($(this), true, true); });
+      updateToolbarState();
     });
-    $('#faq-collapse-all').on('click', function(){
-      $('#fh5co-faqs .faq-accordion:visible').each(function(){ toggle($(this), false); });
+    $collapseAll.on('click', function(){
+      $faqContainer.find('.faq-item:visible').each(function(){ toggle($(this), false, true); });
+      updateToolbarState();
     });
 
     // Simple search/filter
     $('#faq-search').on('input', function(){
       var q = $(this).val().toLowerCase().trim();
       var any = false;
-      $('#fh5co-faqs .faq-accordion').each(function(){
-        var $acc = $(this);
-        var text = ($acc.find('h3').text() + ' ' + $acc.find('.faq-body').text()).toLowerCase();
+      $faqContainer.find('.faq-item').each(function(){
+        var $item = $(this);
+        var text = ($item.find('.faq-question-text').text() + ' ' + $item.find('.faq-body').text()).toLowerCase();
         var match = q === '' || text.indexOf(q) !== -1;
-        $acc.toggle(match);
+        $item.toggle(match);
         if (match) any = true;
       });
       $('.faq-empty').toggle(!any);
+      updateToolbarState();
     });
 
-    // Default: expand all so answers are visible initially
-    $('#fh5co-faqs .faq-accordion').each(function(){ toggle($(this), true); });
+    updateToolbarState();
   })(jQuery);
 </script>
