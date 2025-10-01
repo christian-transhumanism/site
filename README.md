@@ -58,6 +58,26 @@ The static site is written to `_site/`. Deploy that folder to any static host (N
 - Notes inside `cta-wiki/board/` map to `/board/...` permalinks, while all other notes render under `/wiki/...`.
 - Keep organizational metadata (frontmatter, tags, aliases) in the Markdown files—Eleventy parses it via `gray-matter` to drive permalinks and backlinks.
 
+## Dynamic data & external feeds
+
+- Most dynamic content lives under `src/_data/`. JSON files set the sources and copy for sections such as books, community feeds, and mission articles.
+- `src/_data/community-feeds.json` lists the RSS URLs aggregated for the Community page. Update the list and clear `.cache/` to force a refetch.
+- `src/_data/videoSources.json` defines the YouTube channels shown on `/videos/`. Add entries with `channelId`, `handle`, or legacy `user` fields; the data loader falls back gracefully when some fields are missing.
+- Optional seed and credential helpers live next to the loaders (`youtubeApi.json`, `substackFeed.json`) so you can keep secrets out of git.
+- Remote fetches write to `.cache/` for faster rebuilds. Delete that directory when you need to bypass cached responses.
+
+### Environment variables
+
+Place values in a `.env` file or export them before running Eleventy. The lightweight loader in `.eleventy.js` reads `.env` automatically.
+
+| Variable | Purpose |
+| --- | --- |
+| `YOUTUBE_API_KEY` | Enables YouTube Data API v3 pagination for deeper channel history. Optional but recommended when you need more than the RSS feed surface area. |
+| `MAX_VIDEOS_PER_CHANNEL` | Cap per-channel fetches when using the API. Defaults to the value in `youtubeApi.json` (150). |
+| `VIDEO_LIMIT` | Hard limit on the number of merged videos rendered onto the site (default 100). Lower it for faster builds or smaller grids. |
+| `SUBSTACK_FEED` | Override the Substack RSS URL consumed by `src/_data/substack.js`. Useful for previews or testing alternate newsletters. |
+| `CLOUDINARY_CLOUD_NAME` | Change the Cloudinary account used by the `cdnImage` filter. Falls back to `christian-transhumanist-association`. |
+
 ## Helpful commands
 
 | Task | Command |
@@ -81,4 +101,3 @@ The static site is written to `_site/`. Deploy that folder to any static host (N
 4. Ensure the build command runs cleanly before opening a pull request.
 
 For additional background on content strategy or pending tasks, consult `guidelines.txt` and `todo.txt`.
-
