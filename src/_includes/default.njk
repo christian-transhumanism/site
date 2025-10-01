@@ -20,18 +20,10 @@ body_classes:  ""
     <main role="main">
       {{ content | safe }}
 
-      {# Backlinks: only render here for pages whose chosen layout is 'default' #}
-      {% set backlinks = (page.url | obsidianBacklinks) %}
-      {% if layout == 'default' and (page.url | stringContains('/wiki/')) and backlinks and backlinks.length %}
-        <section class="backlinks container">
-          <hr>
-          <h3>Backlinks</h3>
-          <ul>
-            {% for item in backlinks %}
-              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </section>
+      {% if layout == 'default' %}
+        <div class="container">
+          {% include 'shared/backlinks-panel.njk' %}
+        </div>
       {% endif %}
     </main>
 

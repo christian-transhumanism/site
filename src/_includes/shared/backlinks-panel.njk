@@ -1,0 +1,97 @@
+{# Renders inbound/outbound knowledge links for Obsidian-sourced pages #}
+{% set currentUrl = pageUrl or (page and page.url) or '' %}
+{% if not currentUrl %}
+  {% set backlinksList = [] %}
+  {% set outboundList = [] %}
+{% else %}
+  {% set backlinksList = backlinksList or (currentUrl | obsidianBacklinks) %}
+  {% set outboundList = outboundList or (currentUrl | obsidianOutbound) %}
+{% endif %}
+{% if currentUrl and (currentUrl | stringContains('/wiki/')) %}
+  {% set hasBacklinks = backlinksList and backlinksList.length %}
+  {% set hasOutbound = outboundList and outboundList.length %}
+  {% if hasBacklinks or hasOutbound %}
+    <section class="knowledge-links">
+      <hr>
+      {% if hasBacklinks %}
+        {% set featuredBacklinks = (backlinksList | selectattr('isFeatured') | list) %}
+        {% set otherBacklinks = (backlinksList | rejectattr('isFeatured') | list) %}
+        <div class="knowledge-links__section">
+          <h3>Referenced By</h3>
+          {% if featuredBacklinks and featuredBacklinks.length %}
+            <div class="knowledge-links__grid">
+              {% for item in featuredBacklinks %}
+                <article class="knowledge-card">
+                  <h4><a href="{{ item.url }}">{{ item.title }}</a></h4>
+                  {% if item.snippet %}
+                    <p>{{ item.snippet | excerpt(36) }}</p>
+                  {% endif %}
+                  <div class="knowledge-card__meta">
+                    {% if item.badgeCount %}
+                      <span class="knowledge-pill">{{ item.badgeCount }} mentions</span>
+                    {% endif %}
+                    {% if item.isMutual %}
+                      <span class="knowledge-pill knowledge-pill--mutual">↔ Linked both ways</span>
+                    {% endif %}
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+          {% endif %}
+          {% if otherBacklinks and otherBacklinks.length %}
+            <ul class="knowledge-links__list">
+              {% for item in otherBacklinks %}
+                <li>
+                  <a href="{{ item.url }}">{{ item.title }}</a>
+                  {% if item.badgeCount %}
+                    <span class="knowledge-count" aria-label="{{ item.badgeCount }} references">{{ item.badgeCount }}</span>
+                  {% endif %}
+                  {% if item.isMutual and not item.badgeCount %}
+                    <span class="knowledge-count knowledge-count--mutual" aria-label="Linked both ways">↔</span>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if hasOutbound %}
+        <div class="knowledge-links__section">
+          <h3>Linked in this Article</h3>
+          <div class="knowledge-links__grid knowledge-links__grid--condensed">
+            {% for item in outboundList %}
+              {% if loop.index <= 3 %}
+                <article class="knowledge-card knowledge-card--compact">
+                  <h4><a href="{{ item.url }}">{{ item.title }}</a></h4>
+                  {% if item.snippet %}
+                    <p>{{ item.snippet | excerpt(28) }}</p>
+                  {% endif %}
+                  <div class="knowledge-card__meta">
+                    {% if item.badgeCount %}
+                      <span class="knowledge-pill">{{ item.badgeCount }} mentions</span>
+                    {% endif %}
+                  </div>
+                </article>
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% if outboundList.length > 3 %}
+            <ul class="knowledge-links__list knowledge-links__list--outbound">
+              {% for item in outboundList %}
+                {% if loop.index > 3 %}
+                  <li>
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+                    {% if item.badgeCount %}
+                      <span class="knowledge-count" aria-label="{{ item.badgeCount }} references">{{ item.badgeCount }}</span>
+                    {% endif %}
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      {% endif %}
+    </section>
+  {% endif %}
+{% endif %}

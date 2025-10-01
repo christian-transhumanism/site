@@ -403,7 +403,9 @@ module.exports = function(eleventyConfig) {
   // Build backlinks for Obsidian notes based on wikilinks
   function buildObsidianBacklinks(rootDir, index) {
     const base = path.join(process.cwd(), rootDir);
-    const backlinks = new Map(); // targetUrl -> [{ url, title }]
+    const backlinks = new Map(); // targetUrl -> [{ url, title, count, snippets, anchorTexts }]
+    const outbound = new Map(); // sourceUrl -> [{ url, count, snippets, anchorTexts }]
+    const pageMeta = new Map(); // url -> { title }
 
     function toUrlForFile(fullPath) {
       try {
@@ -440,18 +442,91 @@ module.exports = function(eleventyConfig) {
           collect(parsed.data);
           return acc.join('\n\n');
         })();
-        return { url, title, content: parsed.content || '', dataText };
+        const meta = { url, title, content: parsed.content || '', dataText };
+        if (url) pageMeta.set(url, { title });
+        return meta;
       } catch (_) {
         return null;
       }
     }
 
-    function addBacklink(targetUrl, fromItem) {
-      if (!targetUrl || !fromItem) return;
-      const arr = backlinks.get(targetUrl) || [];
-      // Deduplicate by URL
-      if (!arr.some(x => x.url === fromItem.url)) arr.push({ url: fromItem.url, title: fromItem.title });
-      backlinks.set(targetUrl, arr);
+    function makeSnippet(sourceText, index, length) {
+      if (!sourceText) return '';
+      try {
+        const radius = 140;
+        const start = Math.max(0, index - radius);
+        const end = Math.min(sourceText.length, index + length + radius);
+        let snippet = sourceText.slice(start, end).replace(/\s+/g, ' ').trim();
+        // Strip simple Markdown constructs for cleaner display
+        snippet = snippet
+          .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+          .replace(/\[[^\]]+\]\([^)]*\)/g, (m) => {
+            const inner = m.match(/\[([^\]]+)\]/);
+            return inner && inner[1] ? inner[1] : '';
+          })
+          .replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (m, p1, p2) => (p2 || p1 || ''));
+        if (!snippet) return '';
+        if (start > 0) snippet = '…' + snippet;
+        if (end < sourceText.length) snippet = snippet + '…';
+        return snippet;
+      } catch (_) {
+        return '';
+      }
+    }
+
+    function registerLink(fromItem, targetUrl, meta = {}) {
+      if (!targetUrl || !fromItem || !fromItem.url) return;
+
+      const payload = {
+        snippet: meta.snippet || '',
+        anchorText: meta.anchorText || '',
+        type: meta.type || 'link'
+      };
+
+      // Inbound storage (backlinks)
+      const inboundList = backlinks.get(targetUrl) || [];
+      let inboundEntry = inboundList.find(x => x.url === fromItem.url);
+      if (!inboundEntry) {
+        inboundEntry = {
+          url: fromItem.url,
+          title: fromItem.title,
+          count: 0,
+          snippets: [],
+          anchorTexts: [],
+          types: [],
+        };
+        inboundList.push(inboundEntry);
+      }
+      inboundEntry.count += 1;
+      if (payload.snippet) inboundEntry.snippets.push(payload.snippet);
+      if (payload.anchorText) inboundEntry.anchorTexts.push(payload.anchorText);
+      if (payload.type && !inboundEntry.types.includes(payload.type)) inboundEntry.types.push(payload.type);
+      inboundEntry.snippet = inboundEntry.snippets[0] || '';
+      inboundEntry.anchorText = inboundEntry.anchorTexts[inboundEntry.anchorTexts.length - 1] || '';
+      inboundEntry.score = inboundEntry.count;
+      backlinks.set(targetUrl, inboundList);
+
+      // Outbound storage (links from the current page)
+      const outboundList = outbound.get(fromItem.url) || [];
+      let outboundEntry = outboundList.find(x => x.url === targetUrl);
+      if (!outboundEntry) {
+        outboundEntry = {
+          url: targetUrl,
+          count: 0,
+          snippets: [],
+          anchorTexts: [],
+          types: [],
+        };
+        outboundList.push(outboundEntry);
+      }
+      outboundEntry.count += 1;
+      if (payload.snippet) outboundEntry.snippets.push(payload.snippet);
+      if (payload.anchorText) outboundEntry.anchorTexts.push(payload.anchorText);
+      if (payload.type && !outboundEntry.types.includes(payload.type)) outboundEntry.types.push(payload.type);
+      outboundEntry.snippet = outboundEntry.snippets[0] || '';
+      outboundEntry.anchorText = outboundEntry.anchorTexts[outboundEntry.anchorTexts.length - 1] || '';
+      outboundEntry.score = outboundEntry.count;
+      outbound.set(fromItem.url, outboundList);
     }
 
     function normalizeHref(href) {
@@ -485,19 +560,32 @@ module.exports = function(eleventyConfig) {
           if (!from) continue;
           const content = String(from.content);
           const extra = String(from.dataText || '');
+          const fromUrl = from.url;
+          const fromTitle = from.title;
+          if (fromUrl) {
+            if (!pageMeta.has(fromUrl)) pageMeta.set(fromUrl, { title: fromTitle });
+          }
           // Wikilinks [[...]]
           const rx = /\[\[([^\]]+)\]\]/g;
           let m;
           while ((m = rx.exec(content)) !== null) {
             let target = m[1] || '';
+            let display = '';
             const pipe = target.indexOf('|');
-            if (pipe !== -1) target = target.slice(0, pipe);
+            if (pipe !== -1) {
+              display = target.slice(pipe + 1);
+              target = target.slice(0, pipe);
+            }
             const hash = target.indexOf('#');
             if (hash !== -1) target = target.slice(0, hash);
             const key = target.trim();
             if (!key) continue;
             const url = index.get(key) || index.get(key.toLowerCase()) || index.get(toSlugBase(key));
-            if (url && url !== from.url) addBacklink(url, from);
+            if (url && url !== from.url) {
+              const anchorText = (display && display.trim()) || key;
+              const snippet = makeSnippet(content, m.index, m[0].length);
+              registerLink(from, url, { anchorText, snippet, type: 'wikilink' });
+            }
           }
 
           // Markdown links [text](href) — skip images ![alt](href)
@@ -507,7 +595,16 @@ module.exports = function(eleventyConfig) {
             if (m2[1] === '!') continue; // image
             const href = m2[2];
             const norm = normalizeHref(href);
-            if (norm && norm !== from.url) addBacklink(norm, from);
+            if (norm && norm !== from.url) {
+              const anchorText = (() => {
+                try {
+                  const textMatch = m2[0].match(/\[([^\]]+)\]/);
+                  return textMatch && textMatch[1] ? textMatch[1] : '';
+                } catch (_) { return ''; }
+              })();
+              const snippet = makeSnippet(content, m2.index, m2[0].length);
+              registerLink(from, norm, { anchorText, snippet, type: 'markdown' });
+            }
           }
 
           // Also parse front matter strings (e.g., FAQ answers/questions)
@@ -516,14 +613,22 @@ module.exports = function(eleventyConfig) {
             const rx2 = /\[\[([^\]]+)\]\]/g;
             while ((m3 = rx2.exec(extra)) !== null) {
               let target = m3[1] || '';
+              let display = '';
               const pipe = target.indexOf('|');
-              if (pipe !== -1) target = target.slice(0, pipe);
+              if (pipe !== -1) {
+                display = target.slice(pipe + 1);
+                target = target.slice(0, pipe);
+              }
               const hash = target.indexOf('#');
               if (hash !== -1) target = target.slice(0, hash);
               const key = target.trim();
               if (!key) continue;
               const url = index.get(key) || index.get(key.toLowerCase()) || index.get(toSlugBase(key));
-              if (url && url !== from.url) addBacklink(url, from);
+              if (url && url !== from.url) {
+                const anchorText = (display && display.trim()) || key;
+                const snippet = makeSnippet(extra, m3.index, m3[0].length);
+                registerLink(from, url, { anchorText, snippet, type: 'wikilink' });
+              }
             }
             const md2 = /(!)?\[[^\]]+\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)/g;
             let m4;
@@ -531,7 +636,16 @@ module.exports = function(eleventyConfig) {
               if (m4[1] === '!') continue;
               const href = m4[2];
               const norm = normalizeHref(href);
-              if (norm && norm !== from.url) addBacklink(norm, from);
+              if (norm && norm !== from.url) {
+                const anchorText = (() => {
+                  try {
+                    const textMatch = m4[0].match(/\[([^\]]+)\]/);
+                    return textMatch && textMatch[1] ? textMatch[1] : '';
+                  } catch (_) { return ''; }
+                })();
+                const snippet = makeSnippet(extra, m4.index, m4[0].length);
+                registerLink(from, norm, { anchorText, snippet, type: 'markdown' });
+              }
             }
           }
         }
@@ -539,34 +653,159 @@ module.exports = function(eleventyConfig) {
     }
 
     walk(base);
-    return backlinks;
+    return { backlinks, outbound, pageMeta };
   }
 
-  const obsidianBacklinks = buildObsidianBacklinks(WIKI_ROOT, obsidianIndex);
+  const { backlinks: obsidianBacklinks, outbound: obsidianOutbound, pageMeta: obsidianPageMeta } = buildObsidianBacklinks(WIKI_ROOT, obsidianIndex);
+
+  function normalizeUrlKey(url) {
+    if (!url) return '';
+    let key = String(url).split('#')[0].split('?')[0];
+    if (!key.endsWith('/')) key = key + '/';
+    return key;
+  }
+
+  function mergeEntry(target, source) {
+    if (!source) return target;
+    target.title = target.title || source.title;
+    target.count = (target.count || 0) + (source.count || 0) || 1;
+    target.score = (target.score || 0) + (source.score || source.count || 0) || target.count;
+    if (Array.isArray(source.snippets) && source.snippets.length) {
+      target.snippets = (target.snippets || []).concat(source.snippets);
+    } else if (source.snippet) {
+      target.snippets = (target.snippets || []).concat([source.snippet]);
+    }
+    if (Array.isArray(source.anchorTexts) && source.anchorTexts.length) {
+      target.anchorTexts = (target.anchorTexts || []).concat(source.anchorTexts);
+    } else if (source.anchorText) {
+      target.anchorTexts = (target.anchorTexts || []).concat([source.anchorText]);
+    }
+    const existingTypes = new Set(target.types || []);
+    if (Array.isArray(source.types)) {
+      for (const t of source.types) existingTypes.add(t);
+    } else if (source.type) {
+      existingTypes.add(source.type);
+    }
+    target.types = Array.from(existingTypes);
+    target.snippet = target.snippet || (target.snippets && target.snippets[0]) || '';
+    target.anchorText = target.anchorText || (target.anchorTexts && target.anchorTexts[target.anchorTexts.length - 1]) || '';
+    return target;
+  }
+
+  function collectFromMap(map, key) {
+    if (!map || !key) return [];
+    const list = map.get(key);
+    return Array.isArray(list) ? list : [];
+  }
 
   eleventyConfig.addFilter('obsidianBacklinks', function(pageUrl) {
     if (!pageUrl) return [];
     try {
-      let key = String(pageUrl).split('#')[0].split('?')[0];
-      if (!key.endsWith('/')) key = key + '/';
-      const results = [];
-      const seen = new Set();
-      function pushAll(list) {
-        if (!Array.isArray(list)) return;
-        for (const item of list) {
-          const sig = item && item.url ? item.url : JSON.stringify(item);
-          if (!seen.has(sig)) { seen.add(sig); results.push(item); }
+      const key = normalizeUrlKey(pageUrl);
+      const variants = [key];
+      if (key.includes('/wiki/')) variants.push(key.replace('/wiki/', WIKI_RAW_PREFIX));
+      else if (key.includes(WIKI_RAW_PREFIX)) variants.push(key.replace(WIKI_RAW_PREFIX, '/wiki/'));
+
+      const seen = new Map();
+      for (const variant of variants) {
+        const list = collectFromMap(obsidianBacklinks, variant);
+        for (const rawItem of list) {
+          if (!rawItem || !rawItem.url) continue;
+          const normalizedUrl = normalizeUrlKey(rawItem.url);
+          const existing = seen.get(normalizedUrl) || { url: normalizedUrl };
+          mergeEntry(existing, JSON.parse(JSON.stringify(rawItem)));
+          seen.set(normalizedUrl, existing);
         }
       }
-      // Direct key
-      pushAll(obsidianBacklinks.get(key));
-      // Cross-prefix fallback between /wiki/ and the raw note directory
-      if (key.includes('/wiki/')) {
-        pushAll(obsidianBacklinks.get(key.replace('/wiki/', WIKI_RAW_PREFIX)));
-      } else if (key.includes(WIKI_RAW_PREFIX)) {
-        pushAll(obsidianBacklinks.get(key.replace(WIKI_RAW_PREFIX, '/wiki/')));
+
+      const outboundSeen = new Map();
+      for (const variant of variants) {
+        const list = collectFromMap(obsidianOutbound, variant);
+        for (const raw of list) {
+          if (!raw || !raw.url) continue;
+          const normalizedUrl = normalizeUrlKey(raw.url);
+          const existing = outboundSeen.get(normalizedUrl) || { url: normalizedUrl };
+          mergeEntry(existing, JSON.parse(JSON.stringify(raw)));
+          outboundSeen.set(normalizedUrl, existing);
+        }
       }
-      return results.sort((a, b) => a.title.localeCompare(b.title));
+
+      const results = Array.from(seen.values()).map(entry => {
+        entry.count = entry.count || 1;
+        entry.snippet = entry.snippet || '';
+        entry.score = entry.score || entry.count;
+        const outboundEntry = outboundSeen.get(entry.url);
+        entry.outboundCount = outboundEntry ? outboundEntry.count || 0 : 0;
+        entry.isMutual = !!outboundEntry;
+        if (entry.isMutual) entry.score += Math.max(1, entry.outboundCount);
+        entry.isStrong = entry.count >= 2;
+        entry.isFeatured = entry.isStrong || entry.isMutual;
+        entry.badgeCount = entry.count > 1 ? entry.count : null;
+        return entry;
+      });
+
+      results.sort((a, b) => {
+        if ((b.score || 0) !== (a.score || 0)) return (b.score || 0) - (a.score || 0);
+        const at = (a.title || '').toLowerCase();
+        const bt = (b.title || '').toLowerCase();
+        if (at < bt) return -1;
+        if (at > bt) return 1;
+        return 0;
+      });
+
+      return results;
+    } catch (_) {
+      return [];
+    }
+  });
+
+  eleventyConfig.addFilter('obsidianOutbound', function(pageUrl) {
+    if (!pageUrl) return [];
+    try {
+      const key = normalizeUrlKey(pageUrl);
+      const variants = [key];
+      if (key.includes('/wiki/')) variants.push(key.replace('/wiki/', WIKI_RAW_PREFIX));
+      else if (key.includes(WIKI_RAW_PREFIX)) variants.push(key.replace(WIKI_RAW_PREFIX, '/wiki/'));
+
+      const seen = new Map();
+      for (const variant of variants) {
+        const list = collectFromMap(obsidianOutbound, variant);
+        for (const raw of list) {
+          if (!raw || !raw.url) continue;
+          const normalizedUrl = normalizeUrlKey(raw.url);
+          const existing = seen.get(normalizedUrl) || { url: normalizedUrl };
+          mergeEntry(existing, JSON.parse(JSON.stringify(raw)));
+          seen.set(normalizedUrl, existing);
+        }
+      }
+
+      const results = Array.from(seen.values()).map(entry => {
+        const meta = obsidianPageMeta.get(entry.url);
+        entry.title = entry.title || (meta && meta.title) || entry.title || (function deriveTitle(url) {
+          const parts = (url || '').split('/').filter(Boolean);
+          if (!parts.length) return url || '';
+          const last = parts[parts.length - 1].replace(/[-_]/g, ' ');
+          return last.charAt(0).toUpperCase() + last.slice(1);
+        })(entry.url);
+        entry.count = entry.count || 1;
+        entry.score = entry.score || entry.count;
+        entry.snippet = entry.snippet || '';
+        entry.badgeCount = entry.count > 1 ? entry.count : null;
+        entry.isStrong = entry.count >= 2;
+        entry.isFeatured = entry.isStrong;
+        return entry;
+      });
+
+      results.sort((a, b) => {
+        if ((b.score || 0) !== (a.score || 0)) return (b.score || 0) - (a.score || 0);
+        const at = (a.title || '').toLowerCase();
+        const bt = (b.title || '').toLowerCase();
+        if (at < bt) return -1;
+        if (at > bt) return 1;
+        return 0;
+      });
+
+      return results;
     } catch (_) {
       return [];
     }

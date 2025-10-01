@@ -9,19 +9,7 @@ layout: default
     <div class="col-md-8">
       {{ content | safe }}
 
-      {# Backlinks: show within main column for Obsidian pages only #}
-      {% set backlinks = (page.url | obsidianBacklinks) %}
-      {% if (page.url | stringContains('/wiki/')) and backlinks and backlinks.length %}
-        <section class="backlinks">
-          <hr>
-          <h3>Backlinks</h3>
-          <ul>
-            {% for item in backlinks %}
-              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </section>
-      {% endif %}
+      {% include 'shared/backlinks-panel.njk' %}
     </div>
 
     <div class="col-md-4">
