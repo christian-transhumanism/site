@@ -1,0 +1,68 @@
+{% set records = records or leadership_history or [] %}
+{% if records and records | length %}
+<div class="leadership-table">
+  <table class="leadership-table__table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Years Active</th>
+        <th scope="col">Roles &amp; Service</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for person in records %}
+        <tr>
+          <th scope="row">{{ person.name }}</th>
+          <td>
+            {% if person.years and person.years | length %}
+              {% for span in person.years %}
+                {% set start = span.start %}
+                {% set end = span.end %}
+                <span class="leadership-table__badge">
+                  {{ start if start else '—' }}
+                  {% if end is not none %}
+                    &ndash;{{ end }}
+                  {% else %}
+                    &ndash;Present
+                  {% endif %}
+                </span>
+              {% endfor %}
+            {% else %}
+              <span class="leadership-table__badge">N/A</span>
+            {% endif %}
+          </td>
+          <td>
+            {% if person.roles and person.roles | length %}
+              <ul class="leadership-table__roles">
+                {% for role in person.roles %}
+                  <li>
+                    <span class="leadership-table__role-title">{{ role.title }}</span>
+                    {% if role.periods and role.periods | length %}
+                      <span class="leadership-table__role-periods">
+                        {% for span in role.periods %}
+                          {% set start = span.start %}
+                          {% set end = span.end %}
+                          <span class="leadership-table__badge leadership-table__badge--inline">
+                            {{ start if start else '—' }}
+                            {% if end is not none %}
+                              &ndash;{{ end }}
+                            {% else %}
+                              &ndash;Present
+                            {% endif %}
+                          </span>
+                        {% endfor %}
+                      </span>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <span class="leadership-table__badge">No roles recorded</span>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}

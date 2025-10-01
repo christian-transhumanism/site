@@ -1,0 +1,696 @@
+[
+  {
+    "name": "Micah Redding",
+    "years": [
+      {
+        "start": 2014,
+        "end": null
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2014,
+            "end": null
+          }
+        ]
+      },
+      {
+        "title": "Executive Director",
+        "periods": [
+          {
+            "start": 2014,
+            "end": null
+          }
+        ]
+      },
+      {
+        "title": "Chair",
+        "periods": [
+          {
+            "start": 2017,
+            "end": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Christopher Benek",
+    "years": [
+      {
+        "start": 2014,
+        "end": 2017
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2014,
+            "end": 2017
+          }
+        ]
+      },
+      {
+        "title": "Chair",
+        "periods": [
+          {
+            "start": 2014,
+            "end": 2017
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dorothy Deasy",
+    "years": [
+      {
+        "start": 2014,
+        "end": 2017
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2014,
+            "end": 2017
+          }
+        ]
+      },
+      {
+        "title": "Secretary",
+        "periods": [
+          {
+            "start": 2014,
+            "end": 2017
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Emily Redding",
+    "years": [
+      {
+        "start": 2014,
+        "end": null
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2014,
+            "end": 2020
+          }
+        ]
+      },
+      {
+        "title": "Treasurer",
+        "periods": [
+          {
+            "start": 2014,
+            "end": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lincoln Cannon",
+    "years": [
+      {
+        "start": 2015,
+        "end": null
+      }
+    ],
+    "roles": [
+      {
+        "title": "Membership Council",
+        "periods": [
+          {
+            "start": 2015,
+            "end": 2017
+          }
+        ]
+      },
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2016,
+            "end": 2022
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jonathan Gunnell",
+    "years": [
+      {
+        "start": 2015,
+        "end": null
+      }
+    ],
+    "roles": [
+      {
+        "title": "Membership Council",
+        "periods": [
+          {
+            "start": 2015,
+            "end": 2017
+          }
+        ]
+      },
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2016,
+            "end": 2022
+          }
+        ]
+      },
+      {
+        "title": "VP",
+        "periods": [
+          {
+            "start": 2022,
+            "end": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dan Hegelund",
+    "years": [
+      {
+        "start": 2015,
+        "end": 2016
+      }
+    ],
+    "roles": [
+      {
+        "title": "Membership Council",
+        "periods": [
+          {
+            "start": 2015,
+            "end": 2016
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ryan Hogan",
+    "years": [
+      {
+        "start": 2015,
+        "end": 2017
+      }
+    ],
+    "roles": [
+      {
+        "title": "Membership Council",
+        "periods": [
+          {
+            "start": 2015,
+            "end": 2017
+          }
+        ]
+      },
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2016,
+            "end": 2017
+          },
+          {
+            "start": 2025,
+            "end": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "James McLean Ledford",
+    "years": [
+      {
+        "start": 2015,
+        "end": 2017
+      }
+    ],
+    "roles": [
+      {
+        "title": "Membership Council",
+        "periods": [
+          {
+            "start": 2015,
+            "end": 2016
+          }
+        ]
+      },
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2017,
+            "end": 2017
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Neal Locke",
+    "years": [
+      {
+        "start": 2016,
+        "end": 2022
+      }
+    ],
+    "roles": [
+      {
+        "title": "Membership Council",
+        "periods": [
+          {
+            "start": 2016,
+            "end": 2017
+          }
+        ]
+      },
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2017,
+            "end": 2022
+          }
+        ]
+      },
+      {
+        "title": "VP",
+        "periods": [
+          {
+            "start": null,
+            "end": 2018
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Amy Henry Gaskin",
+    "years": [
+      {
+        "start": 2016,
+        "end": 2018
+      }
+    ],
+    "roles": [
+      {
+        "title": "Membership Council",
+        "periods": [
+          {
+            "start": 2016,
+            "end": 2017
+          }
+        ]
+      },
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2017,
+            "end": 2018
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Robert Walden Kurtz",
+    "years": [
+      {
+        "start": 2017,
+        "end": 2020
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2017,
+            "end": 2020
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gabriel Redding",
+    "years": [
+      {
+        "start": 2017,
+        "end": 2019
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2017,
+            "end": 2019
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Timothy Langer",
+    "years": [
+      {
+        "start": 2017,
+        "end": 2018
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2017,
+            "end": 2018
+          },
+          {
+            "start": 2025,
+            "end": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mike Morrell",
+    "years": [
+      {
+        "start": 2018,
+        "end": 2021
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2018,
+            "end": 2021
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mark Russell",
+    "years": [
+      {
+        "start": 2018,
+        "end": null
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2018,
+            "end": 2022
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jenne Erigero Alderks",
+    "years": [
+      {
+        "start": 2018,
+        "end": 2019
+      }
+    ],
+    "roles": [
+      {
+        "title": "Secretary",
+        "periods": [
+          {
+            "start": 2018,
+            "end": 2019
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Heather Goodman",
+    "years": [
+      {
+        "start": 2018,
+        "end": 2019
+      }
+    ],
+    "roles": [
+      {
+        "title": "Officer",
+        "periods": [
+          {
+            "start": 2018,
+            "end": 2019
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Agbolade Omowole",
+    "years": [
+      {
+        "start": 2018,
+        "end": 2019
+      }
+    ],
+    "roles": [
+      {
+        "title": "VP",
+        "periods": [
+          {
+            "start": 2018,
+            "end": 2019
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blaire Ostler",
+    "years": [
+      {
+        "start": 2019,
+        "end": 2021
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2019,
+            "end": 2021
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Brian Sigmon",
+    "years": [
+      {
+        "start": 2019,
+        "end": 2020
+      }
+    ],
+    "roles": [
+      {
+        "title": "Secretary",
+        "periods": [
+          {
+            "start": 2019,
+            "end": 2020
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Omar Reyes",
+    "years": [
+      {
+        "start": 2020,
+        "end": null
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2020,
+            "end": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lorenzo Barberis Canonico",
+    "years": [
+      {
+        "start": 2020,
+        "end": null
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2020,
+            "end": null
+          }
+        ]
+      },
+      {
+        "title": "Secretary",
+        "periods": [
+          {
+            "start": 2020,
+            "end": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Martha Bucaram",
+    "years": [
+      {
+        "start": 2021,
+        "end": null
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2021,
+            "end": 2024
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Elias Kruger",
+    "years": [
+      {
+        "start": 2021,
+        "end": null
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2021,
+            "end": 2024
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "MacKenzie Fisher",
+    "years": [
+      {
+        "start": 2022,
+        "end": null
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2022,
+            "end": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Caleb Strom",
+    "years": [
+      {
+        "start": 2022,
+        "end": null
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2022,
+            "end": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dustin Ashley",
+    "years": [
+      {
+        "start": 2025,
+        "end": null
+      }
+    ],
+    "roles": [
+      {
+        "title": "Board",
+        "periods": [
+          {
+            "start": 2025,
+            "end": null
+          }
+        ]
+      }
+    ]
+  }
+]
