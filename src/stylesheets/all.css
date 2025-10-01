@@ -200,32 +200,10 @@ section {
   font-weight: 600;
   color: var(--accent, #337ab7);
 }
-.nav.nav-pills > li.mission-focus > a::after {
-  content: '';
-  position: absolute;
-  left: 22%;
-  right: 22%;
-  bottom: 0.35rem;
-  height: 3px;
-  border-radius: 999px;
-  background: rgba(51, 122, 183, 0.3);
-  transform: scaleX(0.6);
-  transform-origin: center;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-.nav.nav-pills > li.mission-focus > a:hover::after,
-.nav.nav-pills > li.mission-focus > a:focus::after {
-  transform: scaleX(1);
-  background: var(--accent, #337ab7);
-}
 .nav.nav-pills > li.mission-focus.active > a,
 .nav.nav-pills > li.mission-focus.active > a:focus,
 .nav.nav-pills > li.mission-focus.active > a:hover {
   color: var(--accent-contrast, #fff);
-}
-.nav.nav-pills > li.mission-focus.active > a::after {
-  transform: scaleX(1);
-  background: rgba(255, 255, 255, 0.75);
 }
 
 /* Blog pages: align sidebar/well with resource look, without touching conferences */
