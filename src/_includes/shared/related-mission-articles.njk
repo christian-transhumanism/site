@@ -12,7 +12,9 @@
 {% endif %}
 
 {% set list = missionArticles[section] %}
-{% if list and list.length > 0 %}
+{% set landingPages = ['/mission/faith/', '/mission/technological/', '/mission/theological/'] %}
+{% set isLandingPage = page and page.url and page.url in landingPages %}
+{% if list and list.length > 0 and not isLandingPage %}
   <div class="related-mission">
     <h3 class="h5" style="margin-top:2rem;">More in {{ section | capitalize }}</h3>
     <div class="feature-grid">
@@ -31,4 +33,3 @@
     </div>
   </div>
 {% endif %}
-

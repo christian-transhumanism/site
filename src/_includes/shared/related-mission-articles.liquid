@@ -17,7 +17,13 @@ provided, it infers from page.url. Excludes the current page URL.
 {%- endif -%}
 
 {%- assign list = missionArticles[section] -%}
-{%- if list and list.size > 0 -%}
+{%- assign is_landing_page = false -%}
+{%- if page and page.url -%}
+  {%- if page.url == '/mission/faith/' or page.url == '/mission/technological/' or page.url == '/mission/theological/' -%}
+    {%- assign is_landing_page = true -%}
+  {%- endif -%}
+{%- endif -%}
+{%- if list and list.size > 0 and is_landing_page == false -%}
   <div class="related-mission">
     <h3 class="h5" style="margin-top:2rem;">More in {{ section | capitalize }}</h3>
     <div class="feature-grid">
