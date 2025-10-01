@@ -5,13 +5,13 @@ layout: default
 <div class="resource-page">
 {% set currentUrl = page.url or '' %}
 {% if '/mission/' in currentUrl %}
-  {% include 'shared/resources_topbar.njk' %}
+  {% include 'shared/mission_topbar.njk' %}
 {% elseif currentUrl == '/about/' %}
   {% include 'shared/association_topbar.njk' %}
 {% elseif currentUrl == '/faq/' or currentUrl == '/quotes/' or (currentUrl | stringContains('/wiki/')) %}
   {% include 'shared/content_topbar.njk' %}
 {% else %}
-  {% include 'shared/resources_topbar.njk' %}
+  {% include 'shared/mission_topbar.njk' %}
 {% endif %}
 
 <div class="container">
