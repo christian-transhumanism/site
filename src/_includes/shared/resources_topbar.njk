@@ -1,37 +1,20 @@
 <div class="container">
   <ul class="nav nav-pills">
-    {% if page.url and ('/mission/' in page.url) %}
-      <li role="presentation" class="mission-tab mission-tab--first {% if page.url == "/mission/" %} active {% endif %}">
-        <a href="/mission/">Mission</a>
-      </li>
-      <li role="presentation" class="mission-tab {% if '/mission/theological/' in page.url %} active {% endif %}">
-        <a href="/mission/theological/">Theology</a>
-      </li>
-      <li role="presentation" class="mission-tab {% if '/mission/technological/' in page.url %} active {% endif %}">
-        <a href="/mission/technological/">Technology</a>
-      </li>
-      <li role="presentation" class="mission-tab mission-tab--last {% if '/mission/faith/' in page.url %} active {% endif %}">
-        <a href="/mission/faith/">Faith</a>
-      </li>
-    {% else %}
-      <li role="presentation" class="{% if page.url == "/mission/" %} active {% endif %}">
-        <a href="/mission/">Mission</a>
-      </li>
-    {% endif %}
-    <li role="presentation" class="{% if page.url == "/about/" %} active {% endif %}">
-      <a href="/about/">About</a>
+    {% set currentUrl = page.url or '' %}
+    <li role="presentation" class="mission-tab mission-tab--first {% if currentUrl == '/mission/' %} active {% endif %}">
+      <a href="/mission/">Mission</a>
+    </li>
+    <li role="presentation" class="mission-tab {% if '/mission/theological/' in currentUrl %} active {% endif %}">
+      <a href="/mission/theological/">Theology</a>
+    </li>
+    <li role="presentation" class="mission-tab {% if '/mission/technological/' in currentUrl %} active {% endif %}">
+      <a href="/mission/technological/">Technology</a>
+    </li>
+    <li role="presentation" class="mission-tab mission-tab--last {% if '/mission/faith/' in currentUrl %} active {% endif %}">
+      <a href="/mission/faith/">Faith</a>
     </li>
     <li role="presentation" class="{% if page.url == "/affirmation/" %} active {% endif %}">
       <a href="/affirmation/">Affirmation</a>
-    </li>
-    <li role="presentation" class="{% if page.url == "/faq/" %} active {% endif %}">
-      <a href="/faq/">FAQ</a>
-    </li>
-    <li role="presentation" class="{% if page.url == "/quotes/" %} active {% endif %}">
-      <a href="/quotes/">Quotes</a>
-    </li>
-    <li role="presentation" class="{% if page.url and (page.url | stringContains('/wiki/')) %} active {% endif %}">
-      <a href="/wiki/">Wiki</a>
     </li>
   </ul>
 </div>

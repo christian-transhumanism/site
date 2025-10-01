@@ -34,6 +34,21 @@
                 "url": "/press/",
                 "title": "Press and Coverage",
                 "key": "Press"
+            },
+            {
+                "url": "/faq/",
+                "title": "FAQ",
+                "key": "FAQ"
+            },
+            {
+                "url": "/quotes/",
+                "title": "Quotes",
+                "key": "Quotes"
+            },
+            {
+                "url": "/wiki/",
+                "title": "Wiki (new!)",
+                "key": "Wiki (new!)"
             }
         ]
     },
@@ -43,9 +58,14 @@
         "key": "Mission",
         "children": [
             {
+                "url": "/affirmation/",
+                "title": "Affirmation",
+                "key": "Affirmation"
+            },
+            {
                 "url": "/mission/theological/",
-                "title": "1. Theological",
-                "key": "1. Theological",
+                "title": "Theology",
+                "key": "Theology",
                 "children": [
                     {
                         "url": "/mission/theological/image-of-god/",
@@ -70,26 +90,9 @@
                 ]
             },
             {
-                "url": "/mission/faith/",
-                "title": "2. Faith-Renewing",
-                "key": "2. Faith-Renewing",
-                "children": [
-                    {
-                        "url": "/mission/faith/the-faith-principle/",
-                        "title": "The Faith Principle",
-                        "key": "The Faith Principle"
-                    },
-                    {
-                        "url": "/mission/faith/convergence-hypothesis/",
-                        "title": "The Convergence Hypothesis",
-                        "key": "The Convergence Hypothesis"
-                    }
-                ]
-            },
-            {
                 "url": "/mission/technological/",
-                "title": "3. Technological",
-                "key": "3. Technological",
+                "title": "Technology",
+                "key": "Technology",
                 "children": [
             {
                 "url": "/mission/technological/super-longevity/",
@@ -112,34 +115,23 @@
                 "key": "Super-Ecology"
             }
                 ]
-            }
-        ]
-    },
-    {
-        "url": "/about/",
-        "title": "Perspectives",
-        "key": "Perspectives",
-        "children":
-        [
-            {
-                "url": "/about/",
-                "title": "About",
-                "key": "About"
             },
             {
-                "url": "/affirmation/",
-                "title": "Affirmation",
-                "key": "Affirmation"
-            },
-            {
-                "url": "/faq/",
-                "title": "FAQ",
-                "key": "FAQ"
-            },
-            {
-                "url": "/quotes/",
-                "title": "Quotes",
-                "key": "Quotes"
+                "url": "/mission/faith/",
+                "title": "Faith",
+                "key": "Faith-Renewing",
+                "children": [
+                    {
+                        "url": "/mission/faith/the-faith-principle/",
+                        "title": "The Faith Principle",
+                        "key": "The Faith Principle"
+                    },
+                    {
+                        "url": "/mission/faith/convergence-hypothesis/",
+                        "title": "The Convergence Hypothesis",
+                        "key": "The Convergence Hypothesis"
+                    }
+                ]
             }
         ]
     },
@@ -149,6 +141,11 @@
         "key": "Association",
         "children":
         [
+            {
+                "url": "/about/",
+                "title": "About",
+                "key": "About"
+            },
             {
                 "url": "/executive-director/",
                 "title": "Executive Director",
@@ -206,10 +203,5 @@
             }
 
         ]
-    },
-    {
-        "url": "/wiki/",
-        "title": "Wiki (new!)",
-        "key": "Wiki (new!)"
     }
 ]

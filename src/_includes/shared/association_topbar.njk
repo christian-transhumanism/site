@@ -1,5 +1,8 @@
 <div class="container">
   <ul class="nav nav-pills">
+    <li role="presentation" class="{% if page.url == "/about/" %} active {% endif %}">
+      <a href="/about/">About</a>
+    </li>
     <li role="presentation" class="{% if page.url == "/executive-director/" %} active {% endif %}">
       <a href="/executive-director/">Executive Director</a>
     </li>
