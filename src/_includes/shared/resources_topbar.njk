@@ -1,19 +1,19 @@
+{% set currentUrl = page.url or '' %}
 <div class="container">
   <ul class="nav nav-pills">
-    {% set currentUrl = page.url or '' %}
-    <li role="presentation" class="mission-tab mission-tab--first {% if currentUrl == '/mission/' %} active {% endif %}">
+    <li role="presentation" class="{% if currentUrl == '/mission/' %} active {% endif %}">
       <a href="/mission/">Mission</a>
     </li>
-    <li role="presentation" class="mission-tab {% if '/mission/theological/' in currentUrl %} active {% endif %}">
+    <li role="presentation" class="{% if '/mission/theological/' in currentUrl %} active {% endif %}">
       <a href="/mission/theological/">Theology</a>
     </li>
-    <li role="presentation" class="mission-tab {% if '/mission/technological/' in currentUrl %} active {% endif %}">
+    <li role="presentation" class="{% if '/mission/technological/' in currentUrl %} active {% endif %}">
       <a href="/mission/technological/">Technology</a>
     </li>
-    <li role="presentation" class="mission-tab mission-tab--last {% if '/mission/faith/' in currentUrl %} active {% endif %}">
+    <li role="presentation" class="{% if '/mission/faith/' in currentUrl %} active {% endif %}">
       <a href="/mission/faith/">Faith</a>
     </li>
-    <li role="presentation" class="{% if page.url == "/affirmation/" %} active {% endif %}">
+    <li role="presentation" class="{% if currentUrl == '/affirmation/' %} active {% endif %}">
       <a href="/affirmation/">Affirmation</a>
     </li>
   </ul>
