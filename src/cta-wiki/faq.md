@@ -13,6 +13,9 @@ faqs:
   - question: "What is a Christian Transhumanist?"
     answer: |
       Someone who advocates using science & technology to transform the human condition — in a way consistent with, and as exemplified by, the discipleship of Christ.
+  - question: "What is Christian about Christian Transhumanism?"
+    answer: |
+      Our work is grounded in core Christian convictions. We embrace the [Creation Mandate](/mission/theological/creation-mandate/) to cultivate and uplift life, the call to [participate in Christ](/mission/theological/participation-in-christ/) as the pattern for redeemed humanity, and the hope of the [renewal of all things](/mission/theological/renewal-of-all-things/). These ideas are rooted in Scripture and affirmed across Christian history. Above all, Christian Transhumanism keeps Christ—the beginning and end of our faith—at the center of every technological imagination and action.
   - question: "What is the Christian Transhumanist Association?"
     answer: |
       An ecumenical organization seeking to promote positive engagement between Christianity and the leading edges of scientific & technological thought.
