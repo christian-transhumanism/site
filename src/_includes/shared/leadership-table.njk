@@ -11,11 +11,19 @@
     </thead>
     <tbody>
       {% for person in records %}
+        {% set record = person %}
+        {% set record_url = record.url or '' %}
         <tr>
-          <th scope="row">{{ person.name }}</th>
+          <th scope="row">
+            {% if record_url %}
+              <a href="{{ record_url }}">{{ record.name }}</a>
+            {% else %}
+              {{ record.name }}
+            {% endif %}
+          </th>
           <td>
-            {% if person.years and person.years | length %}
-              {% for span in person.years %}
+            {% if record.years and record.years | length %}
+              {% for span in record.years %}
                 {% set start = span.start %}
                 {% set end = span.end %}
                 <span class="leadership-table__badge">
@@ -32,9 +40,9 @@
             {% endif %}
           </td>
           <td>
-            {% if person.roles and person.roles | length %}
+            {% if record.roles and record.roles | length %}
               <ul class="leadership-table__roles">
-                {% for role in person.roles %}
+                {% for role in record.roles %}
                   <li>
                     <span class="leadership-table__role-title">{{ role.title }}</span>
                     {% if role.periods and role.periods | length %}

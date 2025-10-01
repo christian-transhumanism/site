@@ -1,9 +1,8 @@
 ---
-title: History of the CTA
-description: Where we began, and where we are going
-layout: associationPage
-permalink: /history/
+permalink: false
+eleventyExcludeFromCollections: true
 ---
+
 # The History of the Christian Transhumanist Association
 
 ### Prehistory
@@ -171,39 +170,4 @@ Caleb Strom_.
 
 
 #### Board Members & Officers (2014-today)
-
-| Name                             | Years     | Roles                                                              |
-| -------------------------------- | --------- | ------------------------------------------------------------------ |
-| Micah Redding &nbsp;             | 2014-     | Board 2014-; <br>Executive Director 2014-; <br>Chair 2017-         |
-| Christopher Benek &nbsp;         | 2014-2017 | Board 2014-2017;<br>Chair 2014-2017                                |
-| Dorothy Deasy &nbsp;             | 2014-2017 | Board 2014-2017;<br>Secretary 2014-2017                            |
-| Emily Redding &nbsp;             | 2014-     | Board 2014-2020;<br>Treasurer 2014-                                |
-| Lincoln Cannon &nbsp;            | 2015-     | Membership Council 2015-2017;<br>Board 2016-2022                   |
-| Jonathan Gunnell &nbsp;          | 2015-     | Membership Council 2015-2017;<br>Board 2016-2022;<br>VP 2022-      |
-| Dan Hegelund &nbsp;              | 2015-2016 | Membership Council 2015-2016                                       |
-| Ryan Hogan &nbsp;                | 2015-2017 | Membership Council 2015-2017; <br>Board 2016-2017; <br>Board 2025- |
-| James McLean Ledford &nbsp;      | 2015-2017 | Membership Council 2015-2016;<br>Board 2017-2017                   |
-| Neal Locke &nbsp;                | 2016-2022 | Membership Council 2016-2017;<br>Board 2017-2022;<br>VP -2018      |
-| Amy Henry Gaskin &nbsp;          | 2016-2018 | Membership Council 2016-2017;<br>Board 2017-2018                   |
-| Robert Walden Kurtz &nbsp;       | 2017-2020 | Board 2017-2020                                                    |
-| Gabriel Redding &nbsp;           | 2017-2019 | Board 2017-2019                                                    |
-| Timothy Langer &nbsp;            | 2017-2018 | Board 2017-2018, 2025-                                             |
-| Mike Morrell &nbsp;              | 2018-2021 | Board 2018-2021                                                    |
-| Mark Russell &nbsp;              | 2018-     | Board 2018-2022                                                    |
-| Jenne Erigero Alderks &nbsp;     | 2018-2019 | Secretary 2018-2019                                                |
-| Heather Goodman &nbsp;           | 2018-2019 | Officer 2018-2019                                                  |
-| Agbolade Omowole &nbsp;          | 2018-2019 | VP 2018-2019                                                       |
-| Blaire Ostler &nbsp;             | 2019-2021 | Board 2019-2021                                                    |
-| Brian Sigmon &nbsp;              | 2019-2020 | Secretary 2019-2020                                                |
-| Omar Reyes &nbsp;                | 2020-     | Board 2020-                                                        |
-| Lorenzo Barberis Canonico &nbsp; | 2020-     | Board 2020-;<br>Secretary 2020-                                    |
-| Martha Bucaram &nbsp;            | 2021-     | Board 2021-2024                                                    |
-| Elias Kruger &nbsp;              | 2021-     | Board 2021-2024                                                    |
-| MacKenzie Fisher &nbsp;          | 2022-     | Board 2022-                                                        |
-| Caleb Strom &nbsp;               | 2022-     | Board 2022-                                                        |
-| Dustin Ashley                    | 2025-     | Board 2025-                                                        |
-
----
-
-[See who the Board are today.](/board)
 

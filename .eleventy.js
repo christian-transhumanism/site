@@ -188,6 +188,19 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('md', renderMarkdown);
   eleventyConfig.addLiquidFilter('md', renderMarkdown);
 
+  eleventyConfig.addShortcode('renderMarkdownFile', function(relPath) {
+    try {
+      if (!relPath) return '';
+      const fullPath = path.join(process.cwd(), String(relPath));
+      const raw = fs.readFileSync(fullPath, 'utf8');
+      const parsed = matter(raw);
+      const body = parsed && typeof parsed.content === 'string' ? parsed.content : raw;
+      return renderMarkdown(body);
+    } catch (_) {
+      return '';
+    }
+  });
+
   // Inline Markdown (no surrounding <p>), for headings and labels
   const renderMarkdownInline = (str) => {
     try { return markdownLibrary.renderInline(String(str || '')); }
