@@ -3,13 +3,13 @@
     <li role="presentation" class="{% if page.url == '/mission/' %} active {% endif %}">
       <a href="/mission/">Mission</a>
     </li>
-    <li role="presentation" class="{% if '/mission/theological/' in page.url %} active {% endif %}">
+    <li role="presentation" class="mission-focus {% if '/mission/theological/' in page.url %} active {% endif %}">
       <a href="/mission/theological/">Theology</a>
     </li>
-    <li role="presentation" class="{% if '/mission/technological/' in page.url %} active {% endif %}">
+    <li role="presentation" class="mission-focus {% if '/mission/technological/' in page.url %} active {% endif %}">
       <a href="/mission/technological/">Technology</a>
     </li>
-    <li role="presentation" class="{% if '/mission/faith/' in page.url %} active {% endif %}">
+    <li role="presentation" class="mission-focus {% if '/mission/faith/' in page.url %} active {% endif %}">
       <a href="/mission/faith/">Faith</a>
     </li>
     <li role="presentation" class="{% if page.url == '/affirmation/' %} active {% endif %}">
