@@ -8,7 +8,7 @@ This repository contains the static website for the Christian Transhumanist Asso
   - `_includes/` – Nunjucks/Liquid layouts and partials shared across the site.
   - `_data/` – global data sources (JSON/JS) that feed pages, community feeds, podcasts, etc.
   - `stylesheets/` – site CSS assets.
-  - `cta-wiki/` – external Obsidian vault mirrored into the project and compiled into `/wiki/` and `/board/` pages. The Eleventy config provides wikilink parsing, backlink generation, and custom permalink rules for these notes. Keep the vault’s internal `.obsidian` tooling folder intact, but Eleventy automatically ignores any `cta-wiki/templates/` scaffolds.
+  - `cta-wiki/` – external Obsidian vault mirrored into the project and compiled into `/wiki/` and `/board/` pages. The Eleventy config provides wikilink parsing, backlink generation, and custom permalink rules for these notes. Keep the vault’s internal `.obsidian` tooling folder intact, but Eleventy automatically ignores any `cta-wiki/templates/` scaffolds. You can also drop blog articles under `src/cta-wiki/posts/`; Eleventy still recognises them via their `tags: post` front matter while keeping them out of the public wiki index, so the Obsidian vault can own both the knowledge base and the news feed.
 - `_site/` – build output (generated, do not edit manually).
 - `.eleventy.js` – Eleventy configuration, custom collections, filters, and Obsidian integration helpers.
 - `.eleventyignore` – additional paths Eleventy should skip.
