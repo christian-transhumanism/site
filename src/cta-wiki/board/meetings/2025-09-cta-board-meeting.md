@@ -1,4 +1,4 @@
-- **Date:** [[2025.08.07]] (next meeting: [[2024.09.04]])
+- **Date:** [[2025.09.04]] (next meeting: [[2024.10.02]])
 - **Participants:**
     - [[Micah Redding]] (Executive Director)
     - [[Jonathan Gunnell]]
