@@ -213,9 +213,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection('obsidian', (collectionApi) => {
     const items = collectionApi.getAll().filter(item => {
       const ip = (item && item.inputPath) ? String(item.inputPath).replace(/\\/g, '/') : '';
-      if (!ip.includes(`/src/${WIKI_SEGMENT}/`)) return false;
-      // Ignore anything under the wiki templates directory
-      if (ip.includes(`/src/${WIKI_SEGMENT}/templates/`)) return false;
+  if (!ip.includes(`/src/${WIKI_SEGMENT}/`)) return false;
+  // Ignore anything under the wiki templates directory
+  if (ip.includes(`/src/${WIKI_SEGMENT}/templates/`)) return false;
+  // Exclude internal board notes from public wiki listings
+  if (ip.includes(`/src/${WIKI_SEGMENT}/board/`)) return false;
       // Exclude the index page itself if present
       if (ip.endsWith(`/src/${WIKI_SEGMENT}/index.njk`) || ip.endsWith(`/src/${WIKI_SEGMENT}/index.md`)) return false;
       return true;
