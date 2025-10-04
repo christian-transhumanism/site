@@ -17,6 +17,7 @@ permalink: /books/
     <button type="button" class="btn btn-default book-filter-btn active" data-filter="all">All</button>
     <button type="button" class="btn btn-default book-filter-btn" data-filter="faith">Faith</button>
     <button type="button" class="btn btn-default book-filter-btn" data-filter="technology">Technology</button>
+    <button type="button" class="btn btn-default book-filter-btn" data-filter="cta">CTA</button>
   </div>
 
   <label for="book-filter" class="visually-hidden">Filter books</label>
@@ -26,7 +27,8 @@ permalink: /books/
       <div id="book-list" class="book-grid">
   {% for book in books | sort(false, false, "title") %}
   {% set tags = book.tags or [] %}
-  {% set searchIndex = (book.title ~ ' ' ~ book.author ~ ' ' ~ (book.year or '') ~ ' ' ~ (tags | join(' '))) | lower %}
+      {% set primaryContributor = book.author or book.editor %}
+      {% set searchIndex = (book.title ~ ' ' ~ (primaryContributor or '') ~ ' ' ~ (book.year or '') ~ ' ' ~ (tags | join(' '))) | lower %}
   <article class="book" data-search="{{ searchIndex }}" data-tags="{{ (tags | join(' ')) | lower }}">
     {% if book.image %}
       <figure class="book-cover">
@@ -42,7 +44,11 @@ permalink: /books/
       </h2>
 
       <p class="book-byline">
-        <strong>{{ book.author }}</strong>
+        {% if book.author %}
+          <strong>{{ book.author }}</strong>
+        {% elseif book.editor %}
+          <strong>Edited by {{ book.editor }}</strong>
+        {% endif %}
         {% if book.year %} • <span class="book-year">{{ book.year }}</span>{% endif %}
         {% if book.publisher %} • <span class="book-publisher">{{ book.publisher }}</span>{% endif %}
       </p>
@@ -73,13 +79,14 @@ permalink: /books/
   "name": "Books about Christianity & Transhumanism",
   "itemListElement": [
     {% for book in books | sort(false, false, "title") %}
+    {% set schemaAuthor = book.author or book.editor %}
     {
       "@type": "ListItem",
       "position": {{ loop.index }},
       "item": {
         "@type": "Book",
         "name": {{ book.title | dump }},
-        "author": {{ book.author | dump }},
+        {% if schemaAuthor %}"author": {{ schemaAuthor | dump }},{% endif %}
         {% if book.isbn %}"isbn": {{ book.isbn | dump }},{% endif %}
         {% if book.publisher %}"publisher": {{ book.publisher | dump }},{% endif %}
         {% if book.year %}"datePublished": "{{ book.year }}",{% endif %}
