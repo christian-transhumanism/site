@@ -28,8 +28,12 @@ permalink: /books/
   {% for book in books | sort(false, false, "title") %}
   {% set tags = book.tags or [] %}
     {% set primaryContributor = book.author or book.editor %}
-    {% set searchIndex = (book.title ~ ' ' ~ (primaryContributor or '') ~ ' ' ~ (book.year or '') ~ ' ' ~ (tags | join(' '))) | lower %}
     {% set hasContributors = book.contributors and (book.contributors | length) %}
+    {% set contributorsText = '' %}
+    {% if hasContributors %}
+      {% set contributorsText = book.contributors | join(' ') %}
+    {% endif %}
+    {% set searchIndex = (book.title ~ ' ' ~ (primaryContributor or '') ~ ' ' ~ (book.year or '') ~ ' ' ~ (tags | join(' ')) ~ ' ' ~ contributorsText) | lower %}
     {% if hasContributors %}{% set contributorsId = 'book-contributors-' ~ loop.index %}{% endif %}
   <article class="book" data-search="{{ searchIndex }}" data-tags="{{ (tags | join(' ')) | lower }}">
     {% if book.image %}
