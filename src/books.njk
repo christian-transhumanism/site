@@ -27,8 +27,10 @@ permalink: /books/
       <div id="book-list" class="book-grid">
   {% for book in books | sort(false, false, "title") %}
   {% set tags = book.tags or [] %}
-      {% set primaryContributor = book.author or book.editor %}
-      {% set searchIndex = (book.title ~ ' ' ~ (primaryContributor or '') ~ ' ' ~ (book.year or '') ~ ' ' ~ (tags | join(' '))) | lower %}
+    {% set primaryContributor = book.author or book.editor %}
+    {% set searchIndex = (book.title ~ ' ' ~ (primaryContributor or '') ~ ' ' ~ (book.year or '') ~ ' ' ~ (tags | join(' '))) | lower %}
+    {% set hasContributors = book.contributors and (book.contributors | length) %}
+    {% if hasContributors %}{% set contributorsId = 'book-contributors-' ~ loop.index %}{% endif %}
   <article class="book" data-search="{{ searchIndex }}" data-tags="{{ (tags | join(' ')) | lower }}">
     {% if book.image %}
       <figure class="book-cover">
@@ -47,11 +49,27 @@ permalink: /books/
         {% if book.author %}
           <strong>{{ book.author }}</strong>
         {% elseif book.editor %}
-          <strong>Edited by {{ book.editor }}</strong>
+          <strong>{{ book.editor }}</strong>
         {% endif %}
         {% if book.year %} • <span class="book-year">{{ book.year }}</span>{% endif %}
         {% if book.publisher %} • <span class="book-publisher">{{ book.publisher }}</span>{% endif %}
+        {% if hasContributors %} • <button type="button" class="contributors-toggle btn btn-link btn-xs" data-target="{{ contributorsId }}" aria-expanded="false">Contributors ({{ book.contributors | length }})</button>{% endif %}
       </p>
+
+      {% if hasContributors %}
+      <div id="{{ contributorsId }}" class="book-contributors" hidden>
+        <h3 class="contributors-heading">Contributors</h3>
+        <ul class="contributors-list list-unstyled">
+          {% for contributor in book.contributors %}
+          <li>{{ contributor }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <div class="book-desc">
+        {{ book.body | excerpt(40) }}
+      </div>
 
       {% if tags | length %}
         <ul class="book-tags">
@@ -59,14 +77,12 @@ permalink: /books/
         </ul>
       {% endif %}
 
-      <div class="book-desc">
-        {{ book.body | excerpt(40) }}
-      </div>
-
       <p class="book-links">
         <a class="btn" href="{{ book.url or '#' }}" rel="noopener nofollow">Details / Buy</a>
         {% if book.isbn %}<span class="isbn">ISBN: {{ book.isbn }}</span>{% endif %}
       </p>
+
+
     </div>
   </article>
   {% endfor %}
@@ -100,9 +116,10 @@ permalink: /books/
 
       <script>
   (function(){
-    const input = document.getElementById('book-filter');
-    const items = Array.from(document.querySelectorAll('#book-list .book'));
-    const buttons = Array.from(document.querySelectorAll('.book-filter-btn'));
+  const input = document.getElementById('book-filter');
+  const items = Array.from(document.querySelectorAll('#book-list .book'));
+  const buttons = Array.from(document.querySelectorAll('.book-filter-btn'));
+  const contributorButtons = Array.from(document.querySelectorAll('.contributors-toggle'));
     let category = 'all';
 
     function applyFilters(){
@@ -123,6 +140,15 @@ permalink: /books/
       this.classList.add('active');
       category = this.getAttribute('data-filter');
       applyFilters();
+    }));
+
+    contributorButtons.forEach(btn => btn.addEventListener('click', function(){
+      const targetId = this.getAttribute('data-target');
+      const target = targetId ? document.getElementById(targetId) : null;
+      if (!target) return;
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!isExpanded));
+      target.hidden = isExpanded;
     }));
 
     applyFilters();
