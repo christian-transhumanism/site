@@ -18,3 +18,10 @@ Content:
 - I think we might need to work out a fourth "Ethics" pillar alongside Theology, Technology, Faith. 
 - A page on Christ himself, glorifying him as this icon of the future, the beginning of infinity, the future of humanity, the ethical convergence of all our aspirations, and thus the ethical core of our transhumanist faith. What about him? Love, relationality, reconciliation. But also, that Christ is explanation and empowerment of others, and participation, so that his leadership is simultaneously the uplifting into leadership of all others; the only way to rise together.
 - In a structural sense, this suggests bringing together the Wiki, the FAQ, and the Quotes pages in a deeper sense. I want to explore ideas for consolidating these things under Wiki, yet making them deeply integrated into the rest of the site, easily discoverable, and not siloed. 
+
+Obsidian integration ideas
+- Promote vault frontmatter (navOrder, navParent) into generated navigation collections.
+- Drive community and other data files from tagged Obsidian notes with automated loaders.
+- Create a renderVault shortcode wrapper to embed reusable vault snippets in site templates.
+- Extend backlink builder to capture frontmatter relationships for related-content components.
+- Pull asset metadata (captions, alt text) from vault sidecars when generating image markup.
