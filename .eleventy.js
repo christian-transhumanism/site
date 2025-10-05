@@ -213,6 +213,8 @@ module.exports = function(eleventyConfig) {
     let text = value
       // Strip HTML tags
       .replace(/<[^>]*>/g, ' ')
+      // Convert wikilinks [[Page]] or [[Page|Text]] -> Text or Page
+      .replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (m, p1, p2) => (p2 || p1 || ''))
       // Convert Markdown links [text](url) -> text
       .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1')
       // Collapse whitespace
@@ -568,21 +570,21 @@ module.exports = function(eleventyConfig) {
     function makeSnippet(sourceText, index, length) {
       if (!sourceText) return '';
       try {
-        const radius = 140;
-        const start = Math.max(0, index - radius);
-        const end = Math.min(sourceText.length, index + length + radius);
-        let snippet = sourceText.slice(start, end).replace(/\s+/g, ' ').trim();
-        // Strip simple Markdown constructs for cleaner display
-        snippet = snippet
+        // Strip simple Markdown constructs BEFORE slicing to avoid cutting mid-syntax
+        let cleanText = sourceText
           .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+          .replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (m, p1, p2) => (p2 || p1 || ''))
           .replace(/\[[^\]]+\]\([^)]*\)/g, (m) => {
             const inner = m.match(/\[([^\]]+)\]/);
             return inner && inner[1] ? inner[1] : '';
-          })
-          .replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (m, p1, p2) => (p2 || p1 || ''));
+          });
+        const radius = 140;
+        const start = Math.max(0, index - radius);
+        const end = Math.min(cleanText.length, index + length + radius);
+        let snippet = cleanText.slice(start, end).replace(/\s+/g, ' ').trim();
         if (!snippet) return '';
         if (start > 0) snippet = '…' + snippet;
-        if (end < sourceText.length) snippet = snippet + '…';
+        if (end < cleanText.length) snippet = snippet + '…';
         return snippet;
       } catch (_) {
         return '';
