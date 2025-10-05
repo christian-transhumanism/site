@@ -44,6 +44,62 @@ function decodeHtmlEntities(str) {
   });
 }
 
+function normalizeListInput(value) {
+  if (value === undefined || value === null) return [];
+  if (Array.isArray(value)) {
+    return value
+      .map(v => (v === undefined || v === null ? '' : String(v)))
+      .map(v => v.trim())
+      .filter(Boolean);
+  }
+  if (typeof value === 'string' || typeof value === 'number') {
+    const trimmed = String(value).trim();
+    return trimmed ? [trimmed] : [];
+  }
+  return [];
+}
+
+function splitContributorNames(value) {
+  if (value === undefined || value === null) return [];
+  return String(value)
+    .split(/\s*(?:,|;|&|\/|\band\b|\bwith\b)\s*/i)
+    .map(part => part.trim())
+    .filter(Boolean);
+}
+
+function gatherContributorNames(book) {
+  const names = [];
+  const seen = new Set();
+
+  const addName = (name) => {
+    if (name === undefined || name === null) return;
+    const trimmed = String(name).trim();
+    if (!trimmed) return;
+    const lower = trimmed.toLowerCase();
+    if (seen.has(lower)) return;
+    seen.add(lower);
+    names.push(trimmed);
+  };
+
+  const processValue = (value) => {
+    if (value === undefined || value === null) return;
+    if (Array.isArray(value)) {
+      value.forEach(processValue);
+      return;
+    }
+    addName(value);
+    splitContributorNames(value).forEach(addName);
+  };
+
+  if (book && typeof book === 'object') {
+    processValue(book.author);
+    processValue(book.editor);
+    processValue(book.contributors);
+  }
+
+  return names;
+}
+
 const format = require('date-fns/format')
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
@@ -165,6 +221,48 @@ module.exports = function(eleventyConfig) {
     const words = text.split(' ');
     if (words.length <= wordCount) return text;
     return words.slice(0, wordCount).join(' ') + '…';
+  });
+
+  eleventyConfig.addFilter('filterBooks', function (bookList, options = {}) {
+    if (!Array.isArray(bookList)) return [];
+    const opts = options && typeof options === 'object' ? options : {};
+    let result = bookList.slice();
+
+    const tagCriteria = normalizeListInput(opts.tag !== undefined ? opts.tag : opts.tags).map(tag => tag.toLowerCase());
+    if (tagCriteria.length) {
+      result = result.filter(book => {
+        const bookTags = Array.isArray(book && book.tags) ? book.tags.map(tag => String(tag).toLowerCase()) : [];
+        if (!bookTags.length) return false;
+        return tagCriteria.some(tag => bookTags.includes(tag));
+      });
+    }
+
+    const contributorCriteria = normalizeListInput(opts.contributor !== undefined ? opts.contributor : opts.contributors).map(name => name.toLowerCase());
+    if (contributorCriteria.length) {
+      result = result.filter(book => {
+        const pool = gatherContributorNames(book).map(name => name.toLowerCase());
+        if (!pool.length) return false;
+        return contributorCriteria.some(target => pool.some(name => name.includes(target)));
+      });
+    }
+
+    const shouldSort = opts.sort !== false;
+    if (shouldSort) {
+      result.sort((a, b) => {
+        const at = String(a && a.title ? a.title : '').toLowerCase();
+        const bt = String(b && b.title ? b.title : '').toLowerCase();
+        if (at < bt) return -1;
+        if (at > bt) return 1;
+        return 0;
+      });
+    }
+
+    const limit = parseInt(opts.limit, 10);
+    if (Number.isFinite(limit) && limit > 0) {
+      result = result.slice(0, limit);
+    }
+
+    return result;
   });
 
   eleventyConfig.setTemplateFormats([

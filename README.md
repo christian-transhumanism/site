@@ -66,6 +66,25 @@ The static site is written to `_site/`. Deploy that folder to any static host (N
 - Optional seed and credential helpers live next to the loaders (`youtubeApi.json`, `substackFeed.json`) so you can keep secrets out of git.
 - Remote fetches write to `.cache/` for faster rebuilds. Delete that directory when you need to bypass cached responses.
 
+## Embedding filtered book lists
+
+Use the shared `filterBooks` filter together with the `shared/book-list.njk` macro to render curated lists anywhere (wiki notes, blog posts, etc.). Combine contributor and tag filters as needed, and adjust the presentation with the optional flags.
+
+```njk
+{% import 'shared/book-list.njk' as bookBlocks %}
+
+{% set ronColeTurnerBooks = books | filterBooks({ contributor: 'Ron Cole-Turner' }) %}
+{{ bookBlocks.renderBookList(ronColeTurnerBooks, {
+  heading: 'Books featuring Ron Cole-Turner',
+  showImages: false
+}) }}
+
+{% set ctaBooks = books | filterBooks({ tag: 'CTA', limit: 6 }) %}
+{{ bookBlocks.renderBookList(ctaBooks, {
+  heading: 'CTA Publications'
+}) }}
+```
+
 ### Environment variables
 
 Place values in a `.env` file or export them before running Eleventy. The lightweight loader in `.eleventy.js` reads `.env` automatically.

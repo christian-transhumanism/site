@@ -1,0 +1,62 @@
+{% macro renderBookList(books, options={}) %}
+  {% set opts = options or {} %}
+  {% set heading = opts.heading or opts.title %}
+  {% set showImages = opts.showImages is defined ? opts.showImages : true %}
+  {% set showDescriptions = opts.showDescriptions is defined ? opts.showDescriptions : true %}
+  {% set showTags = opts.showTags is defined ? opts.showTags : true %}
+  {% set showContributors = opts.showContributors is defined ? opts.showContributors : true %}
+  {% set emptyMessage = opts.emptyMessage or 'No books found.' %}
+  {% set wrapperClass = 'book-list-embed' %}
+  {% if opts.className %}{% set wrapperClass = wrapperClass + ' ' + opts.className %}{% endif %}
+  <div class="{{ wrapperClass }}"{% if opts.id %} id="{{ opts.id }}"{% endif %}>
+    {% if heading %}<h2 class="book-list-heading">{{ heading }}</h2>{% endif %}
+    {% if books and (books | length) %}
+      <div class="book-grid">
+        {% for book in books %}
+          <article class="book">
+            {% if showImages and book.image %}
+              <figure class="book-cover">
+                <a href="{{ book.url or '#' }}" rel="noopener">
+                  <img src="{{ book.image }}" alt="{{ book.imageAlt or (book.title ~ ' cover') }}" loading="lazy" decoding="async" width="300" height="450">
+                </a>
+              </figure>
+            {% endif %}
+            <div class="book-meta">
+              <h3 class="book-title">
+                <a href="{{ book.url or '#' }}" rel="noopener">{{ book.title }}</a>
+              </h3>
+              <p class="book-byline">
+                {% if book.author %}
+                  <strong>{{ book.author }}</strong>
+                {% elseif book.editor %}
+                  <strong>{{ book.editor }}</strong>
+                {% endif %}
+                {% if book.year %} • <span class="book-year">{{ book.year }}</span>{% endif %}
+                {% if book.publisher %} • <span class="book-publisher">{{ book.publisher }}</span>{% endif %}
+              </p>
+              {% if showContributors and book.contributors and (book.contributors | length) %}
+                <p class="book-contributors-inline"><span class="label">Contributors:</span> {{ book.contributors | join(', ') }}</p>
+              {% endif %}
+              {% if showDescriptions and book.body %}
+                <div class="book-desc">
+                  {{ book.body | excerpt(40) }}
+                </div>
+              {% endif %}
+              {% if showTags and book.tags and (book.tags | length) %}
+                <ul class="book-tags">
+                  {% for t in book.tags %}<li>{{ t }}</li>{% endfor %}
+                </ul>
+              {% endif %}
+              <p class="book-links">
+                <a class="btn" href="{{ book.url or '#' }}" rel="noopener nofollow">Details / Buy</a>
+                {% if book.isbn %}<span class="isbn">ISBN: {{ book.isbn }}</span>{% endif %}
+              </p>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="book-list-empty">{{ emptyMessage }}</p>
+    {% endif %}
+  </div>
+{% endmacro %}
