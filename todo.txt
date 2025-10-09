@@ -29,7 +29,7 @@ Obsidian integration ideas
 Web performance optimizations (start with first two)
 - [x] Lazy-load Disqus embed to defer the 250–400 KB comment payload until the user requests it.
 - [x] Add responsive hero art (srcset/sizes or Cloudinary w_auto) for mission header + card imagery.
-- [ ] Defer or remove global JS (jQuery, Bootstrap, chat widget) to cut render-blocking head scripts.
+- [x] Defer or remove global JS (jQuery, Bootstrap, chat widget) to cut render-blocking head scripts.
 - [ ] Minify and tree-shake all.css via PostCSS/PurgeCSS to reduce unused Bootstrap rules.
 - [ ] Apply lazy loading, async decoding, and explicit dimensions across remaining image galleries.
 - [ ] Add asset fingerprinting and critical preloads for primary CSS/JS bundles.
