@@ -55,6 +55,9 @@
 	- The Future can help Faith Come Alive
 		- Engaging the future can help faith come alive
 	- Christ offers an ethical vision for scientific and technological progress
+	- Locating technology within the story of God
+	- Locating science and technology within the story of God
+	- Locating science and technology within the Christian story
 - Documents:
 	- [[Christian Transhumanist Affirmation]]
 	- [[mission|CTA Mission]]
