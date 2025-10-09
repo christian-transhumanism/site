@@ -1,0 +1,75 @@
+{% set buyUrl = url %}
+{% set authorsList = authors or [] %}
+{% if authorsList is string %}{% set authorsList = [authorsList] %}{% endif %}
+{% set editorsList = editors or [] %}
+{% if editorsList is string %}{% set editorsList = [editorsList] %}{% endif %}
+{% set contributorsList = contributors or [] %}
+{% if contributorsList is string %}{% set contributorsList = [contributorsList] %}{% endif %}
+{% set hasAuthors = authorsList and (authorsList | length) %}
+{% set hasEditors = editorsList and (editorsList | length) %}
+{% set hasContributors = contributorsList and (contributorsList | length) %}
+{% set hasMeta = year or publisher or series or isbn or hasContributors %}
+
+<article class="book book-detail">
+  {% if image %}
+  <figure class="book-cover">
+    {% if buyUrl %}<a href="{{ buyUrl }}" rel="noopener nofollow">{% endif %}
+      <img src="{{ image }}" alt="{{ imageAlt or (title ~ ' cover') }}" loading="lazy" decoding="async">
+    {% if buyUrl %}</a>{% endif %}
+  </figure>
+  {% endif %}
+
+  <div class="book-meta">
+    {% if title %}
+      <h2 class="book-title">{{ title }}</h2>
+    {% endif %}
+    {% if hasAuthors or hasEditors %}
+      <p class="book-byline">
+        {% if hasAuthors %}
+          <span class="book-authors"><strong>{{ authorsList | join(', ') }}</strong></span>
+        {% endif %}
+        {% if hasEditors %}
+          {% if hasAuthors %} • {% endif %}
+          <span class="book-editors"><strong>Editors:</strong> {{ editorsList | join(', ') }}</span>
+        {% endif %}
+        {% if year %} • <span class="book-year">{{ year }}</span>{% endif %}
+        {% if publisher %} • <span class="book-publisher">{{ publisher }}</span>{% endif %}
+      </p>
+    {% else %}
+      <p class="book-byline">
+        {% if year %}<span class="book-year">{{ year }}</span>{% endif %}
+        {% if publisher %}{% if year %} • {% endif %}<span class="book-publisher">{{ publisher }}</span>{% endif %}
+      </p>
+    {% endif %}
+
+    {% if series %}
+      <p class="book-series"><strong>Series:</strong> {{ series }}</p>
+    {% endif %}
+
+    {% if hasMeta %}
+      <dl class="book-facts">
+        {% if isbn %}
+          <div class="book-fact"><dt>ISBN</dt><dd>{{ isbn }}</dd></div>
+        {% endif %}
+        {% if hasContributors %}
+          <div class="book-fact">
+            <dt>Contributors</dt>
+            <dd>
+              <ul class="contributors-list list-unstyled">
+                {% for person in contributorsList %}
+                  <li>{{ person }}</li>
+                {% endfor %}
+              </ul>
+            </dd>
+          </div>
+        {% endif %}
+      </dl>
+    {% endif %}
+
+    {% if buyUrl %}
+      <p class="book-links">
+        <a class="btn btn-primary" href="{{ buyUrl }}" rel="noopener nofollow">Details / Buy</a>
+      </p>
+    {% endif %}
+  </div>
+</article>

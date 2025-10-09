@@ -28,6 +28,11 @@ layout: default
         {% if title %}<h1>{{ title }}</h1>{% endif %}
       {% endif %}
 
+      {% set pageTags = tags or [] %}
+      {% if 'book' in pageTags %}
+        {% include 'shared/book-detail-card.njk' %}
+      {% endif %}
+
       {{ content | safe }}
 
       {% include 'shared/backlinks-panel.njk' %}
