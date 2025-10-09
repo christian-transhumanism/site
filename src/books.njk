@@ -38,7 +38,7 @@ permalink: /books/
   <article class="book" data-search="{{ searchIndex }}" data-tags="{{ (tags | join(' ')) | lower }}">
     {% if book.image %}
       <figure class="book-cover">
-        <a href="{{ book.url or '#' }}" rel="noopener">
+        <a href="{{ book.wikiUrl or book.url or '#' }}">
           <img src="{{ book.image }}" alt="{{ book.imageAlt or (book.title ~ ' cover') }}" loading="lazy" decoding="async" width="300" height="450">
         </a>
       </figure>
@@ -46,7 +46,7 @@ permalink: /books/
 
     <div class="book-meta">
       <h2 class="book-title">
-        <a href="{{ book.url or '#' }}" rel="noopener">{{ book.title }}</a>
+        <a href="{{ book.wikiUrl or book.url or '#' }}">{{ book.title }}</a>
       </h2>
 
       <p class="book-byline">
@@ -82,7 +82,7 @@ permalink: /books/
       {% endif %}
 
       <p class="book-links">
-        <a class="btn" href="{{ book.url or '#' }}" rel="noopener nofollow">Details / Buy</a>
+  <a class="btn" href="{{ book.url or '#' }}" rel="noopener nofollow">Details / Buy</a>
         {% if book.isbn %}<span class="isbn">ISBN: {{ book.isbn }}</span>{% endif %}
       </p>
 

@@ -1015,6 +1015,21 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('wikilinks', resolveWikilinksInHtml);
   eleventyConfig.addLiquidFilter('wikilinks', resolveWikilinksInHtml);
 
+  const wikiUrlFor = function(name) {
+    if (!name) return '';
+    const key = String(name).trim();
+    if (!key) return '';
+    return (
+      obsidianIndex.get(key) ||
+      obsidianIndex.get(key.toLowerCase()) ||
+      obsidianIndex.get(toSlugBase(key)) ||
+      ''
+    );
+  };
+
+  eleventyConfig.addFilter('wikiUrlFor', wikiUrlFor);
+  eleventyConfig.addLiquidFilter('wikiUrlFor', wikiUrlFor);
+
   // Replace Obsidian-style wikilinks [[Page|Text]] and [[Page#Anchor]] in final HTML
   eleventyConfig.addTransform('obsidian-wikilinks', function (content, outputPath) {
     if (!outputPath || !outputPath.endsWith('.html') || typeof content !== 'string') return content;

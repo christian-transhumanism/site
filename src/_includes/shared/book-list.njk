@@ -16,14 +16,14 @@
           <article class="book">
             {% if showImages and book.image %}
               <figure class="book-cover">
-                <a href="{{ book.url or '#' }}" rel="noopener">
+                <a href="{{ book.wikiUrl or book.url or '#' }}">
                   <img src="{{ book.image }}" alt="{{ book.imageAlt or (book.title ~ ' cover') }}" loading="lazy" decoding="async" width="300" height="450">
                 </a>
               </figure>
             {% endif %}
             <div class="book-meta">
               <h3 class="book-title">
-                <a href="{{ book.url or '#' }}" rel="noopener">{{ book.title }}</a>
+                <a href="{{ book.wikiUrl or book.url or '#' }}">{{ book.title }}</a>
               </h3>
               <p class="book-byline">
                 {% if book.author %}

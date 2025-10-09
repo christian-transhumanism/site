@@ -26,11 +26,31 @@
     {% if hasAuthors or hasEditors %}
       <p class="book-byline">
         {% if hasAuthors %}
-          <span class="book-authors"><strong>{{ authorsList | join(', ') }}</strong></span>
+          <span class="book-authors"><strong>
+            {% for person in authorsList %}
+              {% set href = person | wikiUrlFor %}
+              {% if href %}
+                <a href="{{ href }}">{{ person }}</a>
+              {% else %}
+                {{ person }}
+              {% endif %}
+              {% if not loop.last %}, {% endif %}
+            {% endfor %}
+          </strong></span>
         {% endif %}
         {% if hasEditors %}
           {% if hasAuthors %} • {% endif %}
-          <span class="book-editors"><strong>Editors:</strong> {{ editorsList | join(', ') }}</span>
+          <span class="book-editors"><strong>Editors:</strong>
+            {% for person in editorsList %}
+              {% set href = person | wikiUrlFor %}
+              {% if href %}
+                <a href="{{ href }}">{{ person }}</a>
+              {% else %}
+                {{ person }}
+              {% endif %}
+              {% if not loop.last %}, {% endif %}
+            {% endfor %}
+          </span>
         {% endif %}
         {% if year %} • <span class="book-year">{{ year }}</span>{% endif %}
         {% if publisher %} • <span class="book-publisher">{{ publisher }}</span>{% endif %}
@@ -57,7 +77,14 @@
             <dd>
               <ul class="contributors-list list-unstyled">
                 {% for person in contributorsList %}
-                  <li>{{ person }}</li>
+                  {% set href = person | wikiUrlFor %}
+                  <li>
+                    {% if href %}
+                      <a href="{{ href }}">{{ person }}</a>
+                    {% else %}
+                      {{ person }}
+                    {% endif %}
+                  </li>
                 {% endfor %}
               </ul>
             </dd>
