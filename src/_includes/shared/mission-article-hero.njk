@@ -12,8 +12,19 @@
 {% endfor %}
 
 {% if hero %}
+  {% set heroSrcSmall = hero | cdnImage('c_fill,g_auto,f_auto,q_auto,w_480,h_160,dpr_auto') %}
+  {% set heroSrcMedium = hero | cdnImage('c_fill,g_auto,f_auto,q_auto,w_768,h_240,dpr_auto') %}
+  {% set heroSrcLarge = hero | cdnImage('c_fill,g_auto,f_auto,q_auto,w_1024,h_320,dpr_auto') %}
+  {% set heroSrcXL = hero | cdnImage('c_fill,g_auto,f_auto,q_auto,w_1440,h_380,dpr_auto') %}
+  {% set heroSrcMax = hero | cdnImage('c_fill,g_auto,f_auto,q_auto,w_1600,h_420,dpr_auto') %}
   <div class="mission-header">
-    <img class="mission-header__image" src="{{ hero | cdnImage('c_fill,g_auto,f_auto,q_auto,w_1600,h_420,dpr_auto') }}" alt="{{ page.title }}" />
+    <img
+      class="mission-header__image"
+      src="{{ heroSrcLarge }}"
+      srcset="{{ heroSrcSmall }} 480w, {{ heroSrcMedium }} 768w, {{ heroSrcLarge }} 1024w, {{ heroSrcXL }} 1440w, {{ heroSrcMax }} 1600w"
+      sizes="(min-width: 1200px) 1140px, (min-width: 992px) 960px, 100vw"
+      alt="{{ page.title }}"
+      decoding="async"
+    />
   </div>
 {% endif %}
-

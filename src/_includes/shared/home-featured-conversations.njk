@@ -1,8 +1,21 @@
 <section class="container">
   <div class="feature-grid">
     {% for c in conversations %}
+    {% set imgSmall = c.image | cdnImage("c_fill,g_auto,f_auto,q_auto,w_320,h_140,dpr_auto") %}
+    {% set imgMedium = c.image | cdnImage("c_fill,g_auto,f_auto,q_auto,w_480,h_180,dpr_auto") %}
+    {% set imgLarge = c.image | cdnImage("c_fill,g_auto,f_auto,q_auto,w_600,h_220,dpr_auto") %}
+    {% set imgXL = c.image | cdnImage("c_fill,g_auto,f_auto,q_auto,w_900,h_330,dpr_auto") %}
     <a class="feature-card" href="{{ c.url }}">
-      <span class="feature-card__media" style="background-image: url('{{ c.image }}');"></span>
+      <span class="feature-card__media">
+        <img
+          src="{{ imgLarge }}"
+          srcset="{{ imgSmall }} 320w, {{ imgMedium }} 480w, {{ imgLarge }} 600w, {{ imgXL }} 900w"
+          sizes="(min-width: 1200px) 280px, (min-width: 992px) 240px, (min-width: 768px) 50vw, 100vw"
+          alt="{{ c.title }}"
+          loading="lazy"
+          decoding="async"
+        >
+      </span>
       <span class="feature-card__body">
         <h3 class="feature-card__title">{{ c.title }}</h3>
         <p class="feature-card__blurb">{{ c.blurb }}</p>

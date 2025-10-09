@@ -2,8 +2,21 @@
 {% assign list = missionArticles[key] %}
 {% if list %}
 {% for item in list %}
+{% assign img_small = item.image | cdnImage: "c_fill,g_auto,f_auto,q_auto,w_320,h_140,dpr_auto" %}
+{% assign img_medium = item.image | cdnImage: "c_fill,g_auto,f_auto,q_auto,w_480,h_180,dpr_auto" %}
+{% assign img_large = item.image | cdnImage: "c_fill,g_auto,f_auto,q_auto,w_600,h_220,dpr_auto" %}
+{% assign img_xl = item.image | cdnImage: "c_fill,g_auto,f_auto,q_auto,w_900,h_330,dpr_auto" %}
 <a class="feature-card" href="{{ item.url }}">
-<span class="feature-card__media" style="background-image: url('{{ item.image | cdnImage: "c_fill,g_auto,f_auto,q_auto,w_600,h_220,dpr_auto" }}');"></span>
+<span class="feature-card__media">
+  <img
+    src="{{ img_large }}"
+    srcset="{{ img_small }} 320w, {{ img_medium }} 480w, {{ img_large }} 600w, {{ img_xl }} 900w"
+    sizes="(min-width: 1200px) 280px, (min-width: 992px) 240px, (min-width: 768px) 50vw, 100vw"
+    alt="{{ item.title }}"
+    loading="lazy"
+    decoding="async"
+  >
+</span>
 <span class="feature-card__body">
 <h3 class="feature-card__title">{{ item.title }}</h3>
 </span>
