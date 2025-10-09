@@ -336,6 +336,26 @@ module.exports = function(eleventyConfig) {
     return items;
   });
 
+  eleventyConfig.addCollection('books', (collectionApi) => {
+    const items = collectionApi.getAll().filter(item => {
+      const tags = normalizeListInput(item && item.data && item.data.tags).map(tag => tag.toLowerCase());
+      if (!tags.includes('book')) return false;
+      const inputPath = posixPath(item && item.inputPath ? item.inputPath : '');
+      if (!inputPath.includes(`/src/${WIKI_SEGMENT}/books/`)) return false;
+      return true;
+    });
+
+    items.sort((a, b) => {
+      const at = String(a && a.data && a.data.title ? a.data.title : '').toLowerCase();
+      const bt = String(b && b.data && b.data.title ? b.data.title : '').toLowerCase();
+      if (at < bt) return -1;
+      if (at > bt) return 1;
+      return 0;
+    });
+
+    return items;
+  });
+
   // --- Obsidian Wikilink support ---
   function collectWikiAssets(rootDir) {
     const base = path.join(process.cwd(), rootDir);
