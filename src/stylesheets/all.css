@@ -1110,6 +1110,11 @@ body.home section.container { margin-top: 44px; margin-bottom: 28px; }
 .disqus-lazy__note { margin: 0; color: var(--muted, #555); max-width: 40rem; }
 .disqus-lazy__button { align-self: flex-start; }
 .disqus-lazy__thread { margin-top: 1.5rem; }
+.disqus-lazy__cta.is-loading .disqus-lazy__button::after {
+    content: '…';
+}
+.disqus-lazy--loaded { padding: 0; border: none; background: transparent; }
+.disqus-lazy--loaded .disqus-lazy__thread { margin-top: 0; }
 .btn.is-disabled { pointer-events: none; opacity: .65; }
 
 /* Remove underline on Conversation cards (Bootstrap override) */

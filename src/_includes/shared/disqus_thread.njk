@@ -20,6 +20,7 @@
   if (!container || !container.classList || !container.classList.contains('disqus-lazy')) return;
 
   var button = container.querySelector('.disqus-lazy__button');
+  var cta = container.querySelector('.disqus-lazy__cta');
   var thread = container.querySelector('#disqus_thread');
   if (!button || !thread) return;
 
@@ -41,6 +42,9 @@
     loadState = 'loading';
     setButton('Loading comments…', true);
     thread.hidden = false;
+    if (cta) {
+      cta.classList.add('is-loading');
+    }
 
     window.disqus_config = function () {
       this.page.url = container.getAttribute('data-page-url') || '{{ page.url }}';
@@ -53,11 +57,18 @@
     s.async = true;
     s.setAttribute('data-timestamp', Date.now());
     s.onload = function () {
-      setButton('Comments loaded', true);
+      loadState = 'loaded';
+      if (cta) {
+        cta.remove();
+      }
+      container.classList.add('disqus-lazy--loaded');
     };
     s.onerror = function () {
       loadState = 'idle';
       setButton('Retry loading comments', false);
+      if (cta) {
+        cta.classList.remove('is-loading');
+      }
     };
     (d.head || d.body).appendChild(s);
   }
