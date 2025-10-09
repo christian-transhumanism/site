@@ -1,7 +1,24 @@
-<section class="home-hero"><br><br>
+{% set heroImage = "https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1567800006/24281387673_cd3c59a941_h_copy_ec6ikz.jpg" %}
+{% set heroSmall = heroImage | cdnImage("c_fill,g_auto,f_auto,q_auto,w_640,h_420,dpr_auto") %}
+{% set heroMedium = heroImage | cdnImage("c_fill,g_auto,f_auto,q_auto,w_960,h_520,dpr_auto") %}
+{% set heroLarge = heroImage | cdnImage("c_fill,g_auto,f_auto,q_auto,w_1440,h_640,dpr_auto") %}
+{% set heroXL = heroImage | cdnImage("c_fill,g_auto,f_auto,q_auto,w_1920,h_860,dpr_auto") %}
+
+<section class="home-hero">
+  <div class="home-hero__media" aria-hidden="true">
+    <img
+      src="{{ heroLarge }}"
+      srcset="{{ heroSmall }} 640w, {{ heroMedium }} 960w, {{ heroLarge }} 1440w, {{ heroXL }} 1920w"
+      sizes="100vw"
+      alt=""
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    >
+  </div>
+  <div class="home-hero__overlay" aria-hidden="true"></div>
   <section class="container text-center" id="intro">
     <h1>Could Science & Faith work together <br /> to create a radically better Future?</h1>
-    <br /><br />
     <p class="hero-actions">
       <a class="btn btn-primary btn-lg" href="/join">Join Us</a>
       <a class="btn btn-default btn-lg" href="/mission/">Explore the Mission</a>
