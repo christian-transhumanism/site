@@ -1,20 +1,85 @@
-<div id="disqus_thread"></div>
+<div
+  class="disqus-lazy"
+  data-page-url="{{ (site.url or '') }}{{ page.url }}"
+  data-page-identifier="{{ disqus_id }}"
+>
+  <div class="disqus-lazy__cta">
+    <h3 class="disqus-lazy__title">Join the conversation</h3>
+    <p class="disqus-lazy__note">
+      Comments are hosted by Disqus. Loading them will pull in external scripts and cookies.
+    </p>
+    <button type="button" class="btn btn-primary disqus-lazy__button">
+      Load comments
+    </button>
+  </div>
+  <div id="disqus_thread" class="disqus-lazy__thread" hidden aria-live="polite"></div>
+</div>
 <script>
+(function () {
+  var container = document.currentScript && document.currentScript.previousElementSibling;
+  if (!container || !container.classList || !container.classList.contains('disqus-lazy')) return;
 
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var button = container.querySelector('.disqus-lazy__button');
+  var thread = container.querySelector('#disqus_thread');
+  if (!button || !thread) return;
 
-var disqus_config = function () {
-this.page.url = "{{ page.url }}"; // Replace PAGE_URL with your page's canonical URL
-this.page.identifier = "{{ disqus_id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
+  var disqusShortname = 'christian-transhumanism';
+  var loadState = 'idle';
 
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://christian-transhumanism.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
+  function setButton(label, disabled) {
+    button.textContent = label;
+    button.disabled = !!disabled;
+    if (disabled) {
+      button.classList.add('is-disabled');
+    } else {
+      button.classList.remove('is-disabled');
+    }
+  }
+
+  function loadDisqus() {
+    if (loadState !== 'idle') return;
+    loadState = 'loading';
+    setButton('Loading comments…', true);
+    thread.hidden = false;
+
+    window.disqus_config = function () {
+      this.page.url = container.getAttribute('data-page-url') || '{{ page.url }}';
+      this.page.identifier = container.getAttribute('data-page-identifier') || '{{ disqus_id }}';
+    };
+
+    var d = document;
+    var s = d.createElement('script');
+    s.src = 'https://' + disqusShortname + '.disqus.com/embed.js';
+    s.async = true;
+    s.setAttribute('data-timestamp', Date.now());
+    s.onload = function () {
+      setButton('Comments loaded', true);
+    };
+    s.onerror = function () {
+      loadState = 'idle';
+      setButton('Retry loading comments', false);
+    };
+    (d.head || d.body).appendChild(s);
+  }
+
+  button.addEventListener('click', loadDisqus);
+
+  if (window.location && window.location.hash === '#disqus_thread') {
+    loadDisqus();
+  } else if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          io.disconnect();
+          loadDisqus();
+        }
+      });
+    }, { rootMargin: '200px' });
+    io.observe(container);
+  }
 })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript>
+  Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>

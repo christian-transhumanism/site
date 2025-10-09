@@ -27,7 +27,7 @@ Obsidian integration ideas
 - Pull asset metadata (captions, alt text) from vault sidecars when generating image markup.
 
 Web performance optimizations (start with first two)
-- [ ] Lazy-load Disqus embed to defer the 250–400 KB comment payload until the user requests it.
+- [x] Lazy-load Disqus embed to defer the 250–400 KB comment payload until the user requests it.
 - [x] Add responsive hero art (srcset/sizes or Cloudinary w_auto) for mission header + card imagery.
 - [ ] Defer or remove global JS (jQuery, Bootstrap, chat widget) to cut render-blocking head scripts.
 - [ ] Minify and tree-shake all.css via PostCSS/PurgeCSS to reduce unused Bootstrap rules.

@@ -1103,6 +1103,15 @@ body.home section.container { margin-top: 44px; margin-bottom: 28px; }
 .feature-card__blurb { margin: 0; color: #555; }
 @media (min-width: 992px) { .feature-card { grid-template-rows: 220px auto; } .feature-card__title { font-size: 1.25rem; } }
 
+/* Disqus lazy loader */
+.disqus-lazy { margin-top: 2rem; padding: 1.5rem; border: 1px solid var(--border, #e5e5e5); background: #fafafa; border-radius: .75rem; }
+.disqus-lazy__cta { display: flex; flex-direction: column; gap: .75rem; }
+.disqus-lazy__title { margin: 0; font-size: 1.25rem; }
+.disqus-lazy__note { margin: 0; color: var(--muted, #555); max-width: 40rem; }
+.disqus-lazy__button { align-self: flex-start; }
+.disqus-lazy__thread { margin-top: 1.5rem; }
+.btn.is-disabled { pointer-events: none; opacity: .65; }
+
 /* Remove underline on Conversation cards (Bootstrap override) */
 .feature-card, .feature-card:hover, .feature-card:focus { text-decoration: none !important; }
 .feature-card__title, .feature-card__blurb { text-decoration: none; }
