@@ -2,12 +2,9 @@
 - The [[Christian Transhumanist Theology|Theology of Christian Transhumanism]] & [[Theological Mission]]
 - Categories
     - [[Transhumanism Supporting Faith]]
-        - [[Simulation Argument]]
-        - [[Omega Point Theory]]
     - [[Faith Supporting Transhumanism]]
-        - Transhumanism as a Christian calling
-        - [[Participatory Theology]]
-        - [[Physical Eschatology]]
+	- [[Future Supports Faith]]
+	- [[Faith Supports Future]]
 - Concepts
     - [[Physical Eschatology]]
     - [[Participatory Theology]]

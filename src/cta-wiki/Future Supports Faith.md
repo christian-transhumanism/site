@@ -1,0 +1,25 @@
+- [[Christianity is a futurist religion]]
+- Christianity created and sustained the scientific revolution
+	- [[Christianity is the origin of the scientific revolution]]
+	- [[Religious drivers of the Scientific Revolution]]
+- Christianity created the modern world
+	- [[Christianity is the origin of the Enlightenment]]
+	- [[Christianity is the origin of moral progress]]
+	- [[Christianity is the origin of certain ethics we care about]]
+- A religion like Christianity is needed to sustain the future
+	- [[Christianity is necessary for civilizational progress]]
+	- [[Christianity is necessary for scientific progress]]
+	- [[Christianity is necessary for moral progress]]
+- Why the future needs Christ
+	- [[Christianity is necessary to escape the Great Filter]]
+    - love for all, even enemies
+    - forgiveness and grace for all, even enemies
+    - personhood, high view of
+    - open-ended rational ethics
+- How the future fulfills Christian visions
+	- [[Religious Aspirations through Science]]
+- How the future demonstrates Christian beliefs (God, Christ, Spirit, creation)
+	- [[Rationalist Religious Cosmology]]
+	- [[Simulation Argument]]
+	- 
+- 

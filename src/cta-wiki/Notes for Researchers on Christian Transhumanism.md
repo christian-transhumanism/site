@@ -27,7 +27,7 @@
 - 1600s [[Francis Bacon]] (father of scientific method, theological defense of scientific institutions)
 - 1600s [[Robert Boyle]] (early scientist, evangelical Christian, aspired to scientific longevity)
 - 1900s Nikolai Fyodorovich Fyodorov ([[Nikolai Fedorov (1829-1903)|Fedorov]]) (Russian Orthodox Christian, inspiration for Russian space program)
-- 1900s [[Pierre Teilhard de Chardin|Teilhard de Chardin]] (jesuit priest, paleontologist, used term "transhuman", envisioned the Singularity)
+- 1930s [[Pierre Teilhard de Chardin|Teilhard de Chardin]] (jesuit priest, paleontologist, used term "transhuman", envisioned the Singularity)
 - 1950s [[Julian Huxley]] (atheist, humanist, modern transhumanist movement)
 - 1980s [[FM 2030]]
 - 1990s [[Max More]], [[Natasha Vita-More]] (90s atheistic secular transhumanist movement)
