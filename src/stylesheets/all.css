@@ -1051,7 +1051,21 @@ body.home {
 
 .section-title { margin: 0.78125rem 0 0.46875rem; font-size: 0.875rem; }
 .home-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.625rem; }
-.home-media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.625rem; }
+.home-media-grid { display: grid; gap: 0.625rem; }
+.home-media-grid--primary { grid-template-columns: 1fr; }
+@media (min-width: 576px) { .home-media-grid--primary { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 992px) { .home-media-grid--primary { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.home-media-videos { margin-top: 1.25rem; }
+@media (min-width: 768px) { .home-media-videos { margin-top: 1.75rem; } }
+.home-media-heading { margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 600; }
+.home-media-grid--videos { grid-template-columns: 1fr; }
+@media (min-width: 576px) { .home-media-grid--videos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .home-media-grid--videos { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1200px) { .home-media-grid--videos { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.home-card--video { display: flex; flex-direction: column; height: 100%; }
+.home-card--video .media-thumb { margin-bottom: 0.375rem; }
+.home-card--video p { margin-top: auto; }
+.home-media-cta { margin: 0.75rem 0 0; }
 /* More open homepage typography */
 body.home section.container { margin-top: 44px; margin-bottom: 28px; }
 @media (min-width: 768px) { body.home section.container { margin-top: 56px; margin-bottom: 36px; } }
@@ -1065,9 +1079,6 @@ body.home section.container { margin-top: 44px; margin-bottom: 28px; }
 .feature-card__title { font-weight: 700; }
 .feature-card__blurb { line-height: 1.75; }
 .media-thumb { margin-bottom: 0.375rem; }
-.home-video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.3125rem; }
-@media (max-width: 480px) { .home-video-grid { grid-template-columns: 1fr; } }
-.home-card .home-video-grid { margin-bottom: 0.53125rem; }
 .home-card { background: #fff; border: none; box-shadow: none; border-radius: 0.3125rem; padding: 0.75rem; display: block; color: inherit; text-decoration: none; transition: box-shadow .15s ease, transform .06s ease; overflow:hidden; }
 .home-card:hover { box-shadow: 0 10px 22px rgba(0,0,0,0.12); transform: translateY(-2px); }
 .home-card:focus, .home-card:focus-visible { outline: 2px solid var(--accent, #337ab7); outline-offset: 2px; }

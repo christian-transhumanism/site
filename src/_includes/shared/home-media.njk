@@ -2,9 +2,11 @@
 {% set latestEp = podcast | first %}
 {% set latestSub = substack | first %}
 {% set vids = videos | take(4) %}
-{% if latestPost or latestEp or latestSub or (vids and vids.length) %}
+{% set hasPrimaryMedia = latestPost or latestEp or latestSub %}
+{% if hasPrimaryMedia or (vids and vids.length) %}
 <section class="container">
-  <div class="home-media-grid">
+  {% if hasPrimaryMedia %}
+  <div class="home-media-grid home-media-grid--primary">
     {% if latestPost %}
     <article class="home-card">
       <h3>Latest Blog</h3>
@@ -54,20 +56,25 @@
       <p><a class="btn btn-default" href="/podcast/">All Episodes</a></p>
     </article>
     {% endif %}
-
-    {% if vids and vids.length %}
-    <article class="home-card">
-      <h3>Videos</h3>
-      <div class="home-video-grid">
-        {% for v in vids %}
-          <a class="video-thumb" href="https://www.youtube.com/watch?v={{ v.id }}" target="_blank" rel="noopener">
-            <img src="https://img.youtube.com/vi/{{ v.id }}/hqdefault.jpg" alt="{{ v.title }}" loading="lazy">
-          </a>
-        {% endfor %}
-      </div>
-      <p><a class="btn btn-default" href="/videos/">More Videos</a></p>
-    </article>
-    {% endif %}
   </div>
+  {% endif %}
+
+  {% if vids and vids.length %}
+  <div class="home-media-videos">
+    <h3 class="home-media-heading">Videos</h3>
+    <div class="home-media-grid home-media-grid--videos">
+      {% for v in vids %}
+      <article class="home-card home-card--video">
+        <a class="media-thumb" href="https://www.youtube.com/watch?v={{ v.id }}" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/{{ v.id }}/hqdefault.jpg" alt="{{ v.title }}" loading="lazy">
+        </a>
+        <h4 class="home-item-title"><a href="https://www.youtube.com/watch?v={{ v.id }}" target="_blank" rel="noopener">{{ v.title }}</a></h4>
+        <p><a class="btn btn-default" href="https://www.youtube.com/watch?v={{ v.id }}" target="_blank" rel="noopener">Watch</a></p>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="home-media-cta"><a class="btn btn-default" href="/videos/">More Videos</a></p>
+  </div>
+  {% endif %}
 </section>
 {% endif %}
