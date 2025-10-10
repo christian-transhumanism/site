@@ -43,6 +43,16 @@ Create a production build:
 npx @11ty/eleventy
 ```
 
+### Offline builds
+
+Some global data loads remote RSS and YouTube feeds at build time. When you need to run the build without network access, instruct Eleventy to rely on cached copies by setting `SKIP_REMOTE_FEEDS=1`:
+
+```bash
+SKIP_REMOTE_FEEDS=1 npx @11ty/eleventy
+```
+
+With this flag set, the loaders skip outbound requests, log `[offline]` notices, and fall back to the most recent responses stored in `.cache/`. If no cached data exists yet, the relevant sections render with their built-in placeholders.
+
 The static site is written to `_site/`. Deploy that folder to any static host (Netlify, GitHub Pages, S3/CloudFront, etc.). CI/CD pipelines should run the build command, cache `node_modules/` when possible, and publish `_site/` as the artifact.
 
 ## Deployment notes
