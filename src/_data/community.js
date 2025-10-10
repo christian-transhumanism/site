@@ -1,6 +1,7 @@
 const Parser = require('rss-parser');
 const fs = require('fs');
 const path = require('path');
+const remoteToggle = require('./_helpers/remoteToggle');
 
 // Default site image to use as last resort fallback
 const DEFAULT_SITE_IMAGE = '/assets/images/cta_logo_standalone.png';
@@ -153,7 +154,90 @@ const parser = new Parser({
     }
 });
 
+function reviveCommunityItem(item) {
+    if (!item) return null;
+    const normalized = { ...item };
+    if (!normalized.isoDate && normalized.pubDate) {
+        try {
+            const iso = new Date(normalized.pubDate);
+            if (!Number.isNaN(iso.getTime())) {
+                normalized.isoDate = iso.toISOString();
+                normalized.isoDateObject = iso;
+            }
+        } catch (_) {}
+    }
+    if (normalized.isoDate && !normalized.isoDateObject) {
+        try {
+            const iso = new Date(normalized.isoDate);
+            if (!Number.isNaN(iso.getTime())) {
+                normalized.isoDateObject = iso;
+            }
+        } catch (_) {}
+    }
+    if (!normalized.featuredImage) {
+        normalized.featuredImage = DEFAULT_SITE_IMAGE;
+    }
+    if (!normalized.feedImage && normalized.featuredImage) {
+        normalized.feedImage = normalized.featuredImage;
+    }
+    if (!normalized.link) normalized.link = '#';
+    return normalized;
+}
+
+function normalizeArchiveItem(item) {
+    if (!item) return null;
+    const link = item.link || item.guid || '#';
+    const title = item.title || 'Community post';
+    const content = item.content || item.description || '';
+    const publishedRaw = item.published_at || item.pubDate || item.created_at || null;
+    let isoDate = null;
+    let isoDateObject = null;
+    if (publishedRaw) {
+        const parsed = new Date(publishedRaw);
+        if (!Number.isNaN(parsed.getTime())) {
+            isoDate = parsed.toISOString();
+            isoDateObject = parsed;
+        }
+    }
+    const featuredImage = item.image || DEFAULT_SITE_IMAGE;
+    return reviveCommunityItem({
+        title,
+        link,
+        content,
+        description: item.description || '',
+        author: item.author || item.twitter || '',
+        creator: item.author || item.twitter || '',
+        pubDate: publishedRaw || '',
+        isoDate,
+        isoDateObject,
+        featuredImage,
+        feedUrl: item.source || null,
+        feedImage: featuredImage,
+    });
+}
+
+function getOfflineCommunityItems() {
+    const cached = remoteToggle.readCacheJSON('community-feed.json');
+    if (Array.isArray(cached) && cached.length) {
+        return cached.map(reviveCommunityItem).filter(Boolean);
+    }
+    try {
+        const archive = require('./community-archive.json');
+        return archive
+            .slice(0, 100)
+            .map(normalizeArchiveItem)
+            .filter(Boolean);
+    } catch (_) {
+        return [];
+    }
+}
+
 module.exports = async function() {
+    if (remoteToggle.skipRemoteFetch) {
+        remoteToggle.logSkip('community feeds');
+        return getOfflineCommunityItems();
+    }
+
     // Feeds that have died or many no longer be relevant
         // "https://members.christiantranshumanism.org/blog/community.rss",
         // "http://jaygary.com/feed/",
@@ -196,15 +280,21 @@ module.exports = async function() {
         return feedImage && isImageUrl(feedImage) ? feedImage : null;
     }
 
-    const feeds = await Promise.allSettled(
-        feedUrls.map(url => 
-            parser.parseURL(url)
-                .catch(error => {
-                    console.warn(`Failed to fetch feed: ${url}`, error.message);
-                    return { items: [] };
-                })
-        )
-    );
+    let feeds;
+    try {
+        feeds = await Promise.allSettled(
+            feedUrls.map(url => 
+                parser.parseURL(url)
+                    .catch(error => {
+                        console.warn(`Failed to fetch feed: ${url}`, error.message);
+                        return { items: [] };
+                    })
+            )
+        );
+    } catch (error) {
+        remoteToggle.logFailure('community feeds', error);
+        return getOfflineCommunityItems();
+    }
 
     const items = feeds
         .filter(result => result.status === 'fulfilled')
@@ -258,7 +348,7 @@ module.exports = async function() {
     });
 
     // Process each item to get the correct image URL
-    return items.map(item => {
+    const mapped = items.map(item => {
         // Find the matching feed URL for this item
         const itemFeedUrl = feedUrls.find(url => {
             try {
@@ -293,11 +383,15 @@ module.exports = async function() {
                             (itemFeedUrl && feedImages.get(itemFeedUrl)) ||  // Use feed image as fallback
                             DEFAULT_SITE_IMAGE;  // Use site default as last resort
         
-        return {
+        return reviveCommunityItem({
             ...item,
             feedUrl: itemFeedUrl,  // Store the matched feed URL
             featuredImage,
             feedImage: itemFeedUrl && feedImages.get(itemFeedUrl) // Store feed image separately
-        };
+        });
     });
+
+    const cacheReady = mapped.map(({ isoDateObject, ...rest }) => rest);
+    remoteToggle.writeCacheJSON('community-feed.json', cacheReady);
+    return mapped;
 };

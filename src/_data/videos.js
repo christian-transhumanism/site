@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const crypto = require('crypto');
+const remoteToggle = require('./_helpers/remoteToggle');
 
 // Fetch URL over HTTPS, return Promise<string>
 function fetchText(url) {
@@ -243,6 +244,18 @@ module.exports = async function () {
 
   const { apiKey, maxPerChannel } = getYouTubeApiConfig();
 
+  const getOfflineVideos = () => {
+    const cached = remoteToggle.readCacheJSON('videos-data.json');
+    if (Array.isArray(cached) && cached.length) return cached;
+    if (Array.isArray(seed) && seed.length) return seed;
+    return [];
+  };
+
+  if (remoteToggle.skipRemoteFetch) {
+    remoteToggle.logSkip('YouTube feeds');
+    return getOfflineVideos();
+  }
+
   // Map sources to fetchers
   const tasks = sources.map(src => {
     const chanId = src.channelId || '';
@@ -265,7 +278,11 @@ module.exports = async function () {
 
   // Merge seed + fetched, backfill meta (duration/shorts) when missing, then filter out Shorts and de-dupe by id
   const merged = [...seed, ...fetched];
-  await fillVideoMeta(merged);
+  try {
+    await fillVideoMeta(merged);
+  } catch (error) {
+    remoteToggle.logFailure('video metadata', error);
+  }
   const filtered = merged.filter(v => {
     if (v && v.isShorts === true) return false;
     if (v && typeof v.seconds === 'number') return v.seconds > 60;
@@ -287,5 +304,7 @@ module.exports = async function () {
     return db - da;
   });
   const max = Number.parseInt(process.env.VIDEO_LIMIT || '100', 10);
-  return (Number.isFinite(max) && max > 0) ? list.slice(0, max) : list;
+  const finalList = (Number.isFinite(max) && max > 0) ? list.slice(0, max) : list;
+  remoteToggle.writeCacheJSON('videos-data.json', finalList);
+  return finalList;
 };

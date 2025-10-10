@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const crypto = require('crypto');
+const remoteToggle = require('./_helpers/remoteToggle');
 
 function ensureDir(p) { try { fs.mkdirSync(p, { recursive: true }); } catch (_) {} }
 function hash(s) { return crypto.createHash('sha1').update(s).digest('hex'); }
@@ -30,7 +31,13 @@ async function fetchCached(url, maxAgeMs) {
   ensureDir(dir);
   const file = path.join(dir, `substack-${hash(url)}.json`);
   const rec = readCache(file);
-  if (rec && (Date.now() - (rec.t || 0) < maxAgeMs) && rec.body) return rec.body;
+  const hasBody = rec && !!rec.body;
+  const isFresh = hasBody && (Date.now() - (rec.t || 0) < maxAgeMs);
+  if (remoteToggle.skipRemoteFetch) {
+    remoteToggle.logSkip(`substack feed ${url}`);
+    return hasBody ? rec.body : '';
+  }
+  if (isFresh) return rec.body;
   const body = await fetchText(url);
   writeCache(file, body);
   return body;
@@ -68,6 +75,11 @@ function readJSONSafe(p) {
   try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch (_) { return null; }
 }
 
+function getOfflineItems() {
+  const cached = remoteToggle.readCacheJSON('substack-feed.json');
+  return Array.isArray(cached) ? cached : [];
+}
+
 module.exports = async function() {
   // Prefer local file config over env var
   const cfgPath = path.join(__dirname, 'substackFeed.json');
@@ -75,10 +87,23 @@ module.exports = async function() {
   const feedFromFile = (cfg.feed || cfg.url || '').trim();
   const feed = feedFromFile || (process.env.SUBSTACK_FEED || '').trim();
   if (!feed) return [];
+  if (remoteToggle.skipRemoteFetch) {
+    remoteToggle.logSkip('substack feed');
+    const offline = getOfflineItems();
+    if (offline.length) return offline;
+  }
   try {
     const xml = await fetchCached(feed, 1000 * 60 * 15); // 15m cache
-    return parseSubstackRSS(xml).slice(0, 10);
-  } catch (_) {
+    const items = parseSubstackRSS(xml).slice(0, 10);
+    remoteToggle.writeCacheJSON('substack-feed.json', items);
+    return items;
+  } catch (error) {
+    remoteToggle.logFailure('substack feed', error);
+    if (remoteToggle.skipRemoteFetch) {
+      return getOfflineItems();
+    }
+    const fallback = getOfflineItems();
+    if (fallback.length) return fallback;
     return [];
   }
 };
