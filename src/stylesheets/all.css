@@ -1073,7 +1073,7 @@ body.home section.container { margin-top: 44px; margin-bottom: 28px; }
 @media (min-width: 768px) { .home-card { padding: 0.9375rem; } }
 .home-card h3 { margin: 0 0 0.375rem; font-size: 0.75rem; font-weight: 600; }
 .home-card p { line-height: 1.75; }
-.home-item-title { margin: 0.4375rem 0 0.25rem; font-size: 0.65625rem; font-weight: 600; }
+.home-item-title { margin: 0.4375rem 0 0.25rem; font-size: 1rem; font-weight: 600; }
 .home-item-desc { color: #555; line-height: 1.75; }
 .feature-card__body { padding: 0.625rem 0.78125rem 0.78125rem; }
 .feature-card__title { font-weight: 700; }
@@ -1083,7 +1083,7 @@ body.home section.container { margin-top: 44px; margin-bottom: 28px; }
 .home-card:hover { box-shadow: 0 10px 22px rgba(0,0,0,0.12); transform: translateY(-2px); }
 .home-card:focus, .home-card:focus-visible { outline: 2px solid var(--accent, #337ab7); outline-offset: 2px; }
 .home-card img { width: 100%; height: auto; border-radius: 0.25rem; display:block; }
-.home-item-title { margin: 0.3125rem 0 0.15625rem; font-size: 0.625rem; }
+.home-item-title { margin: 0.3125rem 0 0.15625rem; font-size: 1rem; }
 .home-item-desc { margin: 0 0 0.3125rem; color: #555; }
 .home-join ul { margin: 0.3125rem 0 0.625rem; }
 
