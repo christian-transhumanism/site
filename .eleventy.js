@@ -13,6 +13,7 @@ const WIKI_RAW_PREFIX = `/${WIKI_SEGMENT}/`;
 const WIKI_ASSET_OUTPUT_DIR = 'wiki-assets';
 const WIKI_ASSET_URL_PREFIX = `/${WIKI_ASSET_OUTPUT_DIR}/`;
 const WIKI_ASSET_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.avif', '.svg', '.mp3', '.mp4', '.pdf']);
+const BOARD_PATH_PREFIX = '/board/';
 
 function posixPath(str) {
   return String(str).replace(/\\/g, '/');
@@ -42,6 +43,69 @@ function decodeHtmlEntities(str) {
     }
     return match;
   });
+}
+
+function normalizeSitePath(url) {
+  if (url === undefined || url === null) return '';
+  let str = String(url).trim();
+  if (!str) return '';
+
+  // Strip protocol + host if absolute URL
+  if (/^[a-zA-Z][a-zA-Z\d+\-.]*:\/\//.test(str)) {
+    try {
+      const parsed = new URL(str);
+      str = parsed.pathname || '/';
+    } catch (_) {
+      const schemeIdx = str.indexOf('//');
+      if (schemeIdx !== -1) {
+        const firstSlash = str.indexOf('/', schemeIdx + 2);
+        str = firstSlash !== -1 ? str.slice(firstSlash) : '/';
+      }
+    }
+  }
+
+  // Drop query and fragment portions
+  str = str.split('#')[0].split('?')[0];
+  if (!str) return '';
+
+  // Ensure leading slash and collapse duplicate slashes
+  if (!str.startsWith('/')) {
+    const slashIdx = str.indexOf('/');
+    if (slashIdx !== -1) {
+      str = str.slice(slashIdx);
+      if (!str) str = '/';
+    } else {
+      str = `/${str}`;
+    }
+  }
+  str = str.replace(/\/{2,}/g, '/');
+
+  if (/\/index\.html$/i.test(str)) {
+    str = str.replace(/\/index\.html$/i, '/');
+  }
+
+  // Ensure trailing slash (except root, which already ends with '/')
+  if (str !== '/' && !str.endsWith('/')) {
+    str = `${str}/`;
+  }
+  return str;
+}
+
+function normalizeUrlKey(url) {
+  return normalizeSitePath(url);
+}
+
+function isBoardPath(url, includeRoot = false) {
+  const normalized = normalizeSitePath(url);
+  if (!normalized) return false;
+  if (!normalized.startsWith(BOARD_PATH_PREFIX)) return false;
+  if (!includeRoot && normalized === BOARD_PATH_PREFIX) return false;
+  return true;
+}
+
+function filterOutBoardEntries(list) {
+  if (!Array.isArray(list)) return [];
+  return list.filter(item => !isBoardPath(item && item.url));
 }
 
 function normalizeListInput(value) {
@@ -156,6 +220,8 @@ module.exports = function(eleventyConfig) {
     if (typeof value !== 'string' || typeof substr !== 'string') return false;
     return value.indexOf(substr) !== -1;
   });
+  eleventyConfig.addFilter('isBoardPath', (value, includeRoot = false) => isBoardPath(value, includeRoot));
+  eleventyConfig.addLiquidFilter('isBoardPath', (value, includeRoot = false) => isBoardPath(value, includeRoot));
 
   // Map local asset image paths to Cloudinary delivery URLs when needed
   function cdnImageImpl(src, transform) {
@@ -795,13 +861,6 @@ module.exports = function(eleventyConfig) {
 
   const { backlinks: obsidianBacklinks, outbound: obsidianOutbound, pageMeta: obsidianPageMeta } = buildObsidianBacklinks(WIKI_ROOT, obsidianIndex);
 
-  function normalizeUrlKey(url) {
-    if (!url) return '';
-    let key = String(url).split('#')[0].split('?')[0];
-    if (!key.endsWith('/')) key = key + '/';
-    return key;
-  }
-
   function mergeEntry(target, source) {
     if (!source) return target;
     target.title = target.title || source.title;
@@ -890,7 +949,9 @@ module.exports = function(eleventyConfig) {
         return 0;
       });
 
-      return results;
+      const isBoardPage = isBoardPath(pageUrl, true);
+      const finalResults = isBoardPage ? results : filterOutBoardEntries(results);
+      return finalResults;
     } catch (_) {
       return [];
     }
@@ -942,7 +1003,9 @@ module.exports = function(eleventyConfig) {
         return 0;
       });
 
-      return results;
+      const isBoardPage = isBoardPath(pageUrl, true);
+      const finalResults = isBoardPage ? results : filterOutBoardEntries(results);
+      return finalResults;
     } catch (_) {
       return [];
     }

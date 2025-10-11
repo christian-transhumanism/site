@@ -64,8 +64,10 @@ The static site is written to `_site/`. Deploy that folder to any static host (N
 ## Working with the CTA wiki vault
 
 - `src/cta-wiki/` mirrors an external Obsidian vault. Add, edit, or remove Markdown notes here and Eleventy will surface them automatically.
+- `src/cta-wiki/posts/` map to `/blog/...` permalinks, according to their internal permalink setting
+- `src/cta-wiki/board/` map to `/board/...` permalinks, while all other notes render under `/wiki/...`.
+- Board-permalinked notes stay private: Eleventy flags them with `noindex, nofollow`, omits them from the sitemap, and hides them from backlink/search listings on non-board pages. 
 - Wikilinks (`[[Page Name]]`) and Markdown links are resolved to site URLs via custom filters; missing targets render visibly so you can keep the knowledge graph healthy.
-- Notes inside `cta-wiki/board/` map to `/board/...` permalinks, while all other notes render under `/wiki/...`.
 - Keep organizational metadata (frontmatter, tags, aliases) in the Markdown files—Eleventy parses it via `gray-matter` to drive permalinks and backlinks.
 
 ## Dynamic data & external feeds
@@ -75,6 +77,8 @@ The static site is written to `_site/`. Deploy that folder to any static host (N
 - `src/_data/videoSources.json` defines the YouTube channels shown on `/videos/`. Add entries with `channelId`, `handle`, or legacy `user` fields; the data loader falls back gracefully when some fields are missing.
 - Optional seed and credential helpers live next to the loaders (`youtubeApi.json`, `substackFeed.json`) so you can keep secrets out of git.
 - Remote fetches write to `.cache/` for faster rebuilds. Delete that directory when you need to bypass cached responses.
+- (See “Offline builds” above for how to compile the site without refetching remote feeds when previewing these pages locally.)
+
 
 ## Embedding filtered book lists
 

@@ -16,6 +16,9 @@
 <meta property="og:type"              content="{{ site.type or 'website' }}" />
 <meta property="og:image"             content="{{ site.image }}" />
 <meta property="fb:app_id"            content="{{ site.app_id }}" />
+{% if metaRobots %}
+<meta name="robots"                   content="{{ metaRobots }}" />
+{% endif %}
 <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
