@@ -165,6 +165,8 @@ function gatherContributorNames(book) {
 }
 
 const format = require('date-fns/format')
+const parseISO = require('date-fns/parseISO')
+const isValid = require('date-fns/isValid')
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
@@ -193,7 +195,20 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.addFilter('date', function (date, dateFormat) {
-    return format(date, dateFormat)
+    if (!date) return ''
+
+    let parsed = date
+    if (typeof parsed === 'string') {
+      parsed = parseISO(parsed)
+    } else if (!(parsed instanceof Date)) {
+      parsed = new Date(parsed)
+    }
+
+    if (!isValid(parsed)) {
+      throw new RangeError(`Invalid date passed to date filter: ${date}`)
+    }
+
+    return format(parsed, dateFormat)
   });
   eleventyConfig.addFilter('sortByPubDate', (collection) => {
     return collection.slice().sort((a, b) => Date.parse(a.pubDate) - Date.parse(b.pubDate))
