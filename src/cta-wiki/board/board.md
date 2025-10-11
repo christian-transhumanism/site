@@ -1,11 +1,13 @@
 ## Board Dashboard
 
 ### Join board meeting
-- https://www.christiantranshumanism.org/zoom
+- [Zoom Meeting (current)](https://www.christiantranshumanism.org/zoom)
+
 ### Links
 - [[Board Meetings]] (historical record)
 - [[Board members]]
 - [[Executive Director Reports]]
+- [[Member Survey 2020]]
 ### Board Meeting notes in Obsidian:
 - [[Board meeting template]]
 - Once the meeting is finished, they can be published, or pushed to Github, for a permanent record
@@ -21,8 +23,7 @@
     2. [Treasurer reports](https://www.christiantranshumanism.org/reports/treasurer)
 4. Communication & Events
     1. [CTA Events Calendar](https://www.christiantranshumanism.org/calendar)
-    2. [Google Hangouts](https://meet.google.com/vbv-ztvv-icw)
-    3. [Zoom Meeting (current)](https://www.christiantranshumanism.org/zoom)
+    2. [Zoom Meeting (current)](https://www.christiantranshumanism.org/zoom)
 5. Wiki & Content
 	1. View: [wiki.christiantranshumanism.org](https://wiki.christiantranshumanism.org)
 	2. Edit: [wiki @ Roam](https://roamresearch.com/#/app/christiantranshumanism)

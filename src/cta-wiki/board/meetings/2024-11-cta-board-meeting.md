@@ -2,7 +2,7 @@
 - **Participants:**
     - [[Micah Redding]] (Executive Director)
     - Lincoln Cannon
-    - Ryan Hogan
+    - [[Ryan Hogan]]
     - [[Jonathan Gunnell]]
     - Mark Russell
 - Guests:

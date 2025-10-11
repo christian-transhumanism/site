@@ -1,16 +1,16 @@
 ---
-title: 'Religion and the Technological Future: An Introduction to Biohacking, Artificial Intelligence, and Transhumanism'
+title: "Religion and the Technological Future: An Introduction to Biohacking, Artificial Intelligence, and Transhumanism"
 tags:
   - book
   - faith
   - CTA
-url: 'https://amzn.to/3TVUuzH'
-image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757362802/books/61PwMJLzqVL._SY522_.jpg'
+url: https://amzn.to/3TVUuzH
+image: https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757362802/books/61PwMJLzqVL._SY522_.jpg
 authors:
   - Calvin Mercer
   - Tracy J. Trothen
 publisher: Palgrave Macmillan
-year: '2021'
+year: "2021"
 contributors:
   - Foreword by Ronald Cole-Turner
 ---

@@ -1,0 +1,1 @@
+Ryan Hogan is a futurist and a practioner of strategic foresight.

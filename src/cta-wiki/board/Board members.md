@@ -7,9 +7,9 @@
 - Omar Reyes (2)
 - Lorenzo Barberis Canonico (2) (Secretary)
 - [[Micah Redding]] (2) (CEO)
-- Jonathan Gunnell (3)
+- [[Jonathan Gunnell]] (3)
 - Mark Russell (3)
-- Ryan Hogan (3)
+- [[Ryan Hogan]] (3)
 
 ### 2024 April CTA Board (Going into elections, scratch)
 - Emily Redding (0) (Treasurer)

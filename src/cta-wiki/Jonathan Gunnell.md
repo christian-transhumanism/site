@@ -1,0 +1,1 @@
+Australian, Engineer, Christian (mostly Anglican but also have been in Baptist and Charismatic/Pentecostal churches, honorary catholic occasionally in Spanish speaking places), work in construction. Keen to see Christianity impact the developing AI governance systems and coming technology changes. Fluent in Spanish, and in all English dialects of Christian-ese.
