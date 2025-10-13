@@ -41,6 +41,19 @@ function toYearValue(value) {
   return Number.isNaN(parsed) ? Number.NEGATIVE_INFINITY : parsed;
 }
 
+const CATEGORY_ORDER = ['technology', 'faith', 'cta'];
+
+function getCategoryPriority(tags) {
+  if (!Array.isArray(tags) || !tags.length) return CATEGORY_ORDER.length;
+  const lowerTags = tags.map((tag) => String(tag).toLowerCase());
+  for (let i = 0; i < CATEGORY_ORDER.length; i += 1) {
+    if (lowerTags.indexOf(CATEGORY_ORDER[i]) !== -1) {
+      return i;
+    }
+  }
+  return CATEGORY_ORDER.length;
+}
+
 module.exports = {
   eleventyComputed: {
     books: (data) => {
@@ -73,6 +86,11 @@ module.exports = {
           wikiUrl: item && item.url,
         };
       }).sort((a, b) => {
+        const aCategory = getCategoryPriority(a.tags);
+        const bCategory = getCategoryPriority(b.tags);
+        if (aCategory !== bCategory) {
+          return aCategory - bCategory;
+        }
         const aYear = toYearValue(a.year);
         const bYear = toYearValue(b.year);
         if (aYear !== bYear) {
