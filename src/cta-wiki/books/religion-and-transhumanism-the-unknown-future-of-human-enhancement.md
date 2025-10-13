@@ -2,7 +2,6 @@
 title: 'Religion and Transhumanism: The Unknown Future of Human Enhancement'
 tags:
   - book
-  - faith
   - CTA
 url: 'https://amzn.to/3TRDrPi'
 image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757362805/books/811XP8UmrYL._SY522_.jpg'

@@ -2,7 +2,6 @@
 title: 'Religion and Human Enhancement: Death, Values, and Morality'
 tags:
   - book
-  - faith
   - CTA
 url: 'https://amzn.to/46METZn'
 image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1759611693/books/religion-human-enhancement.jpg'

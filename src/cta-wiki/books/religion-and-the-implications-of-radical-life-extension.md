@@ -2,7 +2,6 @@
 title: Religion and the Implications of Radical Life Extension
 tags:
   - book
-  - faith
   - CTA
 url: 'https://amzn.to/45KHynH'
 image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757362811/books/61G0fvqtaAL._SL1360_.jpg'

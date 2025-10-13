@@ -2,7 +2,6 @@
 title: 'Technologies of the Future Self: An Ethics for Transhuman Flourishing'
 tags:
   - book
-  - faith
   - CTA
 url: 'https://amzn.to/46TRs5p'
 image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1759612933/books/technologies-of-future-self.jpg'

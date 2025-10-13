@@ -2,7 +2,6 @@
 title: Religious Transhumanism and Its Critics
 tags:
   - book
-  - faith
   - CTA
 url: 'https://www.amazon.com/Religious-Transhumanism-Religion-Critical-Discourse/dp/1498584136'
 image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1759611694/books/religious-transhumanism-and-its-critics.jpg'

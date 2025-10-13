@@ -2,7 +2,6 @@
 title: The Transhumanism Handbook
 tags:
   - book
-  - faith
   - CTA
 url: 'https://amzn.to/42Y1jWn'
 image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1759611638/books/transhumanism-handbook.jpg'

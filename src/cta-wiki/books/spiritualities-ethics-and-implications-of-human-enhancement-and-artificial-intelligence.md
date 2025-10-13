@@ -2,7 +2,6 @@
 title: 'Spiritualities, Ethics, and Implications of Human Enhancement and Artificial Intelligence'
 tags:
   - book
-  - faith
   - CTA
 url: 'https://amzn.to/3Wr6H0w'
 image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1759611671/books/spiritualities-ethics-human-enhancement.jpg'
