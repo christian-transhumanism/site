@@ -124,6 +124,7 @@ permalink: /books/
   const items = Array.from(document.querySelectorAll('#book-list .book'));
   const buttons = Array.from(document.querySelectorAll('.book-filter-btn'));
   const contributorButtons = Array.from(document.querySelectorAll('.contributors-toggle'));
+    const validFilters = new Set(buttons.map(btn => btn.getAttribute('data-filter')));
     let category = 'all';
 
     function applyFilters(){
@@ -138,12 +139,38 @@ permalink: /books/
       });
     }
 
+    function updateUrlWithCategory(){
+      if (!('URLSearchParams' in window)) return;
+      const params = new URLSearchParams(window.location.search);
+      if (category === 'all') {
+        params.delete('filter');
+      } else {
+        params.set('filter', category);
+      }
+      const query = params.toString();
+      const newUrl = window.location.pathname + (query ? ('?' + query) : '') + window.location.hash;
+      window.history.replaceState({}, '', newUrl);
+    }
+
+    function setActiveCategory(nextCategory, options){
+      const opts = options || {};
+      const desired = validFilters.has(nextCategory) ? nextCategory : 'all';
+      if (desired === category && !opts.force) {
+        if (!opts.skipFilters) applyFilters();
+        return;
+      }
+      category = desired;
+      buttons.forEach(btn => {
+        const isActive = btn.getAttribute('data-filter') === category;
+        btn.classList.toggle('active', isActive);
+      });
+      if (!opts.skipFilters) applyFilters();
+      if (opts.updateUrl !== false) updateUrlWithCategory();
+    }
+
     input.addEventListener('input', applyFilters);
     buttons.forEach(btn => btn.addEventListener('click', function(){
-      buttons.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-      category = this.getAttribute('data-filter');
-      applyFilters();
+      setActiveCategory(this.getAttribute('data-filter'));
     }));
 
     contributorButtons.forEach(btn => btn.addEventListener('click', function(){
@@ -155,7 +182,9 @@ permalink: /books/
       target.hidden = isExpanded;
     }));
 
-    applyFilters();
+    const initialParams = ('URLSearchParams' in window) ? new URLSearchParams(window.location.search) : null;
+    const initialCategory = initialParams ? initialParams.get('filter') : null;
+    setActiveCategory(initialCategory || 'all', {updateUrl: false, force: true});
   })();
       </script>
     </div>
