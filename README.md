@@ -30,7 +30,7 @@ npm install
 Start Eleventy’s development server (with live reload and incremental rebuilds):
 
 ```bash
-npx @11ty/eleventy --serve
+npx @11ty/eleventy --serve --port=8082
 ```
 
 This serves the compiled site at `http://localhost:8080`. Edits inside `src/` trigger automatic rebuilds. Some data sources fetch remote RSS feeds; without network access Eleventy will emit warnings and generate placeholders, which is expected when offline or behind a restrictive firewall.

@@ -25,7 +25,7 @@ permalink: /books/
 </div>
 
       <div id="book-list" class="book-grid">
-  {% for book in books | sort(false, false, "title") %}
+  {% for book in books %}
   {% set tags = book.tags or [] %}
     {% set primaryContributor = book.author or book.editor %}
     {% set hasContributors = book.contributors and (book.contributors | length) %}
@@ -98,7 +98,7 @@ permalink: /books/
   "@type": "ItemList",
   "name": "Books about Christianity & Transhumanism",
   "itemListElement": [
-    {% for book in books | sort(false, false, "title") %}
+    {% for book in books %}
     {% set schemaAuthor = book.author or book.editor %}
     {
       "@type": "ListItem",

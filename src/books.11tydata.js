@@ -33,6 +33,14 @@ function getBodyFromFile(inputPath) {
   }
 }
 
+function toYearValue(value) {
+  if (value === undefined || value === null) return Number.NEGATIVE_INFINITY;
+  const match = String(value).match(/\d{3,4}/);
+  if (!match) return Number.NEGATIVE_INFINITY;
+  const parsed = Number.parseInt(match[0], 10);
+  return Number.isNaN(parsed) ? Number.NEGATIVE_INFINITY : parsed;
+}
+
 module.exports = {
   eleventyComputed: {
     books: (data) => {
@@ -64,6 +72,15 @@ module.exports = {
           body: getBodyFromFile(item && item.inputPath),
           wikiUrl: item && item.url,
         };
+      }).sort((a, b) => {
+        const aYear = toYearValue(a.year);
+        const bYear = toYearValue(b.year);
+        if (aYear !== bYear) {
+          return bYear - aYear;
+        }
+        const aTitle = a.title || '';
+        const bTitle = b.title || '';
+        return aTitle.localeCompare(bTitle);
       });
     },
   },
