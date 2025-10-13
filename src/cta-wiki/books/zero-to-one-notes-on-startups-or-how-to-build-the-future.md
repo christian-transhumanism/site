@@ -7,5 +7,6 @@ url: //www.amazon.com/gp/product/0804139296/ref=as_li_tl?ie=UTF8&amp;camp=1789&a
 image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757363058/books/51zGCdRQXOL._SL1200_.jpg'
 authors:
   - Peter Thiel
+year: '2014'
 ---
 What is the difference between vertical progress & horizontal progress? And what does this difference have to do with our future?

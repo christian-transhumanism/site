@@ -7,5 +7,6 @@ url: //www.amazon.com/Surprised-Hope-Rethinking-Resurrection-Mission/dp/B078YD55
 image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757363382/books/81SpkNGWJTL._SL1500_.jpg'
 authors:
   - N.T. Wright
+year: '2008'
 ---
 Surprised by Hope is the best popular-level introduction to historic Christianity's embodied, non-escapist eschatology.

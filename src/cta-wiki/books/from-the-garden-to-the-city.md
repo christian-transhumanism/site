@@ -7,5 +7,6 @@ url: '//www.amazon.com/Garden-City-John-Dyer-ebook/dp/B005CQ2ZE6/ref=as_li_ss_tl
 image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757363285/books/41kKvyihYPL.jpg'
 authors:
   - John Dyer
+year: '2011'
 ---
 Where does technology belong in the biblical story of redemption?

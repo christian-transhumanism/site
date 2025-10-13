@@ -8,5 +8,6 @@ image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upl
 editors:
   - Max More
   - Natasha Vita-More
+year: '2013'
 ---
 A newer compilation of essays, presenting the secular transhumanist perspective.

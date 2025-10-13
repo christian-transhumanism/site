@@ -7,5 +7,6 @@ url: //www.amazon.com/Phenomenon-Harper-Perennial-Modern-Thought/dp/0061632651/r
 image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757363296/books/61ZozurYpvL._SL1360_.jpg'
 authors:
   - Teilhard de Chardin
+year: '1955'
 ---
 Teilhard de Chardin was the Jesuit Priest and Paleontologist who first proposed many of the concepts of transhumanism in the 1930s-1950s.

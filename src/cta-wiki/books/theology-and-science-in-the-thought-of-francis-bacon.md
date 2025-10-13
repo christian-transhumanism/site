@@ -7,4 +7,5 @@ url: //www.amazon.com/Theology-Science-Thought-Francis-Bacon-ebook-dp-B0794FR5SX
 image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757363541/books/41n30q4hfZL.jpg'
 authors:
   - Steven Matthews
+year: '2008'
 ---
