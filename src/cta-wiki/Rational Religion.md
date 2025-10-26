@@ -5,6 +5,7 @@ Rational Religion is the study of infinitely sustainable, thriving, persistent c
 - Why we need religion: [[Religious Tradition Manifesto]]
 - Speculative reconciliations of rationality and religion:
 	- [[Religious Aspirations through Science]]
+	- [[Religious Concepts as Civilizational Infrastructure]]
 	- [[Rationalist Religious Cosmology]]
 - Background reading
 	- [[Critical Rationalism]]
