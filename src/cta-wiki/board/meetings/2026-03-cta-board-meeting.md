@@ -1,0 +1,58 @@
+- **Date:** [[2026.03.05]] (next meeting [[2026.04.02]])
+- **Participants:**
+    - [[Micah Redding]]
+	- [[Caleb Strom]]
+	- [[Lincoln Cannon]]
+	- [[Jonathan Gunnell]]
+	- [[Dustin Ashley]]
+	- [[Timothy Langer]]   
+	- [[Omar Reyes]]
+	- [[Mark Russell]]
+	- [[Ryan Hogan]]
+- **Absent:**
+    - Emily Hogan Redding (Treasurer)
+- **Agenda**
+    1. Reports
+        1. [Executive Director reports](https://www.christiantranshumanism.org/reports/membership)
+        2. [Treasurer reports](https://www.christiantranshumanism.org/reports/treasurer)
+	2. Discussion 
+		- News
+			- Francesca Pivaro
+				- Liverpool John Moores University
+			- AI & Faith interview
+				- https://www.facebook.com/groups/457984804375784/?multi_permalinks=3386779231496312
+			- Book stuff
+				- Technologies of the Future Self: An Ethics for Transhuman Flourishing
+					- Georg Theiner, Alcibiades Malapi-Nelson
+		- Retreat
+			- October 16-18, October 23-25
+			- Consensus is moving ahead
+		- Election
+			- Jonathan and Mark to meet on the 6th
+			- send general announcement to mailing list (Mailchimp) early next week
+			- 
+			- Mailing List
+				- batch email with election 
+		- New info
+			- Rumblings
+				- Christian childhood education
+				- Children catch something, then their parents do
+				- Life groups into a larger, distributed thing
+			- AI & Faith
+			- Upcoming book chapter
+				- Transhumanism as a Secular Vision of Christian Ethics
+			- Website updates
+			- Next meeting?
+			- Upcoming Rene Girard?
+			- Ideas for retreat / conference
+			- Ideas for other rationalist-adjacent conferences to attend
+		- Previous
+			- [[Caleb Strom]]
+			- [[Dustin Ashley]] 
+				- Padeia Project
+			- [[Lincoln Cannon]] 
+				- leading the new [[CTA Advisory Council]]
+				- AI (Angel)
+					- todo
+						- Angel landing page, write her own
+	3. Previous Discussions
