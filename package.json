@@ -10,6 +10,19 @@
   "name": "11ty",
   "version": "1.0.0",
   "main": ".eleventy.js",
+  "scripts": {
+    "dev": "SKIP_REMOTE_FEEDS=1 eleventy --serve",
+    "dev:remote": "eleventy --serve",
+    "build": "rm -rf _site && SKIP_REMOTE_FEEDS=1 eleventy && node scripts/minify-css.js",
+    "build:remote": "rm -rf _site && eleventy && node scripts/minify-css.js",
+    "serve": "SKIP_REMOTE_FEEDS=1 eleventy --serve",
+    "serve:remote": "eleventy --serve",
+    "clean:site": "rm -rf _site",
+    "clean": "rm -rf _site .cache",
+    "prune:cache": "node scripts/prune-cache.js",
+    "verify": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "a-sync-waterfall": "^1.0.1",
     "abbrev": "^1.1.1",
@@ -308,15 +321,6 @@
     "yargs": "^15.4.1",
     "yargs-parser": "^18.1.3",
     "yeast": "^0.1.2"
-  },
-  "scripts": {
-    "dev": "SKIP_REMOTE_FEEDS=1 npx @11ty/eleventy --serve",
-    "dev:remote": "npx @11ty/eleventy --serve",
-    "build": "SKIP_REMOTE_FEEDS=1 npx @11ty/eleventy && node scripts/minify-css.js",
-    "build:remote": "npx @11ty/eleventy && node scripts/minify-css.js",
-    "serve": "SKIP_REMOTE_FEEDS=1 npx @11ty/eleventy --serve",
-    "serve:remote": "npx @11ty/eleventy --serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",

@@ -45,6 +45,31 @@ function decodeHtmlEntities(str) {
   });
 }
 
+function enforceBlankTargetSecurity(content) {
+  if (typeof content !== 'string' || content.indexOf('target="_blank"') === -1) {
+    return content;
+  }
+
+  return content.replace(/<a\b([^>]*?)target="_blank"([^>]*)>/gi, (match, before, after) => {
+    const attrs = `${before}${after}`;
+    const relMatch = attrs.match(/\brel\s*=\s*"([^"]*)"/i);
+    if (!relMatch) {
+      return `<a${before}target="_blank" rel="noopener noreferrer"${after}>`;
+    }
+
+    const relValues = relMatch[1]
+      .split(/\s+/)
+      .map(value => value.trim())
+      .filter(Boolean);
+    const relSet = new Set(relValues.map(value => value.toLowerCase()));
+    relSet.add('noopener');
+    relSet.add('noreferrer');
+    const mergedRel = Array.from(relSet).join(' ');
+
+    return `<a${before}target="_blank"${after.replace(relMatch[0], `rel="${mergedRel}"`)}>`;
+  });
+}
+
 function normalizeSitePath(url) {
   if (url === undefined || url === null) return '';
   let str = String(url).trim();
@@ -1176,6 +1201,11 @@ module.exports = function(eleventyConfig) {
     });
 
     return content;
+  });
+
+  eleventyConfig.addTransform('secure-external-links', function (content, outputPath) {
+    if (!outputPath || !outputPath.endsWith('.html') || typeof content !== 'string') return content;
+    return enforceBlankTargetSecurity(content);
   });
 
   // Static assets passthrough (images, downloads, etc.)
