@@ -32,87 +32,68 @@ layout: resourcePage
 </section>
 
 <script>
-  (function($){
-    var $faqContainer = $('#fh5co-faqs');
-    var $expandAll = $('#faq-expand-all');
-    var $collapseAll = $('#faq-collapse-all');
+  (function(){
+    var container = document.getElementById('fh5co-faqs');
+    var expandAll = document.getElementById('faq-expand-all');
+    var collapseAll = document.getElementById('faq-collapse-all');
+    var searchInput = document.getElementById('faq-search');
+    var emptyMsg = container.querySelector('.faq-empty');
 
     function setButtons(state){
-      $expandAll.removeClass('btn-primary btn-default');
-      $collapseAll.removeClass('btn-primary btn-default');
-      if (state === 'expanded') {
-        $expandAll.addClass('btn-primary');
-        $collapseAll.addClass('btn-default');
-      } else if (state === 'collapsed') {
-        $collapseAll.addClass('btn-primary');
-        $expandAll.addClass('btn-default');
-      } else {
-        $expandAll.addClass('btn-default');
-        $collapseAll.addClass('btn-default');
-      }
+      expandAll.className = 'btn ' + (state === 'expanded' ? 'btn-primary' : 'btn-default');
+      collapseAll.className = 'btn ' + (state === 'collapsed' ? 'btn-primary' : 'btn-default');
+    }
+
+    function getVisibleItems(){
+      return Array.prototype.filter.call(container.querySelectorAll('.faq-item'), function(el){
+        return el.style.display !== 'none';
+      });
     }
 
     function updateToolbarState(){
-      var $items = $faqContainer.find('.faq-item:visible');
-      if (!$items.length) {
-        setButtons('collapsed');
-        return;
-      }
-      var expandedCount = $items.filter('.active').length;
-      if (expandedCount === 0) setButtons('collapsed');
-      else if (expandedCount === $items.length) setButtons('expanded');
-      else setButtons('partial');
+      var items = getVisibleItems();
+      if (!items.length) { setButtons('collapsed'); return; }
+      var expanded = items.filter(function(el){ return el.classList.contains('active'); }).length;
+      if (expanded === 0) setButtons('collapsed');
+      else if (expanded === items.length) setButtons('expanded');
+      else { setButtons('partial'); }
     }
 
-    function toggle($item, expand, silent){
-      var $body = $item.find('.faq-body');
-      var $button = $item.find('.faq-question');
-      var isActive = $item.hasClass('active');
+    function toggle(item, expand){
+      var isActive = item.classList.contains('active');
       var doExpand = (typeof expand !== 'undefined') ? expand : !isActive;
-      $item.toggleClass('active', doExpand);
-      $button.attr('aria-expanded', doExpand);
-      if (doExpand) { $body.show(); }
-      else { $body.hide(); }
-      if (!silent) updateToolbarState();
+      item.classList.toggle('active', doExpand);
+      item.querySelector('.faq-question').setAttribute('aria-expanded', doExpand);
     }
 
-    $faqContainer.on('click', '.faq-question', function(){
-      toggle($(this).closest('.faq-item'));
+    container.addEventListener('click', function(e){
+      var btn = e.target.closest('.faq-question');
+      if (btn) { toggle(btn.closest('.faq-item')); updateToolbarState(); }
     });
 
-    // Keyboard accessibility: toggle with Enter/Space
-    $faqContainer.on('keydown', '.faq-question', function(e){
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggle($(this).closest('.faq-item'));
-      }
-    });
-
-    // Expand/Collapse All
-    $expandAll.on('click', function(){
-      $faqContainer.find('.faq-item:visible').each(function(){ toggle($(this), true, true); });
-      updateToolbarState();
-    });
-    $collapseAll.on('click', function(){
-      $faqContainer.find('.faq-item:visible').each(function(){ toggle($(this), false, true); });
+    expandAll.addEventListener('click', function(){
+      getVisibleItems().forEach(function(el){ toggle(el, true); });
       updateToolbarState();
     });
 
-    // Simple search/filter
-    $('#faq-search').on('input', function(){
-      var q = $(this).val().toLowerCase().trim();
+    collapseAll.addEventListener('click', function(){
+      getVisibleItems().forEach(function(el){ toggle(el, false); });
+      updateToolbarState();
+    });
+
+    searchInput.addEventListener('input', function(){
+      var q = this.value.toLowerCase().trim();
       var any = false;
-      $faqContainer.find('.faq-item').each(function(){
-        var $item = $(this);
-        var text = ($item.find('.faq-question-text').text() + ' ' + $item.find('.faq-body').text()).toLowerCase();
+      container.querySelectorAll('.faq-item').forEach(function(item){
+        var text = (item.querySelector('.faq-question-text').textContent + ' ' + item.querySelector('.faq-body').textContent).toLowerCase();
         var match = q === '' || text.indexOf(q) !== -1;
-        $item.toggle(match);
+        item.style.display = match ? '' : 'none';
         if (match) any = true;
       });
-      $('.faq-empty').toggle(!any);
+      emptyMsg.style.display = any ? 'none' : '';
       updateToolbarState();
     });
 
     updateToolbarState();
-  })(jQuery);
+  })();
 </script>
