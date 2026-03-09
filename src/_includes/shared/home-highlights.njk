@@ -1,0 +1,202 @@
+{% set highlights = [
+  {
+    url: '/blog/2025-noland-arbaugh-neuralink/',
+    heading: "Did you know the world's first Neuralink recipient is a devout Christian?…",
+    image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1751292628/noland-arbaugh-1.png',
+    headingClass: null,
+    useOriginal: true,
+    modifier: 'home-highlight--fit'
+  },
+  {
+    url: '/blog/2025-creation-mandate-lords-of-the-cosmos/',
+    heading: 'The Creation Mandate: Why Christianity Entails Ruling the Cosmos',
+    image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1760147651/Gemini_Generated_Image_oto6n1oto6n1oto6_v7rj5u.png',
+    headingClass: 'home-highlight__heading--large',
+    contentClass: 'home-highlight__content--wide',
+    modifier: 'home-highlight--top',
+    transform: 'c_fill,g_auto,w_1600,h_960,f_auto,q_auto,dpr_auto'
+  },
+  {
+    url: '/blog/2022-critical-rationalism-christianity/',
+    heading: "Religion is essential to the future",
+    subheading: "If you care about outcomes, you can't ignore the most successful social technology in human history.",
+    image: 'https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1659056646/great-is-truth-and-mighty-above-all-things.png',
+    transform: 'c_fill,g_auto,w_1200,h_720,f_auto,q_auto,dpr_auto'
+  }
+] %}
+
+<style>
+  .home-highlights .home-highlights__grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .home-highlights .home-highlight {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    min-height: 240px;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.24s ease;
+  }
+  .home-highlights .home-highlight:hover,
+  .home-highlights .home-highlight:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+  .home-highlights .home-highlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(200deg, rgba(0,0,0,0.15) 10%, rgba(0,0,0,0.65) 65%, rgba(0,0,0,0.85) 100%);
+    transition: opacity 0.18s ease;
+  }
+  .home-highlights .home-highlight__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .home-highlights .home-highlight__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .home-highlights .home-highlight--fit {
+    padding: 0;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #070708;
+    min-height: auto;
+  }
+  .home-highlights .home-highlight--fit::after {
+    display: none;
+  }
+  .home-highlights .home-highlight--fit .home-highlight__media {
+    position: static;
+    display: block;
+    width: 100%;
+    background: #070708;
+  }
+  .home-highlights .home-highlight--fit .home-highlight__media img {
+    height: auto;
+    object-fit: contain;
+    object-position: top;
+    background: #070708;
+  }
+  .home-highlights .home-highlight--fit .home-highlight__content {
+    position: relative;
+    z-index: 1;
+    background: #070708;
+    padding: 1.75rem 1.5rem 1.5rem;
+    max-width: none;
+  }
+  .home-highlights .home-highlight--fit .home-highlight__heading {
+    text-shadow: none;
+  }
+  .home-highlights .home-highlight:hover,
+  .home-highlights .home-highlight:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 32px rgba(0,0,0,0.25);
+  }
+  .home-highlights .home-highlight:hover::after,
+  .home-highlights .home-highlight:focus::after {
+    opacity: 0.92;
+  }
+  .home-highlights .home-highlight:focus-visible {
+    outline: 2px solid var(--accent, #337ab7);
+    outline-offset: 4px;
+  }
+  .home-highlights .home-highlight__content {
+    position: relative;
+    z-index: 1;
+    max-width: 30ch;
+  }
+  .home-highlights .home-highlight__content--wide {
+    max-width: none;
+  }
+  .home-highlights .home-highlight--top {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 1.5rem;
+  }
+  .home-highlights .home-highlight__heading {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.2;
+    font-weight: 600;
+    text-shadow: 0 3px 16px rgba(0,0,0,0.45);
+  }
+  .home-highlights .home-highlight__heading--large {
+    font-size: 2.2rem;
+    line-height: 1.08;
+  }
+  .home-highlights .home-highlight__subheading {
+    margin: 0.4rem 0 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.82);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  }
+  @media (min-width: 992px) {
+    .home-highlights .home-highlight {
+      min-height: 280px;
+      padding: 1.5rem;
+    }
+    .home-highlights .home-highlight--fit {
+      padding: 0;
+      min-height: auto;
+    }
+    .home-highlights .home-highlight--top {
+      padding-top: 1.75rem;
+    }
+    .home-highlights .home-highlight__heading {
+      font-size: 1.65rem;
+    }
+    .home-highlights .home-highlight__heading--large {
+      font-size: 2.4rem;
+    }
+    .home-highlights .home-highlight__subheading {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<section class="home-highlights">
+  <div class="container">
+    <div class="home-highlights__grid">
+      {% for feature in highlights %}
+      {% set transform = feature.transform %}
+      {% if (not transform) and (not feature.useOriginal) %}
+        {% set transform = 'c_fill,g_auto,w_1600,h_960,f_auto,q_auto,dpr_auto' %}
+      {% endif %}
+      {% if transform %}
+        {% set highlightImage = feature.image | cdnImage(transform) %}
+      {% else %}
+        {% set highlightImage = feature.image %}
+      {% endif %}
+      <a
+        class="home-highlight{% if feature.modifier %} {{ feature.modifier }}{% endif %}"
+        href="{{ feature.url }}"
+      >
+        <span class="home-highlight__media" aria-hidden="true">
+          <img src="{{ highlightImage }}" alt="" loading="lazy">
+        </span>
+        <div class="home-highlight__content{% if feature.contentClass %} {{ feature.contentClass }}{% endif %}">
+          <h3 class="home-highlight__heading{% if feature.headingClass %} {{ feature.headingClass }}{% endif %}">{{ feature.heading }}</h3>
+          {% if feature.subheading %}
+          <p class="home-highlight__subheading">{{ feature.subheading }}</p>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
