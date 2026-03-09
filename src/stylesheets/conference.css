@@ -71,12 +71,12 @@ section {
  */
 
 body {
-    /*padding-top:30px*/
+    padding-top: var(--site-nav-offset, 56px)
 }
 
 @media only screen and (min-width: 500px) {
     body {
-        /*padding-top:70px*/
+        padding-top: var(--site-nav-offset, 70px)
     }
 }
 
@@ -2755,4 +2755,3 @@ body.conference {
         display: inline-block
     }
 }
-

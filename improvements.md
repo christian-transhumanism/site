@@ -6,7 +6,7 @@
   6. Monolithic .eleventy.js — 1193 lines, synchronous fs operations                                 
   7. Hardcoded navigation/footer — 30+ footer links not data-driven                                  
   ~~8. No breadcrumbs for wiki pages~~                                                                   
-  9. Fixed navbar overlaps on mobile                                                                 
+  9. DONE: Fixed navbar overlaps on mobile — body top offset now tracks the real fixed-nav height via shared JS/CSS
   10. Cache directory management — .cache/ 46MB, no auto-cleanup                                     
   11. External AI chat widget — Third-party CDN, no fallback                                         
   12. Book filter JS unclear                                                                         

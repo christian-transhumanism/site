@@ -1,4 +1,16 @@
 (function () {
+  function updateFixedNavbarOffset() {
+    var navbar = document.querySelector(".navbar-fixed-top");
+    if (!navbar) {
+      document.documentElement.style.removeProperty("--site-nav-offset");
+      return;
+    }
+    document.documentElement.style.setProperty(
+      "--site-nav-offset",
+      Math.ceil(navbar.getBoundingClientRect().height) + "px"
+    );
+  }
+
   function selectTarget(trigger) {
     var selector = trigger.getAttribute("data-target") || trigger.getAttribute("href");
     if (!selector || selector === "#") {
@@ -59,6 +71,7 @@
       var nextState = !target.classList.contains("in");
       target.classList.toggle("in", nextState);
       setExpanded(collapseToggle, nextState);
+      updateFixedNavbarOffset();
       return;
     }
 
@@ -86,4 +99,14 @@
     }
     setExpanded(toggle, target.classList.contains("in"));
   });
+
+  updateFixedNavbarOffset();
+  window.addEventListener("resize", updateFixedNavbarOffset);
+
+  if (typeof ResizeObserver !== "undefined") {
+    var navbar = document.querySelector(".navbar-fixed-top");
+    if (navbar) {
+      new ResizeObserver(updateFixedNavbarOffset).observe(navbar);
+    }
+  }
 })();
