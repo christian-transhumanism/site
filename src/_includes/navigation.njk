@@ -1,20 +1,31 @@
 <!-- navigation styled for Bootstrap 3.0 //-->
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<nav class="navbar navbar-default navbar-fixed-top site-nav" aria-label="Primary">
+  <div class="container site-nav__container">
+    <div class="navbar-header site-nav__bar">
+      <a href="/" class="site-nav__brand" aria-label="Christian Transhumanist Association home">
+        <img src="//res.cloudinary.com/christian-transhumanist-association/image/upload/c_scale,h_40/v1757077096/CTA_Logo_-_Light_Background_dlzadg.png" alt="Christian Transhumanist Association"/>
+      </a>
+      <button
+        type="button"
+        class="navbar-toggle site-nav__toggle"
+        data-toggle="collapse"
+        data-target="#site-primary-nav"
+        aria-controls="site-primary-nav"
+        aria-expanded="false"
+        aria-label="Open site navigation"
+      >
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="xnavbar-brand"><img src="//res.cloudinary.com/christian-transhumanist-association/image/upload/c_scale,h_40/v1757077096/CTA_Logo_-_Light_Background_dlzadg.png" style="padding:4px 15px;" alt="Christian Transhumanist Association"/></a>
     </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
+    <button type="button" class="site-nav__backdrop" data-nav-backdrop hidden tabindex="-1" aria-hidden="true"></button>
+    <div id="site-primary-nav" class="collapse navbar-collapse site-nav__panel" aria-hidden="true">
+      <ul class="nav navbar-nav site-nav__list">
         {% include '_navigation_links.njk' %}
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right site-nav__list site-nav__list--secondary">
         {% include '_navigation_links_right.njk' %}
       </ul>
     </div>

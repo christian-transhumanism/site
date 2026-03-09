@@ -117,6 +117,32 @@
   color: rgba(255,255,255,0.82);
   text-shadow: 0 2px 12px rgba(0,0,0,0.35);
 }
+@media (max-width: 767px) {
+  .home-highlights .home-highlights__grid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+  .home-highlights .home-highlight {
+    min-height: 220px;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  .home-highlights .home-highlight--fit {
+    min-height: auto;
+  }
+  .home-highlights .home-highlight--fit .home-highlight__content {
+    padding: 1.125rem 1rem 1rem;
+  }
+  .home-highlights .home-highlight__heading {
+    font-size: 1.2rem;
+  }
+  .home-highlights .home-highlight__heading--large {
+    font-size: 1.7rem;
+  }
+  .home-highlights .home-highlight__subheading {
+    font-size: 0.95rem;
+  }
+}
 @media (min-width: 992px) {
   .home-highlights .home-highlight {
     min-height: 280px;
