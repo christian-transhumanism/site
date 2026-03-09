@@ -30,35 +30,47 @@ npm install
 Start Eleventy’s development server (with live reload and incremental rebuilds):
 
 ```bash
-npx @11ty/eleventy --serve --port=8082
+npm run dev
 ```
 
-This serves the compiled site at `http://localhost:8080`. Edits inside `src/` trigger automatic rebuilds. Some data sources fetch remote RSS feeds; without network access Eleventy will emit warnings and generate placeholders, which is expected when offline or behind a restrictive firewall.
+This serves the compiled site at `http://localhost:8080`. Edits inside `src/` trigger automatic rebuilds. By default, local development skips remote RSS and YouTube fetches and relies on cached data or built-in placeholders instead.
+
+When you want a fully hydrated local preview with live remote feeds, use:
+
+```bash
+npm run dev:remote
+```
 
 ## Building for deployment
 
 Create a production build:
 
 ```bash
-npx @11ty/eleventy
+npm run build
 ```
 
 ### Offline builds
 
-Some global data loads remote RSS and YouTube feeds at build time. When you need to run the build without network access, instruct Eleventy to rely on cached copies by setting `SKIP_REMOTE_FEEDS=1`:
+The default npm scripts already skip remote RSS and YouTube fetches so local builds do not hang on unavailable feeds. They rely on cached copies in `.cache/` when available:
 
 ```bash
-SKIP_REMOTE_FEEDS=1 npx @11ty/eleventy
+npm run build
 ```
 
 With this flag set, the loaders skip outbound requests, log `[offline]` notices, and fall back to the most recent responses stored in `.cache/`. If no cached data exists yet, the relevant sections render with their built-in placeholders.
+
+When you explicitly want to refresh remote feeds during a build, use:
+
+```bash
+npm run build:remote
+```
 
 The static site is written to `_site/`. Deploy that folder to any static host (Netlify, GitHub Pages, S3/CloudFront, etc.). CI/CD pipelines should run the build command, cache `node_modules/` when possible, and publish `_site/` as the artifact.
 
 ## Deployment notes
 
 - The project includes numerous remote feeds configured in `.eleventy.js`. Ensure deploy environments allow outbound HTTP(S) so the build can hydrate those feeds; otherwise Eleventy will fall back to placeholder content.
-- If using Netlify (typical for Eleventy projects), set the build command to `npx @11ty/eleventy` and the publish directory to `_site`.
+- Netlify is configured via [netlify.toml](/Users/micahredding/.codex/worktrees/c443/cta-site/netlify.toml) to run `npm run build:remote` and publish `_site`, so production deploys continue to refresh remote feeds.
 - Environment variables can be defined in `.env` or the hosting provider’s UI; the lightweight loader inside `.eleventy.js` reads the file before the build starts.
 
 ## Working with the CTA wiki vault
@@ -116,15 +128,17 @@ Place values in a `.env` file or export them before running Eleventy. The lightw
 | Task | Command |
 | ---- | ------- |
 | Install dependencies | `npm install` |
-| Start dev server | `npx @11ty/eleventy --serve` |
-| Build once | `npx @11ty/eleventy` |
+| Start dev server | `npm run dev` |
+| Start dev server with remote feeds | `npm run dev:remote` |
+| Build once | `npm run build` |
+| Build once with remote feeds | `npm run build:remote` |
 | Clean output (optional) | `rm -rf _site/ .cache/` |
 
 ## Troubleshooting
 
-- **Feed fetch failures:** When a build lacks network access, Eleventy logs `getaddrinfo ENOTFOUND` warnings. Provide network access or seed the relevant `_data` files with cached content.
+- **Feed fetch failures:** Use `npm run dev` or `npm run build` to skip remote fetches by default. Use the `:remote` variants only when you want to refresh external feeds and know network access is available.
 - **Broken wiki links:** The build surfaces missing wikilinks inline. Add the referenced note to `src/cta-wiki/` or update the link text.
-- **Unexpected build output:** Regenerate the site (`npx @11ty/eleventy`) and inspect `_site/`. Because `_site/` is generated, delete it before re-running if you suspect stale artifacts.
+- **Unexpected build output:** Regenerate the site (`npm run build`) and inspect `_site/`. Because `_site/` is generated, delete it before re-running if you suspect stale artifacts.
 
 ## Contributing
 
