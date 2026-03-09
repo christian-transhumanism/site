@@ -3834,12 +3834,37 @@ main video {
 }
 
 @media (min-width: 992px) {
+  .site-nav {
+    background: #f8f8f8;
+    backdrop-filter: none;
+  }
+
+  .site-nav__brand {
+    min-height: auto;
+    padding: 4px 15px 4px 0;
+  }
+
+  .site-nav__list > li > a,
+  .site-nav__list > li > button {
+    display: block;
+    min-height: 0;
+  }
+
+  .site-sidebar {
+    overflow: visible;
+  }
+
   .site-sidebar--mobile {
     display: none;
   }
 
   .site-sidebar--desktop {
     display: block;
+    padding: 19px;
+  }
+
+  .site-sidebar:not(.site-sidebar--mobile) {
+    padding: 19px;
   }
 
   .site-sidebar__panel {
@@ -3849,6 +3874,24 @@ main video {
 
   .site-sidebar__toggle {
     display: none;
+  }
+
+  .site-sidebar:not(.site-sidebar--mobile) ul.sidebar-nav li a {
+    padding: 0;
+    line-height: inherit;
+  }
+
+  .site-sidebar:not(.site-sidebar--mobile) ul.sidebar-nav > li > a {
+    font-size: inherit;
+  }
+
+  .site-sidebar:not(.site-sidebar--mobile) ul.sidebar-nav ul {
+    padding-left: 1.875rem;
+    margin-top: 0;
+  }
+
+  .site-sidebar:not(.site-sidebar--mobile) ul.sidebar-nav li.active > a {
+    padding-left: 0.3125rem;
   }
 }
 
