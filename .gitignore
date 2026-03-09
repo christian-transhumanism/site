@@ -9,3 +9,4 @@ src/assets/
 .obsidian/
 src/obsidian/.obsidian/
 src/cta-wiki/.smart-env
+.claude
