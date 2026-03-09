@@ -3266,7 +3266,7 @@ ul.sidebar-nav li li.active > a::after {
 /* Grid: cover + meta */
 .book {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 175px 1fr;
   gap: 0.625rem;
   padding: 0.625rem;
   border: none;
@@ -3278,9 +3278,13 @@ ul.sidebar-nav li li.active > a::after {
 .book-cover img {
   display: block;
   width: 100%;
-  max-width: 120px;
+  max-width: 175px;
   border-radius: 0.3125rem;
   object-fit: cover;
+}
+.book-desc {
+  font-size: 0.9375rem;
+  line-height: 1.45;
 }
 .book-meta {
   display: flex;
@@ -3314,10 +3318,10 @@ ul.sidebar-nav li li.active > a::after {
 }
 @media (min-width: 640px) {
   .book {
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 230px 1fr;
   }
   .book-cover img {
-    max-width: 150px;
+    max-width: 230px;
   }
     .book.book-detail {
         grid-template-columns: 200px 1fr;
