@@ -325,22 +325,14 @@ module.exports = async function() {
         if (result.status === 'fulfilled') {
             const feedUrl = feedUrls[index];
             const feed = result.value;
-            console.log('Processing feed:', {
-                url: feedUrl,
-                title: feed.title,
-                hasImage: !!getFeedImage(feed)
-            });
-
             const feedImage = getFeedImage(feed);
             if (feedImage) {
-                console.log('Using feed image:', feedImage);
                 feedImages.set(feedUrl, feedImage);
             } else {
                 // Generate placeholder image using feed title
                 const feedTitle = feed.title || 
                                 feed.description?.split(' - ')[0] ||
                                 new URL(feedUrl).hostname.split('.')[0];
-                console.log('Generating placeholder for:', feedTitle);
                 const placeholderImage = generatePlaceholderImage(feedTitle);
                 feedImages.set(feedUrl, placeholderImage);
             }
@@ -360,16 +352,6 @@ module.exports = async function() {
             } catch (e) {
                 return false;
             }
-        });
-
-        console.log('Processing item:', {
-            title: item.title,
-            feedUrl: itemFeedUrl,
-            hasDirectImage: !!(getMediaImageUrl(item.media) || 
-                             getMediaImageUrl(item.thumbnail) ||
-                             getMediaImageUrl(item.enclosure) ||
-                             getMediaImageUrl(item.image)),
-            hasFeedImage: !!feedImages.get(itemFeedUrl)
         });
 
         // Try to get image from various sources
