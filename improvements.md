@@ -1,7 +1,7 @@
   1. DONE: Retired Bootstrap 3/jQuery runtime — replaced CDN Bootstrap CSS/JS with local compatibility CSS and vanilla nav/collapse behavior
   2. Deprecated Google Analytics — Using old analytics.js, not GA4
   3. Wiki content missing frontmatter — ~77% of wiki files have no YAML frontmatter                  
-  4. DONE: Eleventy 1.x → 2.x upgrade — package updated to @11ty/eleventy 2.0.1 and build verified                                                                      
+  4. DONE: Eleventy 1.x → 3.x upgrade — package updated to @11ty/eleventy 3.1.2 and build verified                                                                      
   5. DONE: CSS minification — build now minifies emitted CSS and defaults local builds to offline feeds                                                 
   6. Monolithic .eleventy.js — 1193 lines, synchronous fs operations                                 
   7. Hardcoded navigation/footer — 30+ footer links not data-driven                                  
