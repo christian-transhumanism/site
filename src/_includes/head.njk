@@ -21,15 +21,20 @@
 {% endif %}
 <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
+{% if page.url == "/" %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "{{ site.sitename }}",
   "url": "{{ site.url }}",
-  "logo": "{{ site.image }}"
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ site.image }}"
+  }
 }
 </script>
+{% endif %}
 
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">

@@ -9,13 +9,13 @@ layout: default
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "{{ title }}",
+  "headline": {{ title | dump }},
   "datePublished": "{{ date | date('yyyy-MM-dd') }}"{% if author %},
   "author": {
     "@type": "Person",
-    "name": "{{ author }}"
+    "name": {{ author | dump }}
   }{% endif %}{% if image %},
-  "image": "{{ image }}"{% endif %}
+  "image": {{ image | dump }}{% endif %}
 }
 </script>
 
