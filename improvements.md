@@ -1,4 +1,4 @@
-  1. Outdated Bootstrap 3 — EOL since 2019, loads jQuery unnecessarily                               
+  1. DONE: Retired Bootstrap 3/jQuery runtime — replaced CDN Bootstrap CSS/JS with local compatibility CSS and vanilla nav/collapse behavior
   2. Deprecated Google Analytics — Using old analytics.js, not GA4
   3. Wiki content missing frontmatter — ~77% of wiki files have no YAML frontmatter                  
   4. Eleventy 1.x → 2.x upgrade                                                                      

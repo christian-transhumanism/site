@@ -4,7 +4,8 @@ node_modules
 _site
 .DS_Store
 .cache
-src/assets/
+src/assets/*
+!src/assets/site.js
 .env
 .obsidian/
 src/obsidian/.obsidian/
