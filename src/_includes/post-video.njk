@@ -5,6 +5,20 @@ description: teaser
 disqus_id: "00000000000000"
 layout: default
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ title | dump }},
+  "datePublished": "{{ date | date('yyyy-MM-dd') }}"{% if author %},
+  "author": {
+    "@type": "Person",
+    "name": {{ author | dump }}
+  }{% endif %}{% if image %},
+  "image": {{ image | dump }}{% endif %}
+}
+</script>
+
 {% include 'shared/content_topbar.njk' %}
 
 <!-- Page Content -->
