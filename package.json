@@ -22,6 +22,8 @@
     "serve:remote": "eleventy --serve",
     "clean:site": "rm -rf _site",
     "clean": "rm -rf _site .cache",
+    "clean:video-cache": "node scripts/clear-video-cache.js",
+    "clean:video-cache:all": "node scripts/clear-video-cache.js --all",
     "prune:cache": "node scripts/prune-cache.js",
     "verify": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"

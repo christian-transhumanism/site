@@ -134,6 +134,8 @@ Place values in a `.env` file or export them before running Eleventy. The lightw
 | Build once with remote feeds | `npm run build:remote` |
 | Verify the production build | `npm run verify` |
 | Clean generated site only | `npm run clean:site` |
+| Clear rendered video cache only | `npm run clean:video-cache` |
+| Clear all cached YouTube video responses | `npm run clean:video-cache:all` |
 | Clean output (optional) | `rm -rf _site/ .cache/` |
 | Clean build output and caches | `npm run clean` |
 | Prune stale cache files (30d default) | `npm run prune:cache` |
