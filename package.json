@@ -9,6 +9,9 @@
   },
   "name": "11ty",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=18"
+  },
   "main": ".eleventy.js",
   "scripts": {
     "dev": "SKIP_REMOTE_FEEDS=1 eleventy --serve",
