@@ -1,12 +1,12 @@
 ---
-layout: post-wide
+layout: post
 tags: post
 title: "Religion is Essential to the Future"
-author: Micah Redding
+author: staff
 permalink: blog/2025-religion-essential-to-the-future/
-date: 2025-03-10T12:00:00.000Z
-disqus_id: 20250310120000
-image: https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1659056646/great-is-truth-and-mighty-above-all-things.png
+date: 2026-03-10T12:00:00.000Z
+disqus_id: 20260310120000
+image: https://res.cloudinary.com/christian-transhumanist-association/image/upload/v1757348386/generated/micahredding_sunburst_vortex_surrounded_by_tendrils_of_swirling_613a023c-1c5d-4edf-b6fc-3011503ac65a.png
 ---
 
 If you care about outcomes, you can't ignore the most successful social technology in human history.
@@ -73,4 +73,6 @@ We believe that the Christian story doesn't just tolerate science and technology
 
 If you care about outcomes, you can't afford to ignore the most successful social technology in human history. The future needs religion. The question is what kind.
 
-We think it should be one that embraces science, technology, and the full scope of human potential---because that is what the Christian story has always been about.
+We think it should be one that embraces science, technology, and the full scope of human potential---because that is what the Christian story has always been.
+
+...

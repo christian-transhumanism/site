@@ -4,6 +4,8 @@ const https = require('https');
 const crypto = require('crypto');
 const remoteToggle = require('./_helpers/remoteToggle');
 
+const MIN_VIDEO_PAGE_SECONDS = 300;
+
 // Fetch URL over HTTPS, return Promise<string>
 function fetchText(url) {
   return new Promise((resolve, reject) => {
@@ -206,8 +208,8 @@ async function fetchVideoMeta(id) {
 async function fillVideoMeta(items) {
   const tasks = items.map(async v => {
     if (!v || !v.id) return;
-    // Only fetch meta when we need it: missing seconds or potentially short-length
-    const needMeta = typeof v.seconds !== 'number' || (v.seconds <= 90);
+    // Shorts status only comes from page metadata, so fetch when it is unknown.
+    const needMeta = typeof v.isShorts !== 'boolean' || typeof v.seconds !== 'number' || (v.seconds < MIN_VIDEO_PAGE_SECONDS);
     if (!needMeta) return;
     const meta = await fetchVideoMeta(v.id);
     if (typeof meta.seconds === 'number' && isFinite(meta.seconds)) v.seconds = meta.seconds;
@@ -234,6 +236,35 @@ async function resolveChannelIdFromHandle(handle) {
   return '';
 }
 
+function filterAndSortVideos(items) {
+  const filtered = items.filter(v => {
+    if (v && v.isShorts === true) return false;
+    if (v && typeof v.seconds === 'number') return v.seconds >= MIN_VIDEO_PAGE_SECONDS;
+    const t = (v && v.title ? v.title : '').toLowerCase();
+    return !t.includes('#shorts');
+  });
+
+  const byId = new Map();
+  for (const v of filtered) {
+    if (!v || !v.id) continue;
+    // Prefer entries with better metadata.
+    const existing = byId.get(v.id);
+    if (!existing || (v.published && !existing.published) || ((typeof v.seconds === 'number') && typeof existing.seconds !== 'number')) {
+      byId.set(v.id, v);
+    }
+  }
+
+  const list = Array.from(byId.values());
+  list.sort((a, b) => {
+    const da = Date.parse(a.published || 0) || 0;
+    const db = Date.parse(b.published || 0) || 0;
+    return db - da;
+  });
+
+  const max = Number.parseInt(process.env.VIDEO_LIMIT || '100', 10);
+  return (Number.isFinite(max) && max > 0) ? list.slice(0, max) : list;
+}
+
 module.exports = async function () {
   const dataDir = __dirname; // src/_data
   const seedPath = path.join(dataDir, 'videos.json');
@@ -246,8 +277,8 @@ module.exports = async function () {
 
   const getOfflineVideos = () => {
     const cached = remoteToggle.readCacheJSON('videos-data.json');
-    if (Array.isArray(cached) && cached.length) return cached;
-    if (Array.isArray(seed) && seed.length) return seed;
+    if (Array.isArray(cached) && cached.length) return filterAndSortVideos(cached);
+    if (Array.isArray(seed) && seed.length) return filterAndSortVideos(seed);
     return [];
   };
 
@@ -283,28 +314,7 @@ module.exports = async function () {
   } catch (error) {
     remoteToggle.logFailure('video metadata', error);
   }
-  const filtered = merged.filter(v => {
-    if (v && v.isShorts === true) return false;
-    if (v && typeof v.seconds === 'number') return v.seconds > 60;
-    const t = (v.title || '').toLowerCase();
-    return !t.includes('#shorts');
-  });
-  const byId = new Map();
-  for (const v of filtered) {
-    if (!v || !v.id) continue;
-    // Prefer fetched entries that include published/seconds
-    const existing = byId.get(v.id);
-    if (!existing || (v.published && !existing.published)) byId.set(v.id, v);
-  }
-  const list = Array.from(byId.values());
-  // Sort by published desc when available
-  list.sort((a, b) => {
-    const da = Date.parse(a.published || 0) || 0;
-    const db = Date.parse(b.published || 0) || 0;
-    return db - da;
-  });
-  const max = Number.parseInt(process.env.VIDEO_LIMIT || '100', 10);
-  const finalList = (Number.isFinite(max) && max > 0) ? list.slice(0, max) : list;
+  const finalList = filterAndSortVideos(merged);
   remoteToggle.writeCacheJSON('videos-data.json', finalList);
   return finalList;
 };
