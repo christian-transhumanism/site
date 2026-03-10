@@ -1,8 +1,53 @@
 (function () {
   var MOBILE_NAV_MEDIA = window.matchMedia("(max-width: 991px)");
+  var THEME_STORAGE_KEY = "cta-theme";
   var mobileNavToggle = document.querySelector(".site-nav__toggle");
   var mobileNavPanel = document.querySelector("#site-primary-nav");
   var mobileNavBackdrop = document.querySelector("[data-nav-backdrop]");
+  var themeToggle = document.querySelector("[data-theme-toggle]");
+
+  function getStoredTheme() {
+    try {
+      return window.localStorage.getItem(THEME_STORAGE_KEY);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function persistTheme(theme) {
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    } catch (error) {}
+  }
+
+  function updateThemeMeta(theme) {
+    var themeColor = theme === "dark" ? "#070b13" : "#f5f7fb";
+    var metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) {
+      metaTheme.setAttribute("content", themeColor);
+    }
+    var metaTile = document.querySelector('meta[name="msapplication-TileColor"]');
+    if (metaTile) {
+      metaTile.setAttribute("content", themeColor);
+    }
+  }
+
+  function applyTheme(theme, persist) {
+    var nextTheme = theme === "dark" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", nextTheme);
+    updateThemeMeta(nextTheme);
+
+    if (themeToggle) {
+      var isDark = nextTheme === "dark";
+      themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+      themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+      themeToggle.setAttribute("title", isDark ? "Switch to light mode" : "Switch to dark mode");
+    }
+
+    if (persist !== false) {
+      persistTheme(nextTheme);
+    }
+  }
 
   function selectTarget(trigger, attributeName) {
     var selector = trigger.getAttribute(attributeName || "data-target") || trigger.getAttribute("href");
@@ -139,6 +184,13 @@
       return;
     }
 
+    var themeButton = event.target.closest("[data-theme-toggle]");
+    if (themeButton) {
+      event.preventDefault();
+      applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
+      return;
+    }
+
     var dropdownToggle = event.target.closest(".dropdown-toggle");
     if (dropdownToggle) {
       var isNavDropdown = mobileNavPanel && mobileNavPanel.contains(dropdownToggle);
@@ -267,5 +319,6 @@
     }
   }
 
+  applyTheme(getStoredTheme() || document.documentElement.getAttribute("data-theme") || "light", false);
   handleViewportChange();
 })();

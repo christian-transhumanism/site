@@ -26,6 +26,27 @@
         {% include '_navigation_links.njk' %}
       </ul>
       <ul class="nav navbar-nav navbar-right site-nav__list site-nav__list--secondary">
+        <li>
+          <button
+            type="button"
+            class="site-theme-toggle"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Switch to dark mode"
+          >
+            <svg class="site-theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <g class="site-theme-toggle__rays" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8">
+                <path d="M12 1.5v3"/>
+                <path d="M4.95 4.95 7.1 7.1"/>
+                <path d="M1.5 12h3"/>
+                <path d="M19.05 4.95 16.9 7.1"/>
+                <path d="M19.5 12h3"/>
+              </g>
+              <path class="site-theme-toggle__bulb" d="M10 18.25h4m-3 2.25h2m-3.95-6.55A5.35 5.35 0 0 1 6.9 9.7 5.1 5.1 0 0 1 12 4.65a5.1 5.1 0 0 1 5.1 4.95 5.42 5.42 0 0 1-2.15 4.4c-.72.54-1.17 1.36-1.23 2.26V17h-3.44v-.74c-.07-.9-.52-1.72-1.23-2.31Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+            </svg>
+            <span class="sr-only">Theme</span>
+          </button>
+        </li>
         {% include '_navigation_links_right.njk' %}
       </ul>
     </div>

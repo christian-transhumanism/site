@@ -51,9 +51,36 @@
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileColor" content="#f5f7fb">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#f5f7fb">
+
+<script>
+  (function () {
+    var storageKey = "cta-theme";
+    var defaultTheme = "light";
+    var theme = defaultTheme;
+
+    try {
+      var storedTheme = window.localStorage.getItem(storageKey);
+      if (storedTheme === "light" || storedTheme === "dark") {
+        theme = storedTheme;
+      }
+    } catch (error) {}
+
+    document.documentElement.setAttribute("data-theme", theme);
+
+    var themeColor = theme === "dark" ? "#070b13" : "#f5f7fb";
+    var themeMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeMeta) {
+      themeMeta.setAttribute("content", themeColor);
+    }
+    var tileMeta = document.querySelector('meta[name="msapplication-TileColor"]');
+    if (tileMeta) {
+      tileMeta.setAttribute("content", themeColor);
+    }
+  })();
+</script>
 
 <link rel="stylesheet" media="all" href="/stylesheets/bootstrap-compat.css">
 <link rel="stylesheet" media="all" href="/stylesheets/all.css">
