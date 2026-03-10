@@ -17,22 +17,6 @@ layout: default
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <div class="well site-sidebar site-sidebar--mobile">
-        <button
-          type="button"
-          class="site-sidebar__toggle"
-          data-disclosure-toggle
-          data-disclosure-target="#resource-sidebar-nav"
-          aria-controls="resource-sidebar-nav"
-          aria-expanded="false"
-        >
-          Browse this section
-        </button>
-        <div id="resource-sidebar-nav" class="site-sidebar__panel" aria-hidden="true">
-          {% include 'shared/sidebar_nav.njk' %}
-        </div>
-      </div>
-
       {# Mission article hero image (if this page is a mission article) #}
       {% if page.url and ('/mission/' in page.url) %}
         {% include 'shared/mission-article-hero.njk' %}

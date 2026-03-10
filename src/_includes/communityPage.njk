@@ -7,22 +7,6 @@ layout: default
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <div class="well site-sidebar site-sidebar--mobile">
-        <button
-          type="button"
-          class="site-sidebar__toggle"
-          data-disclosure-toggle
-          data-disclosure-target="#community-sidebar-nav"
-          aria-controls="community-sidebar-nav"
-          aria-expanded="false"
-        >
-          Browse this section
-        </button>
-        <div id="community-sidebar-nav" class="site-sidebar__panel" aria-hidden="true">
-          {% include 'shared/sidebar_nav.njk' %}
-        </div>
-      </div>
-
       {{ content | safe }}
 
       {% include 'shared/backlinks-panel.njk' %}
