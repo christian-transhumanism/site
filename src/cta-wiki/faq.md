@@ -32,7 +32,7 @@ faqs:
       4. A positive religious vision that calls Christians to serve on behalf of the world.
   - question: "What do Christian Transhumanists think about <strong>X</strong>?"
     answer: |
-      There are almost certainly a number of different opinions. That's a good thing! If we knew all the answers, we wouldn't need to have the conversation.
+      There are almost certainly a number of different opinions. That's a good thing! If we knew all the answers, we wouldn't need to have the conversation. Explore some opinions [here](/beliefs).
   - question: "What do Christian Transhumanists oppose?"
     answer: |
       Most notably, versions of transhumanism that seek to lift up some at the expense of others.

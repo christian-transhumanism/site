@@ -4591,6 +4591,10 @@ html[data-theme="dark"] .footer-column ul li a:hover {
   gap: 1rem;
 }
 
+.belief-explorer__compare-link {
+  margin-top: 1rem;
+}
+
 .belief-card__eyebrow {
   display: inline-block;
   margin-bottom: 0.5rem;
@@ -4643,10 +4647,57 @@ html[data-theme="dark"] .footer-column ul li a:hover {
   font-weight: 600;
 }
 
+.belief-compare__list {
+  display: grid;
+  gap: 1rem;
+}
+
+.belief-compare__grid {
+  display: grid;
+  gap: 0.875rem;
+}
+
+.belief-compare__column {
+  padding: 0.875rem;
+  border-radius: 0.375rem;
+  background: rgba(51, 122, 183, 0.06);
+}
+
+.belief-compare__name {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.belief-compare__stance {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.belief-compare__emphasis {
+  margin-bottom: 0;
+  color: #4c596a;
+}
+
+@media (min-width: 768px) {
+  .belief-compare__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 html[data-theme="dark"] .landing-page__header p,
 html[data-theme="dark"] .landing-page__card p,
-html[data-theme="dark"] .belief-card__position {
+html[data-theme="dark"] .belief-card__position,
+html[data-theme="dark"] .belief-compare__emphasis {
   color: #aebbd0;
+}
+
+html[data-theme="dark"] .belief-compare__column {
+  background: rgba(109, 180, 255, 0.08);
+}
+
+html[data-theme="dark"] .belief-compare__stance {
+  color: #e2ebf6;
 }
 
 body {

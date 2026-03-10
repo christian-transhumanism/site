@@ -1,0 +1,252 @@
+---
+title: Compare Beliefs
+description: Compare CTA viewpoints with neighboring Christian and transhumanist positions.
+layout: default
+permalink: /beliefs/compare/
+---
+{% include 'shared/content_topbar.njk' %}
+
+{% set compareTopics = [
+  {
+    slug: 'compatibility',
+    theme: 'Foundations',
+    title: 'Is transhumanism compatible with Christianity?',
+    viewpoints: [
+      {
+        name: 'CTA',
+        stance: 'Yes, if technological transformation is ordered toward discipleship, love of neighbor, and the renewal of creation.',
+        emphasis: 'Technology is not salvation, but it can be part of faithful participation in God’s work.'
+      },
+      {
+        name: 'Traditional Christian skeptic',
+        stance: 'Usually no, or only in a narrowly qualified sense.',
+        emphasis: 'The term often signals pride, self-salvation, and a refusal to accept creaturely limits.'
+      },
+      {
+        name: 'Secular transhumanist',
+        stance: 'Yes, but Christianity is usually unnecessary or obstructive.',
+        emphasis: 'Human enhancement should be guided by autonomy, capability, and progress rather than theological commitments.'
+      }
+    ]
+  },
+  {
+    slug: 'longevity',
+    theme: 'Longevity',
+    title: 'Should we pursue radical life extension?',
+    viewpoints: [
+      {
+        name: 'CTA',
+        stance: 'Generally yes, provided it serves healing, justice, and broad human flourishing.',
+        emphasis: 'Death is an enemy; extending healthy life can align with Christian compassion and hope.'
+      },
+      {
+        name: 'Traditional Christian skeptic',
+        stance: 'Cautiously or reluctantly, if at all.',
+        emphasis: 'Aggressive anti-aging can look like fear of death, spiritual confusion, or misordered hope.'
+      },
+      {
+        name: 'Secular transhumanist',
+        stance: 'Strongly yes.',
+        emphasis: 'Longevity is a direct extension of medicine and should be pursued as far as possible.'
+      }
+    ]
+  },
+  {
+    slug: 'resurrection',
+    theme: 'Theology',
+    title: 'Is resurrection technological, miraculous, or both?',
+    viewpoints: [
+      {
+        name: 'CTA',
+        stance: 'Ultimately divine, but not necessarily disconnected from embodiment, material continuity, or created means.',
+        emphasis: 'Technological analogies can help modern people think more concretely about resurrection.'
+      },
+      {
+        name: 'Traditional Christian skeptic',
+        stance: 'Primarily miraculous and not aided by human technology.',
+        emphasis: 'Overly technological models can dilute mystery and imply human control over salvation.'
+      },
+      {
+        name: 'Secular transhumanist',
+        stance: 'If anything like resurrection happens, it will be technical rather than supernatural.',
+        emphasis: 'Mind uploading, restoration, or reconstitution are engineering problems, not theological ones.'
+      }
+    ]
+  },
+  {
+    slug: 'ai',
+    theme: 'AI',
+    title: 'How should society approach advanced AI?',
+    viewpoints: [
+      {
+        name: 'CTA',
+        stance: 'With hopeful discipline.',
+        emphasis: 'AI should be built and governed toward wisdom, justice, and human dignity.'
+      },
+      {
+        name: 'Traditional Christian skeptic',
+        stance: 'With strong suspicion.',
+        emphasis: 'AI can centralize power, weaken personhood, and tempt humans into imitation of divine authority.'
+      },
+      {
+        name: 'Secular transhumanist',
+        stance: 'With strong optimism, tempered by safety concerns.',
+        emphasis: 'Advanced intelligence is a major lever for abundance, discovery, and human advancement.'
+      }
+    ]
+  },
+  {
+    slug: 'augmentation',
+    theme: 'Embodiment',
+    title: 'Does enhancement violate the image of God?',
+    viewpoints: [
+      {
+        name: 'CTA',
+        stance: 'No.',
+        emphasis: 'Human dignity is not invalidated by healing, augmentation, or expanded embodied capacities.'
+      },
+      {
+        name: 'Traditional Christian skeptic',
+        stance: 'Potentially yes.',
+        emphasis: 'Some enhancements may reject givenness, distort creaturely identity, or commodify the body.'
+      },
+      {
+        name: 'Secular transhumanist',
+        stance: 'Usually no.',
+        emphasis: 'Enhancement is a natural expression of human freedom and self-directed evolution.'
+      }
+    ]
+  },
+  {
+    slug: 'justice',
+    theme: 'Ethics',
+    title: 'Who should benefit from enhancement technologies?',
+    viewpoints: [
+      {
+        name: 'CTA',
+        stance: 'The default should be broad human flourishing, not elite escape.',
+        emphasis: 'A Christian vision of progress must ask who is protected, included, and empowered.'
+      },
+      {
+        name: 'Traditional Christian skeptic',
+        stance: 'Often skeptical that fair distribution will happen.',
+        emphasis: 'Enhancement may intensify domination and should be constrained rather than normalized.'
+      },
+      {
+        name: 'Secular transhumanist',
+        stance: 'Broad access is good, but innovation often precedes equal distribution.',
+        emphasis: 'Progress may begin unevenly, with affordability and scale improving later.'
+      }
+    ]
+  }
+] %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="belief-compare">
+        <header class="belief-explorer__header">
+          <h1 class="page-header">Compare Beliefs</h1>
+          <p class="page-intro">This page is for contrast, not caricature. It shows where CTA typically differs from both Christian skeptics and secular transhumanists on the main disputed questions.</p>
+        </header>
+
+        <div class="belief-explorer__toolbar">
+          <div class="btn-group btn-group-sm" role="group" aria-label="Comparison filter">
+            <button type="button" class="btn btn-default compare-filter active" data-filter="all">All</button>
+            <button type="button" class="btn btn-default compare-filter" data-filter="Foundations">Foundations</button>
+            <button type="button" class="btn btn-default compare-filter" data-filter="Longevity">Longevity</button>
+            <button type="button" class="btn btn-default compare-filter" data-filter="Theology">Theology</button>
+            <button type="button" class="btn btn-default compare-filter" data-filter="AI">AI</button>
+            <button type="button" class="btn btn-default compare-filter" data-filter="Embodiment">Embodiment</button>
+            <button type="button" class="btn btn-default compare-filter" data-filter="Ethics">Ethics</button>
+          </div>
+          <label for="compare-search" class="visually-hidden">Search comparison topics</label>
+          <input id="compare-search" class="form-control input-sm belief-explorer__search" type="search" placeholder="Search comparisons" autocomplete="off">
+        </div>
+
+        <div class="belief-explorer__empty alert alert-info" style="display:none;">No comparisons match that filter.</div>
+
+        <div class="belief-compare__list" id="compare-list">
+          {% for topic in compareTopics %}
+          {% set searchIndex = (topic.theme ~ ' ' ~ topic.title) | lower %}
+          {% for view in topic.viewpoints %}
+            {% set searchIndex = searchIndex ~ ' ' ~ (view.name | lower) ~ ' ' ~ (view.stance | lower) ~ ' ' ~ (view.emphasis | lower) %}
+          {% endfor %}
+          <section class="home-card belief-compare__topic" data-theme="{{ topic.theme }}" data-search="{{ searchIndex }}">
+            <div class="belief-card__eyebrow">{{ topic.theme }}</div>
+            <h2 class="belief-card__title">{{ topic.title }}</h2>
+            <div class="belief-compare__grid">
+              {% for view in topic.viewpoints %}
+              <article class="belief-compare__column">
+                <h3 class="belief-compare__name">{{ view.name }}</h3>
+                <p class="belief-compare__stance">{{ view.stance }}</p>
+                <p class="belief-compare__emphasis">{{ view.emphasis }}</p>
+              </article>
+              {% endfor %}
+            </div>
+          </section>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="well site-sidebar">
+        {% include 'shared/sidebar_nav.njk' %}
+      </div>
+      <div class="well site-sidebar">
+        <h4>Use this page carefully</h4>
+        <p>These columns describe broad tendencies, not exhaustive camps. The point is to show where CTA’s center of gravity differs, not to flatten every tradition into three boxes.</p>
+        <p><a href="/beliefs/">Return to the Belief Explorer</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var list = document.getElementById('compare-list');
+    if (!list) return;
+
+    var topics = Array.prototype.slice.call(list.querySelectorAll('.belief-compare__topic'));
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('.compare-filter'));
+    var searchInput = document.getElementById('compare-search');
+    var empty = document.querySelector('.belief-explorer__empty');
+    var activeTheme = 'all';
+
+    function normalize(value) {
+      return (value || '').toLowerCase();
+    }
+
+    function applyFilters() {
+      var query = normalize(searchInput && searchInput.value).trim();
+      var any = false;
+
+      topics.forEach(function(topic) {
+        var matchesTheme = activeTheme === 'all' || normalize(topic.getAttribute('data-theme')) === normalize(activeTheme);
+        var matchesQuery = !query || normalize(topic.getAttribute('data-search')).indexOf(query) !== -1;
+        var show = matchesTheme && matchesQuery;
+        topic.style.display = show ? '' : 'none';
+        if (show) any = true;
+      });
+
+      if (empty) empty.style.display = any ? 'none' : '';
+    }
+
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        activeTheme = this.getAttribute('data-filter') || 'all';
+        buttons.forEach(function(item) {
+          item.classList.toggle('active', item === button);
+        });
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilters);
+    }
+
+    applyFilters();
+  })();
+</script>
