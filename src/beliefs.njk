@@ -1,0 +1,340 @@
+---
+title: Belief Explorer
+description: Explore CTA positions on the biggest questions in Christianity, technology, and the human future.
+layout: default
+permalink: /beliefs/
+---
+{% include 'shared/content_topbar.njk' %}
+
+{% set beliefTopics = [
+  {
+    slug: 'compatibility',
+    theme: 'Foundations',
+    title: 'Is transhumanism compatible with Christianity?',
+    position: 'Yes, when technological transformation is ordered toward love of God, love of neighbor, and the renewal of creation.',
+    why: [
+      'CTA treats technology as part of humanity’s calling to cultivate creation, not as a substitute for God.',
+      'Christian hope already includes transformation, healing, resurrection, and participation in Christ.',
+      'The real question is not whether humans should transform the world, but what vision of the good should guide that transformation.'
+    ],
+    misunderstandings: [
+      'Compatibility does not mean every transhumanist idea is good.',
+      'This is not an attempt to reduce salvation to engineering.'
+    ],
+    spectrum: 'Christians will disagree about which technologies are wise, how fast change should happen, and where prudence requires limits.',
+    open: 'How should churches evaluate emerging technologies before social consensus forms?',
+    links: [
+      { label: 'FAQ', url: '/faq/' },
+      { label: 'Creation Mandate', url: '/mission/theological/creation-mandate/' },
+      { label: 'Renewal of All Things', url: '/mission/theological/renewal-of-all-things/' }
+    ]
+  },
+  {
+    slug: 'death-longevity',
+    theme: 'Longevity',
+    title: 'Should Christians support radical life extension?',
+    position: 'In general, yes. Christianity has strong reasons to oppose unnecessary suffering and death, while still rejecting the concept of self-salvation or immortality limited to the privileged few.',
+    why: [
+      'Scripture treats death as an enemy, not a sacred ideal.',
+      'Scripture treats long life, including radically long life, as a blessing, and envisions humans attaining it in cooperation with God (eg, Isaiah 65:20).',
+      'Medicine already extends life; longevity research is an extension of that healing impulse.',
+      'Longer lives can create more time for love, discipleship, creativity, reconciliation, and service.'
+    ],
+    misunderstandings: [
+      'Supporting longevity is not the same as denying our finitude or dependence on God.',
+      'CTA does not treat mere lifespan as the highest good.'
+    ],
+    spectrum: 'Some Christians will affirm aggressive anti-aging work, while others will prioritize narrower medical interventions.',
+    open: 'What social structures are needed so longer lives do not deepen inequality or stagnation?',
+    links: [
+      { label: 'Super-Longevity', url: '/mission/technological/super-longevity/' },
+      { label: 'Life extension wiki', url: '/wiki/life-extension/' },
+      { label: 'Christian Transhumanist Affirmation', url: '/affirmation/' }
+    ]
+  },
+  {
+    slug: 'resurrection',
+    theme: 'Theology',
+    title: 'Is resurrection technological, miraculous, or both?',
+    position: 'Resurrection is the work of God. Yet God calls us to participate in that work through Christ, and scripture tells us that Christ calls upon us to offer our minds, bodies, and works to God. Christians should never assume divine action is unrelated to material processes, embodiment, or participation in creation.',
+    why: [
+      'Christian faith centers on bodily resurrection, not escape from embodiment.',
+      'The Bible often presents divine action working through created means rather than against them.',
+      'Technological imagination can help Christians think more concretely about continuity of personhood and redeemed embodiment.'
+    ],
+    misunderstandings: [
+      'CTA is not claiming humans can engineer the final resurrection by themselves.',
+      'Using technological language is meant to clarify embodied hope, not demystify God.'
+    ],
+    spectrum: 'Some members use technological analogies cautiously; others see them as central to a renewed apologetic for resurrection, consistent with scripture and the tradition of the church fathers.',
+    open: 'Which models of continuity and identity best fit both theology and future science?',
+    links: [
+      { label: 'Participation in Christ', url: '/mission/theological/participation-in-christ/' },
+      { label: 'Resurrection wiki', url: '/wiki/the-resurrection-is-technological/' },
+      { label: 'FAQ', url: '/faq/' }
+    ]
+  },
+  {
+    slug: 'ai',
+    theme: 'AI',
+    title: 'How should Christians think about AI and superintelligence?',
+    position: 'AI should be approached as a powerful tool and a serious moral challenge. CTA’s instinct should be hopeful but disciplined: build, guide, and govern these systems toward human flourishing and creaturely dignity.',
+    why: [
+      'Advanced intelligence can amplify care, discovery, coordination, and stewardship.',
+      'The same systems can also centralize power, weaken agency, and obscure responsibility.',
+      'Christian ethics insists that intelligence must remain accountable to wisdom, justice, and love.'
+    ],
+    misunderstandings: [
+      'CTA is not committed to blanket accelerationism.',
+      'Concern about AI risk is compatible with positive engagement in AI development.'
+    ],
+    spectrum: 'Members may diverge on timelines, existential risk, regulation, and whether future AI could count as a neighbor in any meaningful sense.',
+    open: 'What theological language best equips churches to discuss machine agency, responsibility, and moral status?',
+    links: [
+      { label: 'Super-Intelligence', url: '/mission/technological/super-intelligence/' },
+      { label: 'AI wiki', url: '/wiki/super-intelligence/' },
+      { label: 'Podcast', url: '/podcast/' }
+    ]
+  },
+  {
+    slug: 'augmentation',
+    theme: 'Embodiment',
+    title: 'Does enhancement violate the image of God?',
+    position: 'No. The image of God is not a fragile baseline that disappears when humans heal, augment, or extend embodied capacities.',
+    why: [
+      'Christian tradition grounds human dignity in relation to God, vocation, and personhood, not in a fixed biological snapshot.',
+      'Prosthetics, medicine, and accessibility technologies already show that restoring or extending capacity can honor human dignity.',
+      'The moral issue is how enhancement is used and distributed, not enhancement as such.'
+    ],
+    misunderstandings: [
+      'CTA is not claiming every enhancement is wise or morally neutral.',
+      'Respect for embodiment includes care for limits, vulnerability, and community.'
+    ],
+    spectrum: 'Disagreement is likely around elective enhancement, military uses, and interventions that alter identity or dependency.',
+    open: 'How should churches distinguish therapy, restoration, and enhancement in practice?',
+    links: [
+      { label: 'Image of God', url: '/mission/theological/image-of-god/' },
+      { label: 'Super-Embodiment', url: '/mission/technological/super-embodiment/' },
+      { label: 'Brain-Computer Interfaces wiki', url: '/wiki/brain-computer-interfaces/' }
+    ]
+  },
+  {
+    slug: 'ecology',
+    theme: 'Ecology',
+    title: 'Does a pro-technology future conflict with creation care?',
+    position: 'It should not. CTA’s best case is that technology must be judged by whether it heals, restores, and enriches creation rather than merely extracting from it.',
+    why: [
+      'Christian stewardship includes both protecting and improving the conditions of life.',
+      'Technological capacity can reduce scarcity, clean environments, and repair ecological damage.',
+      'A purely anti-technological posture often leaves existing destructive systems untouched.'
+    ],
+    misunderstandings: [
+      'Techno-optimism is not permission for reckless extraction.',
+      'Ecology cannot be treated as secondary to human enhancement.'
+    ],
+    spectrum: 'Prudential disagreement will center on nuclear power, geoengineering, carbon removal, and the pace of industrial transformation.',
+    open: 'What standards would distinguish faithful management from hubris?',
+    links: [
+      { label: 'Super-Ecology', url: '/mission/technological/super-ecology/' },
+      { label: 'Ethical Technology wiki', url: '/wiki/ethical-technology/' },
+      { label: 'Books', url: '/books/' }
+    ]
+  },
+  {
+    slug: 'tradition',
+    theme: 'Church',
+    title: 'Is Christian transhumanism outside historic orthodoxy?',
+    position: 'CTA is a renewal movement within Christianity, not a replacement religion. Its claims should be tested against Scripture, creed, tradition, and the fruits of discipleship.',
+    why: [
+      'Core CTA themes draw on longstanding Christian doctrines such as resurrection, sanctification, healing, and the renewal of creation.',
+      'The movement is ecumenical and expects accountability to the wider church.',
+      'Its strongest arguments work by recovering neglected Christian resources, not by discarding them.'
+    ],
+    misunderstandings: [
+      'Novel language does not automatically imply novel doctrine.',
+      'Ecumenical breadth does not mean doctrinal indifference.'
+    ],
+    spectrum: 'Different traditions will place boundaries in different places, especially around anthropology, eschatology, and sacramental theology.',
+    open: 'Which historic theological frameworks are most generative for a robust theology of technology?',
+    links: [
+      { label: 'About', url: '/about/' },
+      { label: 'Affirmation', url: '/affirmation/' },
+      { label: 'Wiki', url: '/wiki/' }
+    ]
+  },
+  {
+    slug: 'justice',
+    theme: 'Ethics',
+    title: 'Who should benefit from enhancement technologies?',
+    position: 'CTA should default toward broad human flourishing, not elite escape. Technologies that deepen domination, exclusion, or abandonment betray the movement’s moral purpose.',
+    why: [
+      'Christian ethics centers the vulnerable and rejects visions of progress built on sacrificial classes.',
+      'Technological power without distributive justice produces backlash and moral corruption.',
+      'A credible Christian transhumanism must ask who is included, who is protected, and who is left behind.'
+    ],
+    misunderstandings: [
+      'Justice concerns are not anti-innovation.',
+      'Access alone is not enough if systems undermine dignity or solidarity.'
+    ],
+    spectrum: 'Members may differ on markets, regulation, public funding, and which technologies should be treated as basic goods.',
+    open: 'What institutional commitments would make Christian transhumanism visibly pro-neighbor rather than merely pro-progress?',
+    links: [
+      { label: 'Volunteer', url: '/volunteer/' },
+      { label: 'Community', url: '/blog/community/' },
+      { label: 'Press', url: '/press/' }
+    ]
+  }
+] %}
+{% set beliefThemes = ['Foundations', 'Longevity', 'Theology', 'AI', 'Embodiment', 'Ecology', 'Church', 'Ethics'] %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="belief-explorer">
+        <header class="belief-explorer__header">
+          <h1 class="page-header">Belief Explorer</h1>
+          <p class="page-intro">CTA lives in a space with real disagreement, so this page maps core positions, recurring objections, and the questions that still deserve debate.</p>
+        </header>
+
+        <div class="belief-explorer__toolbar">
+          <div class="btn-group btn-group-sm" role="group" aria-label="Belief topic filter">
+            <button type="button" class="btn btn-default belief-filter active" data-filter="all">All</button>
+            {% for theme in beliefThemes %}
+            <button type="button" class="btn btn-default belief-filter" data-filter="{{ theme }}">{{ theme }}</button>
+            {% endfor %}
+          </div>
+          <label for="belief-search" class="visually-hidden">Search belief topics</label>
+          <input id="belief-search" class="form-control input-sm belief-explorer__search" type="search" placeholder="Search topics, positions, or objections" autocomplete="off">
+        </div>
+
+        <div class="belief-explorer__empty alert alert-info" style="display:none;">No topics match that filter.</div>
+
+        <div class="belief-explorer__grid" id="belief-grid">
+          {% for topic in beliefTopics %}
+          {% set searchIndex = (topic.theme ~ ' ' ~ topic.title ~ ' ' ~ topic.position ~ ' ' ~ (topic.why | join(' ')) ~ ' ' ~ (topic.misunderstandings | join(' ')) ~ ' ' ~ topic.spectrum ~ ' ' ~ topic.open) | lower %}
+          <article class="home-card belief-card" data-theme="{{ topic.theme }}" data-search="{{ searchIndex }}">
+            <div class="belief-card__eyebrow">{{ topic.theme }}</div>
+            <h2 class="belief-card__title">{{ topic.title }}</h2>
+            <p class="belief-card__position"><strong>CTA’s position:</strong> {{ topic.position }}</p>
+
+            <button type="button" class="btn btn-default btn-sm belief-card__toggle" aria-expanded="false">
+              Explore this position
+            </button>
+
+            <div class="belief-card__details" hidden>
+              <div class="belief-card__section">
+                <h3>Why CTA leans this way</h3>
+                <ul>
+                  {% for item in topic.why %}
+                  <li>{{ item }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+
+              <div class="belief-card__section">
+                <h3>Common misunderstandings</h3>
+                <ul>
+                  {% for item in topic.misunderstandings %}
+                  <li>{{ item }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+
+              <div class="belief-card__section">
+                <h3>Where Christians may disagree</h3>
+                <p>{{ topic.spectrum }}</p>
+              </div>
+
+              <div class="belief-card__section">
+                <h3>Open question</h3>
+                <p>{{ topic.open }}</p>
+              </div>
+
+              <div class="belief-card__section">
+                <h3>Go deeper</h3>
+                <p class="belief-card__links">
+                  {% for link in topic.links %}
+                  <a href="{{ link.url }}">{{ link.label }}</a>{% if not loop.last %} <span aria-hidden="true">·</span> {% endif %}
+                  {% endfor %}
+                </p>
+              </div>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="well site-sidebar">
+        {% include 'shared/sidebar_nav.njk' %}
+      </div>
+      <div class="well site-sidebar">
+        <h4>How to use this page</h4>
+        <p>Start with the topics that generate the most confusion, then follow the linked mission pages, wiki entries, and FAQ for more depth.</p>
+        <p>This page maps CTA’s center of gravity. It does not claim that every member would answer every question in exactly the same way.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var grid = document.getElementById('belief-grid');
+    if (!grid) return;
+
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.belief-card'));
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('.belief-filter'));
+    var searchInput = document.getElementById('belief-search');
+    var empty = document.querySelector('.belief-explorer__empty');
+    var activeTheme = 'all';
+
+    function normalize(value) {
+      return (value || '').toLowerCase();
+    }
+
+    function applyFilters() {
+      var query = normalize(searchInput && searchInput.value).trim();
+      var any = false;
+
+      cards.forEach(function(card) {
+        var matchesTheme = activeTheme === 'all' || normalize(card.getAttribute('data-theme')) === normalize(activeTheme);
+        var matchesQuery = !query || normalize(card.getAttribute('data-search')).indexOf(query) !== -1;
+        var show = matchesTheme && matchesQuery;
+        card.style.display = show ? '' : 'none';
+        if (show) any = true;
+      });
+
+      if (empty) empty.style.display = any ? 'none' : '';
+    }
+
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        activeTheme = this.getAttribute('data-filter') || 'all';
+        buttons.forEach(function(item) {
+          item.classList.toggle('active', item === button);
+        });
+        applyFilters();
+      });
+    });
+
+    cards.forEach(function(card) {
+      var toggle = card.querySelector('.belief-card__toggle');
+      var details = card.querySelector('.belief-card__details');
+      if (!toggle || !details) return;
+
+      toggle.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        this.textContent = expanded ? 'Explore this position' : 'Hide details';
+        details.hidden = expanded;
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilters);
+    }
+
+    applyFilters();
+  })();
+</script>

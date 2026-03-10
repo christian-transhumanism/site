@@ -285,6 +285,7 @@ module.exports = function(eleventyConfig) {
     });
   // Take first N items from an array (works in Nunjucks + Liquid)
   eleventyConfig.addFilter('take', (arr, n) => Array.isArray(arr) ? arr.slice(0, n) : []);
+  eleventyConfig.addFilter('unique', (arr) => Array.isArray(arr) ? [...new Set(arr)] : []);
 
   // Extract the first image from HTML content
   eleventyConfig.addFilter('getFirstImage', (content) => {
@@ -293,6 +294,7 @@ module.exports = function(eleventyConfig) {
     return match ? match[1] : null;
   });
   eleventyConfig.addLiquidFilter('take', (arr, n) => Array.isArray(arr) ? arr.slice(0, n) : []);
+  eleventyConfig.addLiquidFilter('unique', (arr) => Array.isArray(arr) ? [...new Set(arr)] : []);
 
   // Simple string containment check for Nunjucks templates
   eleventyConfig.addFilter('stringContains', (value, substr) => {

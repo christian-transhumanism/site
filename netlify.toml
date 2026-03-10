@@ -3,4 +3,4 @@ command = "npm run build:remote"
 publish = "_site"
 
 [build.environment]
-NODE_VERSION = "18"
+NODE_VERSION = "22"

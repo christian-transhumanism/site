@@ -36,6 +36,11 @@
                 "key": "Press"
             },
             {
+                "url": "/beliefs/",
+                "title": "Belief Explorer",
+                "key": "Belief Explorer"
+            },
+            {
                 "url": "/faq/",
                 "title": "FAQ",
                 "key": "FAQ"

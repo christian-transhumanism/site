@@ -16,7 +16,7 @@ This repository contains the static website for the Christian Transhumanist Asso
 
 ## Requirements
 
-- Node.js 18 or newer (Eleventy 3.x compatible)
+- Node.js 22 or newer (Eleventy 3.x compatible)
 - npm (ships with Node)
 
 Install dependencies once after cloning:

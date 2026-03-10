@@ -4573,8 +4573,79 @@ html[data-theme="dark"] .footer-column ul li a:hover {
   color: #4c596a;
 }
 
+.belief-explorer__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.belief-explorer__search {
+  width: 100%;
+  max-width: 24rem;
+}
+
+.belief-explorer__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.belief-card__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent, #337ab7);
+}
+
+.belief-card__title {
+  margin: 0 0 0.625rem;
+  font-size: 1.3rem;
+  line-height: 1.35;
+}
+
+.belief-card__position {
+  margin-bottom: 0.875rem;
+  color: #334155;
+}
+
+.belief-card__toggle {
+  margin-bottom: 0.5rem;
+}
+
+.belief-card__details[hidden] {
+  display: none;
+}
+
+.belief-card__section + .belief-card__section {
+  margin-top: 1rem;
+}
+
+.belief-card__section h3 {
+  margin: 0 0 0.375rem;
+  font-size: 0.95rem;
+}
+
+.belief-card__section ul {
+  padding-left: 1.25rem;
+  margin-bottom: 0;
+}
+
+.belief-card__section p:last-child,
+.belief-card__section ul:last-child {
+  margin-bottom: 0;
+}
+
+.belief-card__links a {
+  font-weight: 600;
+}
+
 html[data-theme="dark"] .landing-page__header p,
-html[data-theme="dark"] .landing-page__card p {
+html[data-theme="dark"] .landing-page__card p,
+html[data-theme="dark"] .belief-card__position {
   color: #aebbd0;
 }
 
