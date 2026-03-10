@@ -5,6 +5,7 @@ const remoteToggle = require('./_helpers/remoteToggle');
 
 // Default site image to use as last resort fallback
 const DEFAULT_SITE_IMAGE = '/assets/images/cta_logo_standalone.png';
+const FEED_TIMEOUT_MS = 8000;
 
 // Generate a data URL for an SVG placeholder image
 function generatePlaceholderImage(feedTitle) {
@@ -280,16 +281,22 @@ module.exports = async function() {
         return feedImage && isImageUrl(feedImage) ? feedImage : null;
     }
 
+    function fetchFeedWithTimeout(url) {
+        return Promise.race([
+            parser.parseURL(url),
+            new Promise((_, reject) => {
+                setTimeout(() => reject(new Error(`Timed out after ${FEED_TIMEOUT_MS}ms`)), FEED_TIMEOUT_MS);
+            })
+        ]).catch(error => {
+            console.warn(`Failed to fetch feed: ${url}`, error.message);
+            return { items: [] };
+        });
+    }
+
     let feeds;
     try {
         feeds = await Promise.allSettled(
-            feedUrls.map(url => 
-                parser.parseURL(url)
-                    .catch(error => {
-                        console.warn(`Failed to fetch feed: ${url}`, error.message);
-                        return { items: [] };
-                    })
-            )
+            feedUrls.map(url => fetchFeedWithTimeout(url))
         );
     } catch (error) {
         remoteToggle.logFailure('community feeds', error);
