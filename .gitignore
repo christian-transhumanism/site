@@ -5,6 +5,8 @@ _site
 .DS_Store
 .cache
 src/assets/*
+!src/assets/icons/
+!src/assets/icons/**
 !src/assets/site.js
 .env
 .obsidian/
