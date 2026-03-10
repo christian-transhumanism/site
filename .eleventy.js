@@ -189,6 +189,45 @@ function gatherContributorNames(book) {
   return names;
 }
 
+function computeWikiPageUrl(relNorm, parsedData, nameNoExt) {
+  if (parsedData && typeof parsedData.permalink === 'string' && parsedData.permalink.trim()) {
+    const p = parsedData.permalink.trim();
+    const url = p.startsWith('/') ? p : `/${p}`;
+    return url.endsWith('/') ? url : `${url}/`;
+  }
+
+  if (relNorm.toLowerCase().startsWith('board/')) {
+    const withoutExt = relNorm.replace(/\.md$/i, '');
+    const segs = withoutExt.split('/').slice(1);
+    const slugged = segs.map(s => toSlugBase(s));
+    return `/board/${slugged.join('/')}/`;
+  }
+
+  return `/wiki/${toSlugBase(nameNoExt)}/`;
+}
+
+function collectFrontMatterText(data) {
+  const acc = [];
+
+  function collect(value) {
+    if (!value) return;
+    if (typeof value === 'string') {
+      acc.push(value);
+      return;
+    }
+    if (Array.isArray(value)) {
+      value.forEach(collect);
+      return;
+    }
+    if (typeof value === 'object') {
+      Object.keys(value).forEach(key => collect(value[key]));
+    }
+  }
+
+  collect(data);
+  return acc.join('\n\n');
+}
+
 const format = require('date-fns/format')
 const parseISO = require('date-fns/parseISO')
 const isValid = require('date-fns/isValid')
@@ -463,8 +502,9 @@ module.exports = function(eleventyConfig) {
   });
 
   // --- Obsidian Wikilink support ---
-  function collectWikiAssets(rootDir) {
+  function scanWikiTree(rootDir) {
     const base = path.join(process.cwd(), rootDir);
+    const noteEntries = [];
     const assets = [];
 
     function walk(dir) {
@@ -474,11 +514,15 @@ module.exports = function(eleventyConfig) {
         if (ent.isDirectory()) {
           if (ent.name && ent.name.toLowerCase() === 'templates') continue;
           walk(full);
-        } else if (ent.isFile()) {
-          const ext = path.extname(ent.name).toLowerCase();
-          if (!WIKI_ASSET_EXTENSIONS.has(ext)) continue;
-          const relFromBase = posixPath(path.relative(base, full));
-          const relFromRoot = posixPath(path.relative(process.cwd(), full));
+          continue;
+        }
+        if (!ent.isFile()) continue;
+
+        const relFromBase = posixPath(path.relative(base, full));
+        const relFromRoot = posixPath(path.relative(process.cwd(), full));
+        const ext = path.extname(ent.name).toLowerCase();
+
+        if (WIKI_ASSET_EXTENSIONS.has(ext)) {
           const outputRelative = posixPath(path.posix.join(WIKI_ASSET_OUTPUT_DIR, relFromBase));
           const href = WIKI_ASSET_URL_PREFIX + relFromBase.split('/').map(encodeURIComponent).join('/');
           const stem = path.basename(ent.name, ext);
@@ -492,12 +536,59 @@ module.exports = function(eleventyConfig) {
             toSlugBase(stem),
           ]);
           assets.push({ relFromBase, relFromRoot, outputRelative, href, keys });
+          continue;
+        }
+
+        if (!/\.md$/i.test(ent.name)) continue;
+
+        try {
+          const raw = fs.readFileSync(full, 'utf8');
+          const parsed = matter(raw);
+          const nameNoExt = path.basename(ent.name, path.extname(ent.name));
+          const relNoExt = relFromBase.replace(/\.md$/i, '');
+          const lastSeg = relNoExt.split('/').pop();
+          const title = (parsed.data && typeof parsed.data.title === 'string' && parsed.data.title.trim())
+            ? parsed.data.title.trim()
+            : nameNoExt;
+          const url = computeWikiPageUrl(relFromBase, parsed.data, nameNoExt);
+          const hasExplicitPermalink = !!(parsed.data && typeof parsed.data.permalink === 'string' && parsed.data.permalink.trim());
+          const keys = new Set([
+            nameNoExt,
+            nameNoExt.toLowerCase(),
+            toSlugBase(nameNoExt),
+          ]);
+
+          if (parsed.data && typeof parsed.data.title === 'string' && parsed.data.title.trim()) {
+            keys.add(parsed.data.title.trim());
+            keys.add(parsed.data.title.trim().toLowerCase());
+            keys.add(toSlugBase(parsed.data.title.trim()));
+          }
+
+          if (lastSeg) {
+            keys.add(lastSeg);
+            keys.add(lastSeg.toLowerCase());
+            keys.add(toSlugBase(lastSeg));
+          }
+
+          noteEntries.push({
+            relFromBase,
+            relFromRoot,
+            nameNoExt,
+            title,
+            url,
+            hasExplicitPermalink,
+            content: parsed.content || '',
+            dataText: collectFrontMatterText(parsed.data),
+            keys,
+          });
+        } catch (_) {
+          // ignore parse errors for non-front-matter files
         }
       }
     }
 
     walk(base);
-    return assets;
+    return { noteEntries, assets };
   }
 
   function findWikiAssetHref(key) {
@@ -516,87 +607,20 @@ module.exports = function(eleventyConfig) {
   }
 
   // Build a lookup of Obsidian note names -> output URLs
-  function buildObsidianIndex(rootDir) {
-    const base = path.join(process.cwd(), rootDir);
+  function buildObsidianIndex(noteEntries) {
     const index = new Map();
 
-    function walk(dir) {
-      const entries = fs.existsSync(dir) ? fs.readdirSync(dir, { withFileTypes: true }) : [];
-      for (const ent of entries) {
-        const full = path.join(dir, ent.name);
-        if (ent.isDirectory()) {
-          // Skip templates directory
-          if (ent.name && ent.name.toLowerCase() === 'templates') continue;
-          walk(full);
-        } else if (ent.isFile() && /\.md$/i.test(ent.name)) {
-          try {
-            const raw = fs.readFileSync(full, 'utf8');
-            const parsed = matter(raw);
-            const rel = path.relative(base, full);
-            const nameNoExt = path.basename(ent.name, path.extname(ent.name));
-            const relNorm = String(rel).replace(/\\/g, '/');
-            // Ignore files under templates/
-            if (relNorm.toLowerCase().startsWith('templates/')) continue;
-
-            // Determine output URL
-            let url = '';
-            if (parsed.data && typeof parsed.data.permalink === 'string' && parsed.data.permalink.trim()) {
-              const p = parsed.data.permalink.trim();
-              url = p.startsWith('/') ? p : `/${p}`;
-              // Ensure trailing slash for clean URLs
-              if (!url.endsWith('/')) url = url + '/';
-            } else {
-              // Default URL logic
-              // If file is under cta-wiki/board, mirror nested path under /board/
-              if (relNorm.toLowerCase().startsWith('board/')) {
-                const withoutExt = relNorm.replace(/\.md$/i, '');
-                const segs = withoutExt.split('/').slice(1); // skip leading 'board'
-                const slugged = segs.map(s => toSlugBase(s));
-                url = `/board/${slugged.join('/')}/`;
-              } else {
-                // Otherwise put under /wiki/
-                let slug = toSlugBase(nameNoExt);
-                url = `/wiki/${slug}/`;
-              }
-            }
-
-            const keys = new Set([
-              nameNoExt,
-              nameNoExt.toLowerCase(),
-              toSlugBase(nameNoExt),
-            ]);
-            if (parsed.data && typeof parsed.data.title === 'string' && parsed.data.title.trim()) {
-              const t = parsed.data.title.trim();
-              keys.add(t);
-              keys.add(t.toLowerCase());
-              keys.add(toSlugBase(t));
-            }
-            // Also allow matching by relative path without extension (last segment)
-            const relNoExt = rel.replace(/\\/g, '/').replace(/\.md$/i, '');
-            const lastSeg = relNoExt.split('/').pop();
-            if (lastSeg) {
-              keys.add(lastSeg);
-              keys.add(lastSeg.toLowerCase());
-              keys.add(toSlugBase(lastSeg));
-            }
-
-            for (const k of keys) {
-              if (!index.has(k)) index.set(k, url);
-            }
-          } catch (_) {
-            // ignore parse errors for non-front-matter files
-          }
-        }
+    for (const entry of noteEntries) {
+      for (const key of entry.keys) {
+        if (!index.has(key)) index.set(key, entry.url);
       }
     }
-
-    walk(base);
     return index;
   }
 
-  const obsidianIndex = buildObsidianIndex(WIKI_ROOT);
+  const { noteEntries: wikiNotes, assets: wikiAssets } = scanWikiTree(WIKI_ROOT);
+  const obsidianIndex = buildObsidianIndex(wikiNotes);
 
-  const wikiAssets = collectWikiAssets(WIKI_ROOT);
   for (const asset of wikiAssets) {
     eleventyConfig.addPassthroughCopy({ [asset.relFromRoot]: asset.outputRelative });
     for (const key of asset.keys) {
@@ -606,35 +630,17 @@ module.exports = function(eleventyConfig) {
   }
 
   // Build a quick lookup to know if a given Obsidian file set an explicit permalink in frontmatter
-  function buildObsidianFileMeta(rootDir) {
-    const base = path.join(process.cwd(), rootDir);
+  function buildObsidianFileMeta(noteEntries) {
     const meta = new Map(); // key: normalized inputPath (posix), value: { hasExplicitPermalink }
-    function walk(dir) {
-      const entries = fs.existsSync(dir) ? fs.readdirSync(dir, { withFileTypes: true }) : [];
-      for (const ent of entries) {
-        const full = path.join(dir, ent.name);
-        if (ent.isDirectory()) {
-          if (ent.name && ent.name.toLowerCase() === 'templates') continue;
-          walk(full);
-        } else if (ent.isFile() && /\.md$/i.test(ent.name)) {
-          try {
-            const raw = fs.readFileSync(full, 'utf8');
-            const parsed = matter(raw);
-            const hasExplicitPermalink = !!(parsed.data && typeof parsed.data.permalink === 'string' && parsed.data.permalink.trim());
-            // Normalize to workspace-relative posix path like 'src/cta-wiki/…'
-            const rel = path.relative(process.cwd(), full).replace(/\\/g, '/');
-            // Ignore files under the wiki templates directory
-            if (rel.includes(`/src/${WIKI_SEGMENT}/templates/`)) continue;
-            meta.set(rel, { hasExplicitPermalink });
-          } catch (_) { /* ignore */ }
-        }
-      }
+
+    for (const entry of noteEntries) {
+      meta.set(entry.relFromRoot, { hasExplicitPermalink: entry.hasExplicitPermalink });
     }
-    walk(base);
+
     return meta;
   }
 
-  const obsidianFileMeta = buildObsidianFileMeta(WIKI_ROOT);
+  const obsidianFileMeta = buildObsidianFileMeta(wikiNotes);
 
   eleventyConfig.addFilter('obsidianHasExplicitPermalink', function(inputPath) {
     if (!inputPath) return false;
@@ -644,54 +650,10 @@ module.exports = function(eleventyConfig) {
   });
 
   // Build backlinks for Obsidian notes based on wikilinks
-  function buildObsidianBacklinks(rootDir, index) {
-    const base = path.join(process.cwd(), rootDir);
+  function buildObsidianBacklinks(noteEntries, index) {
     const backlinks = new Map(); // targetUrl -> [{ url, title, count, snippets, anchorTexts }]
     const outbound = new Map(); // sourceUrl -> [{ url, count, snippets, anchorTexts }]
     const pageMeta = new Map(); // url -> { title }
-
-    function toUrlForFile(fullPath) {
-      try {
-        const raw = fs.readFileSync(fullPath, 'utf8');
-        const parsed = matter(raw);
-        const rel = path.relative(base, fullPath).replace(/\\/g, '/');
-        const nameNoExt = path.basename(fullPath, path.extname(fullPath));
-        let url = '';
-        if (parsed.data && typeof parsed.data.permalink === 'string' && parsed.data.permalink.trim()) {
-          const p = parsed.data.permalink.trim();
-          url = p.startsWith('/') ? p : `/${p}`;
-          if (!url.endsWith('/')) url = url + '/';
-        } else {
-          if (rel.toLowerCase().startsWith('board/')) {
-            const withoutExt = rel.replace(/\.md$/i, '');
-            const segs = withoutExt.split('/').slice(1);
-            const slugged = segs.map(s => toSlugBase(s));
-            url = `/board/${slugged.join('/')}/`;
-          } else {
-            url = `/wiki/${toSlugBase(nameNoExt)}/`;
-          }
-        }
-        const title = (parsed.data && typeof parsed.data.title === 'string' && parsed.data.title.trim())
-          ? parsed.data.title.trim()
-          : nameNoExt;
-        const dataText = (() => {
-          const acc = [];
-          function collect(v) {
-            if (!v) return;
-            if (typeof v === 'string') { acc.push(v); return; }
-            if (Array.isArray(v)) { for (const x of v) collect(x); return; }
-            if (typeof v === 'object') { for (const k of Object.keys(v)) collect(v[k]); }
-          }
-          collect(parsed.data);
-          return acc.join('\n\n');
-        })();
-        const meta = { url, title, content: parsed.content || '', dataText };
-        if (url) pageMeta.set(url, { title });
-        return meta;
-      } catch (_) {
-        return null;
-      }
-    }
 
     function makeSnippet(sourceText, index, length) {
       if (!sourceText) return '';
@@ -788,118 +750,68 @@ module.exports = function(eleventyConfig) {
       } catch (_) { return null; }
     }
 
-    function walk(dir) {
-      const entries = fs.existsSync(dir) ? fs.readdirSync(dir, { withFileTypes: true }) : [];
-      for (const ent of entries) {
-        const full = path.join(dir, ent.name);
-        if (ent.isDirectory()) {
-          if (ent.name && ent.name.toLowerCase() === 'templates') continue;
-          walk(full);
-        } else if (ent.isFile() && /\.md$/i.test(ent.name)) {
-          // Ignore files under templates/
-          const relFromBase = path.relative(base, full).replace(/\\/g, '/');
-          if (relFromBase.toLowerCase().startsWith('templates/')) continue;
-          const from = toUrlForFile(full);
-          if (!from) continue;
-          const content = String(from.content);
-          const extra = String(from.dataText || '');
-          const fromUrl = from.url;
-          const fromTitle = from.title;
-          if (fromUrl) {
-            if (!pageMeta.has(fromUrl)) pageMeta.set(fromUrl, { title: fromTitle });
-          }
-          // Wikilinks [[...]]
-          const rx = /\[\[([^\]]+)\]\]/g;
-          let m;
-          while ((m = rx.exec(content)) !== null) {
-            let target = m[1] || '';
-            let display = '';
-            const pipe = target.indexOf('|');
-            if (pipe !== -1) {
-              display = target.slice(pipe + 1);
-              target = target.slice(0, pipe);
-            }
-            const hash = target.indexOf('#');
-            if (hash !== -1) target = target.slice(0, hash);
-            const key = target.trim();
-            if (!key) continue;
-            const url = index.get(key) || index.get(key.toLowerCase()) || index.get(toSlugBase(key));
-            if (url && url !== from.url) {
-              const anchorText = (display && display.trim()) || key;
-              const snippet = makeSnippet(content, m.index, m[0].length);
-              registerLink(from, url, { anchorText, snippet, type: 'wikilink' });
-            }
-          }
+    function registerLinksFromText(from, text) {
+      if (!text) return;
 
-          // Markdown links [text](href) — skip images ![alt](href)
-          const md = /(!)?\[[^\]]+\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)/g;
-          let m2;
-          while ((m2 = md.exec(content)) !== null) {
-            if (m2[1] === '!') continue; // image
-            const href = m2[2];
-            const norm = normalizeHref(href);
-            if (norm && norm !== from.url) {
-              const anchorText = (() => {
-                try {
-                  const textMatch = m2[0].match(/\[([^\]]+)\]/);
-                  return textMatch && textMatch[1] ? textMatch[1] : '';
-                } catch (_) { return ''; }
-              })();
-              const snippet = makeSnippet(content, m2.index, m2[0].length);
-              registerLink(from, norm, { anchorText, snippet, type: 'markdown' });
-            }
-          }
+      const wikilinkRegex = /\[\[([^\]]+)\]\]/g;
+      let wikilinkMatch;
+      while ((wikilinkMatch = wikilinkRegex.exec(text)) !== null) {
+        let target = wikilinkMatch[1] || '';
+        let display = '';
+        const pipe = target.indexOf('|');
+        if (pipe !== -1) {
+          display = target.slice(pipe + 1);
+          target = target.slice(0, pipe);
+        }
+        const hash = target.indexOf('#');
+        if (hash !== -1) target = target.slice(0, hash);
+        const key = target.trim();
+        if (!key) continue;
+        const url = index.get(key) || index.get(key.toLowerCase()) || index.get(toSlugBase(key));
+        if (url && url !== from.url) {
+          const anchorText = (display && display.trim()) || key;
+          const snippet = makeSnippet(text, wikilinkMatch.index, wikilinkMatch[0].length);
+          registerLink(from, url, { anchorText, snippet, type: 'wikilink' });
+        }
+      }
 
-          // Also parse front matter strings (e.g., FAQ answers/questions)
-          if (extra) {
-            let m3;
-            const rx2 = /\[\[([^\]]+)\]\]/g;
-            while ((m3 = rx2.exec(extra)) !== null) {
-              let target = m3[1] || '';
-              let display = '';
-              const pipe = target.indexOf('|');
-              if (pipe !== -1) {
-                display = target.slice(pipe + 1);
-                target = target.slice(0, pipe);
-              }
-              const hash = target.indexOf('#');
-              if (hash !== -1) target = target.slice(0, hash);
-              const key = target.trim();
-              if (!key) continue;
-              const url = index.get(key) || index.get(key.toLowerCase()) || index.get(toSlugBase(key));
-              if (url && url !== from.url) {
-                const anchorText = (display && display.trim()) || key;
-                const snippet = makeSnippet(extra, m3.index, m3[0].length);
-                registerLink(from, url, { anchorText, snippet, type: 'wikilink' });
-              }
+      const markdownLinkRegex = /(!)?\[[^\]]+\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)/g;
+      let markdownMatch;
+      while ((markdownMatch = markdownLinkRegex.exec(text)) !== null) {
+        if (markdownMatch[1] === '!') continue;
+        const norm = normalizeHref(markdownMatch[2]);
+        if (norm && norm !== from.url) {
+          const anchorText = (() => {
+            try {
+              const textMatch = markdownMatch[0].match(/\[([^\]]+)\]/);
+              return textMatch && textMatch[1] ? textMatch[1] : '';
+            } catch (_) {
+              return '';
             }
-            const md2 = /(!)?\[[^\]]+\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)/g;
-            let m4;
-            while ((m4 = md2.exec(extra)) !== null) {
-              if (m4[1] === '!') continue;
-              const href = m4[2];
-              const norm = normalizeHref(href);
-              if (norm && norm !== from.url) {
-                const anchorText = (() => {
-                  try {
-                    const textMatch = m4[0].match(/\[([^\]]+)\]/);
-                    return textMatch && textMatch[1] ? textMatch[1] : '';
-                  } catch (_) { return ''; }
-                })();
-                const snippet = makeSnippet(extra, m4.index, m4[0].length);
-                registerLink(from, norm, { anchorText, snippet, type: 'markdown' });
-              }
-            }
-          }
+          })();
+          const snippet = makeSnippet(text, markdownMatch.index, markdownMatch[0].length);
+          registerLink(from, norm, { anchorText, snippet, type: 'markdown' });
         }
       }
     }
 
-    walk(base);
+    for (const entry of noteEntries) {
+      const from = {
+        url: entry.url,
+        title: entry.title,
+        content: entry.content,
+        dataText: entry.dataText,
+      };
+      if (from.url) {
+        if (!pageMeta.has(from.url)) pageMeta.set(from.url, { title: from.title });
+      }
+      registerLinksFromText(from, String(entry.content || ''));
+      registerLinksFromText(from, String(entry.dataText || ''));
+    }
     return { backlinks, outbound, pageMeta };
   }
 
-  const { backlinks: obsidianBacklinks, outbound: obsidianOutbound, pageMeta: obsidianPageMeta } = buildObsidianBacklinks(WIKI_ROOT, obsidianIndex);
+  const { backlinks: obsidianBacklinks, outbound: obsidianOutbound, pageMeta: obsidianPageMeta } = buildObsidianBacklinks(wikiNotes, obsidianIndex);
 
   function mergeEntry(target, source) {
     if (!source) return target;
