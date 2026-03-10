@@ -1,0 +1,34 @@
+---
+title: Your CTA
+layout: resourcePage.njk
+hideSidebar: true
+hideBacklinks: true
+---
+
+<div class="saved-overview" data-saved-overview>
+  <div class="saved-overview__header">
+    <p class="saved-overview__lede">
+      This page is personal to this browser. Your saved pages and recent reading stay on this device.
+    </p>
+    <button type="button" class="saved-overview__clear" data-clear-saved-pages>
+      Clear saved pages
+    </button>
+  </div>
+
+  <div class="saved-overview__grid">
+    <section class="saved-overview__section">
+      <div class="saved-overview__section-header">
+        <h2>Saved pages</h2>
+        <span class="saved-overview__count" data-saved-overview-count>0</span>
+      </div>
+      <ul class="saved-overview__list" data-saved-overview-saved></ul>
+    </section>
+
+    <section class="saved-overview__section">
+      <div class="saved-overview__section-header">
+        <h2>Recently viewed</h2>
+      </div>
+      <ul class="saved-overview__list" data-saved-overview-recent></ul>
+    </section>
+  </div>
+</div>

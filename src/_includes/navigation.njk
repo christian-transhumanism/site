@@ -27,14 +27,29 @@
       </ul>
       <ul class="nav navbar-nav navbar-right site-nav__list site-nav__list--secondary">
         <li>
+          <a
+            href="/saved/"
+            class="site-nav__icon-link site-saved-link"
+            data-saved-pages-link
+            aria-label="View saved pages"
+            title="View saved pages"
+          >
+            <svg class="site-nav__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M7 4.75h10a1.25 1.25 0 0 1 1.25 1.25v14.25l-6.25-3.55-6.25 3.55V6A1.25 1.25 0 0 1 7 4.75Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+            </svg>
+            <span class="site-saved-link__count" data-saved-pages-count>0</span>
+            <span class="sr-only">Saved pages</span>
+          </a>
+        </li>
+        <li>
           <button
             type="button"
-            class="site-theme-toggle"
+            class="site-theme-toggle site-nav__icon-link"
             data-theme-toggle
             aria-pressed="false"
             aria-label="Switch to dark mode"
           >
-            <svg class="site-theme-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <svg class="site-theme-toggle__icon site-nav__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <g class="site-theme-toggle__rays" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8">
                 <path d="M12 1.5v3"/>
                 <path d="M4.95 4.95 7.1 7.1"/>

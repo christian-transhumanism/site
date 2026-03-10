@@ -1,12 +1,19 @@
 (function () {
   var MOBILE_NAV_MEDIA = window.matchMedia("(max-width: 991px)");
   var THEME_STORAGE_KEY = "cta-theme";
+  var SAVED_PAGES_STORAGE_KEY = "cta-saved-pages";
+  var RECENT_PAGES_STORAGE_KEY = "cta-recent-pages";
+  var MAX_SAVED_PAGES = 40;
+  var MAX_RECENT_PAGES = 8;
   var mobileNavToggle = document.querySelector(".site-nav__toggle");
   var mobileNavPanel = document.querySelector("#site-primary-nav");
   var mobileNavBackdrop = document.querySelector("[data-nav-backdrop]");
   var themeToggle = document.querySelector("[data-theme-toggle]");
+  var savedPagesLink = document.querySelector("[data-saved-pages-link]");
   var bootScript = document.currentScript || document.querySelector('script[src="/assets/site.js"]');
   var assistantScriptSrc = bootScript && bootScript.dataset ? bootScript.dataset.assistantSrc : "";
+  var saveButton = null;
+  var currentPageMeta = null;
   var resizeFrame = 0;
   var assistantLoadStarted = false;
 
@@ -22,6 +29,295 @@
     try {
       window.localStorage.setItem(THEME_STORAGE_KEY, theme);
     } catch (error) {}
+  }
+
+  function readStoredList(key) {
+    try {
+      var value = window.localStorage.getItem(key);
+      if (!value) {
+        return [];
+      }
+
+      var parsed = JSON.parse(value);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function writeStoredList(key, value) {
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {}
+  }
+
+  function sanitizeText(value) {
+    return (value || "").replace(/\s+/g, " ").trim();
+  }
+
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function getCanonicalPath() {
+    var canonicalLink = document.querySelector('link[rel="canonical"]');
+    var rawValue = canonicalLink ? canonicalLink.getAttribute("href") : window.location.pathname;
+
+    try {
+      return new URL(rawValue, window.location.origin).pathname;
+    } catch (error) {
+      return window.location.pathname;
+    }
+  }
+
+  function getPageHeading() {
+    return document.querySelector("main h1") || document.querySelector(".page-header") || document.querySelector("h1");
+  }
+
+  function classifyPage(pathname) {
+    if (!pathname || pathname === "/") {
+      return "home";
+    }
+    if (pathname === "/saved/") {
+      return "listing";
+    }
+    if (pathname.indexOf("/wiki/") === 0) {
+      return "wiki";
+    }
+    if (pathname.indexOf("/blog/") === 0) {
+      return pathname === "/blog/" || pathname === "/blog/community/" ? "listing" : "blog";
+    }
+    if (pathname.indexOf("/podcast/") === 0) {
+      return pathname === "/podcast/" ? "listing" : "podcast";
+    }
+    if (pathname.indexOf("/books/") === 0) {
+      return pathname === "/books/" ? "listing" : "book";
+    }
+    if (pathname.indexOf("/conference/") === 0) {
+      return "conference";
+    }
+    if (
+      pathname === "/videos/" ||
+      pathname === "/press/" ||
+      pathname === "/quotes/" ||
+      pathname === "/beliefs/" ||
+      pathname === "/beliefs/compare/" ||
+      pathname === "/explore/" ||
+      pathname === "/connect/" ||
+      pathname === "/join/" ||
+      pathname === "/board/" ||
+      pathname === "/wiki/"
+    ) {
+      return "listing";
+    }
+
+    return "page";
+  }
+
+  function shouldEnablePersonalization(pageMeta) {
+    if (!pageMeta || !pageMeta.title || !pageMeta.url) {
+      return false;
+    }
+
+    return pageMeta.type !== "home" && pageMeta.type !== "listing";
+  }
+
+  function getCurrentPageMeta() {
+    var heading = getPageHeading();
+    var title = sanitizeText(heading ? heading.textContent : document.title.replace(/\s+\|.+$/, ""));
+    var url = getCanonicalPath();
+    var type = classifyPage(url);
+
+    if (!title) {
+      return null;
+    }
+
+    return {
+      title: title,
+      url: url,
+      type: type
+    };
+  }
+
+  function formatTypeLabel(type) {
+    switch (type) {
+      case "wiki":
+        return "Wiki";
+      case "blog":
+        return "Blog";
+      case "podcast":
+        return "Podcast";
+      case "book":
+        return "Book";
+      case "conference":
+        return "Conference";
+      default:
+        return "Page";
+    }
+  }
+
+  function getSavedPages() {
+    return readStoredList(SAVED_PAGES_STORAGE_KEY);
+  }
+
+  function persistSavedPages(items) {
+    writeStoredList(SAVED_PAGES_STORAGE_KEY, items.slice(0, MAX_SAVED_PAGES));
+  }
+
+  function getRecentPages() {
+    return readStoredList(RECENT_PAGES_STORAGE_KEY);
+  }
+
+  function persistRecentPages(items) {
+    writeStoredList(RECENT_PAGES_STORAGE_KEY, items.slice(0, MAX_RECENT_PAGES));
+  }
+
+  function findPageIndex(items, url) {
+    return items.findIndex(function (item) {
+      return item && item.url === url;
+    });
+  }
+
+  function isPageSaved(url) {
+    return findPageIndex(getSavedPages(), url) !== -1;
+  }
+
+  function createItemMarkup(item, emptyLabel) {
+    if (!item) {
+      return '<li class="personalization-panel__empty">' + emptyLabel + "</li>";
+    }
+
+    var safeType = formatTypeLabel(item.type);
+    return (
+      '<li class="personalization-panel__item">' +
+        '<a href="' + escapeHtml(item.url) + '">' + escapeHtml(item.title) + "</a>" +
+        '<span class="personalization-panel__meta">' + escapeHtml(safeType) + "</span>" +
+      "</li>"
+    );
+  }
+
+  function syncSavedPagesLink() {
+    if (!savedPagesLink) {
+      return;
+    }
+
+    var savedCount = getSavedPages().length;
+    var countNode = savedPagesLink.querySelector("[data-saved-pages-count]");
+    if (countNode) {
+      countNode.textContent = String(savedCount);
+      countNode.hidden = savedCount === 0;
+    }
+  }
+
+  function syncSaveButtonState() {
+    if (!saveButton || !currentPageMeta) {
+      return;
+    }
+
+    var saved = isPageSaved(currentPageMeta.url);
+    saveButton.classList.toggle("is-saved", saved);
+    saveButton.setAttribute("aria-pressed", saved ? "true" : "false");
+    saveButton.textContent = saved ? "Saved" : "Save page";
+  }
+
+  function toggleSavedPage(pageMeta) {
+    var savedPages = getSavedPages();
+    var existingIndex = findPageIndex(savedPages, pageMeta.url);
+
+    if (existingIndex !== -1) {
+      savedPages.splice(existingIndex, 1);
+    } else {
+      savedPages.unshift({
+        title: pageMeta.title,
+        url: pageMeta.url,
+        type: pageMeta.type,
+        savedAt: new Date().toISOString()
+      });
+    }
+
+    persistSavedPages(savedPages);
+    syncSaveButtonState();
+    syncSavedPagesLink();
+    renderSavedOverviewPage();
+  }
+
+  function clearSavedPages() {
+    persistSavedPages([]);
+    persistRecentPages([]);
+    syncSaveButtonState();
+    syncSavedPagesLink();
+    renderSavedOverviewPage();
+  }
+
+  function recordRecentPage(pageMeta) {
+    var recentPages = getRecentPages();
+    var existingIndex = findPageIndex(recentPages, pageMeta.url);
+
+    if (existingIndex !== -1) {
+      recentPages.splice(existingIndex, 1);
+    }
+
+    recentPages.unshift({
+      title: pageMeta.title,
+      url: pageMeta.url,
+      type: pageMeta.type,
+      viewedAt: new Date().toISOString()
+    });
+
+    persistRecentPages(recentPages);
+  }
+
+  function renderSavedOverviewPage() {
+    var overview = document.querySelector("[data-saved-overview]");
+    if (!overview) {
+      return;
+    }
+
+    var savedPages = getSavedPages();
+    var recentPages = getRecentPages();
+    var savedMarkup = savedPages.length
+      ? savedPages.map(function (item) { return createItemMarkup(item); }).join("")
+      : createItemMarkup(null, "No saved pages yet. Save any article, podcast, or wiki page to keep it here.");
+    var recentMarkup = recentPages.length
+      ? recentPages.map(function (item) { return createItemMarkup(item); }).join("")
+      : createItemMarkup(null, "No recent pages yet. Visit a page and it will appear here.");
+
+    overview.querySelector("[data-saved-overview-count]").textContent = String(savedPages.length);
+    overview.querySelector("[data-saved-overview-saved]").innerHTML = savedMarkup;
+    overview.querySelector("[data-saved-overview-recent]").innerHTML = recentMarkup;
+
+    var clearButton = overview.querySelector("[data-clear-saved-pages]");
+    if (clearButton) {
+      clearButton.disabled = savedPages.length === 0 && recentPages.length === 0;
+    }
+  }
+
+  function ensureSaveButton(pageMeta) {
+    var heading = getPageHeading();
+    if (!heading || heading.querySelector("[data-save-page-button]")) {
+      return;
+    }
+
+    var actions = document.createElement("span");
+    actions.className = "page-actions";
+
+    saveButton = document.createElement("button");
+    saveButton.type = "button";
+    saveButton.className = "page-save-button";
+    saveButton.setAttribute("data-save-page-button", "true");
+    saveButton.addEventListener("click", function () {
+      toggleSavedPage(pageMeta);
+    });
+
+    actions.appendChild(saveButton);
+    heading.appendChild(document.createTextNode(" "));
+    heading.appendChild(actions);
+    syncSaveButtonState();
   }
 
   function updateThemeMeta(theme) {
@@ -399,6 +695,23 @@
 
   ["pointerdown", "focusin", "keydown", "touchstart"].forEach(function (eventName) {
     window.addEventListener(eventName, bootAssistantWidget, { once: true, passive: true });
+  });
+
+  currentPageMeta = getCurrentPageMeta();
+  syncSavedPagesLink();
+  renderSavedOverviewPage();
+  if (shouldEnablePersonalization(currentPageMeta)) {
+    ensureSaveButton(currentPageMeta);
+    recordRecentPage(currentPageMeta);
+    renderSavedOverviewPage();
+  }
+
+  document.addEventListener("click", function (event) {
+    var clearSavedButton = event.target.closest("[data-clear-saved-pages]");
+    if (clearSavedButton) {
+      event.preventDefault();
+      clearSavedPages();
+    }
   });
 
   applyTheme(getStoredTheme() || document.documentElement.getAttribute("data-theme") || "light", false);

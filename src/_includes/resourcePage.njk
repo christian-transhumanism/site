@@ -16,7 +16,7 @@ layout: default
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="{% if hideSidebar %}col-md-12{% else %}col-md-8{% endif %}">
       {# Mission article hero image (if this page is a mission article) #}
       {% if page.url and ('/mission/' in page.url) %}
         {% include 'shared/mission-article-hero.njk' %}
@@ -34,7 +34,9 @@ layout: default
 
       {{ content | safe }}
 
-      {% include 'shared/backlinks-panel.njk' %}
+      {% if not hideBacklinks %}
+        {% include 'shared/backlinks-panel.njk' %}
+      {% endif %}
 
       {# Related articles within the same Mission section #}
       {% if page.url and ('/mission/' in page.url) %}
@@ -54,11 +56,13 @@ layout: default
 
     </div>
 
-    <div class="col-md-4">
-        <div class="well site-sidebar site-sidebar--desktop">
-            {% include 'shared/sidebar_nav.njk' %}
-        </div>
-    </div>
+    {% if not hideSidebar %}
+      <div class="col-md-4">
+          <div class="well site-sidebar site-sidebar--desktop">
+              {% include 'shared/sidebar_nav.njk' %}
+          </div>
+      </div>
+    {% endif %}
 
   </div>
 </div>
