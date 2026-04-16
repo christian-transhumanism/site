@@ -1324,7 +1324,7 @@ body.home {
 .home-media-grid { display: grid; gap: 0.625rem; }
 .home-media-grid--primary { grid-template-columns: 1fr; }
 @media (min-width: 576px) { .home-media-grid--primary { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 992px) { .home-media-grid--primary { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 992px) { .home-media-grid--primary { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .home-media-videos { margin-top: 1.25rem; }
 @media (min-width: 768px) { .home-media-videos { margin-top: 1.75rem; } }
 .home-media-heading { margin: 0 0 0.5rem; font-size: 0.75rem; font-weight: 600; }
