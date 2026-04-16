@@ -1,0 +1,610 @@
+/* =============================================================
+   /vision/ — Expansive Human Futures one-page
+   Register: "Contemporary Futurism with sacred weight"
+   Scoped under .vision / .vision-page so the site's theme tokens
+   and Bootstrap compat don't bleed in.
+   ============================================================= */
+
+/* Type imports — warm serif for scripture marginalia, tight
+   geometric sans for display. Keeping system stacks as fallbacks
+   so the page still works if the CDN fails. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ----- Page-wide reset (only when vision page is loaded) ----- */
+body.vision-page {
+  background: #0b0a10;
+  color: #f5f0e6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure main area doesn't add unexpected padding on the vision page */
+body.vision-page main {
+  background: transparent;
+  padding: 0;
+}
+
+/* Site nav sits on top of the opening; let its backdrop handle contrast */
+body.vision-page .site-nav {
+  background-color: rgba(11, 10, 16, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+}
+
+/* ----- Shared layout primitives ----- */
+.vision {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: -0.01em;
+  overflow: hidden; /* clip the glows */
+}
+
+.vision-container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ----- Opening ---------------------------------------------- */
+.vision-opening {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 0 4rem;
+  background:
+    radial-gradient(60% 70% at 20% 20%, rgba(255, 189, 110, 0.16), transparent 60%),
+    radial-gradient(55% 65% at 85% 75%, rgba(109, 180, 255, 0.14), transparent 60%),
+    radial-gradient(80% 80% at 50% 110%, rgba(77, 223, 180, 0.10), transparent 60%),
+    linear-gradient(180deg, #0b0a10 0%, #0a0813 60%, #08060f 100%);
+  overflow: hidden;
+}
+
+.vision-opening__noise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.4 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+.vision-eyebrow {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: rgba(245, 240, 230, 0.62);
+  margin: 0 0 1.5rem;
+  font-weight: 500;
+}
+
+.vision-opening__title {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: #f7f3ea;
+  margin: 0 0 1.75rem;
+  background: linear-gradient(135deg, #fff6e4 0%, #f4bf77 45%, #c59b6a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vision-opening__lede {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  line-height: 1.25;
+  color: rgba(245, 240, 230, 0.88);
+  margin: 0 0 2.5rem;
+  max-width: 38ch;
+}
+
+.vision-opening__body {
+  max-width: 42ch;
+}
+.vision-opening__body p {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.65;
+  color: rgba(245, 240, 230, 0.78);
+  margin: 0 0 1rem;
+}
+.vision-opening__closer {
+  color: #f7f3ea !important;
+  font-weight: 600;
+  font-size: clamp(1.05rem, 1.4vw, 1.3rem) !important;
+  margin-top: 1.75rem !important;
+  letter-spacing: 0.01em;
+}
+
+.vision-opening__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 2.5rem;
+  transform: translateX(-50%);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(245, 240, 230, 0.55);
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.vision-opening__scroll:hover,
+.vision-opening__scroll:focus {
+  color: #f4bf77;
+  text-decoration: none;
+}
+.vision-opening__scroll-arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+  animation: vision-bob 2.4s ease-in-out infinite;
+}
+@keyframes vision-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(5px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vision-opening__scroll-arrow { animation: none; }
+}
+
+/* ----- Pillar sections -------------------------------------- */
+.vision-pillar {
+  position: relative;
+  min-height: 100vh;
+  padding: 7rem 0;
+  display: flex;
+  align-items: center;
+  color: var(--pillar-text, #f7f3ea);
+  overflow: hidden;
+}
+
+.vision-pillar__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.vision-pillar__backdrop::before,
+.vision-pillar__backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+/* shared grain on top of every pillar */
+.vision-pillar__backdrop::after {
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='11'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* Palette: Longevity — warm amber / gold */
+.vision-pillar--longevity {
+  --pillar-accent: #f4bf77;
+  --pillar-accent-strong: #ffd79b;
+  --pillar-muted: rgba(255, 236, 207, 0.72);
+  --pillar-quote: #ffe7c2;
+  --pillar-rule: rgba(244, 191, 119, 0.35);
+  --pillar-deeper-bg: rgba(255, 231, 194, 0.10);
+  --pillar-deeper-border: rgba(244, 191, 119, 0.35);
+  background: #2a180a;
+}
+.vision-pillar--longevity .vision-pillar__backdrop::before {
+  background:
+    radial-gradient(70% 80% at 30% 20%, rgba(255, 195, 106, 0.40), transparent 60%),
+    radial-gradient(60% 70% at 80% 90%, rgba(196, 98, 30, 0.45), transparent 55%),
+    linear-gradient(145deg, #3a1f0b 0%, #2a180a 50%, #1f0f06 100%);
+}
+
+/* Palette: Embodiment — deep red / crimson */
+.vision-pillar--embodiment {
+  --pillar-accent: #ff9aa2;
+  --pillar-accent-strong: #ffc4c7;
+  --pillar-muted: rgba(255, 225, 228, 0.75);
+  --pillar-quote: #ffd9dc;
+  --pillar-rule: rgba(255, 154, 162, 0.35);
+  --pillar-deeper-bg: rgba(255, 196, 199, 0.08);
+  --pillar-deeper-border: rgba(255, 154, 162, 0.32);
+  background: #2a080d;
+}
+.vision-pillar--embodiment .vision-pillar__backdrop::before {
+  background:
+    radial-gradient(70% 80% at 75% 25%, rgba(232, 65, 80, 0.45), transparent 60%),
+    radial-gradient(65% 75% at 20% 85%, rgba(120, 15, 30, 0.60), transparent 55%),
+    linear-gradient(150deg, #3a0c14 0%, #25070c 55%, #170306 100%);
+}
+
+/* Palette: Intelligence — electric blue / violet */
+.vision-pillar--intelligence {
+  --pillar-accent: #9db6ff;
+  --pillar-accent-strong: #c5d2ff;
+  --pillar-muted: rgba(220, 225, 255, 0.78);
+  --pillar-quote: #dbe2ff;
+  --pillar-rule: rgba(157, 182, 255, 0.32);
+  --pillar-deeper-bg: rgba(157, 182, 255, 0.08);
+  --pillar-deeper-border: rgba(157, 182, 255, 0.32);
+  background: #0a0f2a;
+}
+.vision-pillar--intelligence .vision-pillar__backdrop::before {
+  background:
+    radial-gradient(60% 70% at 25% 30%, rgba(99, 120, 255, 0.45), transparent 60%),
+    radial-gradient(60% 65% at 85% 80%, rgba(147, 72, 237, 0.45), transparent 55%),
+    linear-gradient(140deg, #0e1536 0%, #0a0f29 55%, #06081a 100%);
+}
+
+/* Palette: Ecology — green / teal */
+.vision-pillar--ecology {
+  --pillar-accent: #7fd9c4;
+  --pillar-accent-strong: #b5ebdd;
+  --pillar-muted: rgba(215, 240, 230, 0.78);
+  --pillar-quote: #cdefe2;
+  --pillar-rule: rgba(127, 217, 196, 0.32);
+  --pillar-deeper-bg: rgba(127, 217, 196, 0.08);
+  --pillar-deeper-border: rgba(127, 217, 196, 0.32);
+  background: #061d1d;
+}
+.vision-pillar--ecology .vision-pillar__backdrop::before {
+  background:
+    radial-gradient(65% 70% at 70% 25%, rgba(48, 160, 120, 0.45), transparent 60%),
+    radial-gradient(60% 70% at 20% 85%, rgba(16, 70, 90, 0.60), transparent 55%),
+    linear-gradient(145deg, #0a2a2a 0%, #061c1e 55%, #031213 100%);
+}
+
+/* Pillar grid */
+.vision-pillar__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem 3rem;
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .vision-pillar__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 4rem;
+  }
+  .vision-pillar__head        { grid-column: 1 / -1; }
+  .vision-pillar__body        { grid-column: 1 / 2; }
+  .vision-scripture           { grid-column: 2 / 3; }
+  .vision-pillar__looks-like  { grid-column: 1 / -1; }
+}
+
+.vision-pillar__head {
+  border-bottom: 1px solid var(--pillar-rule);
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.vision-pillar__numeral {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--pillar-accent);
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+}
+
+.vision-pillar__title {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 6.5vw, 5.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  margin: 0 0 1.25rem;
+  color: var(--pillar-accent-strong);
+}
+
+.vision-pillar__cusp {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  line-height: 1.35;
+  color: var(--pillar-quote);
+  margin: 0;
+  max-width: 50ch;
+}
+
+.vision-pillar__body p {
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--pillar-muted);
+  margin: 0 0 1.1rem;
+  max-width: 44ch;
+}
+.vision-pillar__body p em {
+  font-style: italic;
+  color: var(--pillar-accent-strong);
+}
+.vision-pillar__emphasis {
+  color: var(--pillar-accent-strong) !important;
+  font-weight: 500;
+  font-size: clamp(1.1rem, 1.45vw, 1.3rem) !important;
+  letter-spacing: -0.005em;
+  margin-top: 0.4rem !important;
+}
+
+/* Scripture marginalia */
+.vision-scripture {
+  position: relative;
+  padding: 2rem 1.5rem 2rem 2.5rem;
+  border-left: 2px solid var(--pillar-rule);
+}
+.vision-scripture::before {
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  left: -0.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--pillar-accent) 0%, transparent 70%);
+  opacity: 0.35;
+  filter: blur(6px);
+}
+.vision-scripture__quote {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  line-height: 1.25;
+  color: var(--pillar-quote);
+  margin: 0 0 1rem;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+.vision-scripture__cite {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--pillar-accent);
+  margin: 0;
+}
+
+/* "What this looks like" */
+.vision-pillar__looks-like {
+  margin-top: 1rem;
+  border-top: 1px solid var(--pillar-rule);
+  padding-top: 2rem;
+}
+.vision-pillar__looks-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--pillar-accent);
+  margin: 0 0 1.25rem;
+}
+.vision-pillar__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem 1.5rem;
+}
+.vision-pillar__list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--pillar-muted);
+}
+.vision-pillar__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--pillar-accent);
+  box-shadow: 0 0 12px var(--pillar-accent);
+}
+
+.vision-pillar__deeper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--pillar-accent-strong);
+  background: var(--pillar-deeper-bg);
+  border: 1px solid var(--pillar-deeper-border);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+}
+.vision-pillar__deeper:hover,
+.vision-pillar__deeper:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--pillar-accent);
+  color: var(--pillar-accent-strong);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.vision-pillar__deeper span {
+  transition: transform 0.18s ease;
+}
+.vision-pillar__deeper:hover span {
+  transform: translateX(3px);
+}
+
+/* ----- Closing ---------------------------------------------- */
+.vision-closing {
+  position: relative;
+  padding: 8rem 0 7rem;
+  background:
+    radial-gradient(60% 60% at 50% 0%, rgba(255, 244, 225, 0.06), transparent 70%),
+    linear-gradient(180deg, #100e16 0%, #0a0912 100%);
+  text-align: center;
+  overflow: hidden;
+}
+.vision-closing::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(244, 191, 119, 0.6), transparent);
+}
+
+.vision-closing__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin: 0 auto 2.5rem;
+  max-width: 22ch;
+  background: linear-gradient(135deg, #fff6e4 0%, #f4bf77 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vision-closing__lines {
+  max-width: 38rem;
+  margin: 0 auto 2.5rem;
+}
+.vision-closing__lines p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.45;
+  color: rgba(245, 240, 230, 0.85);
+  margin: 0 0 0.75rem;
+}
+
+.vision-closing__benediction {
+  max-width: 44rem;
+  margin: 0 auto 3rem;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.55;
+  color: rgba(245, 240, 230, 0.72);
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+
+.vision-closing__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.vision-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.6rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  border: 1px solid transparent;
+}
+.vision-btn:hover,
+.vision-btn:focus {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.vision-btn--primary {
+  background: linear-gradient(135deg, #f4bf77 0%, #e9974a 100%);
+  color: #2a180a;
+  box-shadow: 0 8px 24px rgba(244, 191, 119, 0.25);
+}
+.vision-btn--primary:hover,
+.vision-btn--primary:focus {
+  color: #2a180a;
+  box-shadow: 0 10px 28px rgba(244, 191, 119, 0.35);
+}
+
+.vision-btn--secondary {
+  background: rgba(245, 240, 230, 0.06);
+  border-color: rgba(245, 240, 230, 0.25);
+  color: #f7f3ea;
+}
+.vision-btn--secondary:hover,
+.vision-btn--secondary:focus {
+  background: rgba(245, 240, 230, 0.12);
+  border-color: rgba(245, 240, 230, 0.45);
+  color: #f7f3ea;
+}
+
+.vision-btn--ghost {
+  color: rgba(245, 240, 230, 0.72);
+  border-color: transparent;
+}
+.vision-btn--ghost:hover,
+.vision-btn--ghost:focus {
+  color: #f4bf77;
+}
+
+/* ----- Responsive tightening -------------------------------- */
+@media (max-width: 767px) {
+  .vision-opening {
+    padding: 7rem 0 5rem;
+    align-items: flex-start;
+  }
+  .vision-opening__scroll {
+    bottom: 1.5rem;
+  }
+  .vision-pillar {
+    padding: 5rem 0;
+    min-height: auto;
+  }
+  .vision-scripture {
+    padding: 1.5rem 1rem 1.5rem 1.75rem;
+    border-left-width: 2px;
+  }
+  .vision-closing {
+    padding: 6rem 0 5rem;
+  }
+  .vision-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ----- Respect dark-mode toggle: the page is always dark, but
+   we keep site theme tokens neutral so header/footer remain legible ----- */
+html[data-theme="light"] body.vision-page .site-nav {
+  background-color: rgba(11, 10, 16, 0.78);
+  color: #f5f0e6;
+}
+html[data-theme="light"] body.vision-page .site-nav a,
+html[data-theme="light"] body.vision-page .site-nav .site-nav__parent-link {
+  color: rgba(245, 240, 230, 0.85);
+}
+html[data-theme="light"] body.vision-page .site-nav a:hover,
+html[data-theme="light"] body.vision-page .site-nav a:focus {
+  color: #f4bf77;
+}
+
+/* Footer: keep its own theme. Just add a subtle top separator so
+   transition from the closing feels intentional. */
+body.vision-page footer,
+body.vision-page .site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
