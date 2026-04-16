@@ -61,6 +61,7 @@
     var storageKey = "cta-theme";
     var defaultTheme = "light";
     var theme = defaultTheme;
+    var homeMessaging = "default";
 
     try {
       var storedTheme = window.localStorage.getItem(storageKey);
@@ -69,7 +70,17 @@
       }
     } catch (error) {}
 
+    if (window.location.pathname === "/") {
+      try {
+        var messaging = new URLSearchParams(window.location.search).get("messaging");
+        if (messaging === "expansive-futures") {
+          homeMessaging = messaging;
+        }
+      } catch (error) {}
+    }
+
     document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.setAttribute("data-home-messaging", homeMessaging);
 
     var themeColor = theme === "dark" ? "#070b13" : "#f5f7fb";
     var themeMeta = document.querySelector('meta[name="theme-color"]');
