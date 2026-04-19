@@ -1,0 +1,26 @@
+{% set stories = [
+  {
+    quote: "I followed secular futurism, only to realize the most exciting parts were Christianity."
+  },
+  {
+    quote: "I left Christianity because of science, only to find science leading to an incredible future that validated Christianity."
+  },
+  {
+    quote: "I’m sold on rationalism, but my heart is increasingly drawn to Christ."
+  },
+  {
+    quote: "I’m a Christian who is waking up to the incredible vision and futurism of our faith."
+  }
+] %}
+
+<section class="container home-stories" id="stories">
+  <h2 class="home-stories__title">Our Stories</h2>
+  <p class="home-stories__lede">People find their way here from many directions. Here are a few of them:</p>
+  <div class="home-stories__grid">
+    {% for story in stories %}
+    <figure class="home-story">
+      <blockquote class="home-story__quote">{{ story.quote }}</blockquote>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
