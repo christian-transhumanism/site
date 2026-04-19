@@ -18,10 +18,62 @@
   </div>
   <div class="home-hero__overlay" aria-hidden="true"></div>
   <section class="container text-center" id="intro">
-    <h1>Could Science & Faith work together <br /> to create a radically better Future?</h1>
+    <div data-hero-content>
+      <h1>AI could remake the world&mdash;or end it</h1>
+      <p class="lead">Positive futures require both science and faith</p>
+      <p class="lead home-hero__tagline">Let&rsquo;s recover Christianity&rsquo;s bold vision for the future.</p>
+    </div>
     <p class="hero-actions">
       <a class="btn btn-primary btn-lg" href="/join">Join Us</a>
       <a class="btn btn-default btn-lg" href="/vision">Explore the Vision</a>
     </p>
   </section>
 </section>
+
+<script>
+(function () {
+  var variants = {
+    "1": {
+      headline: "AI could remake the world or end it.",
+      lead: "Positive futures are going to require both science and faith. Let\u2019s recover Christianity\u2019s bold vision for the future."
+    },
+    "2": {
+      headline: "AI could remake the world or end it.",
+      lead: "Positive futures are going to require both science and faith. Let's recover Christianity's bold vision for the future."
+    },
+    "3": {
+      headline: "AI could remake the world or end it.",
+      lead: "Positive futures require more than technology \u2014 they require Christianity\u2019s bold vision for the future.",
+      tagline: "Let\u2019s recover it."
+    },
+    "4": {
+      headline: "AI could remake the world or end it.",
+      lead: "The difference is Christianity\u2019s bold vision for the future.",
+      tagline: "Let\u2019s recover it together."
+    },
+    "5": {
+      headline: "AI could remake the world\u2014or end it",
+      lead: "Positive futures require more than technology.",
+      tagline: "Let\u2019s recover Christianity\u2019s bold vision for the future."
+    }
+  };
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  try {
+    var id = new URLSearchParams(window.location.search).get("hero");
+    if (!id || !variants[id]) return;
+    var v = variants[id];
+    var container = document.querySelector("[data-hero-content]");
+    if (!container) return;
+    var html = "<h1>" + escapeHtml(v.headline) + "</h1>";
+    if (v.lead) html += '<p class="lead">' + escapeHtml(v.lead) + "</p>";
+    if (v.tagline) html += '<p class="lead home-hero__tagline">' + escapeHtml(v.tagline) + "</p>";
+    container.innerHTML = html;
+  } catch (e) {}
+})();
+</script>
