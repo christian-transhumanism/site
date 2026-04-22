@@ -188,13 +188,6 @@ body.rise-page .site-nav {
   margin-top: 1.6rem !important;
 }
 
-/* ----- Future section (intro contrast) ---------------------- */
-.rise-section--future {
-  background:
-    radial-gradient(55% 60% at 85% 20%, rgba(255, 170, 110, 0.08), transparent 60%),
-    linear-gradient(180deg, #0a0912 0%, #0b0a14 100%);
-}
-
 /* ----- Stakes ------------------------------------------------ */
 .rise-section--stakes {
   background:
@@ -447,15 +440,24 @@ body.rise-page .site-nav {
   transform: translateY(-1px);
 }
 
-.rise-btn--primary {
+/* Specificity needs to beat html[data-theme="dark"] a (0,1,2),
+   so stack two classes to keep the label near-black in both themes. */
+.rise-btn.rise-btn--primary,
+.rise-btn.rise-btn--primary:hover,
+.rise-btn.rise-btn--primary:focus {
   background: linear-gradient(135deg, #f5c485 0%, #d89670 100%);
-  color: #1a1208;
+  color: #111;
   box-shadow: 0 12px 32px -12px rgba(245, 196, 133, 0.6);
 }
-.rise-btn--primary:hover,
-.rise-btn--primary:focus {
-  color: #1a1208;
+.rise-btn.rise-btn--primary:hover,
+.rise-btn.rise-btn--primary:focus {
   box-shadow: 0 16px 40px -12px rgba(245, 196, 133, 0.75);
+}
+
+/* Hide the site-wide "Save page" button injected into h1 by site.js */
+body.rise-page .page-actions,
+body.rise-page [data-save-page-button] {
+  display: none !important;
 }
 
 /* ----- Responsive tightening -------------------------------- */
