@@ -26,6 +26,28 @@ body.rise-page .site-nav {
   -webkit-backdrop-filter: saturate(140%) blur(10px);
 }
 
+body.rise-page .site-nav__panel,
+body.rise-page .site-nav .dropdown-menu {
+  background: linear-gradient(180deg, rgba(15, 13, 23, 0.99), rgba(10, 9, 18, 0.99));
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.rise-page .site-nav .dropdown-menu > li > a,
+body.rise-page .site-nav__list > li > a,
+body.rise-page .site-nav__list > li > button,
+body.rise-page .site-nav__item-control > .site-nav__parent-link,
+body.rise-page .site-nav__item-control > .site-nav__submenu-toggle {
+  color: rgba(246, 241, 231, 0.86);
+}
+
+body.rise-page .site-nav .dropdown-menu > li > a:hover,
+body.rise-page .site-nav .dropdown-menu > li > a:focus,
+body.rise-page .site-nav__item--split:hover > .site-nav__item-control > .site-nav__parent-link,
+body.rise-page .site-nav__item--split:focus-within > .site-nav__item-control > .site-nav__parent-link {
+  color: #fff6e4;
+  background-color: rgba(245, 196, 133, 0.12);
+}
+
 /* ----- Shared primitives ----- */
 .rise {
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -270,6 +292,15 @@ body.rise-page .site-nav {
   line-height: 1.6;
   color: rgba(246, 241, 231, 0.78);
   margin: 0;
+}
+
+.rise-claim__body em,
+.rise-audience__body em {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #fff6e4;
 }
 
 /* ----- What we are doing ------------------------------------ */
