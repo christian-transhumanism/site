@@ -32,6 +32,28 @@ body.vision-page .site-nav {
   -webkit-backdrop-filter: saturate(140%) blur(10px);
 }
 
+body.vision-page .site-nav__panel,
+body.vision-page .site-nav .dropdown-menu {
+  background: linear-gradient(180deg, rgba(14, 13, 21, 0.99), rgba(10, 9, 17, 0.99));
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.vision-page .site-nav .dropdown-menu > li > a,
+body.vision-page .site-nav__list > li > a,
+body.vision-page .site-nav__list > li > button,
+body.vision-page .site-nav__item-control > .site-nav__parent-link,
+body.vision-page .site-nav__item-control > .site-nav__submenu-toggle {
+  color: rgba(245, 240, 230, 0.86);
+}
+
+body.vision-page .site-nav .dropdown-menu > li > a:hover,
+body.vision-page .site-nav .dropdown-menu > li > a:focus,
+body.vision-page .site-nav__item--split:hover > .site-nav__item-control > .site-nav__parent-link,
+body.vision-page .site-nav__item--split:focus-within > .site-nav__item-control > .site-nav__parent-link {
+  color: #fff6e4;
+  background-color: rgba(244, 191, 119, 0.12);
+}
+
 /* ----- Shared layout primitives ----- */
 .vision {
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
