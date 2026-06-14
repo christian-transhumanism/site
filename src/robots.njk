@@ -1,0 +1,14 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+# robots.txt for {{ site.sitename }}
+# Allow all crawlers full access to public pages.
+# Pages that should stay out of search use a per-page `noindex` meta tag
+# (see board subpages), which is the correct mechanism — they are intentionally
+# left crawlable here so search engines can read that directive.
+
+User-agent: *
+Allow: /
+
+Sitemap: {{ site.url }}/sitemap.xml
