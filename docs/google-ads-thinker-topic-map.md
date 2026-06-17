@@ -18,6 +18,7 @@ Recommended URL shape:
 
 - `/topics/ray-kurzweil/`
 - `/topics/david-deutsch/`
+- `/topics/dominion-and-the-future-of-values/`
 - `/topics/brain-computer-interfaces/`
 - `/topics/ai-human-flourishing/`
 
@@ -59,6 +60,7 @@ Use named thinkers where CTA has content or can credibly curate resources. These
 | High | Noland Arbaugh / Neuralink | `/topics/brain-computer-interfaces/` or `/topics/noland-arbaugh/` | `posts/2025-noland-arbaugh.md`, `Brain-Computer Interfaces.md`, `Brain Augmentation Bill of Rights.md`, `Super-Embodiment.md` | Neuralink recipient, BCI, assistive technology, embodiment | Strong, but avoid disability/medical targeting language. |
 | High | Peter Thiel | `/topics/peter-thiel-progress/` | `Books about Christianity & Transhumanism.md`, `NT Wright.md`, `zero-to-one` book page | progress, stagnation, Zero to One, future-building | Medium-high; build around progress, not politics. |
 | High | Nick Bostrom | `/topics/simulation-and-ai-risk/` | `Nick Bostrom.md`, `Simulation Argument.md`, `Christian History of Transhumanism.md`, AI pages | simulation argument, AI risk, superintelligence | Strong topic intent; named page can be paired with topic page. |
+| High | Tom Holland / Dominion | `/topics/dominion-and-the-future-of-values/` | `Christianity is the origin.md`, `Religious Concepts as Civilizational Infrastructure.md`, `Christianity is the origin of the scientific revolution.md`, `Religious drivers of the Scientific Revolution.md`, `Worldview.md` | Dominion book, Tom Holland Christianity, modern values, human rights, moral revolution | Strong bridge theme. Ad copy can emphasize values, moral history, and the future without specifying religious identity. |
 | Medium | Peter Diamandis | `/topics/abundance-and-progress/` | `Peter Diamandis.md`, `Christian History of Transhumanism.md`, `The Future is Faster than you Think.md` | abundance, exponential technology, future trends | Good for optimistic progress seekers. |
 | Medium | Kevin Kelly | `/topics/what-technology-wants/` | `Books about Christianity & Transhumanism.md`, `what-technology-wants` book page | technology evolution, technium, future trends | Good bridge from tech culture to CTA. |
 | Medium | Eric Drexler | `/topics/nanotechnology/` | `Nanotechnology.md`, books page, conference topics | nanotechnology, molecular machines, engines of creation | Strong topic relevance, likely lower volume. |
@@ -112,6 +114,7 @@ Use when search intent is research-oriented. This may perform better as SEO/cont
 | Priority | Ad group | Landing page | Existing support | Search intent | Notes |
 | --- | --- | --- | --- | --- | --- |
 | High | Christian history of transhumanism | `/topics/history-of-transhumanism/` | `Christian History of Transhumanism.md`, `Influences in Christian Transhumanism.md` | history of transhumanism, Christian futurism | Avoid ad copy that targets religious identity. |
+| High | Dominion and modern values | `/topics/dominion-and-the-future-of-values/` | `Christianity is the origin.md`, Tom Holland / Dominion references, `Religious Concepts as Civilizational Infrastructure.md`, scientific revolution and Enlightenment notes | Tom Holland Dominion, origins of human rights, moral revolution, future of Western values | Excellent bridge from moral history into future-facing CTA themes. |
 | Medium | Russian cosmism | `/topics/russian-cosmism/` | Fedorov, Russian Cosmists, Young2012, Tolstoy pages | Russian cosmism, Fedorov, cosmism | Strong niche cluster. |
 | Medium | Scientific Revolution and future | `/topics/science-technology-and-renewal/` | Francis Bacon, Robert Boyle, Christian history, Worldview | Francis Bacon science religion, New Atlantis | Good educational content. |
 | Medium | Teilhard and Omega Point | `/topics/omega-point/` | Teilhard, Tipler, Omega Point, Vice archive | Omega Point theory, Teilhard, Tipler | Good, but religious-sensitive. |
@@ -179,6 +182,15 @@ Use exact and phrase match initially. Examples are seed shapes, not final upload
 - "agi ethics"
 - "superintelligence ethics"
 
+### Tom Holland / Dominion
+
+- "tom holland dominion"
+- "dominion book christianity"
+- "christianity and western values"
+- "origins of human rights christianity"
+- "christian moral revolution"
+- "future of western values"
+
 ## Negative Keyword Starters
 
 - free pdf
@@ -214,15 +226,17 @@ Use exact and phrase match initially. Examples are seed shapes, not final upload
    - Strong CTA fit; can integrate Aubrey de Grey, BBC immortality, Christianity Today, Super-Longevity.
 3. `/topics/ai-human-flourishing/`
    - Broadest scalable non-sensitive topic.
-4. `/topics/christian-transhumanism/`
+4. `/topics/dominion-and-the-future-of-values/`
+   - Strong bridge from Tom Holland / Dominion into modern values, human dignity, technology, and the future without identity-targeted ad copy.
+5. `/topics/christian-transhumanism/`
    - Strongest direct-intent query set; write carefully as an informational page, not identity-targeted ad copy.
-5. `/topics/david-deutsch/`
+6. `/topics/david-deutsch/`
    - Strong thinker-led non-sensitive page around progress, explanations, universal reach.
-6. `/topics/ray-kurzweil/`
+7. `/topics/ray-kurzweil/`
    - High search volume and core transhumanist relevance; needs careful non-affiliation wording.
-7. `/topics/resurrection-and-technology/`
+8. `/topics/resurrection-and-technology/`
    - Distinctive CTA thesis and strong content base; likely better after at least one non-sensitive topic page is live.
-8. `/topics/russian-cosmism/`
+9. `/topics/russian-cosmism/`
    - Rich CTA wiki support and strong thinker/topic specificity.
 
 ## Ad Copy Templates
@@ -249,6 +263,8 @@ Headline directions:
 
 - Explore Kurzweil and the Future
 - David Deutsch, Progress, and Hope
+- Dominion and Modern Values
+- Where Do Human Rights Come From?
 - Neuralink, BCI, and Human Agency
 - Aubrey de Grey and Longevity
 - Bostrom, AI Risk, and the Future
@@ -277,8 +293,9 @@ Build pages where the primary query is not inherently religious-sensitive and wh
 1. Brain-computer interfaces
 2. Radical longevity
 3. AI and human flourishing
-4. David Deutsch
-5. Ray Kurzweil
+4. Dominion and the future of values
+5. David Deutsch
+6. Ray Kurzweil
 
 Campaign goal: establish conversion data on lower-policy-risk traffic before expanding into explicitly religious query sets.
 
@@ -292,6 +309,7 @@ Build pages that express CTA's strongest intellectual identity, but treat Ads ro
 4. Resurrection and technology
 5. Russian cosmism
 6. Teilhard / Omega Point
+7. Dominion as civilizational inheritance
 
 Campaign goal: capture explicit search intent and improve quality score for users already searching these ideas.
 
