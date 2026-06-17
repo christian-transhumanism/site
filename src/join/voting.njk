@@ -1,0 +1,30 @@
+---
+title: Continue to Voting Membership
+layout: default
+permalink: /join/voting/
+destinationUrl: https://buy.stripe.com/14k5lzbTH56N5aw4gg
+membershipType: voting
+---
+
+<section class="fh5co-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <h1>Continue to voting membership</h1>
+        <p>You are being sent to the Christian Transhumanist Association membership checkout.</p>
+        <p><a class="btn btn-primary btn-lg" href="{{ destinationUrl }}">Continue</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var destination = "{{ destinationUrl }}";
+    if (window.ctaReportMembershipConversion) {
+      window.ctaReportMembershipConversion(destination, "{{ membershipType }}");
+    } else {
+      window.location = destination;
+    }
+  })();
+</script>

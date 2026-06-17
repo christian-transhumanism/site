@@ -1,0 +1,30 @@
+---
+title: Continue to Free Membership
+layout: default
+permalink: /join/free/
+destinationUrl: https://eepurl.com/bdyIg5
+membershipType: free
+---
+
+<section class="fh5co-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <h1>Continue to free membership</h1>
+        <p>You are being sent to the Christian Transhumanist Association signup form.</p>
+        <p><a class="btn btn-primary btn-lg" href="{{ destinationUrl }}">Continue</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var destination = "{{ destinationUrl }}";
+    if (window.ctaReportMembershipConversion) {
+      window.ctaReportMembershipConversion(destination, "{{ membershipType }}");
+    } else {
+      window.location = destination;
+    }
+  })();
+</script>
