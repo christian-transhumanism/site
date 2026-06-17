@@ -53,6 +53,25 @@ Result: after saving, the `Free desktop software` sitelink issue no longer appea
 - Prefer first-party CTA landing pages with clear editorial intent over broad indexes when Google flags a destination.
 - For false software/download classifications, first remove or reroute the suspicious destination. Certification is the wrong path unless CTA is actually distributing desktop software.
 
+## Business Name / Logo Policy Issues
+
+On June 17, 2026, the remaining policy issues included:
+
+- `Religious belief in personalized advertising`
+- `Business Information - Name Prominence`
+
+The actionable business-name association rows were:
+
+- `Interviews & Celebrities` -> `Christian Transhumanism`
+- `Noland-Arbaugh-Video-1` -> `Christian Transhumanism`
+- `dale-allison-miracles-1` -> `Religious Transhumanism`
+
+The `Interviews & Celebrities` association was removed from the filtered `Assets` -> `Associations` report. The other two rows remained visible afterward.
+
+Operational caveat: the `Assets` -> `Associations` toolbar is unreliable for this asset type. Bulk `Remove` and `Pause` on business-name assets produced Google's warning that assets cannot be removed across multiple pages and that some asset types do not support bulk operations. Scoping the report to a single campaign and selecting the one visible row still triggered the same bulk-operation warning for `Remove`, and `Pause` returned `Your change was not applicable to any selected assets`.
+
+Next route to try: find and edit the source/origin for the campaign-level business-name asset rather than acting from the Associations report. Likely places to inspect are Performance Max asset-group/business-information settings, campaign asset setup, or any business-information configuration surface that created the campaign-level business-name association.
+
 ## Deployment Notes
 
 - Site changes are committed and pushed to GitHub, but production availability still depends on Netlify deployment.
