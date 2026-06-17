@@ -298,6 +298,10 @@
   }
 
   function ensureSaveButton(pageMeta) {
+    if (document.body && document.body.classList.contains("join-future-page")) {
+      return;
+    }
+
     var heading = getPageHeading();
     if (!heading || heading.querySelector("[data-save-page-button]")) {
       return;
