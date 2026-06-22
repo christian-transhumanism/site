@@ -211,4 +211,4 @@ Monthly:
 ## Decision Log
 
 - 2026-06-17: Do not buy or switch to a neutral domain yet. Keep `christiantranshumanism.org` as the main destination, use neutral topic paths, and revisit a CTA-owned sub-brand only after the current domain has been tested with policy-clean campaigns and landing pages.
-- 2026-06-22: Verified `/join/future/`, `/join/free/`, and `/join/voting/` return `200` in production. Verified both handoff pages contain the Google Ads conversion destination `AW-856723569/b4ANCLq5oXEQ8aDCmAM` and the GA4 `membership_signup_intent` event. Implemented the first Tier 1 landing page at `/topics/ai-human-flourishing/`.
+- 2026-06-22: Verified `/join/future/`, `/join/free/`, and `/join/voting/` return `200` in production. Verified both handoff pages contain the Google Ads conversion destination `AW-856723569/b4ANCLq5oXEQ8aDCmAM` and the GA4 `membership_signup_intent` event. Implemented and deployed the first Tier 1 landing page at `/topics/ai-human-flourishing/`.

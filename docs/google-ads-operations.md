@@ -74,7 +74,9 @@ Next route to try: find and edit the source/origin for the campaign-level busine
 
 ## Deployment Notes
 
-- Site changes are committed and pushed to GitHub, with Netlify deploying the main branch.
+- Site changes are committed and pushed to GitHub, but Git pushes did not trigger a production deploy during the June 22 review. Netlify still reported the June 17 deploy for commit `d0988c9` after commit `b13ecd1` was pushed.
+- The connected Netlify project is `cta-site`, site ID `e9773937-90f4-411c-b900-7cb77166ee0f`. A production source upload through the Netlify connector created deploy `6a3942941692430bae82291d` and published the AI landing page.
+- Until Git auto-deploy is repaired, verify the current production deploy after each site push and trigger an explicit Netlify production deploy when needed.
 - On June 22, 2026, `/join/future/`, `/join/free/`, and `/join/voting/` all returned `200` in production. The earlier `/join/future/` deployment blocker is resolved.
 - Live HTML verification found the Ads destination `AW-856723569/b4ANCLq5oXEQ8aDCmAM` and GA4 event `membership_signup_intent` on both membership handoff pages.
 - Google Ads conversion diagnostics still need to confirm that Google has received a real event; code presence alone does not prove recorded conversions.
