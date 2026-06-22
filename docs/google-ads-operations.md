@@ -74,6 +74,7 @@ Next route to try: find and edit the source/origin for the campaign-level busine
 
 ## Deployment Notes
 
-- Site changes are committed and pushed to GitHub, but production availability still depends on Netlify deployment.
-- On June 16, 2026, Netlify connector deploy attempts returned `500 Internal Server Error`, and local Netlify CLI was not logged in.
-- The `/join/future/` page exists in the repo but was still 404 on production until deployment is resolved.
+- Site changes are committed and pushed to GitHub, with Netlify deploying the main branch.
+- On June 22, 2026, `/join/future/`, `/join/free/`, and `/join/voting/` all returned `200` in production. The earlier `/join/future/` deployment blocker is resolved.
+- Live HTML verification found the Ads destination `AW-856723569/b4ANCLq5oXEQ8aDCmAM` and GA4 event `membership_signup_intent` on both membership handoff pages.
+- Google Ads conversion diagnostics still need to confirm that Google has received a real event; code presence alone does not prove recorded conversions.
