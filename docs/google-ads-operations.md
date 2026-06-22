@@ -80,3 +80,11 @@ Next route to try: find and edit the source/origin for the campaign-level busine
 - On June 22, 2026, `/join/future/`, `/join/free/`, and `/join/voting/` all returned `200` in production. The earlier `/join/future/` deployment blocker is resolved.
 - Live HTML verification found the Ads destination `AW-856723569/b4ANCLq5oXEQ8aDCmAM` and GA4 event `membership_signup_intent` on both membership handoff pages.
 - Google Ads conversion diagnostics still need to confirm that Google has received a real event; code presence alone does not prove recorded conversions.
+
+## June 22, 2026 Membership Conversion Diagnosis
+
+Google Ads reported the website conversion action `Membership` as `Needs attention` with `Tag inactive`. Its last recorded tag activity was November 30, 2022. The action remained enabled, primary, included in the account-level Sign-up goal, and assigned to all eight campaigns.
+
+The production pages contained the correct destination, `AW-856723569/b4ANCLq5oXEQ8aDCmAM`, but `/join/free/` and `/join/voting/` fired the event immediately on page load and redirected off-domain after 1.2 seconds. Tag Assistant could not connect before the redirect and reported zero tags. This also made delivery timing unreliable and counted page arrival rather than the visitor's membership handoff action.
+
+Fix: retain the external URL as the no-JavaScript fallback, but fire `ctaReportMembershipConversion` only when the visitor clicks `Continue`. The event callback still performs the external navigation, with the existing timeout as a fallback. After production deployment, run Tag Assistant against each handoff page, click `Continue`, and refresh Google Ads diagnostics. Google may take several hours to update the tracking status.

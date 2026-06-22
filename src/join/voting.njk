@@ -12,7 +12,7 @@ membershipType: voting
       <div class="col-md-8 col-md-offset-2 text-center">
         <h1>Continue to voting membership</h1>
         <p>You are being sent to the Christian Transhumanist Association membership checkout.</p>
-        <p><a class="btn btn-primary btn-lg" href="{{ destinationUrl }}">Continue</a></p>
+        <p><a class="btn btn-primary btn-lg" href="{{ destinationUrl }}" id="membership-continue">Continue</a></p>
       </div>
     </div>
   </div>
@@ -20,11 +20,16 @@ membershipType: voting
 
 <script>
   (function () {
-    var destination = "{{ destinationUrl }}";
-    if (window.ctaReportMembershipConversion) {
-      window.ctaReportMembershipConversion(destination, "{{ membershipType }}");
-    } else {
-      window.location = destination;
-    }
+    var continueLink = document.getElementById("membership-continue");
+    if (!continueLink) return;
+
+    continueLink.addEventListener("click", function (event) {
+      if (!window.ctaReportMembershipConversion) return;
+
+      event.preventDefault();
+      if (continueLink.getAttribute("aria-disabled") === "true") return;
+      continueLink.setAttribute("aria-disabled", "true");
+      window.ctaReportMembershipConversion(continueLink.href, "{{ membershipType }}");
+    });
   })();
 </script>
