@@ -355,3 +355,46 @@ Ad copy:
 Policy note: Google again prefilled the ad draft with religion-forward suggestions such as `Christianity & Transhumanism`, `What does the Bible say?`, and a description about `God's plan`. These were overwritten before saving. Keep ad copy about moral history, human dignity, values, and Tom Holland's `Dominion`; do not write copy implying the viewer is Christian, religious, deconstructing, doubting, or otherwise in a sensitive religious category.
 
 After both ad groups were saved, the `USA` campaign table showed `Ad groups (11)`, with both `Radical Longevity` and `Dominion and Future Values` present as `Eligible`.
+
+## June 23, 2026 Ad-Group Sitelink Attempt
+
+Attempted to add ad-group-level sitelinks for the five new topic expansion ad groups:
+
+- `AI and Human Flourishing`
+- `AI Ethics and Future`
+- `Brain-Computer Interfaces`
+- `Radical Longevity`
+- `Dominion and Future Values`
+
+Workflow used:
+
+1. Opened `Assets` -> `Associations` filtered to `assetType=sitelink` for the `USA` campaign.
+2. Clicked `Create asset`.
+3. Changed `Add to` from `Campaign` to `Ad group`.
+4. Selected the five target ad groups in the `Select ad groups` dialog.
+5. Added two neutral membership sitelinks:
+   - `Join Free` -> `https://www.christiantranshumanism.org/join/free/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=sitelink_join_free`
+   - `Voting Membership` -> `https://www.christiantranshumanism.org/join/voting/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=sitelink_voting`
+
+Result: after saving, Google Ads returned to the sitelink associations report. However, after refreshing the report, the visible page text did not include `Join Free` or `Voting Membership`, and the rows were not visible in the virtualized table. Treat this as an inconclusive / not verified mutation. Do not assume the new sitelinks are active until a later browser check confirms the rows in `Assets` -> `Associations` or in each ad group's asset view.
+
+Operational caveat: the sitelink creation form has a horizontally scrollable layout and accordion panels that can collapse or hide fields while browser automation is interacting with it. For future attempts, add one or two sitelinks at a time and verify the association rows immediately after save. If the association report remains unreliable, try adding sitelinks from the ad creation/edit flow for one ad group at a time.
+
+## June 23, 2026 Next Landing Page Batch
+
+Added two more topic landing pages for the next Search expansion batch:
+
+- `/topics/technology-and-human-flourishing/`
+  - Source: `src/topics/technology-and-human-flourishing.njk`
+  - Positioning: responsible technology, human dignity, shared flourishing, stewardship, access, and accountable hope.
+  - Resource links: Ethical Technology, Creation Mandate, Christian Transhumanist Affirmation, Ethical Technology wiki, Books, and Media.
+  - Suggested future ad group themes: `Technology and Human Flourishing`, `Responsible Technology`, `Technology Serving Life`.
+  - Policy caveat: keep ad copy about technology, dignity, flourishing, stewardship, and future-building. Avoid copy that infers the viewer's religious identity.
+- `/topics/human-enhancement-ethics/`
+  - Source: `src/topics/human-enhancement-ethics.njk`
+  - Positioning: human enhancement ethics, embodiment, agency, dignity, justice, access, and transhuman flourishing.
+  - Resource links: CTA beliefs on enhancement, Super-Embodiment, Brain Augmentation Bill of Rights, Religion and Human Enhancement, Religion and the Technological Future, and Technologies of the Future Self.
+  - Suggested future ad group themes: `Human Enhancement Ethics`, `Technology and Human Enhancement`, `Transhuman Flourishing`.
+  - Policy caveat: avoid ad copy implying a user's disability, medical condition, body dissatisfaction, or health status. Use ethics/research language rather than problem-solution language about the viewer's body.
+
+Local build verification passed with `npm run build`; Eleventy wrote both `_site/topics/technology-and-human-flourishing/index.html` and `_site/topics/human-enhancement-ethics/index.html`. Production deploy still needs verification before creating matching ad groups.
