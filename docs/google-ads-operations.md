@@ -265,3 +265,93 @@ Added two additional topic landing pages for future Search traffic expansion:
 Both pages use the same topic landing page structure as the existing AI and BCI pages and route visitors toward `/join/future/`, `/join/free/`, and `/join/voting/`.
 
 Deploy status: commit `b6fe889` was pushed to `main`; production initially returned `404` for both URLs while Netlify remained on older deploy `6a3a7b3b91db7a0008d3b960` from commit `ae8212c`. A Netlify source-upload deploy was also started as deploy `6a3a7d50fa3c1e6988b01dbf`, but the API stayed inconsistent while production updated separately. Final verification on June 23, 2026: both `/topics/radical-longevity/` and `/topics/dominion-and-the-future-of-values/` returned `200` in production, with the expected headings, resource links, and membership CTAs. Netlify project state showed current ready deploy `6a3a7d04475cfa0009a334ef`.
+
+Created matching Search ad groups in the `USA` campaign after both pages were live:
+
+### Radical Longevity
+
+- Campaign: `USA`
+- Campaign ID: `802881820`
+- Ad group: `Radical Longevity`
+- Initial bid: `$2.00 (enhanced)`
+- Status after save: `Eligible`
+- Final URL: `https://www.christiantranshumanism.org/topics/radical-longevity/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=radical_longevity`
+- Display path: `/longevity/healthspan`
+- Business name: `CTA`
+
+Keyword set:
+
+```text
+[radical longevity]
+"radical longevity"
+[life extension ethics]
+"life extension ethics"
+[healthspan research]
+"healthspan research"
+[longevity ethics]
+"longevity ethics"
+[future of longevity]
+"future of longevity"
+[ending aging debate]
+"ending aging debate"
+```
+
+Ad copy:
+
+- `Radical Longevity`
+- `Life Extension Ethics`
+- `Explore Healthspan`
+- `Longevity and Purpose`
+- `Future of Longer Life`
+- `Responsible Longevity`
+- `Healthspan Research`
+- `Explore resources on longevity research, healthspan, ethics, and longer flourishing lives.`
+- `Longer life raises questions about access, agency, purpose, and the future.`
+
+Operational note: saving the ad triggered Google reauth for `AD_FINAL_URL`. After Micah completed passkey verification, returning to the campaign table showed `Radical Longevity` persisted and was `Eligible`.
+
+Policy note: keep this ad group away from personalized medical language. Avoid phrasing that implies the searcher is old, sick, has a medical condition, fears death, or is seeking treatment. The saved keyword set uses research, ethics, and future-oriented terms instead.
+
+### Dominion and Future Values
+
+- Campaign: `USA`
+- Campaign ID: `802881820`
+- Ad group: `Dominion and Future Values`
+- Initial bid: `$2.00 (enhanced)`
+- Status after save: `Eligible`
+- Final URL: `https://www.christiantranshumanism.org/topics/dominion-and-the-future-of-values/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=dominion_future_values`
+- Display path: `/values/future`
+- Business name: `CTA`
+
+Keyword set:
+
+```text
+[tom holland dominion]
+"tom holland dominion"
+[dominion tom holland]
+"dominion tom holland"
+[moral history]
+"moral history"
+[future of values]
+"future of values"
+[human dignity technology]
+"human dignity technology"
+[technology and values]
+"technology and values"
+```
+
+Ad copy:
+
+- `Tom Holland Dominion`
+- `Future of Values`
+- `Explore Moral History`
+- `Human Dignity Future`
+- `Technology and Values`
+- `Values for the Future`
+- `Moral Memory Matters`
+- `Explore moral history, human dignity, rights, and future values in a tech age.`
+- `Resources on Dominion themes, humane progress, and values for the future.`
+
+Policy note: Google again prefilled the ad draft with religion-forward suggestions such as `Christianity & Transhumanism`, `What does the Bible say?`, and a description about `God's plan`. These were overwritten before saving. Keep ad copy about moral history, human dignity, values, and Tom Holland's `Dominion`; do not write copy implying the viewer is Christian, religious, deconstructing, doubting, or otherwise in a sensitive religious category.
+
+After both ad groups were saved, the `USA` campaign table showed `Ad groups (11)`, with both `Radical Longevity` and `Dominion and Future Values` present as `Eligible`.
