@@ -34,7 +34,27 @@ subscription. Access/how-counted: vault `agent/capabilities/cta-integrations-acc
 
 ## Orchestration
 
-- `[decision]` **Keep Ads + site in Codex, or bring under the agent-framework fleet** for observability (so they show up in the owner's `status` board). Cross-cuts every CTA off-fleet system; affects who can see/operate the funnel.
+- `[decision]` **Keep Ads + site in Codex, or bring under the agent-framework fleet** for observability (so they show up in the owner's `status` board). Cross-cuts every CTA off-fleet system; affects who can see/operate the funnel. *(Partially addressed 2026-06-23: the owner's `status` now shows a **cta-site panel** — live status, last deploy, content-commit activity, and an Ads-docs proxy. The Ads **automation itself** is still Codex-only and unobservable from the fleet — proxied via last Ads-docs commit. The open decision is whether to make the automation directly observable.)*
+
+## Measurement — keep the numbers alive
+
+**Imperative:** CTA's membership numbers must stay current and trustworthy.
+
+- `[risk]` **The ED-report measurement breaks every ~7 days.** `cta-report.js` (Mailchimp + Stripe → reporting sheet, in the owner's vault) authenticates via the **Google Workspace OAuth app, still in *testing* mode → its refresh token expires every 7 days.** So CTA's membership *measurement* silently dies weekly unless re-authed, and the funnel can end up optimizing against **stale numbers**. Fix: publish/verify the OAuth app (move it out of testing), or add a re-auth reminder.
+
+## Content — cta-wiki stub completion (standing work)
+
+**Imperative:** the cta-wiki (mirrored into `/wiki/` + `/board/`) should be substantive, not stubs.
+
+- `[improve]` **Complete cta-wiki stub articles — ongoing, agent-discoverable.** ~**176 of 491** notes in `src/cta-wiki/` are under ~400 bytes (likely stubs). Any agent working in cta-site can pick these up as needed work:
+  ```bash
+  find src/cta-wiki -name "*.md" -size -400c | grep -v templates
+  ```
+  Verify a candidate is genuinely thin (not a legitimately short note/quote/definition), then expand it in CTA voice (see the `/cta-page` skill's `VOICE.md`). **Suggestion:** add a `stub: true` frontmatter marker as you touch notes, so stub-detection becomes reliable over time instead of a size heuristic.
+
+## Upcoming — CTA retreat (Oct 16–18, 2026)
+
+- `[improve]` **Retreat site work** (fixed date **Oct 16–18, 2026**; planning now, ~116 days out). A retreat typically needs a site presence: an event/info page, **registration + payment (Stripe)**, and promotion. Build the concrete pages before it's last-minute.
 
 ---
 

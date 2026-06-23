@@ -28,7 +28,7 @@ Google Ad Grant (acquisition)
 - **Key structure:**
   - `src/join/` — `free.njk`, `voting.njk`, `future.njk` — the **conversion handoff pages** (kept on-domain long enough to fire tracking, then redirect to Mailchimp/Stripe). **Do not** add raw external redirects that bypass tracking.
   - `src/topics/` — informative landing pages that ad groups route to (e.g. `ai-human-flourishing`, `brain-computer-interfaces`, `radical-longevity`, `dominion-and-the-future-of-values`, `is-religion-rational`).
-  - `src/cta-wiki/` — an Obsidian vault mirrored into `/wiki/` + `/board/`; also holds blog posts (`tags: post`). See `README.md` for the wikilink/permalink rules.
+  - `src/cta-wiki/` — an Obsidian vault mirrored into `/wiki/` + `/board/`; also holds blog posts (`tags: post`). See `README.md` for the wikilink/permalink rules. **Content dependency:** a large share of the live site's content is this wiki (**491 notes**), and **~176 are stubs (<~400 bytes) — completing them is standing work** (`docs/backlog.md` → Content; find them with `find src/cta-wiki -name "*.md" -size -400c | grep -v templates`). *Undocumented:* where the *source* Obsidian vault lives and how it syncs into `src/cta-wiki/` — record that pipeline when known.
   - `src/_includes/` layouts, `src/_data/` global data, `src/_redirects.njk` / `src/_headers.njk`.
 
 ## 3. Page creation & writing
