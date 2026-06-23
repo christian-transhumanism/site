@@ -104,3 +104,108 @@ The production pages contained the correct destination, `AW-856723569/b4ANCLq5oX
 Fix: retain the external URL as the no-JavaScript fallback, but fire `ctaReportMembershipConversion` only when the visitor clicks `Continue`. The event callback still performs the external navigation, with the existing timeout as a fallback. After production deployment, run Tag Assistant against each handoff page, click `Continue`, and refresh Google Ads diagnostics. Google may take several hours to update the tracking status.
 
 Later June 22 browser check: `Goals` -> `Summary` showed the account-default `Sign-up` goal as `Active`, assigned to `8 of 8` campaigns, with `1` primary conversion action. This suggests Google Ads has accepted the conversion setup at the goal level. Continue monitoring actual conversion counts separately; the last 30-day campaign report still showed `0.00` conversions.
+
+## June 23, 2026 AI and Human Flourishing Search Ad Group
+
+Created a new Search ad group in the `USA` campaign for the live landing page:
+
+- Campaign: `USA`
+- Campaign ID: `802881820`
+- Ad group: `AI and Human Flourishing`
+- Initial bid: `$2.00 (enhanced)`
+- Status after save: `Eligible`
+- Final URL: `https://www.christiantranshumanism.org/topics/ai-human-flourishing/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=ai_human_flourishing`
+- Display path: `/ai/human-flourish`
+- Business name: `CTA`
+
+Keyword set:
+
+```text
+[ai human flourishing]
+"ai human flourishing"
+[artificial intelligence ethics]
+"artificial intelligence ethics"
+[technology and human flourishing]
+"technology and human flourishing"
+[ai and human values]
+"ai and human values"
+[responsible ai future]
+"responsible ai future"
+```
+
+Ad copy:
+
+- `AI and Human Flourishing`
+- `Explore Responsible AI`
+- `Technology Serving Life`
+- `AI, Dignity and Purpose`
+- `Ideas for Humanity Future`
+- `Responsible Progress in AI`
+- `Human-Centered AI Futures`
+- `Essays and resources on AI, responsibility, and the future worth building.`
+- `Explore thoughtful resources on technology, human dignity, and long-term hope.`
+
+Important setup detail: Google prefilled the new ad draft with religion-forward suggestions such as `What does the Bible say?`, `Christianity & Transhumanism`, and a description about `God's plan`. These were overwritten before saving. After saving, the ad group table showed `AI and Human Flourishing` as `Eligible`.
+
+Follow-up: the campaign still inherits older sitelinks such as `Join`, `FAQ`, and `About Us`. If the new ad group gets limited by religious-belief policy or low relevance, create neutral campaign/ad-group-level sitelinks for the topic page and membership handoff instead of relying on the inherited sitelinks.
+
+Created a second Search ad group in the `USA` campaign using the same AI landing page:
+
+- Campaign: `USA`
+- Campaign ID: `802881820`
+- Ad group: `AI Ethics and Future`
+- Initial bid: `$2.00 (enhanced)`
+- Status after save: `Eligible`
+- Final URL: `https://www.christiantranshumanism.org/topics/ai-human-flourishing/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=ai_ethics_future`
+- Display path: `/ai/ethics-future`
+- Business name: `CTA`
+
+Keyword set:
+
+```text
+[ai ethics]
+"ai ethics"
+[ethical ai]
+"ethical ai"
+[responsible artificial intelligence]
+"responsible artificial intelligence"
+[responsible ai]
+"responsible ai"
+[future of ai]
+"future of ai"
+[ai and human values]
+"ai and human values"
+```
+
+Ad copy:
+
+- `AI Ethics and Future`
+- `Responsible AI Ideas`
+- `Explore Ethical AI`
+- `AI and Human Values`
+- `Build Better AI Futures`
+- `Technology Serving Life`
+- `Future of Responsible AI`
+- `Essays on AI ethics, responsibility, and the future worth building.`
+- `Explore resources on technology, human dignity, and human-centered AI.`
+
+After saving, the ad group table showed `AI Ethics and Future` as `Eligible`. The `USA` campaign then showed `8` ad groups.
+
+## June 23, 2026 Brain-Computer Interfaces Landing Page
+
+Added a second Tier 1 topic landing page for future Search traffic:
+
+- Local source: `src/topics/brain-computer-interfaces.njk`
+- URL: `/topics/brain-computer-interfaces/`
+- Positioning: brain-computer interfaces, assistive technology, human agency, privacy, restorative priority, and responsible interface design.
+- Resource links: Noland Arbaugh interview, Brain-Computer Interfaces wiki, Brain Augmentation Bill of Rights, and Super-Embodiment.
+- Membership CTAs: `/join/future/`, `/join/free/`, and `/join/voting/`.
+
+Local build verification passed with `npm run build`; Eleventy wrote `_site/topics/brain-computer-interfaces/index.html`.
+
+Recommended next Ads build after deployment:
+
+- Ad group: `Brain-Computer Interfaces`
+- Final URL: `https://www.christiantranshumanism.org/topics/brain-computer-interfaces/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=brain_computer_interfaces`
+- Copy should emphasize `brain-computer interfaces`, `assistive technology`, `human agency`, `neurotechnology ethics`, and `responsible interface design`.
+- Avoid copy that implies the searcher has a disability, medical condition, or religious identity.
