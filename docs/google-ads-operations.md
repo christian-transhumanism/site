@@ -244,3 +244,22 @@ Ad copy:
 - `Explore neurotechnology, assistive tech, and the future of embodied action.`
 
 Policy note: Google blocked the keyword `assistive technology future` under `Health in personalized advertising`. Do not use health-, disability-, injury-, or medical-condition-adjacent keyword phrasing in BCI ad groups unless intentionally pursuing a policy review. The final saved keyword set removed that term and returned to the campaign table as `Eligible`.
+
+## June 23, 2026 Next Topic Landing Pages
+
+Added two additional topic landing pages for future Search traffic expansion:
+
+- `/topics/radical-longevity/`
+  - Source: `src/topics/radical-longevity.njk`
+  - Positioning: longevity research, healthspan, aging ethics, access, agency, and the purpose of longer lives.
+  - Resource links: Super-Longevity, CTA Statement on Radical Life Extension, BBC Why Factor interview, Christianity Today anti-aging article, Ending Aging, and CTA beliefs on longevity.
+  - Suggested future ad group themes: `Radical Longevity`, `Life Extension Ethics`, `Healthy Longevity Research`.
+  - Policy caveat: avoid ad copy and keywords that imply the user is old, sick, afraid of death, seeking medical treatment, or has a medical condition. Prefer broad research/ethics language such as `life extension ethics`, `radical longevity`, `healthspan research`, and `longevity debate`.
+- `/topics/dominion-and-the-future-of-values/`
+  - Source: `src/topics/dominion-and-the-future-of-values.njk`
+  - Positioning: Tom Holland's `Dominion`, moral history, human dignity, rights, progress, institutions, and future values.
+  - Resource links: Christianity is the origin, Religious concepts as civilizational infrastructure, Christianity and the Scientific Revolution, Christian history of transhumanism, and CTA worldview.
+  - Suggested future ad group themes: `Dominion and Moral History`, `Future of Values`, `Human Dignity and Technology`.
+  - Policy caveat: ad copy should not imply the viewer has a religious identity. Safer framing: `Explore moral history`, `Human dignity and future values`, `Tom Holland Dominion themes`, `Technology needs moral memory`.
+
+Both pages use the same topic landing page structure as the existing AI and BCI pages and route visitors toward `/join/future/`, `/join/free/`, and `/join/voting/`.
