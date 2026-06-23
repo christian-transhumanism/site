@@ -46,11 +46,13 @@ subscription. Access/how-counted: vault `agent/capabilities/cta-integrations-acc
 
 **Imperative:** the cta-wiki (mirrored into `/wiki/` + `/board/`) should be substantive, not stubs.
 
-- `[improve]` **Complete cta-wiki stub articles — ongoing, agent-discoverable.** ~**176 of 491** notes in `src/cta-wiki/` are under ~400 bytes (likely stubs). Any agent working in cta-site can pick these up as needed work:
+**Policy:** `src/cta-wiki/` is a **human-edited area**. AI must **not** write or expand cta-wiki articles (stubs included) — only *identify* thin notes and flag them for a human to write. AI **may** read cta-wiki content and use it as source material for other site pages (e.g. `/topics/*`).
+
+- `[improve]` **Surface cta-wiki stubs for human authoring (detection only).** ~**176 of 491** notes in `src/cta-wiki/` are under ~400 bytes (likely stubs). Any agent working in cta-site can *list* these and flag them for a human — **AI does not write the content**:
   ```bash
   find src/cta-wiki -name "*.md" -size -400c | grep -v templates
   ```
-  Verify a candidate is genuinely thin (not a legitimately short note/quote/definition), then expand it in CTA voice (see the `/cta-page` skill's `VOICE.md`). **Suggestion:** add a `stub: true` frontmatter marker as you touch notes, so stub-detection becomes reliable over time instead of a size heuristic.
+  Confirm a candidate is genuinely thin (not a legitimately short note/quote/definition) before flagging. **Suggestion:** add a `stub: true` frontmatter marker as notes are touched, so stub-detection becomes reliable over time instead of a size heuristic. Expansion itself is human work.
 
 ## Upcoming — CTA retreat (Oct 16–18, 2026)
 
