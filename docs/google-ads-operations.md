@@ -263,3 +263,5 @@ Added two additional topic landing pages for future Search traffic expansion:
   - Policy caveat: ad copy should not imply the viewer has a religious identity. Safer framing: `Explore moral history`, `Human dignity and future values`, `Tom Holland Dominion themes`, `Technology needs moral memory`.
 
 Both pages use the same topic landing page structure as the existing AI and BCI pages and route visitors toward `/join/future/`, `/join/free/`, and `/join/voting/`.
+
+Deploy status: commit `b6fe889` was pushed to `main`, but production still returned `404` for both URLs immediately afterward. A Netlify source-upload deploy was started as deploy `6a3a7d50fa3c1e6988b01dbf`; after several minutes the Netlify API still reported `summary.status=building` / `state=new` and production remained on older deploy `6a3a7b3b91db7a0008d3b960` from commit `ae8212c`. Do not create Google Ads ad groups for these two pages until production returns `200`.
