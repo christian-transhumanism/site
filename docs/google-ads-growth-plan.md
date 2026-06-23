@@ -212,3 +212,66 @@ Monthly:
 
 - 2026-06-17: Do not buy or switch to a neutral domain yet. Keep `christiantranshumanism.org` as the main destination, use neutral topic paths, and revisit a CTA-owned sub-brand only after the current domain has been tested with policy-clean campaigns and landing pages.
 - 2026-06-22: Verified `/join/future/`, `/join/free/`, and `/join/voting/` return `200` in production. Verified both handoff pages contain the Google Ads conversion destination `AW-856723569/b4ANCLq5oXEQ8aDCmAM` and the GA4 `membership_signup_intent` event. Implemented and deployed the first Tier 1 landing page at `/topics/ai-human-flourishing/`.
+
+## AI And Human Flourishing Search Build
+
+Prepared June 22, 2026 for the existing `USA` Search campaign. Keeping this as an ad group inside `USA` preserves the account's current budget while creating a clean topic-level reporting unit.
+
+Ad group:
+
+- Name: `AI and Human Flourishing`
+- Default max CPC: `$2.00`, matching the existing USA ad groups
+- Final URL: `https://www.christiantranshumanism.org/topics/ai-human-flourishing/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=ai_human_flourishing`
+- Display paths: `ai` / `human-flourish`
+
+Initial exact and phrase keywords:
+
+- `[ai human flourishing]`
+- `"ai human flourishing"`
+- `[artificial intelligence ethics]`
+- `"artificial intelligence ethics"`
+- `[technology and human flourishing]`
+- `"technology and human flourishing"`
+- `[ai and human values]`
+- `"ai and human values"`
+- `[responsible ai future]`
+- `"responsible ai future"`
+
+Ad-group negatives:
+
+- `jobs`, `career`, `salary`, `degree`, `course`, `certification`
+- `software`, `app`, `chatbot`, `image generator`, `prompt`, `download`
+- `stock`, `investing`, `price`, `free trial`
+- `pdf`, `torrent`, `definition`, `meaning`
+
+Responsive Search Ad headlines:
+
+- `AI and Human Flourishing`
+- `Explore Responsible AI`
+- `Technology Serving Life`
+- `Build a Future Worth Living`
+- `AI, Dignity and Purpose`
+- `Ideas for Humanity's Future`
+- `Responsible Progress in AI`
+- `Explore AI and Human Values`
+- `Essays, Talks and Resources`
+- `Join the Future Conversation`
+- `Human-Centered AI Futures`
+- `Think Beyond AI Hype`
+- `What Should AI Serve?`
+- `A Practical AI Framework`
+
+Descriptions:
+
+- `Explore ideas about AI, human dignity, responsibility, and a future worth building.`
+- `Read essays and talks on responsible progress, human purpose, and emerging technology.`
+- `Go beyond AI hype with a framework for accountability, participation, and purpose.`
+- `Join conversation about intelligence, values, and the kind of future we should build.`
+
+Launch guardrails:
+
+- Search only; no remarketing, custom audiences, or Performance Max expansion.
+- Exact and phrase match only during the learning period.
+- No new campaign budget. The ad group inherits the existing `USA` campaign budget.
+- Review search terms after 7 days or 100 impressions, whichever comes first.
+- Keep only queries that sustain at least 5% CTR and show educational or membership-relevant intent.
