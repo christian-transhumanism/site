@@ -397,4 +397,404 @@ Added two more topic landing pages for the next Search expansion batch:
   - Suggested future ad group themes: `Human Enhancement Ethics`, `Technology and Human Enhancement`, `Transhuman Flourishing`.
   - Policy caveat: avoid ad copy implying a user's disability, medical condition, body dissatisfaction, or health status. Use ethics/research language rather than problem-solution language about the viewer's body.
 
-Local build verification passed with `npm run build`; Eleventy wrote both `_site/topics/technology-and-human-flourishing/index.html` and `_site/topics/human-enhancement-ethics/index.html`. The changes were committed to `main` and pushed to GitHub as `831e4ce` (`Add next topic landing pages`), but production still returned `404` for both URLs on June 23, 2026 after the push. Netlify CLI was not logged in locally, the connected Netlify token was expired, and no `NETLIFY_AUTH_TOKEN` was present in the environment. Production deploy still needs Netlify auth/deploy verification before creating matching ad groups.
+Local build verification passed with `npm run build`; Eleventy wrote both `_site/topics/technology-and-human-flourishing/index.html` and `_site/topics/human-enhancement-ethics/index.html`. The changes were committed to `main` and pushed to GitHub as `831e4ce` (`Add next topic landing pages`). Production initially returned `404` because the local `.netlify/state.json` pointed at the non-production `cta-site` project (`e9773937-90f4-411c-b900-7cb77166ee0f`). The live domain is served by the `christian-transhumanism` project (`1ecf40b9-9df1-415f-ab0f-125cdeae0ca8`). After Netlify auth was refreshed, production served both URLs with `HTTP 200` on June 23, 2026. Use the live-domain project ID for future deploys.
+
+## June 23, 2026 Technology and Enhancement Search Ad Groups
+
+After verifying both new landing pages returned `HTTP 200` in production, added two more Search ad groups to the `USA` campaign (`campaignId=802881820`).
+
+### Technology and Human Flourishing
+
+- Initial bid: `$2.00 (enhanced)`
+- Status after save: `Eligible`
+- Final URL: `https://www.christiantranshumanism.org/topics/technology-and-human-flourishing/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=technology_human_flourishing`
+- Business name: `CTA`
+
+Keyword set:
+
+```text
+[technology and human flourishing]
+"technology and human flourishing"
+[responsible technology]
+"responsible technology"
+[technology ethics]
+"technology ethics"
+[human dignity technology]
+"human dignity technology"
+[technology for human flourishing]
+"technology for human flourishing"
+[future of technology ethics]
+"future of technology ethics"
+```
+
+Ad copy:
+
+- `Responsible Technology`
+- `Human Dignity and Tech`
+- `Future Tech Ethics`
+- `Technology Serving Life`
+- `Build Humane Futures`
+- `Ethics for New Tech`
+- `Shared Flourishing`
+- `Explore responsible technology, human dignity, and shared flourishing in a tech age.`
+- `Resources on future-building, ethics, and technology that serves human life.`
+
+Operational note: saving the ad triggered Google reauth for `AD_FINAL_URL`. After Micah completed passkey verification, the post-auth redirect stayed on Google's loading page, but returning to the `USA` campaign ad-group table showed `Ad groups (12)` and `Technology and Human Flourishing` present as `Eligible`.
+
+### Human Enhancement Ethics
+
+- Initial bid: `$2.00 (enhanced)`
+- Status after save: `Eligible`
+- Final URL: `https://www.christiantranshumanism.org/topics/human-enhancement-ethics/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=human_enhancement_ethics`
+- Business name: `CTA`
+
+Keyword set:
+
+```text
+[human enhancement ethics]
+"human enhancement ethics"
+[human enhancement technology]
+"human enhancement technology"
+[enhancement ethics]
+"enhancement ethics"
+[future of human enhancement]
+"future of human enhancement"
+[transhumanism ethics]
+"transhumanism ethics"
+[technology and human enhancement]
+"technology and human enhancement"
+```
+
+Ad copy:
+
+- `Human Enhancement Ethics`
+- `Enhancement and Dignity`
+- `Future Enhancement Ethics`
+- `Technology and Agency`
+- `Transhumanism Ethics`
+- `Responsible Enhancement`
+- `Human Flourishing Tech`
+- `Explore human enhancement ethics, dignity, agency, access, and responsible futures.`
+- `Resources on enhancement technology, justice, and human flourishing in a tech age.`
+
+Policy note: Google again prefilled both ad drafts with religion-forward suggestions such as `Christianity & Transhumanism`, `What does the Bible say?`, and a description about `God's plan`. These were overwritten before saving. For `Human Enhancement Ethics`, also avoid copy implying the viewer has a disability, medical condition, body dissatisfaction, or health concern. Keep future copy framed around ethics, agency, dignity, access, justice, and research.
+
+After both ad groups were saved, the `USA` campaign table showed `Ad groups (13)`, with both `Technology and Human Flourishing` and `Human Enhancement Ethics` present as `Eligible`.
+
+## June 23, 2026 Legacy Religion-Forward Ad Group Audit
+
+Audited the older religion-forward `USA` ad groups after adding the neutral topic expansion set. The campaign's last-30-days table showed `5` clicks, `36` impressions, `$8.20` spend, and `0.00` conversions. The only older religion-forward groups with recent clicks were:
+
+- `Christianity & Transhumanism`: `3` clicks, `8` impressions, `37.50%` CTR, `$4.37` cost.
+- `Future of Christianity`: `2` clicks, `11` impressions, `18.18%` CTR, `$3.83` cost.
+
+Decision: leave those two enabled temporarily because they account for all recent campaign clicks. Revisit once the seven neutral topic expansion groups have enough impressions and search-term data to compare.
+
+Paused these zero-click / higher-policy-risk legacy ad groups:
+
+- `Christianity and Technology`: `0` clicks, `17` impressions.
+- `God & AI`: `0` clicks, `0` impressions.
+- `Religion and Technology`: `0` clicks, `0` impressions.
+
+`Science & Faith & Spirituality` was already paused due to low activity. This trims sensitive/religion-forward inventory that was not producing traffic, while preserving current traffic sources during the transition to neutral topic campaigns.
+
+## June 23, 2026 Thinker / Book Search Test Batch
+
+Added three more fast-learning Search ad groups to the `USA` campaign (`campaignId=802881820`) using existing production `wiki` pages that already returned `HTTP 200`. These are test lanes for named thinker / book search intent. The ads are framed as CTA resources/commentary and do not imply endorsement by the named figures.
+
+### Ray Kurzweil Singularity
+
+- Initial bid: `$2.00 (enhanced)`
+- Status after save: `Eligible`
+- Final URL: `https://www.christiantranshumanism.org/wiki/the-singularity-is-near-when-humans-transcend-biology/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=ray_kurzweil_singularity`
+- Business name: `CTA`
+
+Keyword set:
+
+```text
+[ray kurzweil singularity]
+"ray kurzweil singularity"
+[the singularity is near]
+"the singularity is near"
+[kurzweil ai future]
+"kurzweil ai future"
+[kurzweil longevity]
+"kurzweil longevity"
+[singularity ai future]
+"singularity ai future"
+[future of humanity ai]
+"future of humanity ai"
+```
+
+Ad copy:
+
+- `Ray Kurzweil Future`
+- `The Singularity Is Near`
+- `AI and Humanity Future`
+- `Explore Future Tech`
+- `Kurzweil and AI`
+- `Singularity Resources`
+- `Longevity and AI`
+- `Explore resources on Kurzweil, AI, longevity, and the future of humanity.`
+- `CTA commentary and links on the Singularity and future-facing technology.`
+
+### David Deutsch Progress
+
+- Initial bid: `$2.00 (enhanced)`
+- Status after save: `Eligible`
+- Final URL: `https://www.christiantranshumanism.org/wiki/the-beginning-of-infinity-explanations-that-transform-the-world/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=david_deutsch_progress`
+- Business name: `CTA`
+
+Keyword set:
+
+```text
+[david deutsch beginning of infinity]
+"david deutsch beginning of infinity"
+[david deutsch optimism]
+"david deutsch optimism"
+[david deutsch progress]
+"david deutsch progress"
+[beginning of infinity]
+"beginning of infinity"
+[universal explainers]
+"universal explainers"
+[optimism progress philosophy]
+"optimism progress philosophy"
+```
+
+Ad copy:
+
+- `David Deutsch Progress`
+- `Beginning of Infinity`
+- `Explore Optimism`
+- `Universal Explainers`
+- `Progress and Knowledge`
+- `Explanations Transform`
+- `Knowledge and Progress`
+- `Explore resources on David Deutsch, progress, knowledge, and the future of humanity.`
+- `CTA commentary and links on optimism, explanations, and future-building.`
+
+### Zero to One Future
+
+- Initial bid: `$2.00 (enhanced)`
+- Status after save: `Eligible`
+- Final URL: `https://www.christiantranshumanism.org/wiki/zero-to-one-notes-on-startups-or-how-to-build-the-future/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=zero_to_one_future`
+- Business name: `CTA`
+
+Keyword set:
+
+```text
+[zero to one future]
+"zero to one future"
+[zero to one peter thiel]
+"zero to one peter thiel"
+[how to build the future]
+"how to build the future"
+[startups build the future]
+"startups build the future"
+[progress and innovation]
+"progress and innovation"
+[future building technology]
+"future building technology"
+```
+
+Ad copy:
+
+- `Zero to One Future`
+- `Build the Future`
+- `Progress and Innovation`
+- `Future-Building Ideas`
+- `Technology and Progress`
+- `Startups and Progress`
+- `Future Tech Ideas`
+- `Explore resources on Zero to One, innovation, technology, and future-building.`
+- `CTA commentary and links on progress, startups, and responsible technology.`
+
+Operational notes:
+
+- Google again prefilled all ad drafts with religion-forward suggestions such as `Christianity & Transhumanism`, `What does the Bible say?`, and a description about `God's plan`. These were overwritten before saving.
+- For `David Deutsch Progress` and `Zero to One Future`, the editable fields updated before the ad preview did. The stale preview still showed the religion-forward template until the last headline/description fields were nudged. Do not save until both editable fields and preview are clean.
+- Google showed an optional `Confirm it's you` dialog after saving `Zero to One Future`; using `Skip` returned to the campaign table, and the ad group persisted.
+- After this batch, the `USA` campaign table showed `Ad groups (16)` with `Ray Kurzweil Singularity`, `David Deutsch Progress`, and `Zero to One Future` all present as `Eligible`.
+
+## June 23, 2026 Podcast-Backed Guest Search Test Batch
+
+After adding the full podcast interview inventory to `docs/google-ads-thinker-topic-map.md`, added three more small Search tests from the highest-priority podcast-backed lanes with live production URLs.
+
+### Kevin Kelly Technology
+
+- Initial bid: `$2.00 (enhanced)`
+- Status after save: `Eligible`
+- Final URL: `https://www.christiantranshumanism.org/wiki/what-technology-wants/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=kevin_kelly_technology`
+- Business name: `CTA`
+
+Keyword set:
+
+```text
+[kevin kelly technology]
+"kevin kelly technology"
+[what technology wants]
+"what technology wants"
+[kevin kelly what technology wants]
+"kevin kelly what technology wants"
+[technology wants]
+"technology wants"
+[technology as life]
+"technology as life"
+[future technology trends]
+"future technology trends"
+```
+
+Ad copy:
+
+- `Kevin Kelly Technology`
+- `What Technology Wants`
+- `Explore Future Tech`
+- `Technology and Life`
+- `Future Tech Resources`
+- `The Inevitable Future`
+- `Tech Evolution Ideas`
+- `Explore CTA resources on Kevin Kelly, technology, life, and future trends.`
+- `Commentary and links on technology evolution, AI, and human futures.`
+
+Operational note: saving triggered Google `AD_FINAL_URL` passkey reauth. After Micah completed verification, the campaign table showed `Kevin Kelly Technology` present as `Eligible`.
+
+### David Pearce Ending Suffering
+
+- Initial bid: `$2.00 (enhanced)`
+- Status after save: `Eligible`
+- Final URL: `https://www.christiantranshumanism.org/podcast/41/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=david_pearce_ending_suffering`
+- Business name: `CTA`
+
+Keyword set:
+
+```text
+[david pearce ending suffering]
+"david pearce ending suffering"
+[david pearce paradise engineering]
+"david pearce paradise engineering"
+[paradise engineering]
+"paradise engineering"
+[ending suffering ethics]
+"ending suffering ethics"
+[hedonistic imperative]
+"hedonistic imperative"
+[engineering paradise]
+"engineering paradise"
+```
+
+Ad copy:
+
+- `David Pearce Interview`
+- `Ending Suffering Ethics`
+- `Paradise Engineering`
+- `Engineering Paradise`
+- `Future Ethics Resources`
+- `Explore Humane Futures`
+- `Technology and Suffering`
+- `Listen to CTA conversation on ending suffering, ethics, and future technology.`
+- `Resources and commentary on humane futures, suffering, and responsible progress.`
+
+### Robin Hanson Futurism
+
+- Initial bid: `$2.00 (enhanced)`
+- Status after save: `Eligible`
+- Final URL: `https://www.christiantranshumanism.org/podcast/37/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=robin_hanson_futurism`
+- Business name: `CTA`
+
+Keyword set:
+
+```text
+[robin hanson futurism]
+"robin hanson futurism"
+[robin hanson elephant in the brain]
+"robin hanson elephant in the brain"
+[elephant in the brain]
+"elephant in the brain"
+[great filter robin hanson]
+"great filter robin hanson"
+[simulation argument futurism]
+"simulation argument futurism"
+[human uploads future]
+"human uploads future"
+```
+
+Ad copy:
+
+- `Robin Hanson Futurism`
+- `Elephant in the Brain`
+- `Great Filter Futures`
+- `Simulation and Motives`
+- `Human Uploads Future`
+- `Futurism Interview`
+- `Explore Future Motives`
+- `Listen to CTA conversation on futurism, motives, simulation, and human futures.`
+- `Resources and commentary on the ideas shaping long-term human possibilities.`
+
+Operational notes:
+
+- The same Google-generated religion-forward draft pattern appeared. No ad was saved while `Christianity & Transhumanism`, `What does the Bible say?`, or `God's plan` appeared in editable fields or preview.
+- The preview can lag after editing; verify the rendered preview, not just the editable fields.
+- After this batch, the `USA` campaign table showed `Ad groups (19)`. `Kevin Kelly Technology`, `David Pearce Ending Suffering`, and `Robin Hanson Futurism` were all present as `Eligible`. `Ray Kurzweil Singularity` and `David Deutsch Progress` had moved to `Pending / All ads under review`, which is expected after recent ad creation.
+
+## June 23, 2026 Live Status Recheck
+
+Opened the saved `USA` campaign ad-group URL in Google Ads:
+
+`https://ads.google.com/aw/adgroups?campaignId=802881820&ocid=217504736&authuser=0&__u=2228876330&__c=4238000864`
+
+The account loaded without requiring another passkey challenge. The campaign still showed `Ad groups (19)`.
+
+Visible reporting-period totals remained:
+
+- Clicks: `5`
+- Impressions: `36`
+- CTR: `13.89%`
+- Average CPC: `$1.64`
+- Cost: `$8.20`
+- Conversions: `0.00`
+
+Status changes from the previous checkpoint:
+
+- `David Deutsch Progress` — `Pending / All ads under review`.
+- `Ray Kurzweil Singularity` — `Pending / All ads under review`.
+- `David Pearce Ending Suffering` — now also `Pending / All ads under review`.
+- `Robin Hanson Futurism` — now also `Pending / All ads under review`.
+
+The other recently created topic/search-test groups visible in the table remained `Eligible`: `AI and Human Flourishing`, `AI Ethics and Future`, `Brain-Computer Interfaces`, `Dominion and Future Values`, `Human Enhancement Ethics`, `Kevin Kelly Technology`, `Radical Longevity`, `Technology and Human Flourishing`, and `Zero to One Future`.
+
+Checked `Admin` -> `Policy` -> `Ads`. Current policy issues:
+
+- `Business Name Irrelevance` — `Disapproved`, `Extensions (1)`.
+- `Religious belief in personalized advertising` — `Approved (limited)`, `Extensions`; still appears to be a serving limitation/review state rather than a blocking disapproval.
+
+Opened the `Business Name Irrelevance` business-name association report. The virtualized table initially rendered no rows; opening the `Download` menu forced the rows to appear. Affected rows:
+
+- `USA` — asset `CTA`, level `Campaign`, status `Not eligible / Disapproved (Business Name Irrelevance)`, last updated `Jun 22, 2026, 9:58 PM`.
+- `Noland-Arbaugh-Video-1` — asset `CTA`, level `Campaign`, status `Not eligible / Disapproved (Business Name Irrelevance)`, last updated `Jun 22, 2026, 9:23 PM`.
+- `dale-allison-miracles-1` — asset `CTA`, level `Campaign`, status `Not eligible / Disapproved (Business Name Irrelevance)`, last updated `Jun 22, 2026, 9:25 PM`.
+
+Interpretation: changing campaign brand names to `CTA` cleared the earlier sensitive/name-prominence problem, but likely made the business name too abbreviated for Google's destination relevance check. First attempt to make `CTA` a more prominent on-site brand signal, then recheck policy. If the relevance disapproval remains after production deploy and review, the fallback is to test a longer landing-page-visible business name and accept that it may be limited under religious-belief policy.
+
+Sitelink verification:
+
+- Opened the sitelink associations report with `assetType=sitelink`.
+- The report did not contain `Join Free` or `Voting Membership`.
+- The table showed `No assets match your filters`, even though totals reflected inherited/other sitelink performance.
+
+Conclusion: the previous bulk attempt to add ad-group-level `Join Free` and `Voting Membership` sitelinks did not create visible active associations. If sitelinks are still desired, recreate them one ad group at a time and verify immediately from that ad group's asset view.
+
+## June 23, 2026 CTA Wordmark Site Update
+
+To support the `CTA` business-name asset without reverting to a religion-forward business name, added a visible `CTA` wordmark to the global site chrome:
+
+- Header: the existing logo link now includes visible text `CTA` beside the logo image.
+- Footer: the global footer now starts with a brand block: `CTA` plus `Christian Transhumanist Association`.
+
+This is intended to make `CTA` a prominent on-site brand signal for Google's business-name relevance review while keeping the shorter `CTA` business name available as the less religion-forward Ads asset.
+
+Verification:
+
+- `npm run build` passed.
+- Generated HTML for `_site/index.html` and `_site/topics/technology-and-human-flourishing/index.html` contains `site-nav__wordmark` and `footer-brand` with visible `CTA` text.
+- Local responsive browser checks passed at `1280x720` and `390x844`; the mobile `CTA` wordmark does not overlap the nav toggle.

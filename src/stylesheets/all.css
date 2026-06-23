@@ -3811,6 +3811,20 @@ main video {
   height: 40px;
 }
 
+.site-nav__wordmark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  margin-left: 0.625rem;
+  padding-left: 0.625rem;
+  border-left: 1px solid rgba(34, 50, 70, 0.16);
+  color: #1f2a36;
+  font-size: 1.0625rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
 .site-nav__toggle {
   min-width: 44px;
   min-height: 44px;
@@ -3983,6 +3997,41 @@ main video {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.25rem;
+}
+
+.footer-brand {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.footer-brand__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 2.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.footer-brand__mark:hover,
+.footer-brand__mark:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-brand p {
+  margin: 0;
+  color: #c9d2dc;
+  font-size: 0.8125rem;
 }
 
 .footer-column h3 {
@@ -4195,6 +4244,10 @@ main video {
   .site-nav__brand {
     min-height: auto;
     padding: 4px 15px 4px 0;
+  }
+
+  .site-nav__wordmark {
+    font-size: 1rem;
   }
 
   .site-nav__list > li > a,
@@ -4681,6 +4734,11 @@ html[data-theme="dark"] .site-nav__brand::after {
   filter: blur(12px);
 }
 
+html[data-theme="dark"] .site-nav__wordmark {
+  border-left-color: rgba(214, 226, 242, 0.24);
+  color: #f4f7fb;
+}
+
 html[data-theme="dark"] .site-nav__list > li > a,
 html[data-theme="dark"] .site-nav__list > li > button,
 html[data-theme="dark"] .navbar-nav > li > a,
@@ -4811,6 +4869,15 @@ html[data-theme="dark"] .site-footer {
   border-top: 1px solid rgba(154, 178, 214, 0.14);
 }
 
+html[data-theme="dark"] .footer-brand__mark {
+  border-color: rgba(214, 226, 242, 0.24);
+  color: #f8fbff;
+}
+
+html[data-theme="dark"] .footer-brand p {
+  color: #c7d3e2;
+}
+
 html[data-theme="dark"] .footer-column ul li a {
   color: #a8b6ca;
 }
@@ -4820,6 +4887,10 @@ html[data-theme="dark"] .footer-column ul li a:hover {
 }
 
 @media (max-width: 991px) {
+  .site-nav__wordmark {
+    font-size: 0.9375rem;
+  }
+
   .site-nav__list--secondary > li:first-child {
     margin-right: 0;
     margin-bottom: 0.625rem;

@@ -31,6 +31,67 @@ Recommended page sections:
 5. Join CTA: soft CTA to `/join/future/`, plus direct free/voting buttons lower on the page.
 6. Non-affiliation note where needed: "This page is CTA commentary and resource curation; it does not imply endorsement by [person]."
 
+## Podcast Interview Coverage
+
+Source of truth: `.cache/podcast-feed.json` plus `src/_data/guests.json`. Use this list to make sure Ads landing pages and future ad groups are not limited to the most obvious names. Priority here is for Google Ads testing, not for intellectual importance.
+
+| Ep | Guest / host lane | Preferred landing page | Search / topic lane | Ads priority |
+| --- | --- | --- | --- | --- |
+| 47 | Dale C. Allison | `/topics/miracles-and-reason/` | miracles, reason, historical inquiry | Medium |
+| 46 | Jonathan Rauch | `/topics/democracy-and-future-community/` | democracy, pluralism, institutions | Medium |
+| 45 | Sam McConnell | `/podcast/45/` | social construction, religion after harm, Bible podcast audience | Low |
+| 44 | Moritz Bierling | `/topics/second-brain-and-transformation/` | second brain, personal transformation, group transformation | Medium |
+| 43 | Derek Webb | `/topics/ai-music-and-creativity/` | AI consciousness, music, creativity | Medium |
+| 42 | Taryn Southern | `/topics/ai-music-and-creativity/` | AI music, VR, blockchain creativity | Medium |
+| 41 | David Pearce | `/topics/ending-suffering/` | ending suffering, paradise engineering | High |
+| 40 | Justin Lee | `/podcast/40/` | ethics, community, belonging, bridge-building | Low |
+| 39 | Ilia Delio | `/topics/christ-and-evolution/` | evolution, Teilhard, future theology | Medium |
+| 38 | N. T. Wright | `/topics/embodied-hope/` | embodiment, resurrection, future hope | Medium |
+| 37 | Robin Hanson | `/topics/futurism-and-human-motives/` | futurism, motives, simulation, uploads | Medium |
+| 36 | Aubrey de Grey | `/topics/radical-longevity/` | radical life extension, aging research | High |
+| 35 | David Deutsch | `/topics/david-deutsch/` | progress, explanations, universal reach | High |
+| 34 | Meghan O'Gieblyn | `/topics/god-in-the-machine/` | transhumanism, belief, technology culture | Medium |
+| 33 | Ron Cole-Turner | `/topics/theology-and-transhumanism/` | transformation, enhancement, theology | Medium |
+| 32 | Shannon Vyff | `/topics/cryonics-and-resurrection/` | cryonics, education, life extension | Medium |
+| 31 | Peter Enns | `/topics/bible-and-future-knowledge/` | certainty, scripture, knowledge | Low |
+| 30 | Robert Wright | `/topics/evolution-and-purpose/` | evolution, purpose, social direction | Medium |
+| 29 | Calvin Mercer | `/topics/religion-and-transhumanism-scholarship/` | enhancement scholarship, transhumanism | Medium |
+| 28 | Robert Walden Kurtz | `/podcast/28/` | Adventism, philosophy, jobs, mind-making | Low |
+| 27 | Christopher Benek | `/topics/religious-transhumanism/` | pastoral transhumanism, movement history | Low |
+| 26 | Philip Clayton | `/podcast/26/` | belief spectrum, doubt, process thought | Low |
+| 25 | Katharine Hayhoe | `/topics/climate-and-human-futures/` | climate science, future responsibility | Medium |
+| 24 | Greg Boyd | `/topics/open-future-and-science/` | open future, science, scripture | Low |
+| 23 | Amy Gaskin | `/topics/christian-transhumanism/` | Genesis, theosis, playing God | Low |
+| 22 | Derek Flood | `/podcast/22/` | scripture, nonviolence, scientific method | Low |
+| 21 | Science Mike McHargue | `/topics/science-faith-and-future/` | science, doubt, space, cryonics | Medium |
+| 20 | Amy Gaskin | `/topics/christian-transhumanism/` | predestination, free will, singularitarian frames | Low |
+| 19 | Frank Tipler | `/topics/omega-point/` | Omega Point, physics, cosmic future | Medium |
+| 18 | Amy Gaskin | `/topics/christian-transhumanism/` | self-driving cars, nomadic culture, technology stories | Low |
+| 17 | Kevin Kelly | `/topics/what-technology-wants/` | technology trends, AI, inevitable future | High |
+| 16 | Amy Gaskin | `/topics/christian-transhumanism/` | leaving faith community, wilderness, rebuilding | Low |
+| 15 | Amy Gaskin | `/topics/christian-transhumanism/` | future expectations, promised technology | Low |
+| 14 | Paul Wallace | `/topics/cosmos-and-human-futures/` | cosmos, astronomy, meaning | Low |
+| 13 | Christian Piatt | `/topics/speculative-theology-and-future/` | cloning, sci-fi, future theology | Low |
+| 12 | Amy Gaskin | `/topics/christian-transhumanism/` | politics, transhumanism, future economics | Low |
+| 11 | Amy Gaskin | `/topics/christian-transhumanism/` | singularity, superheroes, origin stories | Low |
+| 10 | Adam Ericksen | `/topics/violence-scapegoating-and-future/` | Girard, violence, social transformation | Low |
+| 9 | Thomas Jay Oord | `/topics/open-future-and-science/` | open future, free will, science | Low |
+| 8 | Liz Parrish | `/topics/gene-therapy-longevity/` | gene therapy, longevity, risk | Medium |
+| 7 | Steve Fuller | `/topics/proactionary-future/` | proactionary imperative, risk, future politics | Medium |
+| 6 | Amy Gaskin | `/topics/christian-transhumanism/` | capitalism, play, economies of the future | Low |
+| 5 | James Hughes | `/topics/religious-transhumanism/` | religious transhumanism, longevity dividend | Medium |
+| 4 | Amy Gaskin | `/topics/radical-longevity/` | life extension | Low |
+| 3 | Amy Gaskin | `/topics/christian-transhumanism/` | practical steps, transcendence, speculative theology | Low |
+| 2 | Amy Gaskin | `/topics/christian-transhumanism/` | doomsday, existential risk | Low |
+| 1 | Amy Gaskin | `/topics/christian-transhumanism/` | what is transhumanism | Low |
+
+Coverage gaps after the June 23 Search expansion:
+
+- Already represented in live ad groups or current landing pages: Noland Arbaugh, Aubrey de Grey, David Deutsch, Ray Kurzweil, Tom Holland/Dominion, BCI, AI, longevity, enhancement, technology and flourishing.
+- Highest podcast-backed guest lanes not yet tested directly: Kevin Kelly, David Pearce, Robin Hanson, Taryn Southern/Derek Webb, Katharine Hayhoe, Steve Fuller, Liz Parrish, Frank Tipler, Calvin Mercer/Ron Cole-Turner.
+- Best next media-first page builds: `/topics/what-technology-wants/`, `/topics/ending-suffering/`, `/topics/futurism-and-human-motives/`, `/topics/ai-music-and-creativity/`, `/topics/gene-therapy-longevity/`.
+- For sensitive theology-heavy interviews, prefer organic/topic pages first; only run Ads when search intent is explicit and ad copy is informational, not identity-targeted.
+
 ## Campaign Architecture
 
 ### Campaign: CTA Core Questions
@@ -324,6 +385,23 @@ Build or improve media-rich pages around people CTA has hosted or engaged:
 5. Kevin Kelly
 6. Meghan O'Gieblyn
 7. Dale Allison
+8. David Pearce
+9. Robin Hanson
+10. Taryn Southern / Derek Webb
+11. Katharine Hayhoe
+12. Steve Fuller
+13. Liz Parrish
+14. Frank Tipler
+15. Jonathan Rauch
+16. Moritz Bierling
+17. Science Mike McHargue
+18. N. T. Wright
+19. Ilia Delio
+20. Robert Wright
+21. Shannon Vyff
+22. James Hughes
+23. Thomas Jay Oord / Greg Boyd / Philip Clayton / Peter Enns
+24. Foundational Amy Gaskin episodes
 
 Campaign goal: use long-tail name searches and content-specific queries as low-cost entry points into CTA resources.
 

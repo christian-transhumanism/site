@@ -41,6 +41,7 @@ Google Ad Grant (acquisition)
 
 The grant is **use-it-or-lose-it** — unspent budget is wasted. **Operated by Codex** today (incl. a `weekly-cta-google-ads-growth-review` automation). **Source-of-truth docs in `docs/`:**
 
+- **`docs/google-ads-current-state.md`** — start here for the current Ads resume point: account/campaign IDs, recent changes, pending reviews, live landing pages, and next actions.
 - **`docs/google-ads-operations.md`** — account + navigation working notes. **CTA Google Ads customer ID: `459-256-2474`.**
 - **`docs/google-ads-growth-plan.md`** — the operating plan (north star = qualified membership intent: views → free signups → paid memberships).
 - **`docs/google-ads-thinker-topic-map.md`** — campaign → thinker/topic → landing-page map + the operating rules.
