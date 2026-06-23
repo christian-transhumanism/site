@@ -1,6 +1,6 @@
 # CTA Google Ads Current State
 
-_Last updated: 2026-06-23 13:51 CDT._
+_Last updated: 2026-06-23 14:11 CDT._
 
 This file is the compact resume point for CTA Google Ads growth work. A fresh agent should be able to start in this repo, read `AGENTS.md`, then this file, and continue without depending on the Notational vault for recent Ads state.
 
@@ -125,7 +125,7 @@ Live check on 2026-06-23 13:51 CDT:
 - `Religious belief in personalized advertising` remains `Approved (limited)` for business-name/logo assets, not a blocking disapproval.
 - The attempted `Join Free` / `Voting Membership` sitelinks are not verified as active. The sitelink associations report did not contain either asset text and showed `No assets match your filters` under the current sitelink association view.
 
-Likely next fix: `CTA` may be too abbreviated for Google's business-name relevance check. A local site update now adds visible `CTA` wordmarks to the global header and footer so the short business name has an on-page brand signal. Deploy that change, verify production, then recheck whether the relevance disapproval clears before changing the Ads business name back to a religion-forward variant.
+Likely next fix: `CTA` may be too abbreviated for Google's business-name relevance check. The visible `CTA` wordmark update was deployed to production on 2026-06-23, and live homepage/topic-page HTML now contains `site-nav__wordmark` and `footer-brand` with visible `CTA` text. Google Ads still listed `Business Name Irrelevance` under `Extensions (1)` immediately after deploy, so the next move is to wait for policy recrawl/review or manually edit/resubmit the affected business-name assets if the issue remains.
 
 ## Conversion Tracking State
 
@@ -140,7 +140,7 @@ Known measurement gap: this records intent/outbound handoff, not confirmed Mailc
 
 ## Immediate Next Actions
 
-1. Deploy and verify the visible `CTA` wordmark site update, then recheck the `Business Name Irrelevance` disapproval on campaign-level business-name assets for `USA`, `Noland-Arbaugh-Video-1`, and `dale-allison-miracles-1`.
+1. Recheck the `Business Name Irrelevance` policy issue after Google has had time to recrawl/review the newly deployed `CTA` wordmark. If it remains, manually edit/resubmit the affected business-name assets or test a longer landing-page-visible business name.
 2. Continue monitoring approval status for the recent pending ad groups: `Ray Kurzweil Singularity`, `David Deutsch Progress`, `David Pearce Ending Suffering`, and `Robin Hanson Futurism`.
 3. Recreate or verify neutral membership sitelinks one ad group at a time; the prior bulk attempt for `Join Free` and `Voting Membership` did not produce visible active associations.
 4. Let the new neutral ad groups collect enough impression/click data, then compare against `Christianity & Transhumanism` and `Future of Christianity`.

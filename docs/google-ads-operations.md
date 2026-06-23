@@ -798,3 +798,15 @@ Verification:
 - `npm run build` passed.
 - Generated HTML for `_site/index.html` and `_site/topics/technology-and-human-flourishing/index.html` contains `site-nav__wordmark` and `footer-brand` with visible `CTA` text.
 - Local responsive browser checks passed at `1280x720` and `390x844`; the mobile `CTA` wordmark does not overlap the nav toggle.
+
+Follow-up deploy and Ads check:
+
+- Committed and pushed the site/docs updates to `main`, ending at commit `fee4af7` (`Make CTA header wordmark blue`).
+- Verified Netlify CLI was linked to the live `christian-transhumanism` project (`1ecf40b9-9df1-415f-ab0f-125cdeae0ca8`).
+- Two `npx netlify deploy --prod` attempts hung after the build phase. The successful deploy used:
+  - `npx netlify deploy --prod --no-build --dir=_site --site 1ecf40b9-9df1-415f-ab0f-125cdeae0ca8 --message "CTA wordmark header/footer" --json --timeout 300`
+- Successful deploy ID: `6a3ad9e097e75538ed353c69`.
+- Deploy URL: `https://6a3ad9e097e75538ed353c69--christian-transhumanism.netlify.app`.
+- Production URL: `https://www.christiantranshumanism.org`.
+- Live verification returned `HTTP 200` for `/` and `/topics/technology-and-human-flourishing/`; both pages contained `site-nav__wordmark` and `footer-brand` with visible `CTA` text. The live CSS contains `.site-nav__wordmark` and the light-mode blue `#337ab7`.
+- Immediate Google Ads policy refresh still showed `Business Name Irrelevance` under `Extensions (1)` plus `Religious belief in personalized advertising`. The detailed business-name association rows did not reliably render after refresh, even after opening the `Download` menu. Treat the policy summary as the current signal and recheck after Google has had time to recrawl/review the updated production pages.
