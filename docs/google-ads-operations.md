@@ -70,7 +70,21 @@ The `Interviews & Celebrities` association was removed from the filtered `Assets
 
 Operational caveat: the `Assets` -> `Associations` toolbar is unreliable for this asset type. Bulk `Remove` and `Pause` on business-name assets produced Google's warning that assets cannot be removed across multiple pages and that some asset types do not support bulk operations. Scoping the report to a single campaign and selecting the one visible row still triggered the same bulk-operation warning for `Remove`, and `Pause` returned `Your change was not applicable to any selected assets`.
 
-Next route to try: find and edit the source/origin for the campaign-level business-name asset rather than acting from the Associations report. Likely places to inspect are Performance Max asset-group/business-information settings, campaign asset setup, or any business-information configuration surface that created the campaign-level business-name association.
+June 22 source-level fix:
+
+- The remaining two disapproved rows were Performance Max campaign-level brand-guideline assets, not ordinary removable asset associations.
+- Source route:
+  - Open `Assets` -> `Associations` with the policy-filtered business-name report.
+  - Click the affected campaign name.
+  - Open `Campaign settings`.
+  - Scroll to `Brand guidelines` -> `Brand identity`.
+  - Edit `Business name`.
+- Updated `Noland-Arbaugh-Video-1` from `Christian Transhumanism` to `CTA`.
+- Updated `dale-allison-miracles-1` from `Religious Transhumanism` to `CTA`.
+- After saving both changes and refreshing the policy-filtered business-name report, Google Ads showed `No assets match your filters`.
+- `Admin` -> `Policy` -> `Ads` no longer showed the `Business Information - Name Prominence` disapproval. It still showed one `Religious belief in personalized advertising` item as `Approved (limited)` for business names/logos, which appears to be a serving limitation/review state rather than a blocking disapproval.
+
+Current rule: for Performance Max campaigns, fix sensitive or non-prominent business-name policy issues in campaign `Brand guidelines`, not from the asset association toolbar.
 
 ## Deployment Notes
 
@@ -88,3 +102,5 @@ Google Ads reported the website conversion action `Membership` as `Needs attenti
 The production pages contained the correct destination, `AW-856723569/b4ANCLq5oXEQ8aDCmAM`, but `/join/free/` and `/join/voting/` fired the event immediately on page load and redirected off-domain after 1.2 seconds. Tag Assistant initially lost its live connection when the page redirected, but its completed session detected the GA4/Google Ads tag and recorded both the `Membership` Ads hit and `membership_signup_intent` event. This proves the Ads ID and conversion label are valid. The remaining problem was stale activity, while the page-load trigger also counted page arrival rather than the visitor's membership handoff action.
 
 Fix: retain the external URL as the no-JavaScript fallback, but fire `ctaReportMembershipConversion` only when the visitor clicks `Continue`. The event callback still performs the external navigation, with the existing timeout as a fallback. After production deployment, run Tag Assistant against each handoff page, click `Continue`, and refresh Google Ads diagnostics. Google may take several hours to update the tracking status.
+
+Later June 22 browser check: `Goals` -> `Summary` showed the account-default `Sign-up` goal as `Active`, assigned to `8 of 8` campaigns, with `1` primary conversion action. This suggests Google Ads has accepted the conversion setup at the goal level. Continue monitoring actual conversion counts separately; the last 30-day campaign report still showed `0.00` conversions.
