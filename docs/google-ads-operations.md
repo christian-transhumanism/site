@@ -203,6 +203,8 @@ Added a second Tier 1 topic landing page for future Search traffic:
 
 Local build verification passed with `npm run build`; Eleventy wrote `_site/topics/brain-computer-interfaces/index.html`.
 
+Deploy status: commit `444a258` was pushed to `main`. A Netlify source-upload deploy was started as deploy `6a39fbd318a625a1a59ca6ae`, but it remained in `new` / `building` state for several minutes and production still returned `404` for `/topics/brain-computer-interfaces/`. Do not create a live ad group to this URL until production returns `200`.
+
 Recommended next Ads build after deployment:
 
 - Ad group: `Brain-Computer Interfaces`
