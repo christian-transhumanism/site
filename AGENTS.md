@@ -62,6 +62,8 @@ The grant is **use-it-or-lose-it** — unspent budget is wasted. **Operated by C
 - **The `/cta-page` skill** writes topic pages (branch + PR).
 - **The vault's Claude agent** (in `~/Dropbox/1/Notational`) holds the cross-system map and **hands CTA tasks off** to the above. When it has a CTA task, it: (a) writes it up referencing this file, (b) routes Ads/deploy/live-funnel work to Codex, (c) routes new-topic-page writing to `/cta-page`. It does **not** make live Ads changes or push to the site `main` itself.
 
+**Open project tasks / backlog:** `docs/backlog.md` — the canonical surfaced-work list (email-platform/Mailchimp decision, the intent→confirmed conversion webhook, Netlify reliability, orchestration). Check it before picking up CTA work.
+
 **Common tasks → where they go:**
 | Task | Owner / how |
 |---|---|
