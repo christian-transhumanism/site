@@ -203,11 +203,44 @@ Added a second Tier 1 topic landing page for future Search traffic:
 
 Local build verification passed with `npm run build`; Eleventy wrote `_site/topics/brain-computer-interfaces/index.html`.
 
-Deploy status: commit `444a258` was pushed to `main`. A Netlify source-upload deploy was started as deploy `6a39fbd318a625a1a59ca6ae`, but it remained in `new` / `building` state for several minutes and production still returned `404` for `/topics/brain-computer-interfaces/`. Do not create a live ad group to this URL until production returns `200`.
+Deploy status: commit `444a258` was pushed to `main`. A Netlify source-upload deploy was started as deploy `6a39fbd318a625a1a59ca6ae`, but it remained in `new` / `building` state for several minutes and production initially returned `404` for `/topics/brain-computer-interfaces/`. On June 23, 2026, production returned `200` for the page.
 
-Recommended next Ads build after deployment:
+Created the matching Search ad group after production returned `200`:
 
 - Ad group: `Brain-Computer Interfaces`
 - Final URL: `https://www.christiantranshumanism.org/topics/brain-computer-interfaces/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=brain_computer_interfaces`
-- Copy should emphasize `brain-computer interfaces`, `assistive technology`, `human agency`, `neurotechnology ethics`, and `responsible interface design`.
-- Avoid copy that implies the searcher has a disability, medical condition, or religious identity.
+- Display path: `/bci/human-agency`
+- Status after save: `Eligible`
+- Initial bid: `$2.00 (enhanced)`
+- Business name: `CTA`
+
+Final keyword set:
+
+```text
+[brain computer interface]
+"brain computer interface"
+[brain-computer interfaces]
+"brain-computer interfaces"
+[bci ethics]
+"bci ethics"
+[neurotechnology ethics]
+"neurotechnology ethics"
+[neural interface technology]
+"neural interface technology"
+[neural interface ethics]
+"neural interface ethics"
+```
+
+Ad copy:
+
+- `Brain-Computer Interfaces`
+- `Explore BCI Ethics`
+- `Neurotech and Agency`
+- `Human-Centered Interfaces`
+- `Assistive Tech Futures`
+- `BCI and Human Agency`
+- `Responsible Neurotech`
+- `Resources on brain-computer interfaces, agency, privacy, and responsible design.`
+- `Explore neurotechnology, assistive tech, and the future of embodied action.`
+
+Policy note: Google blocked the keyword `assistive technology future` under `Health in personalized advertising`. Do not use health-, disability-, injury-, or medical-condition-adjacent keyword phrasing in BCI ad groups unless intentionally pursuing a policy review. The final saved keyword set removed that term and returned to the campaign table as `Eligible`.
