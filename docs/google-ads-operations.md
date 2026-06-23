@@ -810,3 +810,29 @@ Follow-up deploy and Ads check:
 - Production URL: `https://www.christiantranshumanism.org`.
 - Live verification returned `HTTP 200` for `/` and `/topics/technology-and-human-flourishing/`; both pages contained `site-nav__wordmark` and `footer-brand` with visible `CTA` text. The live CSS contains `.site-nav__wordmark` and the light-mode blue `#337ab7`.
 - Immediate Google Ads policy refresh still showed `Business Name Irrelevance` under `Extensions (1)` plus `Religious belief in personalized advertising`. The detailed business-name association rows did not reliably render after refresh, even after opening the `Download` menu. Treat the policy summary as the current signal and recheck after Google has had time to recrawl/review the updated production pages.
+
+## June 23, 2026 Campaign-Level Membership Sitelinks
+
+Created two new campaign-level sitelinks for the `USA` Search campaign from `Assets` -> `Associations`, filtered to `assetType=sitelink` with campaign `USA` selected.
+
+Rationale: the earlier bulk attempt to attach `Join Free` and `Voting Membership` at the ad-group level did not produce visible active associations. Campaign-level attachment is simpler to verify and does not touch the business-name policy work.
+
+Created sitelinks:
+
+- `Join Free`
+  - Description line 1: `Free membership`
+  - Description line 2: `Join the CTA community`
+  - Final URL: `https://www.christiantranshumanism.org/join/free/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=sitelink_join_free`
+- `Voting Membership`
+  - Description line 1: `Support CTA work`
+  - Description line 2: `Help guide the association`
+  - Final URL: `https://www.christiantranshumanism.org/join/voting/?utm_source=google&utm_medium=cpc&utm_campaign=usa_search&utm_content=sitelink_voting`
+
+Verification after save:
+
+- Both rows appeared in the campaign-level sitelink associations table for `USA`.
+- `Join Free` row: `Enabled`, level `Campaign`, status `Pending / Under review`, added by `Advertiser`, last updated `Jun 23, 2026, 5:57 PM`.
+- `Voting Membership` row: `Enabled`, level `Campaign`, status `Pending / Under review`, added by `Advertiser`, last updated `Jun 23, 2026, 5:57 PM`.
+- The table count changed to `1 - 10 of 30`, up from `1 - 10 of 28`, which matches two newly added sitelink associations.
+
+Next action: recheck these sitelinks after review. If eligible, leave them at campaign level unless ad-group-specific sitelinks are needed later. If limited/disapproved, inspect policy reason before creating more variants.
