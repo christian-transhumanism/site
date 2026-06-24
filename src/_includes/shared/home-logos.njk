@@ -1,0 +1,52 @@
+{#
+  Press / coverage strip. Logos are served from Micah Redding's Cloudinary
+  account (the same assets used on micahredding.com) and reference outlets that
+  have covered Christian Transhumanism and our founder's work.
+#}
+{% set pressLogos = [
+  {
+    name: 'TEDx',
+    src: 'https://res.cloudinary.com/micahredding/image/upload/f_auto,q_auto,w_320,c_scale/TEDx_logo1_dmhodp',
+    width: 160,
+    height: 45
+  },
+  {
+    name: 'American Scientific Affiliation',
+    src: 'https://res.cloudinary.com/micahredding/image/upload/f_auto,q_auto,w_200,c_scale/american-scientific-affiliation-logo-only',
+    width: 100,
+    height: 60
+  },
+  {
+    name: 'BBC',
+    src: 'https://res.cloudinary.com/micahredding/image/upload/f_auto,q_auto,w_320,c_scale/bbc',
+    width: 160,
+    height: 45
+  },
+  {
+    name: 'Vice Motherboard',
+    src: 'https://res.cloudinary.com/micahredding/image/upload/f_auto,q_auto,w_400,c_scale/motherboard-logo',
+    width: 200,
+    height: 28
+  }
+] %}
+
+<section class="home-logos" aria-label="Featured in">
+  <div class="container">
+    <p class="home-logos__eyebrow">Our work has been featured in</p>
+    <ul class="home-logos__list">
+      {% for logo in pressLogos %}
+      <li class="home-logos__item">
+        <img
+          class="home-logos__logo"
+          src="{{ logo.src }}"
+          alt="{{ logo.name }}"
+          width="{{ logo.width }}"
+          height="{{ logo.height }}"
+          loading="lazy"
+          decoding="async"
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
