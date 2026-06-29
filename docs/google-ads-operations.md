@@ -836,3 +836,101 @@ Verification after save:
 - The table count changed to `1 - 10 of 30`, up from `1 - 10 of 28`, which matches two newly added sitelink associations.
 
 Next action: recheck these sitelinks after review. If eligible, leave them at campaign level unless ad-group-specific sitelinks are needed later. If limited/disapproved, inspect policy reason before creating more variants.
+
+## June 23, 2026 Evening Business Name Policy Recheck
+
+Heartbeat check after the deployed visible `CTA` wordmark update:
+
+- Live site verification: `https://www.christiantranshumanism.org/` returned `HTTP 200`; the homepage HTML still contains visible `CTA` in the header (`site-nav__wordmark`) and footer (`footer-brand__mark`).
+- `Admin` -> `Policy` -> `Ads` still shows `Business Name Irrelevance` as `Disapproved` for `Extensions (1)`.
+- `Religious belief in personalized advertising` remains `Approved (limited)` for extensions, including business-name/logo assets; this remains a serving limitation rather than the immediate blocker.
+- Opening the `Business Name Irrelevance` business-name association report still resolves to `1 - 3 of 3` with `Status reason contains any Disapproved`. The virtualized table did not render readable row text in this check, but the count confirms three affected business-name associations remain.
+- The new `Join Free` and `Voting Membership` campaign-level sitelinks are still `Enabled` and `Pending / Under review`.
+
+Recommendation: stop waiting passively on the wordmark recrawl. The next action should be manual edit/resubmission or appeal/reconsideration for the affected `CTA` business-name assets, citing the now-visible `CTA` wordmark in the live header and footer. If resubmission fails, test a longer business name that is visibly present on the landing pages.
+
+## June 23, 2026 Business Name Appeal / Resubmission Attempt
+
+Opened the business-name association report for `Business Name Irrelevance`. The affected rows rendered clearly:
+
+- `USA` — asset `CTA`, level `Campaign`, status `Not eligible / Disapproved (Business Name Irrelevance)`, last updated `Jun 22, 2026, 9:58 PM`.
+- `Noland-Arbaugh-Video-1` — asset `CTA`, level `Campaign`, status `Not eligible / Disapproved (Business Name Irrelevance)`, last updated `Jun 22, 2026, 9:23 PM`.
+- `dale-allison-miracles-1` — asset `CTA`, level `Campaign`, status `Not eligible / Disapproved (Business Name Irrelevance)`, last updated `Jun 22, 2026, 9:25 PM`.
+
+Bulk-selected all three rows from the filtered association report. The toolbar exposed `Remove`, `Pause`, `Enable`, `Add to`, and `Close`; it did not expose `Appeal`, `Edit`, or `Appeal policy decision`.
+
+Checked `Admin` -> `Policy` -> `Ads` and the `Appeal history` tab. `Business Name Irrelevance` still showed as `Disapproved` for `Extensions (1)`, but the policy issue did not expose an appeal/submit button. `Appeal history` showed no filed appeals and no create-appeal action.
+
+Tried to force a fresh review by creating/saving another campaign-scoped business-name asset:
+
+- Started from `Assets` -> business-name associations -> `Create asset`.
+- Switched `Add to` from `Account` to `Campaign`.
+- Selected campaign `USA`.
+- Entered business name `CTA`.
+- Saved.
+
+Result: no duplicate warning appeared, but the report still showed only the original three disapproved `CTA` rows. The `USA` row's last-updated timestamp did not change. Treat this as a Google Ads dedupe/no-op, not a successful resubmission. The campaign selector did not list `Noland-Arbaugh-Video-1` or `dale-allison-miracles-1`, and searching for `Noland-Arbaugh-Video-1` returned no results.
+
+Official Google Ads help checked: `https://support.google.com/google-ads/answer/9338593?hl=en` says unsupported formats/policies may need the `Disapproved ads and policy questions` support form. Used `https://support.google.com/google-ads/contact/approvals`.
+
+Support escalation submitted for account `459-256-2474`:
+
+```text
+Please help appeal or manually review a Google Ads policy decision for account 459-256-2474. Business-name asset "CTA" is disapproved for Business Name Irrelevance on campaign USA, even though the live destination https://www.christiantranshumanism.org/ now prominently shows the CTA wordmark in the global header and footer. The homepage returns HTTP 200 and the visible wordmark is present site-wide. We already made the destination change and tried recreating/saving the CTA business-name asset, but the UI still shows Not eligible / Disapproved. Please submit this for review or advise the exact next step for business-name assets when no Appeal button appears in Policy issues.
+```
+
+Google's support assistant analyzed the account/site and said the verified legal name is `Christian Transhumanist Association`, the domain is `christiantranshumanism.org`, and `CTA` as an acronym may be failing because the business-name asset is expected to strictly match the verified legal name or domain. The assistant moved into a shared-browser handoff, but it is blocked on a human login/confirm step. After `Take action on your own`, Google hides the shared browser from the AI agent, so Codex cannot complete that support handoff without the user completing the login/confirm step.
+
+Recommended next decision:
+
+- If pursuing manual review, the user should complete the Google support shared-browser login/confirm step so the support assistant can continue.
+- If staying inside the Google Ads UI, test a longer business-name asset on `USA` that more directly matches the verified advertiser/domain and is visible on the site. `Christian Transhumanist` is 23 characters and fits the 25-character business-name asset limit; the full verified legal name does not fit.
+- Do not keep re-saving duplicate `CTA` assets; the first attempt appeared to dedupe/no-op.
+
+Follow-up after user completed the Google shared-browser login/confirm step: the Google Ads support assistant reported that it successfully filed an appeal for the `CTA` business-name asset associated with the `USA` campaign.
+
+- Appeal ID: `56380626`
+- Asset/campaign: `CTA` business-name asset on `USA`
+- Issue appealed: `Business Name Irrelevance`
+- Basis: live site now prominently shows the `CTA` wordmark in global header/footer
+- Expected review window quoted by Google: `24 to 48 hours`
+- Tracking location: `Policy Manager` -> `Appeal history`
+
+Next action: monitor Appeal ID `56380626`. If Google denies the appeal, switch strategy from `CTA` to a business-name asset that more directly matches advertiser verification/domain constraints, with `Christian Transhumanist` as the first practical candidate because it fits the 25-character business-name limit.
+
+## June 24, 2026 Business Name Appeal Result
+
+Heartbeat recheck at 2026-06-24 19:53 CDT:
+
+- Live site verification: `https://www.christiantranshumanism.org/` returned `HTTP 200`; the homepage still contains visible `CTA` in the header (`site-nav__wordmark`) and footer (`footer-brand__mark`).
+- `Admin` -> `Policy` -> `Ads` still shows `Business Name Irrelevance` as `Disapproved` for business-name `Extensions (1)`.
+- `Religious belief in personalized advertising` still shows `Approved (limited)` for extensions, including business-name/logo assets. This remains a serving limitation, not the current blocking disapproval.
+- `Appeal history` shows one `Business Name Irrelevance` appeal dated `Jun 24, 2026`, reason `Dispute decision`, status `Not reviewed`, result `Failed`.
+- The appeal-history row lists `1 ad group: Science & Faith & Spirituality`, not the expected active `USA` campaign-level business-name association, so the support-bot appeal appears not to have produced a successful manual review of the active `USA` `CTA` business-name asset.
+
+Conclusion: the `CTA` acronym path is not clearing through passive recrawl or the support-bot appeal. The old heartbeat `check-cta-google-ads-business-name-policy` was deleted after this definitive failed result.
+
+Recommended next action: switch the `USA` business-name test from `CTA` to `Christian Transhumanist`, which is 23 characters and closer to the verified legal name while fitting Google's 25-character business-name limit. If the association must use `CTA`, the likely path is formal brand verification/trademark evidence rather than another duplicate asset save or passive wait.
+
+## June 29, 2026 Correctly-Targeted Manual Review Filing
+
+Goal: file a fresh appeal/review targeting ONLY the campaign-level `CTA` business-name asset on `USA`, since the prior appeal (`56380626`) failed by mis-attaching to the `Science & Faith & Spirituality` ad group.
+
+Findings — there is no self-serve appeal control for this asset type:
+
+- Manually verified in `Assets` -> `Associations` (business-name, policy-filtered). Selecting the `USA` / `CTA` row exposed only `Remove` / `Pause` / `Enable` / `Add to` in the bulk toolbar; the row status dropdown offered only `Enable` / `Pause` / `Remove`; the status cell and asset name were not clickable into a policy-detail/appeal panel; the `Add to` menu offered only `Campaign` / `Account`. No `Appeal` anywhere.
+- The Google Ads support assistant (`https://support.google.com/google-ads/contact/approvals`), driven through its shared browser after the user completed the Google login/confirm step, ran an exhaustive automated pass over the same Policy Manager / Associations screens and hit the same dead ends. It then tried to fall back to filing "using an associated ad group" — exactly the failure mode from `56380626` — and was redirected (via chat) to scope strictly to the campaign-level asset and avoid any ad group.
+- Key admission from the assistant: "the standard automated appeal tools often require an ad group association." This is the structural reason a clean campaign-level appeal cannot be filed through the automated tools.
+
+Resolution — manual policy-review case filed by email:
+
+- The assistant offered to connect to a human Google Ads policy specialist; the only contact channel available was Email.
+- This opened the support `ad_review_request` Email form (`channel=EMAIL`), URL-scoped to account param `pcff=8000001:4592562474` (= `459-256-2474`, CTA). The form pre-filled `End Customer Company Name` = `Christian Transhumanist Association`, review type = `Assets`, response = `Email me`.
+- Fields set: `Select Campaign(s) affected` = `USA` (`802881820`); `Ad group name` = left blank (campaign-scoped on purpose); language = `English`. Summary requested a manual policy-review for the campaign-level `CTA` business-name asset, cited the site-wide `CTA` wordmark in the global header/footer of `christiantranshumanism.org`, and explicitly said "do not appeal via an ad group as previous attempts failed due to incorrect scoping."
+- The user submitted the form. Confirmation email arrived from `ads-support@google.com`: **Case ID `1-2059000040983`** (received 2026-06-29 ~12:25 CDT). The confirmation body is generic and does not name the account/campaign.
+
+Account-sanity check: the support Contact Us page displayed a generic "Your ads can't run because you canceled your account" banner, which prompted concern that the wrong account was selected. Verified against the live CTA account overview (`459-256-2474`, signed in as `micahtredding@gmail.com`): campaign status `Enabled`, last-30-days `16` clicks / `260` impressions / `0.00` conversions / `$16.09`, no cancellation banner. The CTA account is active; the support-page banner was stale/generic (the account picker also lists a second account `MR` = `962-252-2682`, but the case was filed against CTA per the form's `4592562474` scope).
+
+Caveat on this channel: the `ad_review_request` form states twice that it is for ads "under review," not disapprovals, and points to a separate form for policy-disapproval requests. Google may therefore redirect or decline Case `1-2059000040983`. It was still the only available path to a correctly-scoped human review.
+
+Next action: watch Gmail for Google's reply to Case `1-2059000040983`. If declined/redirected, pivot to swapping the `USA` business-name asset to `Christian Transhumanist` or pursuing brand/trademark verification; do not re-save duplicate `CTA` assets and do not appeal via any ad group.
