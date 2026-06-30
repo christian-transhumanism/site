@@ -1,6 +1,6 @@
 # CTA Google Ads Current State
 
-_Last updated: 2026-06-29 12:40 CDT._
+_Last updated: 2026-06-29 14:10 CDT._
 
 This file is the compact resume point for CTA Google Ads growth work. A fresh agent should be able to start in this repo, read `AGENTS.md`, then this file, and continue without depending on the Notational vault for recent Ads state.
 
@@ -151,12 +151,13 @@ Known measurement gap: this records intent/outbound handoff, not confirmed Mailc
 ## Immediate Next Actions
 
 1. Monitor support Case ID `1-2059000040983` (manual policy-review for the campaign-level `CTA` business-name asset on `USA`, filed 2026-06-29) for Google's email response. If Google declines it or redirects it as a disapproval inquiry, stop pursuing `CTA` via appeal: either switch the `USA` business-name asset to `Christian Transhumanist` (23 chars, fits the 25-char limit, closer to the verified legal name) or pursue formal brand verification/trademark evidence. Do not re-save duplicate `CTA` assets (no-op) and do not appeal via any ad group (that caused the failed `56380626`).
-2. Continue monitoring approval status for the recent pending ad groups: `Ray Kurzweil Singularity`, `David Deutsch Progress`, `David Pearce Ending Suffering`, and `Robin Hanson Futurism`.
-3. Monitor the new campaign-level `Join Free` and `Voting Membership` sitelinks until they move from `Pending / Under review` to eligible or policy-limited.
-4. Let the new neutral ad groups collect enough impression/click data, then compare against `Christianity & Transhumanism` and `Future of Christianity`.
-5. Build the next podcast-backed landing pages and ad groups from `docs/google-ads-thinker-topic-map.md`. Highest near-term candidates: Taryn Southern / Derek Webb, Katharine Hayhoe, Steve Fuller, Liz Parrish, Frank Tipler, Calvin Mercer / Ron Cole-Turner.
-6. Add confirmed-conversion tracking for Mailchimp and Stripe completions, or at minimum document exactly why it is blocked.
-7. Continue pruning zero-click, policy-risky, or disapproved legacy assets.
+2. Fix the 4 ad groups that have NO ADS and therefore cannot serve: `Technology and Human Flourishing`, `Radical Longevity`, `Zero to One Future`, `Kevin Kelly Technology` (their ads never persisted through a passkey-reauth interruption at creation). Recreate a Responsive Search Ad in each from the ad copy in `docs/google-ads-operations.md`, and verify each ad persisted after any reauth prompt. See the `June 29, 2026 Status Sweep` section.
+3. Monitor the `AI Ethics and Future` keyword-broadening test (8 new phrase-match keywords + 37 campaign negatives added 2026-06-29). Watch ACCOUNT-level CTR over 7 days; if it holds >=5%, replicate phrase-broadening on `AI and Human Flourishing` and `Brain-Computer Interfaces`. Do not use broad match until conversion tracking works (Ad Grants 5% account CTR rule, no bid-strategy exemption).
+4. All four formerly-pending ad groups are now `Eligible` (`Ray Kurzweil Singularity`, `David Deutsch Progress`, `David Pearce Ending Suffering`, `Robin Hanson Futurism`) — no longer need approval monitoring.
+5. Monitor the new campaign-level `Join Free` and `Voting Membership` sitelinks until they move from `Pending / Under review` to eligible or policy-limited.
+6. Add confirmed-conversion tracking for Mailchimp and Stripe completions, or at minimum document exactly why it is blocked. This is the highest-leverage unlock: it is the prerequisite for safely using broad match + Smart Bidding to actually spend the Ad Grant.
+7. Build the next podcast-backed landing pages and ad groups from `docs/google-ads-thinker-topic-map.md`. Highest near-term candidates: Taryn Southern / Derek Webb, Katharine Hayhoe, Steve Fuller, Liz Parrish, Frank Tipler, Calvin Mercer / Ron Cole-Turner.
+8. Continue pruning zero-click, policy-risky, or disapproved legacy assets.
 
 ## Repo Safety
 
