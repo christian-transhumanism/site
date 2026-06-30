@@ -955,3 +955,24 @@ Change applied — measured broadening of ONE ad group (`AI Ethics and Future`) 
 Monitoring plan: watch ACCOUNT-level CTR over the next 7 days. If it holds >=5%, replicate the phrase-broadening + negatives pattern on `AI and Human Flourishing` and `Brain-Computer Interfaces`. If a single new keyword shows real impressions with weak CTR, pause just that keyword.
 
 Finding — 4 ad groups have NO ADS (cannot serve): Google's `Recommendations` flagged `Technology and Human Flourishing`, `Radical Longevity`, `Zero to One Future`, and `Kevin Kelly Technology` as having no ads. Verified in the `Ads` view: every other neutral group (`Brain-Computer Interfaces`, `Ray Kurzweil Singularity`, `Robin Hanson Futurism`, `Dominion and Future Values`, `David Deutsch Progress`) has a `Responsive search ad`, but these 4 have none. These are exactly the ad groups where this ops log earlier recorded ad-save interruptions (Google `AD_FINAL_URL` passkey reauth on `Technology and Human Flourishing` / `Radical Longevity` / `Kevin Kelly Technology`; a `Confirm it's you` -> `Skip` on `Zero to One Future`). Diagnosis: the ad group was created (shows `Eligible`) but the ad never persisted through the reauth/confirm interruption, so the group is live yet serves nothing. Fix: recreate a Responsive Search Ad in each, reusing the ad copy already documented in this file (do not save through a passkey-reauth interruption — verify each ad persisted afterward).
+
+## June 30, 2026 Recreated the 4 Missing Ads (RESOLVED)
+
+Recreated a Responsive Search Ad in each of the 4 no-ad groups using the ad copy documented earlier in this file. All four now show `Eligible` with a `Responsive search ad` in the `Ads` view:
+
+- `Technology and Human Flourishing` (adGroupId `194716890661`) -> `/topics/technology-and-human-flourishing/`
+- `Radical Longevity` (adGroupId `196505235983`) -> `/topics/radical-longevity/`
+- `Zero to One Future` (adGroupId `196106053365`) -> `/wiki/zero-to-one-notes-on-startups-or-how-to-build-the-future/`
+- `Kevin Kelly Technology` (adGroupId `201371186041`) -> `/wiki/what-technology-wants/`
+
+Each ad used the 7 headlines + 2 descriptions from this file's earlier ad-group build notes, business name `CTA`, and the UTM-tagged final URL. Ad strength came in `Average`.
+
+Operational lessons (important for future ad creation in this account):
+
+- The passkey `Confirm it's you` gate only triggered on the FIRST ad save of the session (`Technology and Human Flourishing`). The fix that finally persisted it: the user clicked `Confirm` and completed the passkey, then I re-clicked `Save ad` (the dialog states "after confirmation, you will need to complete your action" — the save must be re-issued). After that one verification, the session was trusted and ads #2-4 saved with NO further passkey prompt. This is why prior single-attempt saves silently failed: the reauth interrupted the save and it was never re-issued.
+- Always verify each ad actually appears in the ad group's `Ads` view after saving (filter the `Ads` view by ad group). A `Save` that hits the passkey gate can leave the ad group with zero ads even though the builder appeared to submit.
+- Google still auto-prefills religion-forward headlines (`Christianity & Transhumanism`, `What does the Bible say?`) and description (`What if technology is all part of God's plan?`) in every new RSA. These must be overwritten before saving; the editable fields are the source of truth (the right-hand preview can lag).
+- Autocomplete gotcha: typing a headline that matches a keyword/website suggestion (e.g. `Build the Future` -> suggestion `How to Build the Future`) can merge the suggestion into the field or concatenate the next headline. Press `Escape` after typing each headline to dismiss the suggestion dropdown before clicking the next field.
+- Clicking the `Descriptions` section header (instead of the text field) collapses the section. Click the description text input directly.
+
+Flag for separate follow-up: the `USA` campaign has an inherited campaign-level sitelink `Quotes On Christianity` (plus the neutral `Join Free` / `Voting Membership` / inherited `About Us` / `FAQ`). `Quotes On Christianity` is religion-forward and shows on every ad including the neutral topic ads; consider replacing or removing it for consistency with the neutral-framing strategy and to reduce religious-personalization policy exposure. Not changed in this pass.
