@@ -978,3 +978,30 @@ Operational lessons (important for future ad creation in this account):
 Sitelink cleanup (2026-06-30): removed the campaign-level `Quotes On Christianity` sitelink from `USA`. In `Assets` -> `Associations` (filtered to `sitelink`) it was `Eligible (Limited)` under the `Religious belief in personalized advertising` policy, scoped at `Campaign` level (so it showed on every ad including the neutral topic ads), with `0` impressions / `0` clicks. Selected the row and used the toolbar `Remove` -> `Confirm` ("1 asset removed"). Note: sitelink assets DO expose a working `Remove` in the associations toolbar, unlike the business-name assets which only no-op.
 
 Remaining campaign-level sitelinks on `USA` after removal: `Join` (`Join the CTA community / Free or voting membership`), `Join Free`, `Voting Membership`, `About Us` (`Christians & Transhumanists / How did this happen?`), `FAQ` (`Questions about faith and tech / Clear answers for newcomers`). `About Us` and `FAQ` carry milder faith-forward language but DO get engagement (`About Us` had 26 impr / 3 clicks; they are among the few assets with any traffic), so they were left in place. Optional future follow-up: soften/replace the `About Us` and `FAQ` descriptions if pursuing strict neutral framing, but weigh against their current click contribution.
+
+## July 1, 2026 Business Name Determination (CLOSED — cosmetic, accept as-is)
+
+Google Ads support (specialist "Priya," gTech) delivered the determination on Case `1-2059000040983`:
+
+- The `CTA` business-name disapproval **cannot be reversed**. Policy requires the Business Name to EXACTLY match either the registered domain (`christiantranshumanism.org`) or the legal business name (`Christian Transhumanist Association`), AND be <= 25 characters. `CTA` matches neither, so it is rejected in its current form. No on-site wordmark change fixes this (that was the wrong theory the earlier CTA-wordmark deploy pursued).
+- Crucial: **the disapproval does NOT affect ad delivery.** Ads serve normally; the only impact is cosmetic — no business name displays next to the URL (shows the display URL + a placeholder globe icon) until an approved name is added.
+
+Three paths Google offered, with assessment:
+
+1. Rename the asset to `Christiantranshumanism` (their recommendation): 22 chars, exactly matches the domain root, self-serve/free/immediate. This SUPERSEDES the earlier `Christian Transhumanist` fallback idea — that (23 chars) would ALSO fail because it is not an exact match to the domain or legal name.
+2. Change the domain to match the name: non-starter.
+3. Brand-verify `CTA` (keeps the acronym, and `CTA` is the only NEUTRAL option): requires completing Advertiser Verification AND holding an active registered trademark on "CTA" owned by the legal entity; reviewed by a separate team (~3 business days, cannot be expedited). Impractical for CTA — "CTA" is a generic acronym they almost certainly do not hold a trademark on.
+
+Decision — accept as-is (do NOT rename to `Christiantranshumanism`). Reasoning (this is the settled conclusion; do not re-litigate):
+
+- The business name is COSMETIC — it never affected serving. So the ROI of any fix is low.
+- There is NO compliant-AND-neutral business name possible: both the domain and the legal name contain "Christian," so every compliant name reintroduces a religious identifier. The only neutral name (`CTA`) is the one that is blocked.
+- Setting `Christiantranshumanism` would inject "Christian" into the visible served asset, which would very likely pick up the separate `Religious belief in personalized advertising` limitation (already flagged "Approved (limited)" on this account's business-name assets) — trading a harmless cosmetic disapproval for a name carrying an actual serving/personalization limitation. That contradicts the deliberate neutral-framing strategy.
+- Leaving `CTA` disapproved = nothing displayed = maximally neutral served creative. Ads serve fine. This is the cleaner equilibrium.
+
+Strategic implication for future ad development (the useful takeaway):
+
+- Serving ads with a disapproved-but-non-displaying business name is a STABLE, repeatable foundation. The flag is asset-scoped and cosmetic; it does not escalate, does not accrue policy strikes, does not affect ad/ad-group approval, and is not a source of Ad Grants suspension risk. Build new ad groups and ads freely — nothing to re-fight per ad.
+- Even cleaner for any NEW campaign: the business name is an OPTIONAL field, so simply leave it blank rather than carry a disapproved `CTA` asset — same serving result, no disapproval flag.
+- The business name was never the real gate on ad development. The actual governing levers going forward are unchanged: (1) neutral framing (to manage the `Religious belief in personalized advertising` limitation, which is the one that touches serving), (2) the Ad Grants 5% account-level CTR rule, and (3) conversion tracking (the genuine unlock for safely scaling spend via broad match + Smart Bidding).
+- Minor caveat only: a displayed business name adds slight ad prominence/CTR; but the account has always served without one (legacy expanded-text ads had none) at 5-18% CTR on trafficked groups, so this is a marginal cosmetic loss, not a performance risk — not worth reintroducing a religious identifier.

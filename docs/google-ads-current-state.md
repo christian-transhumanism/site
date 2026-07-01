@@ -1,6 +1,6 @@
 # CTA Google Ads Current State
 
-_Last updated: 2026-06-30._
+_Last updated: 2026-07-01._
 
 This file is the compact resume point for CTA Google Ads growth work. A fresh agent should be able to start in this repo, read `AGENTS.md`, then this file, and continue without depending on the Notational vault for recent Ads state.
 
@@ -150,7 +150,7 @@ Known measurement gap: this records intent/outbound handoff, not confirmed Mailc
 
 ## Immediate Next Actions
 
-1. Monitor support Case ID `1-2059000040983` (manual policy-review for the campaign-level `CTA` business-name asset on `USA`, filed 2026-06-29). 2026-06-30: an email update was received from Google, but it contained NO determination yet (still in progress). If Google declines it or redirects it as a disapproval inquiry, stop pursuing `CTA` via appeal: either switch the `USA` business-name asset to `Christian Transhumanist` (23 chars, fits the 25-char limit, closer to the verified legal name) or pursue formal brand verification/trademark evidence. Do not re-save duplicate `CTA` assets (no-op) and do not appeal via any ad group (that caused the failed `56380626`).
+1. CLOSED (2026-07-01): Case `1-2059000040983` determination — the `CTA` business-name disapproval is NOT reversible (must exactly match domain or legal name, <=25 chars). It is COSMETIC ONLY: ads serve fine; the name just does not display next to the URL. Decision: accept as-is, do NOT rename to `Christiantranshumanism` (that would inject "Christian" into the served asset and likely trigger the `Religious belief in personalized advertising` limitation). There is no compliant-AND-neutral business name possible. Serving with a non-displaying business name is a stable foundation — build ads freely; new campaigns can simply leave the business name blank. Full write-up + the 3 rejected paths are in `docs/google-ads-operations.md` -> `July 1, 2026 Business Name Determination`. Do NOT re-litigate. The `Christian Transhumanist` fallback idea is dead (would also fail as non-exact-match).
 2. DONE (2026-06-30): the 4 ad groups that had NO ADS now each have an `Eligible` Responsive Search Ad: `Technology and Human Flourishing`, `Radical Longevity`, `Zero to One Future`, `Kevin Kelly Technology`. See `docs/google-ads-operations.md` -> `June 30, 2026 Recreated the 4 Missing Ads`. Next: watch that they clear review and start collecting impressions now that they can serve.
 3. Monitor the `AI Ethics and Future` keyword-broadening test (8 new phrase-match keywords + 37 campaign negatives added 2026-06-29). Watch ACCOUNT-level CTR over 7 days; if it holds >=5%, replicate phrase-broadening on `AI and Human Flourishing` and `Brain-Computer Interfaces`. Do not use broad match until conversion tracking works (Ad Grants 5% account CTR rule, no bid-strategy exemption).
 4. All four formerly-pending ad groups are now `Eligible` (`Ray Kurzweil Singularity`, `David Deutsch Progress`, `David Pearce Ending Suffering`, `Robin Hanson Futurism`) — no longer need approval monitoring.
