@@ -1,8 +1,8 @@
 # CTA Google Ads Current State
 
-_Last updated: 2026-07-01._
+_Last updated: 2026-07-06._
 
-This file is the compact resume point for CTA Google Ads growth work. A fresh agent should be able to start in this repo, read `AGENTS.md`, then this file, and continue without depending on the Notational vault for recent Ads state.
+This file is the compact resume point for CTA Google Ads growth work. A fresh agent should be able to start in this repo, read `AGENTS.md`, then this file, and continue without depending on anything outside this repo for recent Ads state.
 
 ## Read Order
 
@@ -13,7 +13,7 @@ This file is the compact resume point for CTA Google Ads growth work. A fresh ag
 5. `docs/google-ads-growth-plan.md` — broader strategy.
 6. `docs/backlog.md` — canonical surfaced work list.
 
-CTA Google Ads work should now be documented in this repo first. The Notational vault may contain historical/cross-system context, but it is no longer the center of operations for Ads execution.
+CTA Google Ads work is documented in this repo first. Older operator-side notes may contain historical context, but this repo is the center of operations for Ads execution.
 
 ## Live Account
 
@@ -55,6 +55,10 @@ Paused or already inactive legacy/sensitive groups:
 Legacy groups `Christianity & Transhumanism` and `Future of Christianity` remain enabled for now because they were the only recent click sources. Revisit them after the neutral topic clusters get enough impressions and clicks to compare.
 
 Last live check, 2026-06-23 13:51 CDT: campaign totals still showed `5` clicks, `36` impressions, `$8.20` cost, and `0.00` conversions for the visible reporting period.
+
+**Live check 2026-07-06 — the 7/01 Maximize Conversions switch backfired.** The `USA` campaign over the last 30 days (`Jun 6 – Jul 5`) showed `0` clicks, `38` impressions, `0.00` conversions, `$0.00` cost. Campaign state was `Eligible (Limited)` — "only eligible to serve to a limited audience" — with a `Targeting fewer searches` diagnostic under `Audiences`. This is a sharp regression from the prior 30-day window (16 clicks / 260 impressions / $16.09 as of 6/29): impressions fell ~85% and clicks/spend went to zero. Root cause: **Maximize Conversions with ~zero conversion history cannot learn to bid, so Google throttled delivery to a "limited audience."** The strategy meant to escape the Ad Grant $2 CPC cap instead stopped the campaign from bidding at all. **Reverted the same day** (see below).
+
+**Bid strategy reverted 2026-07-06:** switched `USA` back to **Maximize Clicks** with a **$2.00 max CPC bid limit** (the cap is required for Ad Grant compliance on non-Smart-Bidding strategies). After saving, the Bidding row read `Maximize clicks` and campaign status showed `Bid strategy learning`. AI Max remains off. Watch delivery + account CTR (must stay >=5%) over the next several days.
 
 ## Recent Ad Group Expansion
 
@@ -152,7 +156,7 @@ Known measurement gap: this records intent/outbound handoff, not confirmed Mailc
 
 1. CLOSED (2026-07-01): Case `1-2059000040983` determination — the `CTA` business-name disapproval is NOT reversible (must exactly match domain or legal name, <=25 chars). It is COSMETIC ONLY: ads serve fine; the name just does not display next to the URL. Decision: accept as-is, do NOT rename to `Christiantranshumanism` (that would inject "Christian" into the served asset and likely trigger the `Religious belief in personalized advertising` limitation). There is no compliant-AND-neutral business name possible. Serving with a non-displaying business name is a stable foundation — build ads freely; new campaigns can simply leave the business name blank. Full write-up + the 3 rejected paths are in `docs/google-ads-operations.md` -> `July 1, 2026 Business Name Determination`. Do NOT re-litigate. The `Christian Transhumanist` fallback idea is dead (would also fail as non-exact-match).
 2. DONE (2026-06-30): the 4 ad groups that had NO ADS now each have an `Eligible` Responsive Search Ad: `Technology and Human Flourishing`, `Radical Longevity`, `Zero to One Future`, `Kevin Kelly Technology`. See `docs/google-ads-operations.md` -> `June 30, 2026 Recreated the 4 Missing Ads`. Next: watch that they clear review and start collecting impressions now that they can serve.
-3. TRAFFIC SCALING (2026-07-01, in progress) — the current #1 focus. Campaign was serving almost nothing (2 clicks/50 impr/mo). Actions taken: (a) switched `USA` bid strategy to **Maximize Conversions** to remove the Ad Grants $2 CPC cap (the biggest lever; keywords were losing auctions at "below first page bid"); (b) broadened `AI and Human Flourishing` (7 phrase keywords) on top of the earlier `AI Ethics and Future` broadening. See `docs/google-ads-operations.md` -> `July 1, 2026 Traffic-Scaling Push`. WATCH account-level monthly CTR closely (campaign was ~4% on a tiny sample; must stay >=5% for Ad Grants). Next: broaden the remaining topic groups (`Brain-Computer Interfaces`, `Radical Longevity`, `Dominion and Future Values`, `Technology and Human Flourishing`, `Human Enhancement Ethics`) and re-check impressions/CTR. Still avoid AI Max / broad match (CTR risk). The 4 recreated ads + these changes need a few days of data.
+3. TRAFFIC SCALING — the current #1 focus. **The 7/01 Maximize Conversions experiment FAILED and was reverted 2026-07-06** (0 clicks / 38 impr / $0 over 30 days, `Eligible (Limited)`, "targeting fewer searches"). Do NOT re-try Maximize Conversions until there is real conversion volume for it to learn from — with ~zero conversions it throttles delivery to nothing. Current state: `USA` is back on **Maximize Clicks + $2.00 max CPC** (`Bid strategy learning` as of 7/06). The 7/01 keyword broadening (`AI and Human Flourishing` 7 phrase keywords, `AI Ethics and Future`) remains in place. **Next:** (a) let Maximize Clicks exit learning and confirm impressions/clicks recover over several days; (b) WATCH account-level monthly CTR (must stay >=5% for Ad Grants); (c) then broaden the remaining topic groups (`Brain-Computer Interfaces`, `Radical Longevity`, `Dominion and Future Values`, `Technology and Human Flourishing`, `Human Enhancement Ethics`) and re-check impressions/CTR. Still avoid AI Max / broad match (CTR risk). Note: Google is also suggesting "Remove 13 redundant keywords" on `USA`.
 4. All four formerly-pending ad groups are now `Eligible` (`Ray Kurzweil Singularity`, `David Deutsch Progress`, `David Pearce Ending Suffering`, `Robin Hanson Futurism`) — no longer need approval monitoring.
 5. Monitor the new campaign-level `Join Free` and `Voting Membership` sitelinks until they move from `Pending / Under review` to eligible or policy-limited.
 6. Conversion tracking: NOT the current bottleneck (reprioritized 2026-07-01). The existing intent event (`membership_signup_intent` on the `/join/*` `Continue` click) is a reasonable proxy and the stale tag is fixed. At ~3 clicks/month there is nothing to measure and far too little volume for Smart Bidding (needs ~15-30 conversions/month), so upgrading measurement now would change nothing. TRAFFIC VOLUME is the real bottleneck. Revisit conversion tracking only AFTER traffic scales: then (a) add server-side Mailchimp/Stripe completion tracking to optimize toward real members, and (b) consider Smart Bidding. Leave as-is for now.
