@@ -70,7 +70,7 @@ The static site is written to `_site/`. Deploy that folder to any static host (N
 ## Deployment notes
 
 - The project includes numerous remote feeds configured in `.eleventy.js`. Ensure deploy environments allow outbound HTTP(S) so the build can hydrate those feeds; otherwise Eleventy will fall back to placeholder content.
-- Netlify is configured via [netlify.toml](/Users/micahredding/.codex/worktrees/c443/cta-site/netlify.toml) to run `npm run build:remote` and publish `_site`, so production deploys continue to refresh remote feeds.
+- Netlify is configured via [netlify.toml](netlify.toml) to run `npm run build:remote` and publish `_site`, so production deploys continue to refresh remote feeds.
 - Environment variables can be defined in `.env` or the hosting provider’s UI; the lightweight loader inside `.eleventy.js` reads the file before the build starts.
 
 ## Working with the CTA wiki vault

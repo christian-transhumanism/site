@@ -2,7 +2,11 @@
 
 **This file is the source of truth for running the Christian Transhumanist Association (CTA) digital ecosystem.** Any agent — Codex, Claude, or other — picking up CTA work starts here. It covers the website, Google Ads, page creation/writing, deployment, and the membership funnel, and points to the deeper docs for each.
 
-> Maintained as the agent-facing index. Human dev setup is in `README.md`; this file is the *operations + orchestration* layer. Cross-system context (how CTA fits the broader infra) lives in the owner's vault at `~/Dropbox/1/Notational/agent-framework/INFRA/FLEET.md` (§Off-fleet systems) — but **this directory is the source of truth for the CTA project itself.**
+> Maintained as the agent-facing index. Human dev setup is in `README.md`; this file is the *operations + orchestration* layer. **This repo is the source of truth for the CTA project.**
+
+**Mission: this repo is a standalone, self-documenting project for running the CTA.** Four layers: (1) the public site, (2) the quasi-public board wiki, (3) succession + task docs in `docs/` (never compiled to the site), (4) this AI operating layer. The map is `docs/README.md`; continuity is `docs/succession-plan.md`. An agent's job here is not only to execute tasks but to **coach newcomers** (walk a new operator through `docs/README.md` → this file → `docs/backlog.md`) and to **keep these docs true** — when you learn something operational that isn't written down, write it down.
+
+**Standalone rule:** this repo is CTA-facing and must be handoff-ready — a successor (e.g. the CTA VP) with only this repo + Bitwarden access must be able to carry on. Never make a doc here depend on the current operator's private notes, machines, or personal agent infrastructure. Where something *currently* runs on operator-side infrastructure, say so and track it as a migration item in `docs/succession-plan.md` §6.
 
 ## 1. What the ecosystem is — the funnel
 
@@ -21,7 +25,7 @@ Google Ad Grant (acquisition)
 ## 2. The website (this repo)
 
 - **Stack:** [Eleventy](https://www.11ty.dev/) 3.x static site, **Node 22+**. Source in `src/`. Output in `_site/` (generated — never edit).
-- **Repo:** `git@github.com:christian-transhumanism/site.git` (branch `main`). Local clone: `~/Sites/cta-site`.
+- **Repo:** `git@github.com:christian-transhumanism/site.git` (branch `main`).
 - **Deploy:** **Netlify, auto-deploy on push to `main`.** A push triggers a build + publish to **https://www.christiantranshumanism.org**.
   - **Known failure mode:** the Netlify connector occasionally **500s on upload**, and freshly-pushed `/…/` pages can **404 until the deploy settles**. After pushing, verify the live URL returns 200 before relying on it or wiring ads to it.
 - **Local dev:** `npm install` once, then `npm run dev` (→ http://localhost:8080, skips remote feeds) or `npm run dev:remote` (live feeds). Production check: `npm run build` (offline-safe, uses `.cache/`).
@@ -33,13 +37,13 @@ Google Ad Grant (acquisition)
 
 ## 3. Page creation & writing
 
-- **Topic pages** are written in CTA's voice via the **`/cta-page` skill** (defined in `~/Dropbox/1/Notational/.claude/skills/cta-page/`, with companion `VOICE.md` + `BACKLOG.md`). It produces an **unsigned, informative `/topics/<slug>/` page** and delivers it as a **git branch + PR** for review — it does not push to `main` directly.
-- **Voice/guardrails:** informative, not preachy; unsigned (no personal byline); routes readers to `/join/future`, `/join/free`, `/join/voting`. Content/messaging strategy for the homepage lives in the vault: `~/Dropbox/1/Notational/00_Project_CTA_Homepage.md`.
-- **The hero / messaging layer** (problematization-forward, "AI could remake the world — or end it", Expansive Human Futures) is locked in `00_Project_CTA_Homepage.md`. Keep "transhumanism" below the fold; "apologetics" is used deliberately (do not soften).
+- **Topic pages** are written in CTA's voice via the **`/cta-page` skill** — defined **in this repo** at `.claude/skills/cta-page/` (with companion `VOICE.md` + `BACKLOG.md`). It produces an **unsigned, informative `/topics/<slug>/` page** and delivers it as a **git branch + PR** for review — it does not push to `main` directly.
+- **Voice/guardrails:** informative, not preachy; unsigned (no personal byline); routes readers to `/join/future`, `/join/free`, `/join/voting`. The full voice reference is `.claude/skills/cta-page/VOICE.md`.
+- **The hero / messaging layer** (problematization-forward, "AI could remake the world — or end it", Expansive Human Futures) is locked in **`docs/homepage-messaging.md`**. Keep "transhumanism" below the fold; "apologetics" is used deliberately (do not soften).
 
 ## 4. Google Ads ($10k/mo Ad Grant)
 
-The grant is **use-it-or-lose-it** — unspent budget is wasted. **Operated by Codex** today (incl. a `weekly-cta-google-ads-growth-review` automation). **Source-of-truth docs in `docs/`:**
+The grant is **use-it-or-lose-it** — unspent budget is wasted. Operated by **an AI agent with Ads-account auth, run by the ED** (including a weekly growth-review automation). *That automation currently runs on the ED's personal infrastructure — a migration item in `docs/succession-plan.md` §6; the docs below are written so any agent with Ads access can resume.* **Source-of-truth docs in `docs/`:**
 
 - **`docs/google-ads-current-state.md`** — start here for the current Ads resume point: account/campaign IDs, recent changes, pending reviews, live landing pages, and next actions.
 - **`docs/google-ads-operations.md`** — account + navigation working notes. **CTA Google Ads customer ID: `459-256-2474`.**
@@ -53,15 +57,17 @@ The grant is **use-it-or-lose-it** — unspent budget is wasted. **Operated by C
 
 ## 5. Integrations & conversion tracking
 
-- **Free membership → Mailchimp; voting membership → Stripe.** Access notes (env vars, how each is counted) live in the vault: `~/Dropbox/1/Notational/agent/capabilities/cta-integrations-access.md`. Secrets are in `agent/.env` there — never inline.
+- **Free membership → Mailchimp; voting membership → Stripe.** How each is wired and counted: **`docs/integrations.md`**. **Credentials live in Bitwarden** — never in this repo.
 - **Conversion tags:** GA4 `membership_signup_intent` + Google Ads `Membership`, fired on the `/join/*` handoff pages. **Open gap:** the conversion currently counts *intent / outbound handoff*, **not** confirmed Mailchimp/Stripe completion — so the growth metric is a proxy. Closing it (a completion webhook) is the highest-leverage funnel improvement.
-- **Measurement:** `~/Dropbox/1/Notational/agent/tools/cta-report.js` pulls Mailchimp members + Stripe active subs into the ED-report sheet (Facebook + Google Ads columns still hand-entered).
+- **Measurement:** a small report script (`cta-report.js`) pulls Mailchimp members + Stripe active subs into the ED-report sheet (Facebook + Google Ads columns still hand-entered). Details + its known weekly-auth failure: `docs/integrations.md`. *Currently runs on the ED's machine — migration item.*
 
 ## 6. Who operates what — and how to hand off
 
-- **Codex** runs the **live funnel**: Google Ads changes, site deploys, growth work. It has the Ads auth and the live-site context.
-- **The `/cta-page` skill** writes topic pages (branch + PR).
-- **The vault's Claude agent** (in `~/Dropbox/1/Notational`) holds the cross-system map and **hands CTA tasks off** to the above. When it has a CTA task, it: (a) writes it up referencing this file, (b) routes Ads/deploy/live-funnel work to Codex, (c) routes new-topic-page writing to `/cta-page`. It does **not** make live Ads changes or push to the site `main` itself.
+Think in **roles**, not specific tools — any capable agent (or human) holding the right access can fill each one:
+
+- **Funnel operator** — runs the live funnel: Google Ads changes, site deploys, growth work. Needs Ads-account auth (via Bitwarden) and the `docs/google-ads-*.md` context. *Currently: an AI agent run by the ED.*
+- **Page writer** — the in-repo `/cta-page` skill writes topic pages (branch + PR); it never merges or deploys.
+- **Coordinator** — whoever routes work: writes the task up referencing this file, sends live-Ads/deploy work to the funnel operator, sends new-topic-page writing to `/cta-page`. The coordinator does **not** make live Ads changes or push to `main` itself.
 
 **Open project tasks / backlog:** `docs/backlog.md` — the canonical surfaced-work list (email-platform/Mailchimp decision, the intent→confirmed conversion webhook, Netlify reliability, orchestration). Check it before picking up CTA work.
 
@@ -69,13 +75,15 @@ The grant is **use-it-or-lose-it** — unspent budget is wasted. **Operated by C
 | Task | Owner / how |
 |---|---|
 | New topic landing page | `/cta-page` skill → PR |
-| Ad campaign / keyword / bid changes | Codex (live Ads), per `docs/` |
+| Ad campaign / keyword / bid changes | funnel operator (live Ads), per `docs/google-ads-*.md` |
 | Deploy / verify a page is live | push to `main` → Netlify; verify URL 200 |
-| Conversion-tag / funnel wiring | Codex; keep `/join/*` tracking intact |
-| Membership numbers | `cta-report.js` (vault) |
+| Conversion-tag / funnel wiring | funnel operator; keep `/join/*` tracking intact |
+| Membership numbers | `cta-report.js` — see `docs/integrations.md` |
 
 ## 7. Guardrails recap
 - Don't break `/join/*` conversion tracking or the Stripe voting path.
 - Verify Netlify deploys actually went live (200) — the connector is flaky.
 - Respect the Ads compliance rules in §4 — the grant is the kill-switch.
-- Secrets stay in the vault's `agent/.env`; never commit credentials here.
+- Secrets live in **Bitwarden**; never commit credentials here. Automation may hold working copies in a local gitignored `.env`, but Bitwarden is canonical.
+- Keep the repo standalone: no dependence on the current operator's private notes or machines (see the Standalone rule at the top).
+- Board material is quasi-public and belongs in `src/cta-wiki/board/`; operational docs that shouldn't be served at all belong in `docs/` (which never compiles to the site).

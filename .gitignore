@@ -12,7 +12,9 @@ src/assets/*
 .obsidian/
 src/obsidian/.obsidian/
 src/cta-wiki/.smart-env
-.claude
+# Claude local state stays ignored, but .claude/skills/ is versioned (repo-owned skills, e.g. /cta-page)
+.claude/*
+!.claude/skills/
 
 # Netlify CLI local state
 .netlify

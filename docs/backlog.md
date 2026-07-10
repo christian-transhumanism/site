@@ -1,9 +1,8 @@
 # CTA — backlog (surfaced work)
 
-Canonical task list for the CTA project. Organized the way the owner's infra surfaces work:
-each cluster has an **imperative** (what it serves) and each item a category tag. This is the
-CTA-project source of truth for open work; the vault's `FLEET.md` (§Off-fleet → CTA) holds a
-"register view" of the same items. See `../AGENTS.md` for how the ecosystem runs.
+Canonical task list for the CTA project: each cluster has an **imperative** (what it
+serves) and each item a category tag. This is the CTA-project source of truth for open
+work. See `../AGENTS.md` for how the ecosystem runs.
 
 Tags: `[fix]` broken · `[risk]` will-break · `[improve]` new value · `[unify]` consolidate · `[decision]`
 
@@ -14,7 +13,7 @@ Tags: `[fix]` broken · `[risk]` will-break · `[improve]` new value · `[unify]
 **Imperative:** CTA needs to (a) capture email signups **and** (b) send periodic email to members — *cheaply*.
 **Current state:** Mailchimp ~**$45/mo**, used almost entirely for *capture*; to mail without waste we
 manually **pause/unpause** the monthly plan (toil + mistiming risk). Free membership = a Mailchimp list
-subscription. Access/how-counted: vault `agent/capabilities/cta-integrations-access.md`.
+subscription. Access/how-counted: `integrations.md` (this directory).
 
 - `[decision/improve]` **Evaluate Mailchimp vs competitors** (Kit / MailerLite / Loops / Beehiiv / Resend) against the $45/mo + pause-toil — is there a tier that does capture + light sending *without* the hack? Bar to switch is "clearly better," since Mailchimp is already wired into the funnel (`/join/free` handoff + ED-report member count) and the Stripe (voting) tier must stay intact.
 - `[improve]` **Welcome email on signup** — automate via the chosen platform. *(soft-dep: best after the platform eval, to avoid a rebuild — not blocked by it. Done = a test signup receives a welcome email.)*
@@ -34,13 +33,13 @@ subscription. Access/how-counted: vault `agent/capabilities/cta-integrations-acc
 
 ## Orchestration
 
-- `[decision]` **Keep Ads + site in Codex, or bring under the agent-framework fleet** for observability (so they show up in the owner's `status` board). Cross-cuts every CTA off-fleet system; affects who can see/operate the funnel. *(Partially addressed 2026-06-23: the owner's `status` now shows a **cta-site panel** — live status, last deploy, content-commit activity, and an Ads-docs proxy. The Ads **automation itself** is still Codex-only and unobservable from the fleet — proxied via last Ads-docs commit. The open decision is whether to make the automation directly observable.)*
+- `[risk/decision]` **The Ads automation and its observability run on the ED's personal infrastructure** — the weekly Ads growth-review automation, its monitoring, and the ED-report tooling all live outside this repo. That is itself a succession risk (see `succession-plan.md` §6): decide how to make the automation CTA-transferable — e.g. re-home it as a documented runbook + scheduled agent that any operator with Bitwarden access can re-create. *(Interim mitigation: `docs/google-ads-current-state.md` is kept as the resume point so any agent with Ads auth can continue manually.)*
 
 ## Measurement — keep the numbers alive
 
 **Imperative:** CTA's membership numbers must stay current and trustworthy.
 
-- `[risk]` **The ED-report measurement breaks every ~7 days.** `cta-report.js` (Mailchimp + Stripe → reporting sheet, in the owner's vault) authenticates via the **Google Workspace OAuth app, still in *testing* mode → its refresh token expires every 7 days.** So CTA's membership *measurement* silently dies weekly unless re-authed, and the funnel can end up optimizing against **stale numbers**. Fix: publish/verify the OAuth app (move it out of testing), or add a re-auth reminder.
+- `[risk]` **The ED-report measurement breaks every ~7 days.** `cta-report.js` (Mailchimp + Stripe → reporting sheet; runs on the ED's machine — see `integrations.md`) authenticates via the **Google Workspace OAuth app, still in *testing* mode → its refresh token expires every 7 days.** So CTA's membership *measurement* silently dies weekly unless re-authed, and the funnel can end up optimizing against **stale numbers**. Fix: publish/verify the OAuth app (move it out of testing), or add a re-auth reminder.
 
 ## Content — cta-wiki stub completion (standing work)
 
