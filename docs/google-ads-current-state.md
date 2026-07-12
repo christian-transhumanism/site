@@ -1,6 +1,6 @@
 # CTA Google Ads Current State
 
-_Last updated: 2026-07-06._
+_Last updated: 2026-07-12._
 
 This file is the compact resume point for CTA Google Ads growth work. A fresh agent should be able to start in this repo, read `AGENTS.md`, then this file, and continue without depending on anything outside this repo for recent Ads state.
 
@@ -45,20 +45,24 @@ Enabled ad groups observed in the campaign table:
 - `Technology and Human Flourishing` — eligible.
 - `Zero to One Future` — eligible.
 
-Paused or already inactive legacy/sensitive groups:
+Legacy/sensitive religion-forward groups (status as of 2026-07-10 — see "All-Time Click Source" note below):
 
-- `Christianity and Technology` — paused; zero clicks in the last checked period.
-- `God & AI` — paused; zero clicks.
-- `Religion and Technology` — paused; zero clicks.
-- `Science & Faith & Spirituality` — already paused due to low activity.
+- `Christianity and Technology` — **RE-ENABLED 2026-07-10** (was paused). All-time #1 click source: 2,253 clicks, 8.97% CTR.
+- `God & AI` — **RE-ENABLED 2026-07-10** (was paused). 1,003 clicks all-time, 10.01% CTR (highest CTR of any group).
+- `Religion and Technology` — **RE-ENABLED 2026-07-10** (was paused). 123 clicks all-time, 7.55% CTR.
+- `Science & Faith & Spirituality` — **still PAUSED** (deliberate). 1,485 clicks all-time but only **2.41% CTR** — below the Ad Grant 5% floor, so re-enabling it would drag account CTR down and risk deactivation. Hold pending a separate decision.
 
-Legacy groups `Christianity & Transhumanism` and `Future of Christianity` remain enabled for now because they were the only recent click sources. Revisit them after the neutral topic clusters get enough impressions and clicks to compare.
+Legacy groups `Christianity & Transhumanism` (2,041 clicks, 5.76% CTR) and `Future of Christianity` (630 clicks, 9.75% CTR) remained enabled throughout.
+
+**All-Time Click Source finding (2026-07-10):** an all-time (since 2017) ad-group report showed the account's entire click history — **7,535 clicks — came 100% from the six religion-forward groups above.** Every neutral/topic/thinker group built during the 2026 pivot (AI & Human Flourishing, Brain-Computer Interfaces, all thinker groups, etc.) has produced **exactly 0 clicks all-time**, despite accumulating impressions. Interpretation: CTA's actual searching audience responds to faith-and-technology intent, not neutral topic wording. This is in direct tension with the policy pivot (the religion-forward wording is also what drew sensitive-interest scrutiny). Decision on 2026-07-10: re-enable the three high-CTR religion-forward winners to restore click flow while keeping account CTR healthy; keep the neutral groups running but recognize they are not the click driver. Still OPEN: whether/how to make the neutral groups actually convert (keyword intent vs. ad copy), and the `Science & Faith & Spirituality` CTR-liability decision.
 
 Last live check, 2026-06-23 13:51 CDT: campaign totals still showed `5` clicks, `36` impressions, `$8.20` cost, and `0.00` conversions for the visible reporting period.
 
 **Live check 2026-07-06 — the 7/01 Maximize Conversions switch backfired.** The `USA` campaign over the last 30 days (`Jun 6 – Jul 5`) showed `0` clicks, `38` impressions, `0.00` conversions, `$0.00` cost. Campaign state was `Eligible (Limited)` — "only eligible to serve to a limited audience" — with a `Targeting fewer searches` diagnostic under `Audiences`. This is a sharp regression from the prior 30-day window (16 clicks / 260 impressions / $16.09 as of 6/29): impressions fell ~85% and clicks/spend went to zero. Root cause: **Maximize Conversions with ~zero conversion history cannot learn to bid, so Google throttled delivery to a "limited audience."** The strategy meant to escape the Ad Grant $2 CPC cap instead stopped the campaign from bidding at all. **Reverted the same day** (see below).
 
 **Bid strategy reverted 2026-07-06:** switched `USA` back to **Maximize Clicks** with a **$2.00 max CPC bid limit** (the cap is required for Ad Grant compliance on non-Smart-Bidding strategies). After saving, the Bidding row read `Maximize clicks` and campaign status showed `Bid strategy learning`. AI Max remains off. Watch delivery + account CTR (must stay >=5%) over the next several days.
+
+**Performance check 2026-07-12 (2 days after re-enable):** three religion-forward groups re-enabled on 2026-07-10 all show **Eligible** status with no disapprovals visible. Campaign remains in `Bid strategy learning` phase. Last-30-days data as of 2026-07-12 still showing low recent click volume (Maximize Clicks learning window continues), but re-enabled groups' ads are confirmed serving. Watch items: (1) CTR recovery as groups serve over next 3-5 days; (2) account-level monthly CTR stays >=5%; (3) whether re-enabled groups re-trigger `Religious belief in personalized advertising` limitation.
 
 ## Recent Ad Group Expansion
 

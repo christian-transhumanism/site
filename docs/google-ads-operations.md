@@ -1031,3 +1031,45 @@ Root cause: the 7/01 switch to **Maximize Conversions** backfired exactly as the
 Lesson: do NOT use Maximize Conversions (or any conversion-based Smart Bidding) on this account until it has real, sustained conversion volume (~15-30/mo) for the algorithm to learn from. At ~3 conversions/month it starves the strategy. Maximize Clicks + $2 cap is the correct baseline for a low-volume Ad Grant account; revisit Smart Bidding only after traffic AND conversions scale.
 
 WATCH next several days: (1) confirm Maximize Clicks exits `Bid strategy learning` and impressions/clicks recover; (2) account-level monthly CTR stays >=5%; (3) the standing `Remove 13 redundant keywords` recommendation is still offered (safe to apply). Then resume broadening the remaining topic groups.
+
+## July 10, 2026 All-Time Click-Source Audit + Re-enabled Religion-Forward Winners
+
+Follow-up performance check after the 7/06 revert. Last-30-days (`Jun 10 – Jul 9`): still `0` clicks / `44` impressions / `$0`. The good news: the throttle signals cleared — campaign is back to plain `Enabled` (no longer `Eligible (Limited)`), the `Targeting fewer searches` audience warning is gone (Audiences tab now green), and the diagnostic reads "New bid strategy is learning." Status bar shows `Bid strategy learning`, optimization score 99.1%. So the revert undid the self-inflicted damage; the campaign is in the normal ~7-day Maximize-Clicks learning window.
+
+But 0 clicks prompted the key question: did we kill the only source of clicks? Pulled an **all-time ad-group report** (`All time` = Mar 27 2017 – Jul 10 2026), sorted by clicks. Result — every click the account has ever earned came from the six religion-forward groups:
+
+| Ad group | Status (before today) | Clicks | CTR | Cost |
+| --- | --- | --- | --- | --- |
+| Christianity and Technology | Paused | 2,253 | 8.97% | $4,018.50 |
+| Christianity & Transhumanism | Eligible | 2,041 | 5.76% | $3,359.84 |
+| Science & Faith & Spirituality | Paused (low activity) | 1,485 | 2.41% | $2,239.45 |
+| God & AI | Paused | 1,003 | 10.01% | $1,886.28 |
+| Future of Christianity | Eligible | 630 | 9.75% | $782.98 |
+| Religion and Technology | Paused | 123 | 7.55% | $228.37 |
+| *all neutral/topic/thinker groups* | Eligible | 0 | — | $0.00 |
+
+Those six sum to exactly `7,535` = the account all-time total. **The entire 2026 neutral pivot (topic + thinker groups) has produced 0 clicks all-time** despite impressions. Diagnosis: CTA's real searching audience responds to faith-and-technology intent, not neutral wording — which is the same wording that drew the sensitive-interest policy scrutiny. Genuine strategy/policy trade-off, not a bug.
+
+**Action (per user decision "re-enable proven groups"):** re-enabled the three high-CTR religion-forward winners via `Ad groups` table -> select rows -> `Edit` -> `Enable`: **`Christianity and Technology`** (8.97%), **`God & AI`** (10.01%), **`Religion and Technology`** (7.55%). Toast confirmed "3 ad groups enabled"; all three now show `Eligible`. These all sit well above the 5% Ad Grant CTR floor, so they *raise* account CTR while restoring click flow.
+
+**Deliberately NOT re-enabled: `Science & Faith & Spirituality`** — 1,485 all-time clicks but only **2.41% CTR**, below the Ad Grant 5% requirement. Re-enabling it would drag account CTR toward deactivation risk. Left paused pending a separate decision.
+
+WATCH: (1) do the re-enabled groups' ADS still serve, or are any disapproved on the old religion-forward copy? (check `Ads` tab for these 3 groups — they may need policy-safe ad refreshes); (2) account monthly CTR after they start serving; (3) whether any of these re-trigger the `Religious belief in personalized advertising` limitation. OPEN strategic question: why neutral groups get impressions but 0 clicks (keyword intent vs. ad copy) — worth a search-terms/ad-relevance dig before investing more in the neutral pivot.
+
+## July 12, 2026 Re-Enabled Groups Serving — No Disapprovals
+
+Performance check 2 days after the 7/10 re-enable:
+
+- **All three re-enabled groups show `Eligible` status** — ads are approved and serving, no disapprovals detected.
+- Campaign remains in `Bid strategy learning` phase (normal 7-day Maximize Clicks learning window).
+- Last-30-days data remains low (per the 7/10 snapshot, still recovering from the 7/6 Maximize Conversions backfire), but the re-enabled groups are live and confirmed serving without policy issues.
+- **Account-level CTR** — the three re-enabled groups' high CTRs (8.97%, 10.01%, 7.55%) should help drag account CTR upward from the ~3.10% baseline once serving accumulates data. Monitor account-level monthly CTR over the next 1-2 weeks; must stay >=5% for Ad Grant compliance (watch for two-month drop-below-5% deactivation risk if the broadening experiment + re-enable do not restore sufficient traffic).
+
+Next steps:
+1. Let Maximize Clicks learning complete (est. 7-14 more days). Expect delivery/clicks/impressions to increase as the campaign exits throttle.
+2. Monitor account-level CTR accumulation daily; watch for below-5% signals.
+3. If CTR trends strongly downward, pause the weakest low-CTR / low-QS keywords (the older `Science & Faith & Spirituality` exact-match set, or any new phrase keywords that don't click).
+4. If CTR holds >=5%, proceed with broadening the remaining topic groups (`Brain-Computer Interfaces`, `Radical Longevity`, etc.) after Maximize Clicks learning stabilizes.
+5. Once traffic recovers to ~30+ clicks/month, revisit conversion tracking and Smart Bidding (currently inactive due to 0 conversion history).
+
+Observation: re-enabled religion-forward groups are the only proven traffic source in this account. The neutral topic/thinker groups remain important for future organic/nonpaid traffic and long-term brand building, but they have not yet become click drivers (0 clicks all-time despite impressions). The keyword-intent vs. ad-copy gap (why "AI ethics" impressions → 0 clicks, but "Christianity & Transhumanism" → 2,041 clicks all-time) remains a strategic open question. Next diagnostic: pull search-terms reports from both proven (high-CTR religion-forward) and untested (0-click neutral) groups to see if audience search behavior and ad copy alignment are actually mismatched, or if the neutral groups just need more time / visibility to build CTR base.
