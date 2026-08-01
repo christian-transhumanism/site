@@ -1,0 +1,107 @@
+---
+title: "The First Christian Transhumanist Retreat — October 16–18, 2026"
+description: "Come away with us. Three days at Woodlands Retreat in Nunnelly, Tennessee — a lake, trails, a chapel, fire and conversation late into the night."
+layout: default
+permalink: /retreat/
+body_classes: conference
+tiers:
+  - name: Bunkroom
+    price: "$150"
+    unit: "per person"
+    detail: "A bunk in the shared lodge rooms. The most accessible way to be there — everything else is identical."
+    url: "REPLACE_WITH_STRIPE_LINK_BUNKROOM"
+  - name: Private Room
+    price: "$250"
+    unit: "per person · $450 per couple"
+    detail: "Your own private room in the lodge."
+    urlSolo: "REPLACE_WITH_STRIPE_LINK_PRIVATE_SOLO"
+    urlCouple: "REPLACE_WITH_STRIPE_LINK_PRIVATE_COUPLE"
+  - name: Master Suite
+    price: "$300"
+    unit: "solo · $550 per couple"
+    detail: "The lodge's master suite — one available, first come."
+    urlSolo: "REPLACE_WITH_STRIPE_LINK_MASTER_SOLO"
+    urlCouple: "REPLACE_WITH_STRIPE_LINK_MASTER_COUPLE"
+---
+
+<div class="jumbotron text-center" style="margin-bottom: 0;">
+  <div class="container">
+    <h1>Come away with us.</h1>
+    <h2>The first Christian Transhumanist Retreat</h2>
+    <h3>October 16–18, 2026 · Woodlands Retreat · Nunnelly, Tennessee</h3>
+    <div class="conference-cta-wrapper">
+      <a class="btn btn-primary btn-lg conference-cta-button" href="#register">Register</a>
+    </div>
+  </div>
+</div>
+
+<section class="fh5co-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <p>For ten years we've gathered online and on conference stages to ask one question together: what does it mean to follow Christ into the future? This fall, we're doing something we've never done — going <em>away</em> together. Three days on 300 wooded acres: a lake, trails, a chapel, fire and conversation late into the night.</p>
+        <p>This is a retreat, not a conference. Fewer talks, more table. We'll come to embody the thing we keep pointing at — a hopeful, rational, future-facing faith — before we argue another word about it.</p>
+        <p>The theme that will hold our weekend: <strong>the shape of progress is the face of Christ.</strong> Come find out what we mean.</p>
+        <p>We work against illness, hunger, oppression, injustice, and death — and once a year, it's good to do that work shoulder to shoulder, in person, with people who see what you see.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fh5co-section" style="background: #f7f7f7;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>The details</h2>
+        <ul>
+          <li><strong>When:</strong> Friday, October 16 (check-in 4pm) → Sunday, October 18 (10am)</li>
+          <li><strong>Where:</strong> Woodlands Retreat, Nunnelly, TN — about an hour west of Nashville. Lodge bedding provided.</li>
+          <li><strong>Who:</strong> the CTA community and friends — space is limited</li>
+          <li><strong>Meals:</strong> catered dinners Friday and Saturday; shared breakfasts and lunch</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a id="register"></a>
+<section class="fh5co-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <h2>Register</h2>
+        <p>Every registration includes the full weekend — lodging, meals, and everything we do together. The only difference between tiers is the room you sleep in.</p>
+      </div>
+    </div>
+    <div class="row">
+      {% for tier in tiers %}
+      <div class="col-md-4">
+        <div class="well text-center">
+          <h3>{{ tier.name }}</h3>
+          <p style="font-size: 2em; margin-bottom: 0;"><strong>{{ tier.price }}</strong></p>
+          <p>{{ tier.unit }}</p>
+          <p>{{ tier.detail }}</p>
+          {% if tier.url %}
+            <a class="btn btn-primary btn-lg" href="{{ tier.url }}">Register</a>
+          {% else %}
+            <a class="btn btn-primary" href="{{ tier.urlSolo }}">Register solo</a>
+            <a class="btn btn-primary" href="{{ tier.urlCouple }}">Register couple</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <p>Cost shouldn't keep anyone from the table. <strong>Scholarships are available — just ask:</strong> <a href="mailto:admin@christiantranshumanism.org?subject=CTA%20Retreat%20Scholarship">admin@christiantranshumanism.org</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fh5co-section text-center" style="background: #f7f7f7;">
+  <div class="container">
+    <p><em>Space is genuinely limited. If the future makes your faith come alive, come.</em></p>
+    <p>— The Christian Transhumanist Association</p>
+  </div>
+</section>
