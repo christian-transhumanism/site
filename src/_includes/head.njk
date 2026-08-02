@@ -1,4 +1,5 @@
 <head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{% if title %}{{ title }} | {{ site.sitename or 'Christian Transhumanist Association' }}{% else %}{{ site.title or 'Christian Transhumanist Association: Faith, Technology, and the Future' }}{% endif %}</title>
 
@@ -92,6 +93,9 @@
 {% endif %}
 {% if page.url == "/rise/" %}
 <link rel="stylesheet" media="all" href="/stylesheets/rise.css">
+{% endif %}
+{% if page.url == "/retreat/" or page.url == "/retreat/confirmed/" %}
+<link rel="stylesheet" media="all" href="/stylesheets/retreat.css">
 {% endif %}
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VFC3LNL1G"></script>
