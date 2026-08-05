@@ -27,6 +27,7 @@ Google Ad Grant (acquisition)
 - **Stack:** [Eleventy](https://www.11ty.dev/) 3.x static site, **Node 22+**. Source in `src/`. Output in `_site/` (generated — never edit).
 - **Repo:** `git@github.com:christian-transhumanism/site.git` (branch `main`).
 - **Deploy:** **Netlify, auto-deploy on push to `main`.** A push triggers a build + publish to **https://www.christiantranshumanism.org**.
+- **Podcast pages (`/podcast/<n>/`):** generated at build time from the show's RSS feed (`https://brickcaster.com/christiantranshumanist.rss`, hydrated by `src/_data/podcast.js`). The feed is owned by the separate `micahredding/brickcaster` repo — when a new episode lands there, these pages appear on this site's **next deploy**; push an empty `chore: rebuild` commit to `main` to trigger one immediately.
   - **Known failure mode:** the Netlify connector occasionally **500s on upload**, and freshly-pushed `/…/` pages can **404 until the deploy settles**. After pushing, verify the live URL returns 200 before relying on it or wiring ads to it.
 - **Local dev:** `npm install` once, then `npm run dev` (→ http://localhost:8080, skips remote feeds) or `npm run dev:remote` (live feeds). Production check: `npm run build` (offline-safe, uses `.cache/`).
 - **Key structure:**
