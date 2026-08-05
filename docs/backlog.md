@@ -30,6 +30,7 @@ subscription. Access/how-counted: `integrations.md` (this directory).
 ## Site reliability
 
 - `[fix]` **Netlify deploy reliability** — recurring **500-on-upload / 404-after-push** silently breaks freshly-pushed landing pages (so ads can point at a dead URL). Always verify 200 after a push; find + fix the root cause (connector vs config).
+- `[risk]` **Dependency vulnerabilities — the flattened `package.json` is the disease.** `package.json` pins ~300 *transitive* packages as direct dependencies (a historical flattening), so old pins keep resurfacing as Dependabot alerts: as of 2026-08-05, ~26 open (≈18 high) across `ws`, `socket.io-parser`, `liquidjs`, `js-yaml`, `markdown-it`, `brace-expansion`, `immutable`, etc. — mostly browser-sync's dependency tree. The June 2026 fix (PR #5) bumped a few pins but treated symptoms. Real fix: prune `package.json` down to the genuine direct dependencies (Eleventy, browser-sync, the data-loader libs), regenerate `package-lock.json`, and verify with `npm run build` + `npm run verify`. All alerts are in dev/build-time tooling — the published site is static — so this is hygiene, not an emergency.
 
 ## Orchestration
 
