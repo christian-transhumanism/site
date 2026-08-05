@@ -2,6 +2,29 @@
 
 This repository contains the static website for the Christian Transhumanist Association, built with [Eleventy](https://www.11ty.dev/). Content lives under `src/`, including layouts, data files, and a large knowledge base that is ingested from an external Obsidian vault and rendered into the public wiki.
 
+## A self-documenting system
+
+**Aspiration: this repo is a standalone, self-documenting system for running the CTA's digital operations.** A successor — the CTA VP, a new volunteer, or an AI agent — with only this repo plus Bitwarden access should be able to carry everything on, with no access to the current operator's private notes, machines, or infrastructure. The canonical statement of this mission and the map of the documentation layers is [docs/README.md](docs/README.md); the agent-facing operating guide is [AGENTS.md](AGENTS.md).
+
+**How much of that is true today.** Largely true for knowing *what to do*; not yet true for *running everything from here*:
+
+- ✅ The documentation map and its four layers (public site / board wiki / `docs/` / AI operating layer) exist and are current — [docs/README.md](docs/README.md).
+- ✅ [AGENTS.md](AGENTS.md) documents the whole operation: the membership funnel, deploys, page writing, Google Ads, and guardrails.
+- ✅ [docs/succession-plan.md](docs/succession-plan.md) covers the systems inventory, account-recovery root, operating cadence, and a first-week/first-month takeover playbook.
+- ✅ Google Ads operations are documented in `docs/google-ads-*.md`, including a maintained resume point (`google-ads-current-state.md`) so any operator with Ads auth can continue.
+- ✅ [docs/backlog.md](docs/backlog.md) is the canonical open-work list; [docs/integrations.md](docs/integrations.md) and [docs/legal.md](docs/legal.md) cover the membership wiring and the legal/financial layer.
+- ✅ The topic-page-writing skill lives in-repo (`.claude/skills/cta-page/`), and no secrets live anywhere in the repo — Bitwarden is canonical.
+
+**Where the gaps are.** Tracked live in [docs/succession-plan.md](docs/succession-plan.md) §6–7 and [docs/backlog.md](docs/backlog.md); headline items:
+
+- The Bitwarden access path for a successor is undocumented — the blocking gap; without it, nothing else in the plan works.
+- The weekly Google Ads growth-review automation and the `cta-report.js` membership measurement run on the operator's personal infrastructure, not from this repo (documented as manual resume points, but not yet migrated).
+- The pipeline that syncs the source Obsidian vault into `src/cta-wiki/` is undocumented.
+- The conversion metric counts signup *intent*, not confirmed Mailchimp/Stripe completion — the funnel docs describe a proxy.
+- Parts of the wiki are stale or thin: the admin-accounts inventory predates the current stack, and roughly 176 of 491 wiki notes are stubs awaiting human authoring.
+
+If you learn something operational that isn't written down here, write it down — keeping these docs true is part of operating the project.
+
 ## Project layout
 
 - `src/` – primary Eleventy input directory.
@@ -153,4 +176,4 @@ Place values in a `.env` file or export them before running Eleventy. The lightw
 3. Commit compiled Markdown or template changes; do not commit `_site/`.
 4. Ensure the build command runs cleanly before opening a pull request.
 
-For additional background on content strategy or pending tasks, consult `guidelines.txt` and `todo.txt`.
+Pending work is tracked canonically in [docs/backlog.md](docs/backlog.md); `guidelines.txt` and `todo.txt` are older project-management notes kept for background.
