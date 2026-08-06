@@ -6,24 +6,28 @@ permalink: /retreat/
 body_classes: retreat-page
 tiers:
   - name: Bunkroom
-    price: "$185"
+    wasPrice: "$200"
+    price: "$175"
     unit: "per person"
     detail: "A bunk in the shared lodge rooms. The most accessible way to be there — everything else is identical."
     url: "https://buy.stripe.com/fZueVd4vPaLKd0rcjr8k801"
   - name: Private Room
+    wasPrice: "$295"
     price: "$250"
-    unit: "per person · $495 per couple"
+    unit: "per person · <s>$575</s> $495 per couple"
     detail: "Your own private room in the lodge."
     urlSolo: "https://buy.stripe.com/5kQ28r5zTf201hJerz8k802"
     urlCouple: "https://buy.stripe.com/8x26oHd2ldXW4tV4QZ8k803"
   - name: Family Room
+    wasPrice: "$750"
     price: "$650"
     unit: "per family · sleeps up to 4"
     detail: "A private room for the whole family — bring the kids along."
     url: "https://buy.stripe.com/00w4gz4vP5rq8Kb3MV8k806"
   - name: Master Suite
+    wasPrice: "$350"
     price: "$300"
-    unit: "solo · $550 per couple"
+    unit: "solo · <s>$625</s> $550 per couple"
     detail: "The lodge's master suite — the biggest room in the house."
     badge: "One available"
     urlSolo: "https://buy.stripe.com/fZu5kDe6pdXWgcDabj8k804"
@@ -64,14 +68,14 @@ tiers:
 <section class="retreat-section retreat-section--wide retreat-register">
   <div class="retreat-section__inner">
     <h2>Register</h2>
-    <p class="retreat-register__lede">Every registration includes the full weekend — lodging, meals, and everything we do together. The only difference between tiers is the room you sleep in.</p>
+    <p class="retreat-register__lede">Every registration includes the full weekend — lodging, meals, and everything we do together. The only difference between tiers is the room you sleep in. The crossed-out price is closer to what the weekend actually costs — CTA is covering the difference.</p>
     <div class="retreat-tiers">
       {% for tier in tiers %}
       <div class="tier-card">
         {% if tier.badge %}<span class="tier-card__badge">{{ tier.badge }}</span>{% endif %}
         <h3>{{ tier.name }}</h3>
-        <p class="tier-card__price">{{ tier.price }}</p>
-        <p class="tier-card__unit">{{ tier.unit }}</p>
+        <p class="tier-card__price">{% if tier.wasPrice %}<s class="tier-card__was">{{ tier.wasPrice }}</s> {% endif %}{{ tier.price }}</p>
+        <p class="tier-card__unit">{{ tier.unit | safe }}</p>
         <p class="tier-card__detail">{{ tier.detail }}</p>
         <div class="tier-card__actions">
           {% if tier.url %}

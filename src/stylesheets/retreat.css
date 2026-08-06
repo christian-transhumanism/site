@@ -188,10 +188,19 @@ body.retreat-page {
   color: var(--retreat-ember);
   line-height: 1.1;
 }
+.tier-card__was {
+  margin-right: 0.3rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: rgba(247, 243, 234, 0.45);
+}
 .tier-card__unit {
   margin: 0.2rem 0 1rem;
   font-size: 0.95rem;
   color: rgba(247, 243, 234, 0.7);
+}
+.tier-card__unit s {
+  color: rgba(247, 243, 234, 0.45);
 }
 .tier-card__detail {
   margin: 0 0 1.5rem;
