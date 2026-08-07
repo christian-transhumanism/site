@@ -35,6 +35,7 @@ tiers:
       - label: "Solo"
         wasPrice: "$350"
         price: "$300"
+        unavailable: true
         url: "https://buy.stripe.com/fZu5kDe6pdXWgcDabj8k804"
       - label: "Couple"
         wasPrice: "$625"
@@ -90,12 +91,16 @@ tiers:
         <p class="tier-card__detail">{{ tier.detail }}</p>
         <ul class="tier-options">
           {% for opt in tier.options %}
-          <li class="tier-option">
+          <li class="tier-option{% if opt.unavailable %} tier-option--unavailable{% endif %}">
             <span class="tier-option__text">
               <span class="tier-option__label">{{ opt.label }}{% if opt.note %} <span class="tier-option__note">· {{ opt.note }}</span>{% endif %}</span>
               <span class="tier-option__price"><s>{{ opt.wasPrice }}</s> {{ opt.price }}</span>
             </span>
+            {% if opt.unavailable %}
+            <span class="tier-option__flag">Unavailable</span>
+            {% else %}
             <a class="retreat-btn" href="{{ opt.url }}">Register</a>
+            {% endif %}
           </li>
           {% endfor %}
         </ul>
