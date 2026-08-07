@@ -8,6 +8,12 @@ src/assets/*
 !src/assets/icons/
 !src/assets/icons/**
 !src/assets/site.js
+# Page imagery we intentionally ship (allowlisted individually so bulk/scratch
+# images under src/assets/images/ stay ignored).
+!src/assets/images/
+src/assets/images/*
+!src/assets/images/retreat-hero.jpg
+!src/assets/images/retreat-hero-sm.jpg
 .env
 .obsidian/
 src/obsidian/.obsidian/

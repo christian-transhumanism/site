@@ -19,12 +19,27 @@ body.retreat-page section {
 .retreat-hero {
   position: relative;
   overflow: hidden;
-  padding: 5.5rem 1.5rem 5rem;
+  padding: 7rem 1.5rem 6.5rem;
   text-align: center;
   color: var(--retreat-cream);
-  background:
-    radial-gradient(ellipse 120% 55% at 50% 115%, rgba(217, 142, 50, 0.38) 0%, rgba(217, 142, 50, 0) 60%),
-    linear-gradient(180deg, #0a1710 0%, var(--retreat-night) 45%, #132b1c 100%);
+  /* Photo of the pavilion at dusk (Woodlands Retreat). Scrim keeps the
+     headline legible while letting the building's amber glow read through. */
+  background-color: var(--retreat-night);
+  background-image:
+    radial-gradient(ellipse 100% 60% at 50% 62%, rgba(217, 142, 50, 0.22) 0%, rgba(217, 142, 50, 0) 70%),
+    linear-gradient(180deg, rgba(6, 14, 9, 0.9) 0%, rgba(8, 19, 12, 0.62) 38%, rgba(9, 22, 14, 0.72) 62%, rgba(7, 16, 10, 0.95) 100%),
+    url("/assets/images/retreat-hero-sm.jpg");
+  background-position: center, center, center 62%;
+  background-size: cover, cover, cover;
+  background-repeat: no-repeat;
+}
+@media (min-width: 700px) {
+  .retreat-hero {
+    background-image:
+      radial-gradient(ellipse 100% 60% at 50% 62%, rgba(217, 142, 50, 0.22) 0%, rgba(217, 142, 50, 0) 70%),
+      linear-gradient(180deg, rgba(6, 14, 9, 0.9) 0%, rgba(8, 19, 12, 0.62) 38%, rgba(9, 22, 14, 0.72) 62%, rgba(7, 16, 10, 0.95) 100%),
+      url("/assets/images/retreat-hero.jpg");
+  }
 }
 .retreat-hero__eyebrow {
   margin: 0 0 1.25rem;
@@ -143,6 +158,14 @@ body.retreat-page section {
 }
 .retreat-details li:last-child {
   border-bottom: 0;
+}
+.retreat-details a {
+  color: var(--retreat-ember-deep);
+  text-decoration: underline;
+}
+.retreat-details a:hover,
+.retreat-details a:focus {
+  color: #8f570f;
 }
 
 /* Register */
