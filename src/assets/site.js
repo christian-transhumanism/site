@@ -298,7 +298,11 @@
   }
 
   function ensureSaveButton(pageMeta) {
-    if (document.body && document.body.classList.contains("join-future-page")) {
+    if (
+      document.body &&
+      (document.body.classList.contains("join-future-page") ||
+        document.body.classList.contains("retreat-page"))
+    ) {
       return;
     }
 

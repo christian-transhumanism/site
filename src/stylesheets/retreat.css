@@ -9,6 +9,12 @@ body.retreat-page {
   --retreat-ember-deep: #b9741f;
 }
 
+/* Global `section { margin-top: 20px }` (all.css) leaves white bars between
+   the full-bleed bands on this page. Neutralize it page-scoped. */
+body.retreat-page section {
+  margin-top: 0;
+}
+
 /* Hero */
 .retreat-hero {
   position: relative;
