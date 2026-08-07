@@ -140,13 +140,41 @@ body.retreat-page section {
   font-style: italic;
 }
 
-/* Photo band — full-bleed mosaic, no gutters, sits flush between sections */
+/* Photo band — full-bleed horizontal slider (scroll-snap; buttons are a
+   progressive enhancement, native scroll/swipe works without JS) */
 .retreat-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  position: relative;
   background: var(--retreat-night);
 }
+.retreat-gallery__viewport {
+  position: relative;
+}
+.retreat-gallery__track {
+  display: flex;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.retreat-gallery__track::-webkit-scrollbar {
+  display: none;
+}
+.retreat-gallery__track:focus-visible {
+  outline: 2px solid var(--retreat-ember);
+  outline-offset: -2px;
+}
 .retreat-gallery__item {
+  flex: 0 0 auto;
+  width: clamp(240px, 33.333vw, 460px);
+  scroll-snap-align: start;
+}
+.retreat-gallery__item figure {
   position: relative;
   margin: 0;
   overflow: hidden;
@@ -177,12 +205,46 @@ body.retreat-page section {
   background: linear-gradient(180deg, rgba(6, 14, 9, 0) 0%, rgba(6, 14, 9, 0.78) 100%);
   pointer-events: none;
 }
-@media (max-width: 900px) {
-  .retreat-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.retreat-gallery__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 1px solid rgba(247, 243, 234, 0.25);
+  border-radius: 50%;
+  background: rgba(9, 20, 13, 0.72);
+  color: var(--retreat-cream);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.retreat-gallery__nav:hover,
+.retreat-gallery__nav:focus-visible {
+  background: rgba(9, 20, 13, 0.92);
+  border-color: rgba(217, 142, 50, 0.75);
+}
+.retreat-gallery__nav svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+.retreat-gallery__nav--prev {
+  left: 0.85rem;
+}
+.retreat-gallery__nav--next {
+  right: 0.85rem;
+}
+.retreat-gallery__nav[hidden] {
+  display: none;
 }
 @media (prefers-reduced-motion: reduce) {
+  .retreat-gallery__track {
+    scroll-behavior: auto;
+  }
   .retreat-gallery__item img {
     transition: none;
   }

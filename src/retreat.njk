@@ -4,6 +4,49 @@ description: "Three days at Woodlands Retreat in Nunnelly, Tennessee — a lake,
 layout: default
 permalink: /retreat/
 body_classes: retreat-page
+photos:
+  - file: retreat-lake.jpg
+    caption: The lake
+    alt: "The lake in autumn colour, with a fountain and cattails along the near bank."
+  - file: retreat-chapel.jpg
+    caption: The chapel
+    alt: "A small white clapboard chapel with arched windows and a cupola."
+  - file: retreat-woods.jpg
+    caption: The trails
+    alt: "A rock bluff above a still creek, surrounded by autumn woods."
+  - file: retreat-greatroom.jpg
+    caption: The great room
+    alt: "The lodge great room, with a vaulted timber ceiling and tall windows."
+  - file: retreat-aerial.jpg
+    caption: 300 acres
+    alt: "Aerial view of the property: wooded hills, a lake, and gravel roads winding through."
+  - file: retreat-lodge.jpg
+    caption: The lodge
+    alt: "The timber-and-stone lodge where we'll be staying."
+  - file: retreat-geese.jpg
+    caption: Morning on the water
+    alt: "Two geese on a still lake in early morning mist."
+  - file: retreat-pavilion.jpg
+    caption: Room to gather
+    alt: "An open-sided pavilion with a white truss ceiling, set with rows of chairs."
+  - file: retreat-deer.jpg
+    caption: The neighbors
+    alt: "A deer looking back through autumn leaves at the edge of the woods."
+  - file: retreat-cabin.jpg
+    caption: Cabins by the water
+    alt: "A cabin with a deck overlooking the water, framed by trees."
+  - file: retreat-chapel-night.jpg
+    caption: The chapel at night
+    alt: "The white chapel lit up against the dark."
+  - file: retreat-dock.jpg
+    caption: The dock
+    alt: "A dock on the lake with paddle boats tied alongside."
+  - file: retreat-creek.jpg
+    caption: Creeks and hollows
+    alt: "A narrow creek running through dense green woods."
+  - file: retreat-porch.jpg
+    caption: Covered porch
+    alt: "A long covered porch looking out over the lawn toward the water."
 tiers:
   - name: Bunkroom
     detail: "A bunk in the shared lodge rooms. The most accessible way to be there — everything else is identical."
@@ -66,31 +109,26 @@ tiers:
   </div>
 </section>
 
-<section class="retreat-gallery" aria-label="Woodlands Retreat">
-  <figure class="retreat-gallery__item">
-    <img src="/assets/images/retreat-lake.jpg" width="900" height="675" loading="lazy" decoding="async" alt="The lake in autumn colour, with a fountain and cattails along the near bank.">
-    <figcaption>The lake</figcaption>
-  </figure>
-  <figure class="retreat-gallery__item">
-    <img src="/assets/images/retreat-chapel.jpg" width="900" height="675" loading="lazy" decoding="async" alt="A small white clapboard chapel with arched windows and a cupola.">
-    <figcaption>The chapel</figcaption>
-  </figure>
-  <figure class="retreat-gallery__item">
-    <img src="/assets/images/retreat-woods.jpg" width="900" height="675" loading="lazy" decoding="async" alt="A rock bluff above a still creek, surrounded by autumn woods.">
-    <figcaption>The trails</figcaption>
-  </figure>
-  <figure class="retreat-gallery__item">
-    <img src="/assets/images/retreat-greatroom.jpg" width="900" height="675" loading="lazy" decoding="async" alt="The lodge great room, with a vaulted timber ceiling and tall windows.">
-    <figcaption>Room to gather</figcaption>
-  </figure>
-  <figure class="retreat-gallery__item">
-    <img src="/assets/images/retreat-aerial.jpg" width="900" height="675" loading="lazy" decoding="async" alt="Aerial view of the property: wooded hills, a lake, and gravel roads winding through.">
-    <figcaption>300 acres</figcaption>
-  </figure>
-  <figure class="retreat-gallery__item">
-    <img src="/assets/images/retreat-lodge.jpg" width="900" height="675" loading="lazy" decoding="async" alt="The timber-and-stone lodge where we'll be staying.">
-    <figcaption>The lodge</figcaption>
-  </figure>
+<section class="retreat-gallery" aria-labelledby="retreat-gallery-heading">
+  <h2 id="retreat-gallery-heading" class="sr-only">Photos of Woodlands Retreat</h2>
+  <div class="retreat-gallery__viewport">
+    <button class="retreat-gallery__nav retreat-gallery__nav--prev" type="button" data-gallery-prev aria-label="Scroll to previous photos" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 4.5 7.5 12l7.5 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <ul class="retreat-gallery__track" data-gallery-track tabindex="0" role="group" aria-label="Photo carousel — scroll horizontally">
+      {% for photo in photos %}
+      <li class="retreat-gallery__item">
+        <figure>
+          <img src="/assets/images/{{ photo.file }}" width="900" height="675" loading="lazy" decoding="async" alt="{{ photo.alt }}">
+          <figcaption>{{ photo.caption }}</figcaption>
+        </figure>
+      </li>
+      {% endfor %}
+    </ul>
+    <button class="retreat-gallery__nav retreat-gallery__nav--next" type="button" data-gallery-next aria-label="Scroll to more photos" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4.5 16.5 12 9 19.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
 </section>
 
 <section class="retreat-section retreat-details">
@@ -146,3 +184,56 @@ tiers:
     <p>— The Christian Transhumanist Association</p>
   </div>
 </section>
+
+<script>
+  // Photo slider arrows. The track scrolls natively (swipe, trackpad, arrow
+  // keys) with no JS at all — these buttons are purely additive, so they stay
+  // hidden until we know scripting is available.
+  (function () {
+    var track = document.querySelector("[data-gallery-track]");
+    var prev = document.querySelector("[data-gallery-prev]");
+    var next = document.querySelector("[data-gallery-next]");
+    if (!track || !prev || !next) {
+      return;
+    }
+
+    function maxScroll() {
+      return track.scrollWidth - track.clientWidth;
+    }
+
+    function sync() {
+      var atStart = track.scrollLeft <= 1;
+      var atEnd = track.scrollLeft >= maxScroll() - 1;
+      var scrollable = maxScroll() > 1;
+      prev.hidden = !scrollable || atStart;
+      next.hidden = !scrollable || atEnd;
+    }
+
+    function itemWidth() {
+      var first = track.querySelector(".retreat-gallery__item");
+      return first ? first.getBoundingClientRect().width : 0;
+    }
+
+    // Scroll to an exact item boundary rather than by a fraction of the
+    // viewport: a mandatory snap container will fight a target that lands
+    // between snap points. Honour reduced-motion here too, since an explicit
+    // `behavior` overrides the CSS scroll-behavior rule.
+    function page(direction) {
+      var width = itemWidth();
+      if (!width) {
+        return;
+      }
+      var perPage = Math.max(1, Math.floor(track.clientWidth / width));
+      var current = Math.round(track.scrollLeft / width);
+      var target = Math.max(0, current + direction * perPage) * width;
+      var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      track.scrollTo({ left: Math.min(target, maxScroll()), behavior: reduced ? "auto" : "smooth" });
+    }
+
+    prev.addEventListener("click", function () { page(-1); });
+    next.addEventListener("click", function () { page(1); });
+    track.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+    sync();
+  })();
+</script>
