@@ -8,12 +8,11 @@ src/assets/*
 !src/assets/icons/
 !src/assets/icons/**
 !src/assets/site.js
-# Page imagery we intentionally ship (allowlisted individually so bulk/scratch
-# images under src/assets/images/ stay ignored).
+# Page imagery we intentionally ship. Everything under src/assets/images/ stays
+# ignored (incl. placeholders/) except files matching a shipped-asset prefix.
 !src/assets/images/
 src/assets/images/*
-!src/assets/images/retreat-hero.jpg
-!src/assets/images/retreat-hero-sm.jpg
+!src/assets/images/retreat-*.jpg
 .env
 .obsidian/
 src/obsidian/.obsidian/
