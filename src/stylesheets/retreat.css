@@ -156,7 +156,8 @@ body.retreat-page {
 .retreat-tiers {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  align-items: start;
   text-align: left;
 }
 .tier-card {
@@ -180,43 +181,64 @@ body.retreat-page {
   letter-spacing: 0.02em;
   color: var(--retreat-cream);
 }
-.tier-card__price {
-  margin: 0;
-  font-family: "Montserrat", arial, sans-serif;
-  font-size: 2.3rem;
-  font-weight: 800;
-  color: var(--retreat-ember);
-  line-height: 1.1;
-}
-.tier-card__was {
-  margin-right: 0.3rem;
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: rgba(247, 243, 234, 0.45);
-}
-.tier-card__unit {
-  margin: 0.2rem 0 1rem;
-  font-size: 0.95rem;
-  color: rgba(247, 243, 234, 0.7);
-}
-.tier-card__unit s {
-  color: rgba(247, 243, 234, 0.45);
-}
 .tier-card__detail {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.25rem;
   font-size: 0.98rem;
   line-height: 1.55;
   color: rgba(247, 243, 234, 0.85);
-  flex-grow: 1;
 }
-.tier-card__actions {
+.tier-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(247, 243, 234, 0.12);
+}
+.tier-option {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(247, 243, 234, 0.12);
 }
-.tier-card__actions .retreat-btn {
-  padding: 0.6rem 1.4rem;
+.tier-option__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.tier-option__label {
+  font-family: "Montserrat", arial, sans-serif;
   font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--retreat-cream);
+}
+.tier-option__note {
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  color: rgba(247, 243, 234, 0.6);
+}
+.tier-option__price {
+  font-family: "Montserrat", arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--retreat-ember);
+}
+.tier-option__price s {
+  margin-right: 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(247, 243, 234, 0.45);
+}
+.tier-option .retreat-btn {
+  flex-shrink: 0;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.88rem;
 }
 .tier-card__badge {
   align-self: flex-start;
