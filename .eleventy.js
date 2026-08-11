@@ -1126,6 +1126,11 @@ module.exports = function(eleventyConfig) {
   // Place files under `src/assets/` and reference them at `/assets/...` in templates.
   eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' });
 
+  // Unlisted preview of the "Christianity as Progress" visual-essay draft
+  // (page 1 of a planned four-page series). Linked from nowhere, noindex'd;
+  // shared by URL for CTA review. Self-contained static HTML/CSS/images.
+  eleventyConfig.addPassthroughCopy({ 'src/preview-christianity-as-progress': 'preview/christianity-as-progress' });
+
   return {
     dir: {
       input: "src",
