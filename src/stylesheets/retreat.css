@@ -140,6 +140,18 @@ body.retreat-page section {
   font-style: italic;
 }
 
+/* Themes — light ground, like the intro */
+.retreat-themes {
+  background: var(--retreat-cream);
+  color: var(--retreat-ink);
+}
+.retreat-themes h3 {
+  margin: 2rem 0 0.5rem;
+  font-family: "Montserrat", arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
 /* Photo band — full-bleed horizontal slider (scroll-snap; buttons are a
    progressive enhancement, native scroll/swipe works without JS) */
 .retreat-gallery {
