@@ -4222,6 +4222,11 @@ main video {
     border-left: 4px solid transparent;
   }
 
+  /* Featured link with no submenu — same treatment, minus the dropdown caret. */
+  .site-nav__item--feature > .site-nav__item-control > .site-nav__parent-link::after {
+    content: none;
+  }
+
   .site-nav__item--split:hover > .dropdown-menu,
   .site-nav__item--split:focus-within > .dropdown-menu {
     display: block;
