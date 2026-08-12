@@ -10,12 +10,12 @@
 <meta name="twitter:creator"          content="{{ site.creator }}" />
 <meta name="twitter:title"            content="{{ title or site.title }}" />
 <meta name="twitter:description"      content="{{ description or site.description }}" />
-<meta name="twitter:image"            content="{{ site.image }}" />
+<meta name="twitter:image"            content="{{ socialImage or site.image }}" />
 <meta property="og:description"       content="{{ description or site.description }}" />
 <meta property="og:site_name"         content="{{ site.sitename or site.title }}" />
 <meta property="og:title"             content="{{ title or site.title }}" />
 <meta property="og:type"              content="{{ site.type or 'website' }}" />
-<meta property="og:image"             content="{{ site.image }}" />
+<meta property="og:image"             content="{{ socialImage or site.image }}" />
 <meta property="fb:app_id"            content="{{ site.app_id }}" />
 {% if metaRobots %}
 <meta name="robots"                   content="{{ metaRobots }}" />
