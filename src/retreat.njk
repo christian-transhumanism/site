@@ -57,46 +57,55 @@ tiers:
         wasPrice: "$200"
         price: "$175"
         url: "https://buy.stripe.com/fZueVd4vPaLKd0rcjr8k801"
-  - name: Private Room
-    detail: "Your own private room in the lodge. All three are taken."
-    badge: "Sold out"
+  - name: Queen Bed
+    detail: "A queen bed in the bunkroom, screened off for privacy. A real bed for two — the middle ground between a bunk and a private room."
+    badge: "One available"
     options:
-      - label: "Solo"
-        wasPrice: "$295"
-        price: "$250"
-        unavailable: true
-        url: "https://buy.stripe.com/5kQ28r5zTf201hJerz8k802"
       - label: "Couple"
-        wasPrice: "$575"
-        price: "$495"
-        unavailable: true
-        url: "https://buy.stripe.com/8x26oHd2ldXW4tV4QZ8k803"
-      - label: "Family"
-        note: "up to 4"
-        wasPrice: "$750"
-        price: "$650"
-        unavailable: true
-        url: "https://buy.stripe.com/00w4gz4vP5rq8Kb3MV8k806"
-  - name: Master Suite
-    detail: "The lodge's master suite — the biggest room in the house. Taken."
+        wasPrice: "$450"
+        price: "$395"
+        cta: "Email to reserve"
+        url: "mailto:admin@christiantranshumanism.org?subject=CTA%20Retreat%20—%20Queen%20Bed"
+  - name: Private Rooms & Master Suite
+    detail: "Every enclosed room is taken — all four sold within ten days of opening."
     badge: "Sold out"
-    options:
-      - label: "Solo"
-        wasPrice: "$350"
-        price: "$300"
-        unavailable: true
-        url: "https://buy.stripe.com/fZu5kDe6pdXWgcDabj8k804"
-      - label: "Couple"
-        wasPrice: "$625"
-        price: "$550"
-        unavailable: true
-        url: "https://buy.stripe.com/00wfZh7I1aLKd0r4QZ8k805"
-      - label: "Family"
-        note: "up to 4"
-        wasPrice: "$800"
-        price: "$695"
-        unavailable: true
-        url: "https://buy.stripe.com/9B600j6DX5rqe4v83b8k807"
+    groups:
+      - name: Private Room
+        options:
+          - label: "Solo"
+            wasPrice: "$295"
+            price: "$250"
+            unavailable: true
+            url: "https://buy.stripe.com/5kQ28r5zTf201hJerz8k802"
+          - label: "Couple"
+            wasPrice: "$575"
+            price: "$495"
+            unavailable: true
+            url: "https://buy.stripe.com/8x26oHd2ldXW4tV4QZ8k803"
+          - label: "Family"
+            note: "up to 4"
+            wasPrice: "$750"
+            price: "$650"
+            unavailable: true
+            url: "https://buy.stripe.com/00w4gz4vP5rq8Kb3MV8k806"
+      - name: Master Suite
+        options:
+          - label: "Solo"
+            wasPrice: "$350"
+            price: "$300"
+            unavailable: true
+            url: "https://buy.stripe.com/fZu5kDe6pdXWgcDabj8k804"
+          - label: "Couple"
+            wasPrice: "$625"
+            price: "$550"
+            unavailable: true
+            url: "https://buy.stripe.com/00wfZh7I1aLKd0r4QZ8k805"
+          - label: "Family"
+            note: "up to 4"
+            wasPrice: "$800"
+            price: "$695"
+            unavailable: true
+            url: "https://buy.stripe.com/9B600j6DX5rqe4v83b8k807"
 ---
 
 <section class="retreat-hero">
@@ -177,13 +186,9 @@ tiers:
     <h2>Register</h2>
     <p class="retreat-register__lede">Every registration includes the full weekend — lodging, meals, and everything we do together. The only difference between tiers is the room you sleep in. The crossed-out price is the true price of the weekend; generous donors and volunteers have worked hard to make it this accessible.</p>
     <div class="retreat-tiers">
-      {% for tier in tiers %}
-      <div class="tier-card">
-        {% if tier.badge %}<span class="tier-card__badge">{{ tier.badge }}</span>{% endif %}
-        <h3>{{ tier.name }}</h3>
-        <p class="tier-card__detail">{{ tier.detail }}</p>
+      {% macro tierOptions(options) %}
         <ul class="tier-options">
-          {% for opt in tier.options %}
+          {% for opt in options %}
           <li class="tier-option{% if opt.unavailable %} tier-option--unavailable{% endif %}">
             <span class="tier-option__text">
               <span class="tier-option__label">{{ opt.label }}{% if opt.note %} <span class="tier-option__note">· {{ opt.note }}</span>{% endif %}</span>
@@ -192,11 +197,25 @@ tiers:
             {% if opt.unavailable %}
             <span class="tier-option__flag">Unavailable</span>
             {% else %}
-            <a class="retreat-btn" href="{{ opt.url }}">Register</a>
+            <a class="retreat-btn" href="{{ opt.url }}">{{ opt.cta or "Register" }}</a>
             {% endif %}
           </li>
           {% endfor %}
         </ul>
+      {% endmacro %}
+      {% for tier in tiers %}
+      <div class="tier-card">
+        {% if tier.badge %}<span class="tier-card__badge">{{ tier.badge }}</span>{% endif %}
+        <h3>{{ tier.name }}</h3>
+        <p class="tier-card__detail">{{ tier.detail }}</p>
+        {% if tier.groups %}
+          {% for group in tier.groups %}
+          <h4 class="tier-card__group">{{ group.name }}</h4>
+          {{ tierOptions(group.options) }}
+          {% endfor %}
+        {% else %}
+          {{ tierOptions(tier.options) }}
+        {% endif %}
       </div>
       {% endfor %}
     </div>
