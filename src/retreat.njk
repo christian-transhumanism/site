@@ -68,6 +68,7 @@ tiers:
   - name: Private Rooms & Master Suite
     detail: "Every enclosed room is taken."
     badge: "Sold out"
+    strike: true
     groups:
       - name: Private Room
         options:
@@ -89,16 +90,6 @@ tiers:
             url: "https://buy.stripe.com/00w4gz4vP5rq8Kb3MV8k806"
       - name: Master Suite
         options:
-          - label: "Solo"
-            wasPrice: "$350"
-            price: "$300"
-            unavailable: true
-            url: "https://buy.stripe.com/fZu5kDe6pdXWgcDabj8k804"
-          - label: "Couple"
-            wasPrice: "$625"
-            price: "$550"
-            unavailable: true
-            url: "https://buy.stripe.com/00wfZh7I1aLKd0r4QZ8k805"
           - label: "Family"
             note: "up to 4"
             wasPrice: "$800"
@@ -205,7 +196,7 @@ tiers:
       {% for tier in tiers %}
       <div class="tier-card">
         {% if tier.badge %}<span class="tier-card__badge">{{ tier.badge }}</span>{% endif %}
-        <h3>{{ tier.name }}</h3>
+        <h3>{% if tier.strike %}<s>{{ tier.name }}</s>{% else %}{{ tier.name }}{% endif %}</h3>
         <p class="tier-card__detail">{{ tier.detail }}</p>
         {% if tier.groups %}
           {% for group in tier.groups %}
