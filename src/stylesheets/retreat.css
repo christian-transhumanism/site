@@ -498,3 +498,114 @@ body.retreat-page section {
     padding: 3rem 1.25rem;
   }
 }
+
+/* ---- comped registration form (/retreat/comp/) ---- */
+/* .retreat-hero__eyebrow is cream-on-dark for the hero; this page is on white. */
+.retreat-comp .retreat-hero__eyebrow {
+  color: var(--retreat-ember-deep);
+}
+.retreat-comp h1 {
+  margin: 0.25rem 0 1.25rem;
+}
+.retreat-comp__lede {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 34rem;
+  margin: 0 0 1.75rem;
+}
+.retreat-comp__summary {
+  width: 100%;
+  max-width: 30rem;
+  border-collapse: collapse;
+  margin: 0 0 2rem;
+  font-size: 1rem;
+}
+.retreat-comp__summary th,
+.retreat-comp__summary td {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(36, 49, 42, 0.14);
+  text-align: left;
+  font-weight: 400;
+}
+.retreat-comp__summary td { text-align: right; font-variant-numeric: tabular-nums; }
+.retreat-comp__discount th,
+.retreat-comp__discount td { color: var(--retreat-ember-deep); }
+.retreat-comp__code {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.1rem 0.45rem;
+  border: 1px solid var(--retreat-ember);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.retreat-comp__total th,
+.retreat-comp__total td {
+  border-bottom: none;
+  border-top: 2px solid var(--retreat-ink);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+.retreat-comp__form { max-width: 30rem; }
+.retreat-comp__form p { margin: 0 0 1.25rem; }
+.retreat-comp__form label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+.retreat-comp__req {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--retreat-ember-deep);
+  margin-left: 0.3rem;
+}
+.retreat-comp__form input[type="text"],
+.retreat-comp__form input[type="email"],
+.retreat-comp__form select,
+.retreat-comp__form textarea {
+  width: 100%;
+  padding: 0.65rem 0.7rem;
+  border: 1px solid rgba(36, 49, 42, 0.3);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 1rem;
+  background: #fff;
+  color: var(--retreat-ink);
+}
+.retreat-comp__guests {
+  border: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+.retreat-comp__guests legend {
+  padding: 0;
+  margin-bottom: 0.45rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  width: auto;
+}
+.retreat-comp__guests label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 1.1rem 0 0;
+  font-weight: 400;
+}
+.retreat-comp__guests input[type="radio"] { margin: 0; }
+.retreat-comp__form textarea { resize: vertical; }
+.retreat-comp__form input:focus,
+.retreat-comp__form select:focus,
+.retreat-comp__form textarea:focus {
+  outline: 2px solid var(--retreat-ember);
+  outline-offset: 1px;
+  border-color: var(--retreat-ember);
+}
+.retreat-comp__fineprint {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.75;
+  max-width: 34rem;
+}

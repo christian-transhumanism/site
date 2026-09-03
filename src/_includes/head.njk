@@ -95,7 +95,7 @@
 {% if page.url == "/rise/" %}
 <link rel="stylesheet" media="all" href="/stylesheets/rise.css">
 {% endif %}
-{% if page.url == "/retreat/" or page.url == "/retreat/confirmed/" %}
+{% if page.url and page.url.startsWith("/retreat/") %}
 <link rel="stylesheet" media="all" href="/stylesheets/retreat.css">
 {% endif %}
 
