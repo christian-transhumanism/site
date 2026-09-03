@@ -1,0 +1,125 @@
+---
+title: "Complete your registration — CTA Retreat 2026"
+description: "Registration for invited guests of the first Christian Transhumanist Retreat, October 16–18, 2026."
+layout: default
+permalink: /retreat/comp/
+body_classes: retreat-page
+metaRobots: "noindex, nofollow"
+compCodes:
+  - AMYCOMP26
+---
+
+<section class="retreat-section retreat-comp">
+  <div class="retreat-section__inner">
+
+    <p class="retreat-hero__eyebrow">The First Christian Transhumanist Retreat</p>
+    <h1>Complete your registration</h1>
+
+    <div id="comp-gate" hidden>
+      <p class="retreat-comp__lede">This page needs an invitation link. If you were sent one, open it again — it
+      will have a code on the end. Otherwise, register at <a href="/retreat/">christiantranshumanism.org/retreat</a>,
+      or email <a href="mailto:admin@christiantranshumanism.org?subject=CTA%20Retreat">admin@christiantranshumanism.org</a>
+      and we'll sort it out.</p>
+    </div>
+
+    <div id="comp-body" hidden>
+      <p class="retreat-comp__lede">You've been invited as our guest — there's nothing to pay. We just need names
+      and any dietary restrictions so we can plan the room and the meals.</p>
+
+      <table class="retreat-comp__summary">
+        <tbody>
+          <tr>
+            <th scope="row">Bunkroom &mdash; per person</th>
+            <td>$175.00</td>
+          </tr>
+          <tr>
+            <th scope="row">Guests <span id="comp-qty-label">&times;1</span></th>
+            <td id="comp-subtotal">$175.00</td>
+          </tr>
+          <tr class="retreat-comp__discount">
+            <th scope="row">Invitation <span class="retreat-comp__code" id="comp-code-shown"></span></th>
+            <td id="comp-discount">&minus;$175.00</td>
+          </tr>
+          <tr class="retreat-comp__total">
+            <th scope="row">Total due</th>
+            <td>$0.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <form name="retreat-comp" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+            action="/retreat/comp/confirmed/" class="retreat-comp__form">
+        <input type="hidden" name="form-name" value="retreat-comp">
+        <input type="hidden" name="invitation-code" id="comp-code-field" value="">
+        <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+
+        <fieldset class="retreat-comp__guests">
+          <legend>How many of you are coming?</legend>
+          <label><input type="radio" name="guests" value="1" checked> 1</label>
+          <label><input type="radio" name="guests" value="2"> 2</label>
+          <label><input type="radio" name="guests" value="3"> 3</label>
+          <label><input type="radio" name="guests" value="4"> 4</label>
+        </fieldset>
+
+        <p>
+          <label for="comp-names">Attendee names <span class="retreat-comp__req">required</span></label>
+          <input type="text" id="comp-names" name="attendee-names" required
+                 placeholder="Everyone coming, including you">
+        </p>
+
+        <p>
+          <label for="comp-email">Email <span class="retreat-comp__req">required</span></label>
+          <input type="email" id="comp-email" name="email" required autocomplete="email">
+        </p>
+
+        <p>
+          <label for="comp-diet">Dietary restrictions or allergies</label>
+          <input type="text" id="comp-diet" name="dietary" placeholder="Anyone's — or leave blank">
+        </p>
+
+        <p>
+          <label for="comp-notes">Anything else we should know?</label>
+          <textarea id="comp-notes" name="notes" rows="3"></textarea>
+        </p>
+
+        <button type="submit" class="retreat-btn">Complete registration</button>
+      </form>
+
+      <p class="retreat-comp__fineprint">Friday, October 16 (check-in 4pm) &rarr; Sunday, October 18 (10am) &middot;
+      Woodlands Retreat, Nunnelly, Tennessee &middot; lodge bedding and all meals provided.</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function () {
+  var VALID = {{ compCodes | dump | safe }};
+  var params = new URLSearchParams(window.location.search);
+  var code = (params.get('code') || '').trim().toUpperCase();
+  var ok = VALID.indexOf(code) !== -1;
+
+  document.getElementById(ok ? 'comp-body' : 'comp-gate').hidden = false;
+  if (!ok) return;
+
+  document.getElementById('comp-code-field').value = code;
+  document.getElementById('comp-code-shown').textContent = code;
+
+  var PRICE = 175;
+  var radios = document.querySelectorAll('input[name="guests"]');
+  function money(n) { return '$' + n.toFixed(2); }
+  function render() {
+    var q = 1;
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) { q = parseInt(radios[i].value, 10) || 1; }
+    }
+    document.getElementById('comp-qty-label').innerHTML = '&times;' + q;
+    document.getElementById('comp-subtotal').textContent = money(PRICE * q);
+    document.getElementById('comp-discount').innerHTML = '&minus;' + money(PRICE * q);
+  }
+  for (var i = 0; i < radios.length; i++) {
+    radios[i].addEventListener('change', render);
+  }
+  render();
+})();
+</script>
