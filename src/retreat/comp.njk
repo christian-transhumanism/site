@@ -5,8 +5,6 @@ layout: default
 permalink: /retreat/comp/
 body_classes: retreat-page
 metaRobots: "noindex, nofollow"
-compCodes:
-  - AMYCOMP26
 ---
 
 <section class="retreat-section retreat-comp">
@@ -94,10 +92,13 @@ compCodes:
 
 <script>
 (function () {
-  var VALID = {{ compCodes | dump | safe }};
+  // The code identifies the invitation; it is not a secret. An in-page allowlist
+  // was worse than useless — it gated nobody (readable in source) while costing a
+  // deploy per guest. Any code of 4+ characters opens the form and is recorded
+  // with the submission, so invitations stay distinguishable.
   var params = new URLSearchParams(window.location.search);
   var code = (params.get('code') || '').trim().toUpperCase();
-  var ok = VALID.indexOf(code) !== -1;
+  var ok = /^[A-Z0-9][A-Z0-9-]{3,31}$/.test(code);
 
   document.getElementById(ok ? 'comp-body' : 'comp-gate').hidden = false;
   if (!ok) return;
