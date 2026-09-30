@@ -13,6 +13,8 @@ CC = Continuing Christians · DC = Deconstructing Christians · SR = Secular Rat
 |---|---|---|---|---|---|
 | live | `ai-human-flourishing` | AI and Human Flourishing | SR/DC | Not what AI *can* do but what human future it should serve | Super-Intelligence, Alignment requires Christ, Ethical Techno-Optimism |
 | drafted | `is-religion-rational` | Is Religion Rational? | SR | Faith is an *aspect* of the critical-rationalist process, not its opposite | Critical Rationalism, Christian Rationalism, What is rationality?, Rational Religion |
+| drafted | `three-responses-to-technology` | Three Ways Christians Respond to Technology | CC/DC | Keep Up / Resist / Create: each response carries an answer to what technology is; Creative Engagement as the third option | Creation Mandate, Cooperation Theory of Technology, Super-Embodiment |
+| drafted | `what-is-technology-and-ai` | What Are Technology and AI? | CC/DC/SR | A four-step ladder: Calling, Self (microbiome), Family (pets, adoption), Neighbor (new creatures: angels, aliens, Narnians) | Creation Mandate, Humans to Rule Over All Things, Humans will rule over Angels, Super-Embodiment |
 | idea | `science-and-faith` | Where Science Came From | SR/CC | Christianity as origin of the scientific revolution; reuniting science & faith | Christianity is the origin of the scientific revolution, Religious drivers of the Scientific Revolution, Francis Bacon, Robert Boyle |
 | idea | `radical-life-extension` | Living Longer, Living Well | DC/CC | Longevity as a religious aspiration pursued through science — and why it needs atonement community | Radical Longevity, Statement on Radical Life Extension, Life extension, Religious Aspirations through Science |
 | idea | `resurrection-and-technology` | Resurrection and Technology | CC/DC | Resurrection hope and the technological reach toward it | The Resurrection is Technological, Scientific Resurrection, Resurrection of the Body, Cosmism |
@@ -24,6 +26,8 @@ CC = Continuing Christians · DC = Deconstructing Christians · SR = Secular Rat
 | idea | `enhancement-ethics` | The Ethics of Human Enhancement | DC/SR | Gene editing, BCIs, cognitive enhancement — a framework for doing it well | Gene editing, Brain-Computer Interfaces, Cognitive enhancement, Brain Augmentation Bill of Rights |
 | idea | `faith-after-deconstruction` | A Faith That Holds | DC | For people on the edge of faith: a vision of what faith *is*, not just what it forbids | Deconstructing Christians, Non-Supernaturalist Theology, Faith Principle |
 | idea | `renewal-of-all-things` | The Renewal of All Things | CC | Renewal eschatology — heaven on earth as the future we work toward | Renewal of All Things, Physical Eschatology, Postmillennialism, Eschatology |
+
+Ideas surfaced while drafting the two pages above: wiki notes for the microbiome / extended-self image, adoption, the chain of being, and the three responses; fill the `Artificial Intelligence`, `Angels` and `Ethical Technology` stubs; a "three responses to X" section on each existing topic page.
 
 ## Notes for whoever maintains this
 
