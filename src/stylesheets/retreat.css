@@ -609,3 +609,85 @@ body.retreat-page section {
   opacity: 0.75;
   max-width: 34rem;
 }
+
+/* ---- session offers (/retreat/sessions/) ---- */
+.retreat-sessions__choices {
+  border: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.retreat-sessions__choices legend {
+  padding: 0;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  width: auto;
+}
+.retreat-comp__form .retreat-sessions__choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(36, 49, 42, 0.22);
+  border-radius: 4px;
+  font-weight: 400;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.retreat-sessions__choice:has(input:checked) {
+  border-color: var(--retreat-ember);
+  box-shadow: inset 0 0 0 1px var(--retreat-ember);
+}
+.retreat-sessions__choice input { margin: 0.3rem 0 0; flex: none; }
+.retreat-sessions__choice span { min-width: 0; }
+.retreat-sessions__choice strong { display: block; }
+.retreat-comp__form .retreat-sessions__av > label {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+.retreat-sessions__av input[type="checkbox"] { margin: 0; flex: none; }
+.retreat-comp__form .retreat-sessions__other { margin: 0.25rem 0 0; }
+.retreat-comp__form .retreat-sessions__other label {
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+.retreat-sessions__prompt {
+  max-width: 34rem;
+  line-height: 1.6;
+  margin: 0.5rem 0 1.25rem;
+}
+.retreat-sessions__idea {
+  border: 1px solid rgba(36, 49, 42, 0.18);
+  border-radius: 6px;
+  margin: 0 0 1.25rem;
+  padding: 1rem 1rem 0.25rem;
+}
+.retreat-sessions__idea > legend {
+  padding: 0 0.4rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none;
+  width: auto;
+}
+.retreat-sessions__more { margin: 0 0 1.25rem; }
+.retreat-sessions__more > summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--retreat-ember-deep);
+  padding: 0.5rem 0;
+}
+.retreat-sessions__more[open] > summary { margin-bottom: 0.75rem; }
+.retreat-sessions__optional {
+  font-weight: 400;
+  font-size: 0.8rem;
+  opacity: 0.75;
+  margin-left: 0.3rem;
+}
