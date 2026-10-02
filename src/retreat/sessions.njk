@@ -1,0 +1,109 @@
+---
+title: "Lead a session — CTA Retreat 2026"
+description: "Offer a talk, a discussion, or a story for the first Christian Transhumanist Retreat, October 16–18, 2026."
+layout: default
+permalink: /retreat/sessions/
+body_classes: retreat-page
+metaRobots: "noindex, nofollow"
+---
+
+<section class="retreat-section retreat-comp retreat-sessions">
+  <div class="retreat-section__inner">
+
+    <p class="retreat-hero__eyebrow">The First Christian Transhumanist Retreat</p>
+    <h1>Lead a session</h1>
+
+    <p class="retreat-comp__lede">Part of the weekend comes from the people in the room. If there's something
+    you'd like to share or ask the group, tell us here. We'll fit as many as we can into the schedule and
+    follow up before the retreat.</p>
+
+    <form name="retreat-sessions" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+          action="/retreat/sessions/thanks/" class="retreat-comp__form">
+      <input type="hidden" name="form-name" value="retreat-sessions">
+      <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+
+      <p>
+        <label for="sess-name">Your name <span class="retreat-comp__req">required</span></label>
+        <input type="text" id="sess-name" name="name" required autocomplete="name">
+      </p>
+
+      <p>
+        <label for="sess-email">Email <span class="retreat-comp__req">required</span></label>
+        <input type="email" id="sess-email" name="email" required autocomplete="email">
+      </p>
+
+      <p>
+        <label for="sess-topic">Topic or title <span class="retreat-comp__req">required</span></label>
+        <input type="text" id="sess-topic" name="topic" required>
+      </p>
+
+      <p>
+        <label for="sess-about">A sentence or two about it</label>
+        <textarea id="sess-about" name="about" rows="3"></textarea>
+      </p>
+
+      <fieldset class="retreat-sessions__choices">
+        <legend>How would you like to share it? <span class="retreat-comp__req">required</span></legend>
+
+        <label class="retreat-sessions__choice">
+          <input type="radio" name="format" value="Short talk (10 min, everyone)" required>
+          <span><strong>A short talk to everyone</strong>
+          About 10 minutes, with a question or two after.</span>
+        </label>
+
+        <label class="retreat-sessions__choice">
+          <input type="radio" name="format" value="Lead a whole-room discussion">
+          <span><strong>Lead a conversation with everyone</strong>
+          You open with a question or a short framing, then guide the whole group's discussion.</span>
+        </label>
+
+        <label class="retreat-sessions__choice">
+          <input type="radio" name="format" value="Lead a small-group breakout">
+          <span><strong>Lead a small-group conversation</strong>
+          People who choose your topic join you in a group of five or six, for about 45 minutes.</span>
+        </label>
+
+        <label class="retreat-sessions__choice">
+          <input type="radio" name="format" value="Fireside story">
+          <span><strong>Tell a story by the fire</strong>
+          About 10 minutes on Saturday night: how you got here, or a story the group should hear.</span>
+        </label>
+
+        <label class="retreat-sessions__choice">
+          <input type="radio" name="format" value="Other">
+          <span><strong>Something else</strong>
+          Tell us what you have in mind.</span>
+        </label>
+        <p class="retreat-sessions__other">
+          <label for="sess-other">If something else, what?</label>
+          <input type="text" id="sess-other" name="format-other">
+        </p>
+      </fieldset>
+
+      <fieldset class="retreat-sessions__choices retreat-sessions__av">
+        <legend>Will you need any of these?</legend>
+        <label><input type="checkbox" name="av[]" value="Slides (screen or projector)"> Slides on a screen or projector</label>
+        <label><input type="checkbox" name="av[]" value="Video or audio playback"> Video or audio playback</label>
+        <label><input type="checkbox" name="av[]" value="Microphone"> A microphone</label>
+        <label><input type="checkbox" name="av[]" value="Whiteboard or flip chart"> A whiteboard or flip chart</label>
+        <label><input type="checkbox" name="av[]" value="Printed handouts"> Printed handouts</label>
+        <label><input type="checkbox" name="av[]" value="Musical instrument or music setup"> A musical instrument or music setup</label>
+        <p class="retreat-sessions__other">
+          <label for="sess-av-other">Anything else?</label>
+          <input type="text" id="sess-av-other" name="av-other">
+        </p>
+      </fieldset>
+
+      <p>
+        <label for="sess-notes">Anything else we should know?</label>
+        <textarea id="sess-notes" name="notes" rows="3" placeholder="Timing, who it's for, whether you'd co-lead"></textarea>
+      </p>
+
+      <button type="submit" class="retreat-btn">Send it</button>
+    </form>
+
+    <p class="retreat-comp__fineprint">Friday, October 16 (check-in 4pm) &rarr; Sunday, October 18 (10am) &middot;
+    Woodlands Retreat, Nunnelly, Tennessee. We'll confirm what equipment the lodge has once we know what people need.</p>
+
+  </div>
+</section>
