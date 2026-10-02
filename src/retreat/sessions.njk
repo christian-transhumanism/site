@@ -14,7 +14,7 @@ metaRobots: "noindex, nofollow"
     <h1>Lead a session</h1>
 
     <p class="retreat-comp__lede">Part of the weekend comes from the people in the room. If there's something
-    you'd like to share or ask the group, tell us here. We'll fit as many as we can into the schedule and
+    you'd like to share or ask the group, tell us here — up to three ideas. We'll fit as many as we can into the schedule and
     follow up before the retreat.</p>
 
     <form name="retreat-sessions" method="POST" data-netlify="true" netlify-honeypot="bot-field"
@@ -32,56 +32,54 @@ metaRobots: "noindex, nofollow"
         <input type="email" id="sess-email" name="email" required autocomplete="email">
       </p>
 
-      <p>
-        <label for="sess-topic">Topic or title <span class="retreat-comp__req">required</span></label>
-        <input type="text" id="sess-topic" name="topic" required>
-      </p>
+      <p class="retreat-sessions__prompt">Offer <strong>one to three ideas</strong>. More than one helps us
+      balance the weekend, and we may ask you to lead the one that fits best.</p>
 
-      <p>
-        <label for="sess-about">A sentence or two about it</label>
-        <textarea id="sess-about" name="about" rows="3"></textarea>
-      </p>
+      {%- set formats = [
+        ["Short talk (10 min, everyone)", "A short talk to everyone", "About 10 minutes, with a question or two after."],
+        ["Lead a whole-room discussion", "Lead a conversation with everyone", "You open with a question or a short framing, then guide the whole group's discussion."],
+        ["Lead a small-group breakout", "Lead a small-group conversation", "People who choose your topic join you in a group of five or six, for about 45 minutes."],
+        ["Fireside story", "Tell a story by the fire", "About 10 minutes on Saturday night: how you got here, or a story the group should hear."],
+        ["Other", "Something else", "Tell us what you have in mind."]
+      ] %}
 
-      <fieldset class="retreat-sessions__choices">
-        <legend>How would you like to share it? <span class="retreat-comp__req">required</span></legend>
+      {%- for n in [1, 2, 3] %}
+      {%- set first = (n == 1) %}
+      {% if not first %}<details class="retreat-sessions__more">
+        <summary>{% if n == 2 %}Add a second idea{% else %}Add a third idea{% endif %} <span class="retreat-sessions__optional">optional</span></summary>{% endif %}
+      <fieldset class="retreat-sessions__idea">
+        <legend>Idea {{ n }}{% if first %} <span class="retreat-comp__req">required</span>{% endif %}</legend>
 
-        <label class="retreat-sessions__choice">
-          <input type="radio" name="format" value="Short talk (10 min, everyone)" required>
-          <span><strong>A short talk to everyone</strong>
-          About 10 minutes, with a question or two after.</span>
-        </label>
-
-        <label class="retreat-sessions__choice">
-          <input type="radio" name="format" value="Lead a whole-room discussion">
-          <span><strong>Lead a conversation with everyone</strong>
-          You open with a question or a short framing, then guide the whole group's discussion.</span>
-        </label>
-
-        <label class="retreat-sessions__choice">
-          <input type="radio" name="format" value="Lead a small-group breakout">
-          <span><strong>Lead a small-group conversation</strong>
-          People who choose your topic join you in a group of five or six, for about 45 minutes.</span>
-        </label>
-
-        <label class="retreat-sessions__choice">
-          <input type="radio" name="format" value="Fireside story">
-          <span><strong>Tell a story by the fire</strong>
-          About 10 minutes on Saturday night: how you got here, or a story the group should hear.</span>
-        </label>
-
-        <label class="retreat-sessions__choice">
-          <input type="radio" name="format" value="Other">
-          <span><strong>Something else</strong>
-          Tell us what you have in mind.</span>
-        </label>
-        <p class="retreat-sessions__other">
-          <label for="sess-other">If something else, what?</label>
-          <input type="text" id="sess-other" name="format-other">
+        <p>
+          <label for="sess-topic-{{ n }}">Topic or title{% if first %} <span class="retreat-comp__req">required</span>{% endif %}</label>
+          <input type="text" id="sess-topic-{{ n }}" name="idea-{{ n }}-topic"{% if first %} required{% endif %}>
         </p>
+
+        <p>
+          <label for="sess-about-{{ n }}">A sentence or two about it</label>
+          <textarea id="sess-about-{{ n }}" name="idea-{{ n }}-about" rows="3"></textarea>
+        </p>
+
+        <fieldset class="retreat-sessions__choices">
+          <legend>How would you like to share it?{% if first %} <span class="retreat-comp__req">required</span>{% endif %}</legend>
+          {%- for f in formats %}
+          <label class="retreat-sessions__choice">
+            <input type="radio" name="idea-{{ n }}-format" value="{{ f[0] }}"{% if first and loop.first %} required{% endif %}>
+            <span><strong>{{ f[1] }}</strong>
+            {{ f[2] }}</span>
+          </label>
+          {%- endfor %}
+          <p class="retreat-sessions__other">
+            <label for="sess-other-{{ n }}">If something else, what?</label>
+            <input type="text" id="sess-other-{{ n }}" name="idea-{{ n }}-format-other">
+          </p>
+        </fieldset>
       </fieldset>
+      {% if not first %}</details>{% endif %}
+      {%- endfor %}
 
       <fieldset class="retreat-sessions__choices retreat-sessions__av">
-        <legend>Will you need any of these?</legend>
+        <legend>For any of your ideas, will you need these?</legend>
         <label><input type="checkbox" name="av[]" value="Slides (screen or projector)"> Slides on a screen or projector</label>
         <label><input type="checkbox" name="av[]" value="Video or audio playback"> Video or audio playback</label>
         <label><input type="checkbox" name="av[]" value="Microphone"> A microphone</label>
@@ -96,7 +94,7 @@ metaRobots: "noindex, nofollow"
 
       <p>
         <label for="sess-notes">Anything else we should know?</label>
-        <textarea id="sess-notes" name="notes" rows="3" placeholder="Timing, who it's for, whether you'd co-lead"></textarea>
+        <textarea id="sess-notes" name="notes" rows="3" placeholder="Which idea needs the equipment, timing, whether you'd co-lead"></textarea>
       </p>
 
       <button type="submit" class="retreat-btn">Send it</button>
