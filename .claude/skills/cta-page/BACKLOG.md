@@ -27,7 +27,7 @@ CC = Continuing Christians · DC = Deconstructing Christians · SR = Secular Rat
 | idea | `faith-after-deconstruction` | A Faith That Holds | DC | For people on the edge of faith: a vision of what faith *is*, not just what it forbids | Deconstructing Christians, Non-Supernaturalist Theology, Faith Principle |
 | idea | `renewal-of-all-things` | The Renewal of All Things | CC | Renewal eschatology — heaven on earth as the future we work toward | Renewal of All Things, Physical Eschatology, Postmillennialism, Eschatology |
 
-Ideas surfaced while drafting the two pages above: wiki notes for the microbiome / extended-self image, adoption, the chain of being, and the three responses; fill the `Artificial Intelligence`, `Angels` and `Ethical Technology` stubs; a "three responses to X" section on each existing topic page.
+Ideas surfaced while drafting the two pages above (wiki items are for a human to write — see `docs/backlog.md` → Content policy): wiki notes for the microbiome / extended-self image, adoption, the chain of being, and the three responses; the thin `Artificial Intelligence`, `Angels` and `Ethical Technology` stubs; a "three responses to X" section on each existing topic page.
 
 ## Notes for whoever maintains this
 
