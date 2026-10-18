@@ -20,6 +20,7 @@ metaRobots: "noindex, nofollow"
           action="/retreat/feedback/thanks/" class="retreat-comp__form">
       <input type="hidden" name="form-name" value="retreat-feedback">
       <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+      <input type="hidden" name="code" id="fb-code" value="">
 
       <fieldset class="retreat-sessions__choices">
         <legend>Again? Would you come to another CTA retreat?</legend>
@@ -60,3 +61,12 @@ metaRobots: "noindex, nofollow"
 
   </div>
 </section>
+
+<script>
+  // Personal links carry ?code=; it tags the submission so we know who answered.
+  // No code, or a malformed one, submits anonymously.
+  (function () {
+    var code = (new URLSearchParams(location.search).get('code') || '').trim().toUpperCase();
+    if (/^[A-Z0-9][A-Z0-9-]{3,31}$/.test(code)) document.getElementById('fb-code').value = code;
+  })();
+</script>
