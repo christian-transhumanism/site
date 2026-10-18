@@ -1,0 +1,72 @@
+---
+title: "Feedback — CTA Retreat 2026"
+description: "Tell us how the first Christian Transhumanist Retreat went, October 16–18, 2026."
+layout: default
+permalink: /retreat/feedback/
+body_classes: retreat-page
+metaRobots: "noindex, nofollow"
+---
+
+<section class="retreat-section retreat-comp retreat-sessions">
+  <div class="retreat-section__inner">
+
+    <p class="retreat-hero__eyebrow">The First Christian Transhumanist Retreat</p>
+    <h1>Feedback</h1>
+
+    <p class="retreat-comp__lede">Thank you for coming. A few honest lines help us shape the next one.
+    Answer what you like; everything is optional.</p>
+
+    <form name="retreat-feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+          action="/retreat/feedback/thanks/" class="retreat-comp__form">
+      <input type="hidden" name="form-name" value="retreat-feedback">
+      <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+      <input type="hidden" name="code" id="fb-code" value="">
+
+      <fieldset class="retreat-sessions__choices">
+        <legend>Again? Would you come to another CTA retreat?</legend>
+        {%- for v in ["Yes", "Maybe", "No"] %}
+        <label class="retreat-sessions__choice">
+          <input type="radio" name="again" value="{{ v }}">
+          <span><strong>{{ v }}</strong></span>
+        </label>
+        {%- endfor %}
+        <p class="retreat-sessions__other">
+          <label for="fb-again-why">Why, or what would make it a yes?</label>
+          <input type="text" id="fb-again-why" name="again-why">
+        </p>
+      </fieldset>
+
+      <p>
+        <label for="fb-more">More of? What should we do more of next time?</label>
+        <textarea id="fb-more" name="more-of" rows="4"></textarea>
+      </p>
+
+      <p>
+        <label for="fb-less">Less of? What should we do less of, or drop?</label>
+        <textarea id="fb-less" name="less-of" rows="4"></textarea>
+      </p>
+
+      <p>
+        <label for="fb-other">Other: what surprised you, what you'd change, who should come next year</label>
+        <textarea id="fb-other" name="other" rows="4"></textarea>
+      </p>
+
+      <p>
+        <label for="fb-name">Your name <span class="retreat-comp__req">optional</span></label>
+        <input type="text" id="fb-name" name="name" autocomplete="name">
+      </p>
+
+      <button type="submit" class="retreat-btn">Send it</button>
+    </form>
+
+  </div>
+</section>
+
+<script>
+  // Personal links carry ?code=; it tags the submission so we know who answered.
+  // No code, or a malformed one, submits anonymously.
+  (function () {
+    var code = (new URLSearchParams(location.search).get('code') || '').trim().toUpperCase();
+    if (/^[A-Z0-9][A-Z0-9-]{3,31}$/.test(code)) document.getElementById('fb-code').value = code;
+  })();
+</script>
