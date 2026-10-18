@@ -23,7 +23,7 @@ metaRobots: "noindex, nofollow"
       <input type="hidden" name="code" id="fb-code" value="">
 
       <fieldset class="retreat-sessions__choices">
-        <legend>Again? Would you come to another CTA retreat?</legend>
+        <legend>Would you come to another CTA retreat?</legend>
         {%- for v in ["Yes", "Maybe", "No"] %}
         <label class="retreat-sessions__choice">
           <input type="radio" name="again" value="{{ v }}">
@@ -37,17 +37,17 @@ metaRobots: "noindex, nofollow"
       </fieldset>
 
       <p>
-        <label for="fb-more">More of? What should we do more of next time?</label>
+        <label for="fb-more">What should we do more of next time?</label>
         <textarea id="fb-more" name="more-of" rows="4"></textarea>
       </p>
 
       <p>
-        <label for="fb-less">Less of? What should we do less of, or drop?</label>
+        <label for="fb-less">What should we do less of, or drop?</label>
         <textarea id="fb-less" name="less-of" rows="4"></textarea>
       </p>
 
       <p>
-        <label for="fb-other">Other: what surprised you, what you'd change, who should come next year</label>
+        <label for="fb-other">What surprised you, what would you change, who should come next year? Any other recommendations?</label>
         <textarea id="fb-other" name="other" rows="4"></textarea>
       </p>
 
