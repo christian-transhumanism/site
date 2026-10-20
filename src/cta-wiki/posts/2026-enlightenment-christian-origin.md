@@ -4,9 +4,10 @@ tags: post
 title: "The Enlightenment Is of Christian Origin"
 author: staff
 permalink: blog/2026-enlightenment-christian-origin/
-date: 2026-09-02T12:00:00.000Z
-disqus_id: 20260902120000
-# image: TODO — needs Cloudinary upload
+date: 2026-10-20T20:00:00.000Z
+disqus_id: 20261020200000
+image: https://www.christiantranshumanism.org/assets/images/wright-orrery.jpg
+socialImage: https://www.christiantranshumanism.org/assets/images/wright-orrery.jpg
 ---
 
 Christians are often told they must choose: faith or reason, revelation or
@@ -116,3 +117,5 @@ escape.
 > that, because of this, is also open to all that is truly rational."
 >
 > — Joseph Ratzinger, Subiaco, April 1, 2005
+
+*Image: Joseph Wright of Derby,* A Philosopher Lecturing on the Orrery *(c. 1766), Derby Museum and Art Gallery. Public domain.*
