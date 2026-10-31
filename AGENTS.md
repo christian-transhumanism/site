@@ -70,6 +70,8 @@ Think in **roles**, not specific tools — any capable agent (or human) holding 
 - **Page writer** — the in-repo `/cta-page` skill writes topic pages (branch + PR); it never merges or deploys.
 - **Coordinator** — whoever routes work: writes the task up referencing this file, sends live-Ads/deploy work to the funnel operator, sends new-topic-page writing to `/cta-page`. The coordinator does **not** make live Ads changes or push to `main` itself.
 
+**Overall agent plan:** `docs/agent-plan.md` — the five target capabilities (site, social, chat agents, content, Ads), the **five content commitments + canonical examples every piece of CTA output must meet**, the autonomy tiers, and the roadmap. Read its §2 before producing any public-facing content.
+
 **Open project tasks / backlog:** `docs/backlog.md` — the canonical surfaced-work list (email-platform/Mailchimp decision, the intent→confirmed conversion webhook, Netlify reliability, orchestration). Check it before picking up CTA work.
 
 **Common tasks → where they go:**

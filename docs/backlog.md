@@ -34,6 +34,8 @@ subscription. Access/how-counted: `integrations.md` (this directory).
 
 ## Orchestration
 
+The overall plan, roadmap and open decisions for agents are in `agent-plan.md`. The items below are the near-term pieces of it.
+
 - `[risk/decision]` **The Ads automation and its observability run on the ED's personal infrastructure** — the weekly Ads growth-review automation, its monitoring, and the ED-report tooling all live outside this repo. That is itself a succession risk (see `succession-plan.md` §6): decide how to make the automation CTA-transferable — e.g. re-home it as a documented runbook + scheduled agent that any operator with Bitwarden access can re-create. *(Interim mitigation: `docs/google-ads-current-state.md` is kept as the resume point so any agent with Ads auth can continue manually.)*
 
 ## Measurement — keep the numbers alive

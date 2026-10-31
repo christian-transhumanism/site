@@ -5,6 +5,8 @@ draw on. Source of truth for the prose; you should not need to re-read the whole
 `cta-wiki` corpus to write in voice. (Upstream sources, for deeper grounding:
 `guidelines.txt` at the repo root and `src/cta-wiki/CTA Communications Styleguide.md`.)
 
+The five content commitments and the canonical example posts in `docs/agent-plan.md` §2 sit above this file: run the §2.2 checklist on every draft.
+
 These pages are **unsigned**. They speak in CTA's institutional voice — "CTA
 approaches…", "We…" — never a named author, never first-person-singular opinion.
 
