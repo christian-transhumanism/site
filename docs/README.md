@@ -15,6 +15,7 @@ The documentation has four layers, with different visibility:
 
 - [succession-plan.md](succession-plan.md) — continuity plan: systems inventory, access, cadence, what a successor does first, operator-infra migration list.
 - [agent-plan.md](agent-plan.md) — overall AI-agent plan: target capabilities, content commitments + canonical examples, autonomy tiers, roadmap.
+- [agent-technical-plan.md](agent-technical-plan.md) — how the agent system is built and run: runner, secrets, repos, approvals, per-capability design, build order.
 - [backlog.md](backlog.md) — canonical open-work list for the CTA project.
 - [integrations.md](integrations.md) — Mailchimp/Stripe wiring, how the official membership numbers are counted, reporting.
 - [legal.md](legal.md) — incorporation, officers, EIN/tax status, banking pointers (treasurer).

@@ -437,6 +437,8 @@ unsure, step up a tier.
 
 ## 4. Roadmap
 
+The technical design and build order are in `docs/agent-technical-plan.md`.
+
 **Phase 0: the plan (this document).**
 
 **Phase 1: make existing operations standalone.**
