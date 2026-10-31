@@ -318,6 +318,54 @@ When CTA publishes something that states the perspective this well, add it to §
 with a short "why it works". Agents should *propose* additions (in a PR). A human
 decides what becomes canon.
 
+### 2.6 Positioning: BioLogos as a reference point
+
+When working out how CTA should sit in public conversation, a useful comparison is
+**BioLogos** (biologos.org). Founded in 2007 by Francis Collins, it presents
+"evolutionary creation": the harmony of historic Christian faith with mainstream
+science. There is history between the two organizations: BioLogos VP Jim Stump spoke
+at the 2019 Christian Transhumanist Conference (`src/conference-2019.njk`).
+
+**Where CTA's positioning is similar, and worth learning from:**
+- **Orthodox and in step with consensus science at the same time.** Both organizations
+  hold to historic Christian faith (commitment 1) without contradicting the evidence
+  (commitment 4), and both treat that combination as normal rather than as a
+  concession.
+- **Offering positions rather than mandating them.** On contested questions, BioLogos
+  typically sets out several readings that fit both faith and science and lets readers
+  weigh them. That is the same stance as §2.3 Example 1 and the "offered, not imposed"
+  check in §2.2.
+- **Tone.** Gracious, non-combative, credible to scientists and to people in church
+  alike. A good benchmark for CTA's "informative, not preachy" voice.
+- **Seriousness as an institution.** Substantive explanatory articles, recognizable
+  scholars, a podcast. CTA's topic pages and podcast play a similar role.
+
+**Where CTA differs, and should stay distinct:**
+- **Direction of attention.** BioLogos mostly works on *origins*: evolution, Genesis,
+  Adam and Eve, the age of the earth. CTA's centre of gravity is the *future*:
+  technology, AI, longevity, human transformation, the renewal of all things. Where
+  CTA touches origins (as in Example 1), it is usually to say what the past means for
+  our calling now.
+- **Epistemology.** CTA explicitly reasons in the Critical Rationalist line and aims to
+  be legible to Bayesians and rationalists (commitments 2 and 3). That brings in
+  audiences, such as secular rationalists and the tech world, that a faith-and-science
+  organization doesn't usually address directly.
+- **Transhumanism.** CTA holds that overcoming death and transforming the human
+  condition through science and technology is part of the Christian calling
+  (commitment 5). That is CTA's own claim. Never attribute it, or any other CTA
+  position, to BioLogos.
+
+**Practical rules for agents:**
+- Use BioLogos as a model for tone and for how to present contested questions, not as
+  a source of CTA positions.
+- Never imply affiliation, partnership or endorsement. Describe BioLogos accurately and
+  generously when it comes up, and link to their own material for their views.
+- Keep BioLogos's name out of ad copy and keywords (trademark and Ad Grant hygiene).
+- When people ask "how is CTA different from BioLogos?", the short answer is: *similar
+  commitment to orthodox faith and consensus science; CTA's focus is the future, its
+  method is critical rationalism, and its horizon is the transformation of the human
+  condition.*
+
 ---
 
 ## 3. Autonomy: what an agent may do on its own
