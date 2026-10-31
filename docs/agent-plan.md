@@ -81,9 +81,11 @@ the gaps.
 - **Rules every CTA chat agent follows:**
   - **Say it's an AI.** It speaks as "an AI assistant for the CTA", never as a named
     person, a board member or the ED.
-  - **Separate settled from open.** "CTA's view is…" only for positions documented in
-    this repo. Everything else is "one way CTA thinkers approach this…" or an honest
-    "that's an open question".
+  - **Separate settled from open.** "CTA's view is…" only for the commitments (§2.1)
+    and positions documented as CTA's in this repo. Readings like Example 1 (§2.3)
+    are offered as *available* positions: "one reading consistent with both the
+    tradition and science is…", alongside others, never as the only option for a
+    Christian or a member. Everything else is an honest "that's an open question".
   - **Not pastoral care.** If someone is in distress, grieving, or in danger, respond
     with care, point them to real people and, where relevant, crisis resources, and do
     not theologize at them. This matters especially for the death and Fall framing in
@@ -188,6 +190,9 @@ Everything CTA publishes, whether by agent or by person, aims to be:
       the work of overcoming death and suffering?
 - [ ] **The move (§2.4):** Does it reframe an old question, rather than repeat one
       side of a stale argument?
+- [ ] **Offered, not imposed (§2.4):** Is a specific reading presented as an
+      available position ("there's another reading…") rather than as CTA's required
+      doctrine or the only option consistent with the commitments?
 - [ ] **Voice:** Does it match `VOICE.md`: disciplined hope, informative rather than
       preachy, plain first and rich underneath, Christ as the reveal rather than the
       gate?
@@ -198,6 +203,12 @@ Everything CTA publishes, whether by agent or by person, aims to be:
 
 These two posts are the clearest current statement of what CTA offers. Study them
 before writing anything. They are reproduced verbatim.
+
+They are canonical as examples of *the move*, not as doctrine. In particular,
+Example 1 presents its reading of Genesis 1–3 as **an available position**: "there's
+another reading consistent with both Christian tradition, and with modern science". It
+does not claim to be the only position consistent with CTA, or one a Christian must
+hold. Agents should present it the same way.
 
 #### Example 1: death, the Fall, and the path not taken
 
@@ -237,6 +248,9 @@ before writing anything. They are reproduced verbatim.
 - *Transhumanism:* overcoming death is the calling. That is Fedorov's Common Task,
   reached from Scripture.
 - *Bayesian legibility:* no premise asks the reader to discount evidence.
+- *Offered, not insisted on:* it opens with "there's another reading" and "in this
+  reading". It widens the options available to a Christian who accepts modern science,
+  without declaring the other options closed.
 
 #### Example 2: how Christianity made the modern world
 
@@ -286,7 +300,9 @@ Both posts follow the same pattern. Use it deliberately:
 2. **Name the usual move and why it fails**: it contradicts science, or it relies on
    proof-texting that collapses under counterexamples.
 3. **Offer a third reading** that keeps what the tradition was actually protecting
-   *and* fits the evidence.
+   *and* fits the evidence. Offer it as a reading that is *available*, not one the
+   reader must accept. The aim is to show that a position true to both tradition and
+   science exists, and so to open the question rather than close it.
 4. **Ground it in the deep structure of the tradition**: Genesis 1–3, the image of
    God, Christ, theosis. Not isolated verses.
 5. **Land on the future**: a calling, a task, a cosmos made new. The reframing should
@@ -337,7 +353,8 @@ unsure, step up a tier.
   §2.2 checklist built in.
 - Start the post log, and review performance alongside Ads at the weekly read-out.
 - Turn each canonical post into a full topic page or article (Example 1 → a page on
-  death, the Fall and the calling to overcome death; Example 2 → a page on *reformatio*
+  death, the Fall and the calling to overcome death, presenting the reading as one
+  available position alongside others; Example 2 → a page on *reformatio*
   and the modern world).
 
 **Phase 3: chat agents.**
