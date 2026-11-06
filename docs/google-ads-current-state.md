@@ -1,6 +1,57 @@
 # CTA Google Ads Current State
 
-_Last updated: 2026-07-12._
+_Last updated: 2026-11-05. The **Current State** section below supersedes the July snapshot that follows it; the July material is kept as history._
+
+## Current State (2026-11-05)
+
+**Traffic took off in Sep–Oct, and it is not coming from `USA`.** Account totals (Ads UI, Central Time):
+
+| Period | Impr. | Clicks | Conv. | Cost |
+|---|---|---|---|---|
+| Aug 4 – Sep 2 | 1,196 | 25 | 0 | $30.38 |
+| Sep 1 – 30 | 2,287 | 117 | — | $503.93 |
+| Oct 1 – 31 | 8,321 | 557 | 3 | $3,137.89 |
+
+October CTR 6.69% (above the 5% grant floor). All spend is grant money: `Billing` shows "We don't bill you."
+
+October by campaign:
+
+| Campaign | Type / bidding | Daily budget | Impr. | Clicks | CTR | Cost |
+|---|---|---|---|---|---|---|
+| `dale-allison-miracles-1` | Performance Max / Maximize conversions | $58.32 | 4,038 | 202 | 5.0% | $1,186.13 |
+| `Interviews & Celebrities` | Search / Maximize conversions | $178.66 | 2,540 | 184 | 7.2% | $1,038.00 |
+| `Noland-Arbaugh-Video-1` | Performance Max / Maximize conversions | $40.50 | 1,626 | 168 | 10.3% | $908.48 |
+| `USA` | Search / Maximize clicks ($2 cap) | $100.00 | 116 | 3 | 2.6% | $5.27 |
+
+Everything else (`Science, Faith, Technology` Smart, the `Conference 2018/2019` campaigns) served ~0.
+
+**Nobody changed the account to cause this.** Change history for Aug 1 – Oct 31 shows only two edits: Aug 10, applied the "redundant keyword" recommendation on `USA` (1 phrase + 14 exact removed); Aug 18, paused `Ray Kurzweil Singularity`. Nothing in September or October. The likeliest explanation (an inference, not something Google reports) is that the three Maximize-conversions campaigns finished learning and began bidding on their own. Maximize conversions is exempt from the grant's $2 CPC cap, so October average CPCs on the top pages ran **$3–$9**, which is how spend grew this fast.
+
+This reverses the July read. Maximize conversions throttled `USA` to zero in July (see below), but on these three campaigns it is now the whole traffic source. `USA`, which the rest of this doc centers on, is effectively dormant.
+
+**Where the clicks land (October, landing-pages report):**
+
+| Landing page | Clicks | CTR | Avg CPC | Cost |
+|---|---|---|---|---|
+| `/blog/2025-noland-arbaugh-neuralink/` | 204 | 7.18% | $4.87 | $993.72 |
+| `/podcast/19/` | 113 | 7.22% | $6.14 | $694.00 |
+| `/wiki/the-beginning-of-infinity-explanations-that-transform-the-world/` | 37 | 5.20% | $5.13 | $189.72 |
+| `/wiki/zero-to-one-notes-on-startups-or-how-to-build-the-future/` | 28 | 7.57% | $3.28 | $91.87 |
+| `/blog/transhumanist-and-jehovahs-witness/` | 23 | 5.01% | $9.39 | $215.92 |
+| `/wiki/the-singularity-is-near-when-humans-transcend-biology/` | 22 | 3.89% | $2.76 | $60.81 |
+| `/topics/radical-longevity/` | 20 | 3.97% | $8.12 | $162.41 |
+
+**Funnel gap this exposes:** as of 2026-11-05, the two top landing pages (~$1,690 of October spend) have **no in-content membership link**. They have only the site-nav `Join` link and no `/join/free`, `/join/future` or `/join/voting` handoff. `/topics/*` pages do carry all three. So most paid visitors land where the tracked conversion path is hardest to reach. That fits 3 conversions on 557 clicks and Mailchimp growing by only +4 members (1,675 → 1,679) over October.
+
+**Conversions:** `Goals` → `Summary` for October shows 3 results (account level). The per-campaign conversion cells render blank in the campaigns table, so attribution by campaign was not confirmed.
+
+## Next Actions (2026-11-05)
+
+1. **Put a membership CTA on the pages the ads actually send people to.** Add a shared in-content join block (routing to `/join/future` / `/join/free`, keeping the `/join/*` tracking handoff intact) to the blog-post, podcast-episode and wiki-note layouts, or at minimum to the top landing pages above. This is a site-only change with no Ads risk, and it is the highest-leverage move: paid traffic is ~557 clicks/month and growing, and almost none of it sees a join path.
+2. **Watch spend vs. quality.** Spend went ~$30 → ~$3,100/month with no human change. Check monthly that account CTR stays ≥5% and that conversions and Mailchimp growth rise with it. If clicks keep climbing while members don't, the Performance Max placements (YouTube/Display/etc., not just Search) are the first suspect.
+3. **Reconcile the campaign list with this doc.** The three active campaigns have no build notes in `docs/google-ads-operations.md`: what assets and final URLs they use, and who created them. Document them before changing them.
+4. **Decide `USA`'s future.** 3 clicks in October on a $100/day budget. Options: move it to Maximize conversions now that the account has some conversion history, fold its best ad groups into `Interviews & Celebrities`, or leave it.
+5. The July-era actions below are historical. Re-check any of them against the live account before acting.
 
 This file is the compact resume point for CTA Google Ads growth work. A fresh agent should be able to start in this repo, read `AGENTS.md`, then this file, and continue without depending on anything outside this repo for recent Ads state.
 
@@ -156,7 +207,7 @@ Current tracking measures membership intent on the `/join/*` handoff pages:
 
 Known measurement gap: this records intent/outbound handoff, not confirmed Mailchimp or Stripe completion. A server-side completion webhook remains one of the highest-leverage funnel improvements because it would let Ads optimize against real members rather than only click-through intent.
 
-## Immediate Next Actions
+## Immediate Next Actions (July 2026 — historical; see Next Actions (2026-11-05) above)
 
 1. CLOSED (2026-07-01): Case `1-2059000040983` determination — the `CTA` business-name disapproval is NOT reversible (must exactly match domain or legal name, <=25 chars). It is COSMETIC ONLY: ads serve fine; the name just does not display next to the URL. Decision: accept as-is, do NOT rename to `Christiantranshumanism` (that would inject "Christian" into the served asset and likely trigger the `Religious belief in personalized advertising` limitation). There is no compliant-AND-neutral business name possible. Serving with a non-displaying business name is a stable foundation — build ads freely; new campaigns can simply leave the business name blank. Full write-up + the 3 rejected paths are in `docs/google-ads-operations.md` -> `July 1, 2026 Business Name Determination`. Do NOT re-litigate. The `Christian Transhumanist` fallback idea is dead (would also fail as non-exact-match).
 2. DONE (2026-06-30): the 4 ad groups that had NO ADS now each have an `Eligible` Responsive Search Ad: `Technology and Human Flourishing`, `Radical Longevity`, `Zero to One Future`, `Kevin Kelly Technology`. See `docs/google-ads-operations.md` -> `June 30, 2026 Recreated the 4 Missing Ads`. Next: watch that they clear review and start collecting impressions now that they can serve.
